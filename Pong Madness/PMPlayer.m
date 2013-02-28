@@ -20,6 +20,7 @@
 @dynamic handedness;
 @dynamic leaderboardPlayerSet;
 @dynamic teamSet;
+@dynamic sinceDate;
 @dynamic tournamentSet;
 
 @end

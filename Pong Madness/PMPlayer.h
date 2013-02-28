@@ -21,6 +21,7 @@
 @property (nonatomic, strong) NSString *handedness;
 @property (nonatomic, strong) NSSet *leaderboardPlayerSet;
 @property (nonatomic, strong) NSSet *teamSet;
+@property (nonatomic, strong) NSDate *sinceDate;
 @property (nonatomic, strong) NSSet *tournamentSet;
 
 @end
