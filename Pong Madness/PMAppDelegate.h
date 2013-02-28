@@ -7,13 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@class PMViewController;
+#import "PMLobbyViewController.h"
 
 @interface PMAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
-@property (strong, nonatomic) PMViewController *viewController;
+@property (strong, nonatomic) PMLobbyViewController *viewController;
 
 @end

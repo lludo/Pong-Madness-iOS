@@ -16,8 +16,23 @@
 		8222C24316DF1CD30084D5D6 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 8222C24216DF1CD30084D5D6 /* Default.png */; };
 		8222C24516DF1CD30084D5D6 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8222C24416DF1CD30084D5D6 /* Default@2x.png */; };
 		8222C24716DF1CD30084D5D6 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8222C24616DF1CD30084D5D6 /* Default-568h@2x.png */; };
-		8222C24A16DF1CD30084D5D6 /* PMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8222C24916DF1CD30084D5D6 /* PMViewController.m */; };
-		8222C24D16DF1CD30084D5D6 /* PMViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8222C24B16DF1CD30084D5D6 /* PMViewController.xib */; };
+		8222C25616DF1D290084D5D6 /* PMLobbyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8222C25416DF1D290084D5D6 /* PMLobbyViewController.m */; };
+		8222C25716DF1D290084D5D6 /* PMLobbyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8222C25516DF1D290084D5D6 /* PMLobbyViewController.xib */; };
+		8222C25B16DF1F490084D5D6 /* PMPlayerListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8222C25916DF1F490084D5D6 /* PMPlayerListViewController.m */; };
+		8222C25C16DF1F490084D5D6 /* PMPlayerListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8222C25A16DF1F490084D5D6 /* PMPlayerListViewController.xib */; };
+		8222C26016DF1F570084D5D6 /* PMPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8222C25E16DF1F570084D5D6 /* PMPlayerViewController.m */; };
+		8222C26116DF1F570084D5D6 /* PMPlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8222C25F16DF1F570084D5D6 /* PMPlayerViewController.xib */; };
+		8222C26916DF21170084D5D6 /* PMDocumentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8222C26816DF21170084D5D6 /* PMDocumentManager.m */; };
+		8222C26E16DF21700084D5D6 /* PongMadnessModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8222C26C16DF21700084D5D6 /* PongMadnessModel.xcdatamodeld */; };
+		8222C27116DF2B230084D5D6 /* PMPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8222C27016DF2B230084D5D6 /* PMPlayer.m */; };
+		8222C27416DF2B230084D5D6 /* PMTournament.m in Sources */ = {isa = PBXBuildFile; fileRef = 8222C27316DF2B230084D5D6 /* PMTournament.m */; };
+		8222C27716DF2B230084D5D6 /* PMTeam.m in Sources */ = {isa = PBXBuildFile; fileRef = 8222C27616DF2B230084D5D6 /* PMTeam.m */; };
+		8222C27A16DF2B230084D5D6 /* PMGameParticipant.m in Sources */ = {isa = PBXBuildFile; fileRef = 8222C27916DF2B230084D5D6 /* PMGameParticipant.m */; };
+		8222C27D16DF2B230084D5D6 /* PMParticipant.m in Sources */ = {isa = PBXBuildFile; fileRef = 8222C27C16DF2B230084D5D6 /* PMParticipant.m */; };
+		8222C28016DF2B230084D5D6 /* PMLeaderboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 8222C27F16DF2B230084D5D6 /* PMLeaderboard.m */; };
+		8222C28316DF2B240084D5D6 /* PMGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 8222C28216DF2B240084D5D6 /* PMGame.m */; };
+		8222C28616DF2B240084D5D6 /* PMLeaderboardPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8222C28516DF2B240084D5D6 /* PMLeaderboardPlayer.m */; };
+		8222C28816DF2BEF0084D5D6 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8222C28716DF2BEF0084D5D6 /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,9 +49,35 @@
 		8222C24216DF1CD30084D5D6 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		8222C24416DF1CD30084D5D6 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		8222C24616DF1CD30084D5D6 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		8222C24816DF1CD30084D5D6 /* PMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PMViewController.h; sourceTree = "<group>"; };
-		8222C24916DF1CD30084D5D6 /* PMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PMViewController.m; sourceTree = "<group>"; };
-		8222C24C16DF1CD30084D5D6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/PMViewController.xib; sourceTree = "<group>"; };
+		8222C25316DF1D290084D5D6 /* PMLobbyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMLobbyViewController.h; sourceTree = "<group>"; };
+		8222C25416DF1D290084D5D6 /* PMLobbyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMLobbyViewController.m; sourceTree = "<group>"; };
+		8222C25516DF1D290084D5D6 /* PMLobbyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PMLobbyViewController.xib; sourceTree = "<group>"; };
+		8222C25816DF1F490084D5D6 /* PMPlayerListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMPlayerListViewController.h; sourceTree = "<group>"; };
+		8222C25916DF1F490084D5D6 /* PMPlayerListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMPlayerListViewController.m; sourceTree = "<group>"; };
+		8222C25A16DF1F490084D5D6 /* PMPlayerListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PMPlayerListViewController.xib; sourceTree = "<group>"; };
+		8222C25D16DF1F570084D5D6 /* PMPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMPlayerViewController.h; sourceTree = "<group>"; };
+		8222C25E16DF1F570084D5D6 /* PMPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMPlayerViewController.m; sourceTree = "<group>"; };
+		8222C25F16DF1F570084D5D6 /* PMPlayerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PMPlayerViewController.xib; sourceTree = "<group>"; };
+		8222C26716DF21170084D5D6 /* PMDocumentManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMDocumentManager.h; sourceTree = "<group>"; };
+		8222C26816DF21170084D5D6 /* PMDocumentManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMDocumentManager.m; sourceTree = "<group>"; };
+		8222C26D16DF21700084D5D6 /* PongMadnessModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PongMadnessModel.xcdatamodel; sourceTree = "<group>"; };
+		8222C26F16DF2B230084D5D6 /* PMPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMPlayer.h; sourceTree = "<group>"; };
+		8222C27016DF2B230084D5D6 /* PMPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMPlayer.m; sourceTree = "<group>"; };
+		8222C27216DF2B230084D5D6 /* PMTournament.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMTournament.h; sourceTree = "<group>"; };
+		8222C27316DF2B230084D5D6 /* PMTournament.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMTournament.m; sourceTree = "<group>"; };
+		8222C27516DF2B230084D5D6 /* PMTeam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMTeam.h; sourceTree = "<group>"; };
+		8222C27616DF2B230084D5D6 /* PMTeam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMTeam.m; sourceTree = "<group>"; };
+		8222C27816DF2B230084D5D6 /* PMGameParticipant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMGameParticipant.h; sourceTree = "<group>"; };
+		8222C27916DF2B230084D5D6 /* PMGameParticipant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMGameParticipant.m; sourceTree = "<group>"; };
+		8222C27B16DF2B230084D5D6 /* PMParticipant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMParticipant.h; sourceTree = "<group>"; };
+		8222C27C16DF2B230084D5D6 /* PMParticipant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMParticipant.m; sourceTree = "<group>"; };
+		8222C27E16DF2B230084D5D6 /* PMLeaderboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMLeaderboard.h; sourceTree = "<group>"; };
+		8222C27F16DF2B230084D5D6 /* PMLeaderboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMLeaderboard.m; sourceTree = "<group>"; };
+		8222C28116DF2B240084D5D6 /* PMGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMGame.h; sourceTree = "<group>"; };
+		8222C28216DF2B240084D5D6 /* PMGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMGame.m; sourceTree = "<group>"; };
+		8222C28416DF2B240084D5D6 /* PMLeaderboardPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMLeaderboardPlayer.h; sourceTree = "<group>"; };
+		8222C28516DF2B240084D5D6 /* PMLeaderboardPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMLeaderboardPlayer.m; sourceTree = "<group>"; };
+		8222C28716DF2BEF0084D5D6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8222C28816DF2BEF0084D5D6 /* CoreData.framework in Frameworks */,
 				8222C23116DF1CD30084D5D6 /* UIKit.framework in Frameworks */,
 				8222C23316DF1CD30084D5D6 /* Foundation.framework in Frameworks */,
 				8222C23516DF1CD30084D5D6 /* CoreGraphics.framework in Frameworks */,
@@ -73,6 +115,7 @@
 		8222C22F16DF1CD30084D5D6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8222C28716DF2BEF0084D5D6 /* CoreData.framework */,
 				8222C23016DF1CD30084D5D6 /* UIKit.framework */,
 				8222C23216DF1CD30084D5D6 /* Foundation.framework */,
 				8222C23416DF1CD30084D5D6 /* CoreGraphics.framework */,
@@ -85,9 +128,9 @@
 			children = (
 				8222C23F16DF1CD30084D5D6 /* PMAppDelegate.h */,
 				8222C24016DF1CD30084D5D6 /* PMAppDelegate.m */,
-				8222C24816DF1CD30084D5D6 /* PMViewController.h */,
-				8222C24916DF1CD30084D5D6 /* PMViewController.m */,
-				8222C24B16DF1CD30084D5D6 /* PMViewController.xib */,
+				8222C26616DF20EE0084D5D6 /* ViewControllers */,
+				8222C26A16DF211A0084D5D6 /* Managers */,
+				8222C26B16DF21260084D5D6 /* Model */,
 				8222C23716DF1CD30084D5D6 /* Supporting Files */,
 			);
 			path = "Pong Madness";
@@ -105,6 +148,87 @@
 				8222C24616DF1CD30084D5D6 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8222C26216DF1F5D0084D5D6 /* Lobby */ = {
+			isa = PBXGroup;
+			children = (
+				8222C25316DF1D290084D5D6 /* PMLobbyViewController.h */,
+				8222C25416DF1D290084D5D6 /* PMLobbyViewController.m */,
+				8222C25516DF1D290084D5D6 /* PMLobbyViewController.xib */,
+			);
+			name = Lobby;
+			sourceTree = "<group>";
+		};
+		8222C26316DF1F650084D5D6 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				8222C25816DF1F490084D5D6 /* PMPlayerListViewController.h */,
+				8222C25916DF1F490084D5D6 /* PMPlayerListViewController.m */,
+				8222C25A16DF1F490084D5D6 /* PMPlayerListViewController.xib */,
+				8222C25D16DF1F570084D5D6 /* PMPlayerViewController.h */,
+				8222C25E16DF1F570084D5D6 /* PMPlayerViewController.m */,
+				8222C25F16DF1F570084D5D6 /* PMPlayerViewController.xib */,
+			);
+			name = Player;
+			sourceTree = "<group>";
+		};
+		8222C26416DF1F750084D5D6 /* QuickPlay */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = QuickPlay;
+			sourceTree = "<group>";
+		};
+		8222C26516DF1F840084D5D6 /* Tournament */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Tournament;
+			sourceTree = "<group>";
+		};
+		8222C26616DF20EE0084D5D6 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				8222C26216DF1F5D0084D5D6 /* Lobby */,
+				8222C26316DF1F650084D5D6 /* Player */,
+				8222C26416DF1F750084D5D6 /* QuickPlay */,
+				8222C26516DF1F840084D5D6 /* Tournament */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		8222C26A16DF211A0084D5D6 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				8222C26716DF21170084D5D6 /* PMDocumentManager.h */,
+				8222C26816DF21170084D5D6 /* PMDocumentManager.m */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
+		8222C26B16DF21260084D5D6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8222C26C16DF21700084D5D6 /* PongMadnessModel.xcdatamodeld */,
+				8222C28416DF2B240084D5D6 /* PMLeaderboardPlayer.h */,
+				8222C28516DF2B240084D5D6 /* PMLeaderboardPlayer.m */,
+				8222C28116DF2B240084D5D6 /* PMGame.h */,
+				8222C28216DF2B240084D5D6 /* PMGame.m */,
+				8222C27E16DF2B230084D5D6 /* PMLeaderboard.h */,
+				8222C27F16DF2B230084D5D6 /* PMLeaderboard.m */,
+				8222C27B16DF2B230084D5D6 /* PMParticipant.h */,
+				8222C27C16DF2B230084D5D6 /* PMParticipant.m */,
+				8222C27816DF2B230084D5D6 /* PMGameParticipant.h */,
+				8222C27916DF2B230084D5D6 /* PMGameParticipant.m */,
+				8222C27516DF2B230084D5D6 /* PMTeam.h */,
+				8222C27616DF2B230084D5D6 /* PMTeam.m */,
+				8222C27216DF2B230084D5D6 /* PMTournament.h */,
+				8222C27316DF2B230084D5D6 /* PMTournament.m */,
+				8222C26F16DF2B230084D5D6 /* PMPlayer.h */,
+				8222C27016DF2B230084D5D6 /* PMPlayer.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,7 +287,9 @@
 				8222C24316DF1CD30084D5D6 /* Default.png in Resources */,
 				8222C24516DF1CD30084D5D6 /* Default@2x.png in Resources */,
 				8222C24716DF1CD30084D5D6 /* Default-568h@2x.png in Resources */,
-				8222C24D16DF1CD30084D5D6 /* PMViewController.xib in Resources */,
+				8222C25716DF1D290084D5D6 /* PMLobbyViewController.xib in Resources */,
+				8222C25C16DF1F490084D5D6 /* PMPlayerListViewController.xib in Resources */,
+				8222C26116DF1F570084D5D6 /* PMPlayerViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,7 +302,19 @@
 			files = (
 				8222C23D16DF1CD30084D5D6 /* main.m in Sources */,
 				8222C24116DF1CD30084D5D6 /* PMAppDelegate.m in Sources */,
-				8222C24A16DF1CD30084D5D6 /* PMViewController.m in Sources */,
+				8222C25616DF1D290084D5D6 /* PMLobbyViewController.m in Sources */,
+				8222C25B16DF1F490084D5D6 /* PMPlayerListViewController.m in Sources */,
+				8222C26016DF1F570084D5D6 /* PMPlayerViewController.m in Sources */,
+				8222C26916DF21170084D5D6 /* PMDocumentManager.m in Sources */,
+				8222C26E16DF21700084D5D6 /* PongMadnessModel.xcdatamodeld in Sources */,
+				8222C27116DF2B230084D5D6 /* PMPlayer.m in Sources */,
+				8222C27416DF2B230084D5D6 /* PMTournament.m in Sources */,
+				8222C27716DF2B230084D5D6 /* PMTeam.m in Sources */,
+				8222C27A16DF2B230084D5D6 /* PMGameParticipant.m in Sources */,
+				8222C27D16DF2B230084D5D6 /* PMParticipant.m in Sources */,
+				8222C28016DF2B230084D5D6 /* PMLeaderboard.m in Sources */,
+				8222C28316DF2B240084D5D6 /* PMGame.m in Sources */,
+				8222C28616DF2B240084D5D6 /* PMLeaderboardPlayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,14 +327,6 @@
 				8222C23A16DF1CD30084D5D6 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		8222C24B16DF1CD30084D5D6 /* PMViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8222C24C16DF1CD30084D5D6 /* en */,
-			);
-			name = PMViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -303,6 +433,19 @@
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8222C26C16DF21700084D5D6 /* PongMadnessModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8222C26D16DF21700084D5D6 /* PongMadnessModel.xcdatamodel */,
+			);
+			currentVersion = 8222C26D16DF21700084D5D6 /* PongMadnessModel.xcdatamodel */;
+			path = PongMadnessModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 8222C22516DF1CD30084D5D6 /* Project object */;
 }
