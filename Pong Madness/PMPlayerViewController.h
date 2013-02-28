@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PMPlayer.h"
 
 @interface PMPlayerViewController : UIViewController
+
+@property (nonatomic, strong) PMPlayer *player;
+
+- (id)initWithPlayer:(PMPlayer *)player;
 
 @end

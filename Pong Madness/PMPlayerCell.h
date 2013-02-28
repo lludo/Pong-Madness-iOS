@@ -1,5 +1,5 @@
 //
-//  PMPlayerListViewController.h
+//  PMPlayerCell.h
 //  Pong Madness
 //
 //  Created by Ludovic Landry on 2/27/13.
@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <CoreData/CoreData.h>
 
-@interface PMPlayerListViewController : UIViewController
+@interface PMPlayerCell : UITableViewCell
 
 @end

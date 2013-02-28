@@ -33,6 +33,8 @@
 		8222C28316DF2B240084D5D6 /* PMGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 8222C28216DF2B240084D5D6 /* PMGame.m */; };
 		8222C28616DF2B240084D5D6 /* PMLeaderboardPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8222C28516DF2B240084D5D6 /* PMLeaderboardPlayer.m */; };
 		8222C28816DF2BEF0084D5D6 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8222C28716DF2BEF0084D5D6 /* CoreData.framework */; };
+		8222C28C16DF44180084D5D6 /* PMPlayerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8222C28B16DF44180084D5D6 /* PMPlayerCell.m */; };
+		8222C28E16DF44470084D5D6 /* PMPlayerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8222C28D16DF44470084D5D6 /* PMPlayerCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +80,9 @@
 		8222C28416DF2B240084D5D6 /* PMLeaderboardPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMLeaderboardPlayer.h; sourceTree = "<group>"; };
 		8222C28516DF2B240084D5D6 /* PMLeaderboardPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMLeaderboardPlayer.m; sourceTree = "<group>"; };
 		8222C28716DF2BEF0084D5D6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		8222C28A16DF44180084D5D6 /* PMPlayerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMPlayerCell.h; sourceTree = "<group>"; };
+		8222C28B16DF44180084D5D6 /* PMPlayerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMPlayerCell.m; sourceTree = "<group>"; };
+		8222C28D16DF44470084D5D6 /* PMPlayerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PMPlayerCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +134,7 @@
 				8222C23F16DF1CD30084D5D6 /* PMAppDelegate.h */,
 				8222C24016DF1CD30084D5D6 /* PMAppDelegate.m */,
 				8222C26616DF20EE0084D5D6 /* ViewControllers */,
+				8222C28916DF3D2C0084D5D6 /* TableViewCells */,
 				8222C26A16DF211A0084D5D6 /* Managers */,
 				8222C26B16DF21260084D5D6 /* Model */,
 				8222C23716DF1CD30084D5D6 /* Supporting Files */,
@@ -231,6 +237,16 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		8222C28916DF3D2C0084D5D6 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				8222C28A16DF44180084D5D6 /* PMPlayerCell.h */,
+				8222C28B16DF44180084D5D6 /* PMPlayerCell.m */,
+				8222C28D16DF44470084D5D6 /* PMPlayerCell.xib */,
+			);
+			name = TableViewCells;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -290,6 +306,7 @@
 				8222C25716DF1D290084D5D6 /* PMLobbyViewController.xib in Resources */,
 				8222C25C16DF1F490084D5D6 /* PMPlayerListViewController.xib in Resources */,
 				8222C26116DF1F570084D5D6 /* PMPlayerViewController.xib in Resources */,
+				8222C28E16DF44470084D5D6 /* PMPlayerCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,6 +332,7 @@
 				8222C28016DF2B230084D5D6 /* PMLeaderboard.m in Sources */,
 				8222C28316DF2B240084D5D6 /* PMGame.m in Sources */,
 				8222C28616DF2B240084D5D6 /* PMLeaderboardPlayer.m in Sources */,
+				8222C28C16DF44180084D5D6 /* PMPlayerCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

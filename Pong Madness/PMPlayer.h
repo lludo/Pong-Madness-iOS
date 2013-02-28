@@ -12,6 +12,10 @@
 
 @class PMLeaderboardPlayer, PMTeam, PMTournament;
 
+//TODO: Handedness
+// lefty
+// righty
+
 @interface PMPlayer : PMParticipant
 
 @property (nonatomic, strong) NSString *username;

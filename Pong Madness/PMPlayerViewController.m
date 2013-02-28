@@ -10,27 +10,45 @@
 
 @interface PMPlayerViewController ()
 
+- (IBAction)close:(id)sender;
+
 @end
 
 @implementation PMPlayerViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+@synthesize player;
+
+- (id)init {
+    self = [super init];
     if (self) {
         // Custom initialization
     }
     return self;
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+- (id)initWithPlayer:(PMPlayer *)aPlayer {
+    self = [self init];
+    if (self) {
+        self.player = aPlayer;
+    }
+    return self;
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    self.title = player.username;
+    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Close", nil)
+                                                                             style:UIBarButtonItemStyleBordered
+                                                                            target:self action:@selector(close:)];
+}
+
+- (IBAction)close:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }

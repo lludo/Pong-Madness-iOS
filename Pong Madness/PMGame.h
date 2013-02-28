@@ -11,6 +11,10 @@
 
 @class PMGameParticipant, PMTournament;
 
+//TODO: Type
+// single
+// Double
+
 @interface PMGame : NSManagedObject
 
 @property (nonatomic, strong) NSString *type;
