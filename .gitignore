@@ -1,0 +1,40 @@
+
+# Xcode
+
+build/*
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+*.xcodeproj/*.xcworkspace
+xcuserdata
+profile
+*.moved-aside
+.project
+
+# os + ide files
+
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+*.tmproj
+*.tmproject
+tmtags
+.*.sw[a-z]
+*.un~
+Session.vim
+Thumbs.db
+Desktop.ini
+.idea
+.rvmrc
+.svn
+
+# cocoapods
+
+Pods/
+Podfile.lock
