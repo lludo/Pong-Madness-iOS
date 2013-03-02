@@ -48,6 +48,26 @@
 		820D718216E1CDEB00E98D23 /* btn-gametype-active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 820D717E16E1CDEA00E98D23 /* btn-gametype-active@2x.png */; };
 		820D718316E1CDEB00E98D23 /* btn-gametype.png in Resources */ = {isa = PBXBuildFile; fileRef = 820D717F16E1CDEB00E98D23 /* btn-gametype.png */; };
 		820D718416E1CDEB00E98D23 /* btn-gametype@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 820D718016E1CDEB00E98D23 /* btn-gametype@2x.png */; };
+		820D718F16E1F1DA00E98D23 /* player-add.png in Resources */ = {isa = PBXBuildFile; fileRef = 820D718516E1F1DA00E98D23 /* player-add.png */; };
+		820D719016E1F1DA00E98D23 /* player-add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 820D718616E1F1DA00E98D23 /* player-add@2x.png */; };
+		820D719116E1F1DA00E98D23 /* player-card-medium.png in Resources */ = {isa = PBXBuildFile; fileRef = 820D718716E1F1DA00E98D23 /* player-card-medium.png */; };
+		820D719216E1F1DA00E98D23 /* player-card-medium@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 820D718816E1F1DA00E98D23 /* player-card-medium@2x.png */; };
+		820D719316E1F1DA00E98D23 /* settings-avatar-ludo.png in Resources */ = {isa = PBXBuildFile; fileRef = 820D718916E1F1DA00E98D23 /* settings-avatar-ludo.png */; };
+		820D719416E1F1DA00E98D23 /* settings-avatar-ludo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 820D718A16E1F1DA00E98D23 /* settings-avatar-ludo@2x.png */; };
+		820D719516E1F1DA00E98D23 /* settings-avatar-robin.png in Resources */ = {isa = PBXBuildFile; fileRef = 820D718B16E1F1DA00E98D23 /* settings-avatar-robin.png */; };
+		820D719616E1F1DA00E98D23 /* settings-avatar-robin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 820D718C16E1F1DA00E98D23 /* settings-avatar-robin@2x.png */; };
+		820D719716E1F1DA00E98D23 /* settings-madeby.png in Resources */ = {isa = PBXBuildFile; fileRef = 820D718D16E1F1DA00E98D23 /* settings-madeby.png */; };
+		820D719816E1F1DA00E98D23 /* settings-madeby@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 820D718E16E1F1DA00E98D23 /* settings-madeby@2x.png */; };
+		820D71A016E1F2A800E98D23 /* PMLeaderboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 820D719E16E1F2A800E98D23 /* PMLeaderboardViewController.m */; };
+		820D71A116E1F2A800E98D23 /* PMLeaderboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 820D719F16E1F2A800E98D23 /* PMLeaderboardViewController.xib */; };
+		820D71A616E1F31400E98D23 /* PMSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 820D71A416E1F31400E98D23 /* PMSettingsViewController.m */; };
+		820D71A716E1F31400E98D23 /* PMSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 820D71A516E1F31400E98D23 /* PMSettingsViewController.xib */; };
+		820D71AB16E1F37500E98D23 /* PMSingleGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 820D71A916E1F37500E98D23 /* PMSingleGameViewController.m */; };
+		820D71AC16E1F37500E98D23 /* PMSingleGameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 820D71AA16E1F37500E98D23 /* PMSingleGameViewController.xib */; };
+		820D71B016E1F38100E98D23 /* PMDoubleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 820D71AE16E1F38100E98D23 /* PMDoubleViewController.m */; };
+		820D71B116E1F38100E98D23 /* PMDoubleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 820D71AF16E1F38100E98D23 /* PMDoubleViewController.xib */; };
+		820D71B316E1F79800E98D23 /* settings-dot.png in Resources */ = {isa = PBXBuildFile; fileRef = 820D71B216E1F79700E98D23 /* settings-dot.png */; };
+		820D71B516E1F79E00E98D23 /* settings-dot@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 820D71B416E1F79D00E98D23 /* settings-dot@2x.png */; };
 		8222C23116DF1CD30084D5D6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8222C23016DF1CD30084D5D6 /* UIKit.framework */; };
 		8222C23316DF1CD30084D5D6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8222C23216DF1CD30084D5D6 /* Foundation.framework */; };
 		8222C23516DF1CD30084D5D6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8222C23416DF1CD30084D5D6 /* CoreGraphics.framework */; };
@@ -61,8 +81,8 @@
 		8222C25716DF1D290084D5D6 /* PMLobbyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8222C25516DF1D290084D5D6 /* PMLobbyViewController.xib */; };
 		8222C25B16DF1F490084D5D6 /* PMPlayerListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8222C25916DF1F490084D5D6 /* PMPlayerListViewController.m */; };
 		8222C25C16DF1F490084D5D6 /* PMPlayerListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8222C25A16DF1F490084D5D6 /* PMPlayerListViewController.xib */; };
-		8222C26016DF1F570084D5D6 /* PMPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8222C25E16DF1F570084D5D6 /* PMPlayerViewController.m */; };
-		8222C26116DF1F570084D5D6 /* PMPlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8222C25F16DF1F570084D5D6 /* PMPlayerViewController.xib */; };
+		8222C26016DF1F570084D5D6 /* PMPlayerCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8222C25E16DF1F570084D5D6 /* PMPlayerCardViewController.m */; };
+		8222C26116DF1F570084D5D6 /* PMPlayerCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8222C25F16DF1F570084D5D6 /* PMPlayerCardViewController.xib */; };
 		8222C26916DF21170084D5D6 /* PMDocumentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8222C26816DF21170084D5D6 /* PMDocumentManager.m */; };
 		8222C26E16DF21700084D5D6 /* PongMadnessModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8222C26C16DF21700084D5D6 /* PongMadnessModel.xcdatamodeld */; };
 		8222C27116DF2B230084D5D6 /* PMPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8222C27016DF2B230084D5D6 /* PMPlayer.m */; };
@@ -126,6 +146,30 @@
 		820D717E16E1CDEA00E98D23 /* btn-gametype-active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-gametype-active@2x.png"; sourceTree = "<group>"; };
 		820D717F16E1CDEB00E98D23 /* btn-gametype.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-gametype.png"; sourceTree = "<group>"; };
 		820D718016E1CDEB00E98D23 /* btn-gametype@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-gametype@2x.png"; sourceTree = "<group>"; };
+		820D718516E1F1DA00E98D23 /* player-add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "player-add.png"; sourceTree = "<group>"; };
+		820D718616E1F1DA00E98D23 /* player-add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "player-add@2x.png"; sourceTree = "<group>"; };
+		820D718716E1F1DA00E98D23 /* player-card-medium.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "player-card-medium.png"; sourceTree = "<group>"; };
+		820D718816E1F1DA00E98D23 /* player-card-medium@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "player-card-medium@2x.png"; sourceTree = "<group>"; };
+		820D718916E1F1DA00E98D23 /* settings-avatar-ludo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-avatar-ludo.png"; sourceTree = "<group>"; };
+		820D718A16E1F1DA00E98D23 /* settings-avatar-ludo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-avatar-ludo@2x.png"; sourceTree = "<group>"; };
+		820D718B16E1F1DA00E98D23 /* settings-avatar-robin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-avatar-robin.png"; sourceTree = "<group>"; };
+		820D718C16E1F1DA00E98D23 /* settings-avatar-robin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-avatar-robin@2x.png"; sourceTree = "<group>"; };
+		820D718D16E1F1DA00E98D23 /* settings-madeby.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-madeby.png"; sourceTree = "<group>"; };
+		820D718E16E1F1DA00E98D23 /* settings-madeby@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-madeby@2x.png"; sourceTree = "<group>"; };
+		820D719D16E1F2A800E98D23 /* PMLeaderboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMLeaderboardViewController.h; sourceTree = "<group>"; };
+		820D719E16E1F2A800E98D23 /* PMLeaderboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMLeaderboardViewController.m; sourceTree = "<group>"; };
+		820D719F16E1F2A800E98D23 /* PMLeaderboardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PMLeaderboardViewController.xib; sourceTree = "<group>"; };
+		820D71A316E1F31400E98D23 /* PMSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMSettingsViewController.h; sourceTree = "<group>"; };
+		820D71A416E1F31400E98D23 /* PMSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMSettingsViewController.m; sourceTree = "<group>"; };
+		820D71A516E1F31400E98D23 /* PMSettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PMSettingsViewController.xib; sourceTree = "<group>"; };
+		820D71A816E1F37500E98D23 /* PMSingleGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMSingleGameViewController.h; sourceTree = "<group>"; };
+		820D71A916E1F37500E98D23 /* PMSingleGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMSingleGameViewController.m; sourceTree = "<group>"; };
+		820D71AA16E1F37500E98D23 /* PMSingleGameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PMSingleGameViewController.xib; sourceTree = "<group>"; };
+		820D71AD16E1F38100E98D23 /* PMDoubleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMDoubleViewController.h; sourceTree = "<group>"; };
+		820D71AE16E1F38100E98D23 /* PMDoubleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMDoubleViewController.m; sourceTree = "<group>"; };
+		820D71AF16E1F38100E98D23 /* PMDoubleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PMDoubleViewController.xib; sourceTree = "<group>"; };
+		820D71B216E1F79700E98D23 /* settings-dot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-dot.png"; sourceTree = "<group>"; };
+		820D71B416E1F79D00E98D23 /* settings-dot@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-dot@2x.png"; sourceTree = "<group>"; };
 		8222C22D16DF1CD30084D5D6 /* Pong Madness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pong Madness.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8222C23016DF1CD30084D5D6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8222C23216DF1CD30084D5D6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -145,9 +189,9 @@
 		8222C25816DF1F490084D5D6 /* PMPlayerListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMPlayerListViewController.h; sourceTree = "<group>"; };
 		8222C25916DF1F490084D5D6 /* PMPlayerListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMPlayerListViewController.m; sourceTree = "<group>"; };
 		8222C25A16DF1F490084D5D6 /* PMPlayerListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PMPlayerListViewController.xib; sourceTree = "<group>"; };
-		8222C25D16DF1F570084D5D6 /* PMPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMPlayerViewController.h; sourceTree = "<group>"; };
-		8222C25E16DF1F570084D5D6 /* PMPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMPlayerViewController.m; sourceTree = "<group>"; };
-		8222C25F16DF1F570084D5D6 /* PMPlayerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PMPlayerViewController.xib; sourceTree = "<group>"; };
+		8222C25D16DF1F570084D5D6 /* PMPlayerCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMPlayerCardViewController.h; sourceTree = "<group>"; };
+		8222C25E16DF1F570084D5D6 /* PMPlayerCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMPlayerCardViewController.m; sourceTree = "<group>"; };
+		8222C25F16DF1F570084D5D6 /* PMPlayerCardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PMPlayerCardViewController.xib; sourceTree = "<group>"; };
 		8222C26716DF21170084D5D6 /* PMDocumentManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMDocumentManager.h; sourceTree = "<group>"; };
 		8222C26816DF21170084D5D6 /* PMDocumentManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMDocumentManager.m; sourceTree = "<group>"; };
 		8222C26D16DF21700084D5D6 /* PongMadnessModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PongMadnessModel.xcdatamodel; sourceTree = "<group>"; };
@@ -218,6 +262,18 @@
 				820D716A16E1C85200E98D23 /* Icon-Small-50@2x.png */,
 				820D716516E1C85200E98D23 /* Default-Landscape@2x~ipad.png */,
 				820D716616E1C85200E98D23 /* Default-Landscape~ipad.png */,
+				820D718516E1F1DA00E98D23 /* player-add.png */,
+				820D718616E1F1DA00E98D23 /* player-add@2x.png */,
+				820D718716E1F1DA00E98D23 /* player-card-medium.png */,
+				820D718816E1F1DA00E98D23 /* player-card-medium@2x.png */,
+				820D718916E1F1DA00E98D23 /* settings-avatar-ludo.png */,
+				820D718A16E1F1DA00E98D23 /* settings-avatar-ludo@2x.png */,
+				820D718B16E1F1DA00E98D23 /* settings-avatar-robin.png */,
+				820D718C16E1F1DA00E98D23 /* settings-avatar-robin@2x.png */,
+				820D718D16E1F1DA00E98D23 /* settings-madeby.png */,
+				820D718E16E1F1DA00E98D23 /* settings-madeby@2x.png */,
+				820D71B216E1F79700E98D23 /* settings-dot.png */,
+				820D71B416E1F79D00E98D23 /* settings-dot@2x.png */,
 				820D717D16E1CDEA00E98D23 /* btn-gametype-active.png */,
 				820D717E16E1CDEA00E98D23 /* btn-gametype-active@2x.png */,
 				820D717F16E1CDEB00E98D23 /* btn-gametype.png */,
@@ -279,6 +335,26 @@
 				820D714D16E1B15900E98D23 /* NSDateFormatter+Extras.m */,
 			);
 			name = Categories;
+			sourceTree = "<group>";
+		};
+		820D719916E1F27000E98D23 /* Leaderboard */ = {
+			isa = PBXGroup;
+			children = (
+				820D719D16E1F2A800E98D23 /* PMLeaderboardViewController.h */,
+				820D719E16E1F2A800E98D23 /* PMLeaderboardViewController.m */,
+				820D719F16E1F2A800E98D23 /* PMLeaderboardViewController.xib */,
+			);
+			name = Leaderboard;
+			sourceTree = "<group>";
+		};
+		820D71A216E1F2FE00E98D23 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				820D71A316E1F31400E98D23 /* PMSettingsViewController.h */,
+				820D71A416E1F31400E98D23 /* PMSettingsViewController.m */,
+				820D71A516E1F31400E98D23 /* PMSettingsViewController.xib */,
+			);
+			name = Settings;
 			sourceTree = "<group>";
 		};
 		8222C22416DF1CD30084D5D6 = {
@@ -356,9 +432,9 @@
 				8222C25816DF1F490084D5D6 /* PMPlayerListViewController.h */,
 				8222C25916DF1F490084D5D6 /* PMPlayerListViewController.m */,
 				8222C25A16DF1F490084D5D6 /* PMPlayerListViewController.xib */,
-				8222C25D16DF1F570084D5D6 /* PMPlayerViewController.h */,
-				8222C25E16DF1F570084D5D6 /* PMPlayerViewController.m */,
-				8222C25F16DF1F570084D5D6 /* PMPlayerViewController.xib */,
+				8222C25D16DF1F570084D5D6 /* PMPlayerCardViewController.h */,
+				8222C25E16DF1F570084D5D6 /* PMPlayerCardViewController.m */,
+				8222C25F16DF1F570084D5D6 /* PMPlayerCardViewController.xib */,
 			);
 			name = Player;
 			sourceTree = "<group>";
@@ -366,24 +442,32 @@
 		8222C26416DF1F750084D5D6 /* QuickPlay */ = {
 			isa = PBXGroup;
 			children = (
+				820D71A816E1F37500E98D23 /* PMSingleGameViewController.h */,
+				820D71A916E1F37500E98D23 /* PMSingleGameViewController.m */,
+				820D71AA16E1F37500E98D23 /* PMSingleGameViewController.xib */,
+				820D71AD16E1F38100E98D23 /* PMDoubleViewController.h */,
+				820D71AE16E1F38100E98D23 /* PMDoubleViewController.m */,
+				820D71AF16E1F38100E98D23 /* PMDoubleViewController.xib */,
 			);
 			name = QuickPlay;
 			sourceTree = "<group>";
 		};
-		8222C26516DF1F840084D5D6 /* Tournament */ = {
+		8222C26516DF1F840084D5D6 /* KnockOut */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = Tournament;
+			name = KnockOut;
 			sourceTree = "<group>";
 		};
 		8222C26616DF20EE0084D5D6 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				8222C26216DF1F5D0084D5D6 /* Lobby */,
-				8222C26316DF1F650084D5D6 /* Player */,
 				8222C26416DF1F750084D5D6 /* QuickPlay */,
-				8222C26516DF1F840084D5D6 /* Tournament */,
+				8222C26516DF1F840084D5D6 /* KnockOut */,
+				820D719916E1F27000E98D23 /* Leaderboard */,
+				8222C26316DF1F650084D5D6 /* Player */,
+				820D71A216E1F2FE00E98D23 /* Settings */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -489,7 +573,7 @@
 				8222C24716DF1CD30084D5D6 /* Default-568h@2x.png in Resources */,
 				8222C25716DF1D290084D5D6 /* PMLobbyViewController.xib in Resources */,
 				8222C25C16DF1F490084D5D6 /* PMPlayerListViewController.xib in Resources */,
-				8222C26116DF1F570084D5D6 /* PMPlayerViewController.xib in Resources */,
+				8222C26116DF1F570084D5D6 /* PMPlayerCardViewController.xib in Resources */,
 				8222C28E16DF44470084D5D6 /* PMPlayerCell.xib in Resources */,
 				820D712816E1AEC800E98D23 /* Brothers-Bold.ttf in Resources */,
 				820D713716E1B02E00E98D23 /* background.png in Resources */,
@@ -528,6 +612,22 @@
 				820D718216E1CDEB00E98D23 /* btn-gametype-active@2x.png in Resources */,
 				820D718316E1CDEB00E98D23 /* btn-gametype.png in Resources */,
 				820D718416E1CDEB00E98D23 /* btn-gametype@2x.png in Resources */,
+				820D718F16E1F1DA00E98D23 /* player-add.png in Resources */,
+				820D719016E1F1DA00E98D23 /* player-add@2x.png in Resources */,
+				820D719116E1F1DA00E98D23 /* player-card-medium.png in Resources */,
+				820D719216E1F1DA00E98D23 /* player-card-medium@2x.png in Resources */,
+				820D719316E1F1DA00E98D23 /* settings-avatar-ludo.png in Resources */,
+				820D719416E1F1DA00E98D23 /* settings-avatar-ludo@2x.png in Resources */,
+				820D719516E1F1DA00E98D23 /* settings-avatar-robin.png in Resources */,
+				820D719616E1F1DA00E98D23 /* settings-avatar-robin@2x.png in Resources */,
+				820D719716E1F1DA00E98D23 /* settings-madeby.png in Resources */,
+				820D719816E1F1DA00E98D23 /* settings-madeby@2x.png in Resources */,
+				820D71A116E1F2A800E98D23 /* PMLeaderboardViewController.xib in Resources */,
+				820D71A716E1F31400E98D23 /* PMSettingsViewController.xib in Resources */,
+				820D71AC16E1F37500E98D23 /* PMSingleGameViewController.xib in Resources */,
+				820D71B116E1F38100E98D23 /* PMDoubleViewController.xib in Resources */,
+				820D71B316E1F79800E98D23 /* settings-dot.png in Resources */,
+				820D71B516E1F79E00E98D23 /* settings-dot@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -542,7 +642,7 @@
 				8222C24116DF1CD30084D5D6 /* PMAppDelegate.m in Sources */,
 				8222C25616DF1D290084D5D6 /* PMLobbyViewController.m in Sources */,
 				8222C25B16DF1F490084D5D6 /* PMPlayerListViewController.m in Sources */,
-				8222C26016DF1F570084D5D6 /* PMPlayerViewController.m in Sources */,
+				8222C26016DF1F570084D5D6 /* PMPlayerCardViewController.m in Sources */,
 				8222C26916DF21170084D5D6 /* PMDocumentManager.m in Sources */,
 				8222C26E16DF21700084D5D6 /* PongMadnessModel.xcdatamodeld in Sources */,
 				8222C27116DF2B230084D5D6 /* PMPlayer.m in Sources */,
@@ -558,6 +658,10 @@
 				820D714E16E1B15900E98D23 /* UIImage+Stretch.m in Sources */,
 				820D714F16E1B15900E98D23 /* UIFont+PongMadness.m in Sources */,
 				820D715016E1B15900E98D23 /* NSDateFormatter+Extras.m in Sources */,
+				820D71A016E1F2A800E98D23 /* PMLeaderboardViewController.m in Sources */,
+				820D71A616E1F31400E98D23 /* PMSettingsViewController.m in Sources */,
+				820D71AB16E1F37500E98D23 /* PMSingleGameViewController.m in Sources */,
+				820D71B016E1F38100E98D23 /* PMDoubleViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

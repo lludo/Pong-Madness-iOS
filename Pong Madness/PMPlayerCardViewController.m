@@ -1,20 +1,20 @@
 //
-//  PMPlayerViewController.m
+//  PMPlayerCardViewController.m
 //  Pong Madness
 //
 //  Created by Ludovic Landry on 2/27/13.
 //  Copyright (c) 2013 MirageTeam. All rights reserved.
 //
 
-#import "PMPlayerViewController.h"
+#import "PMPlayerCardViewController.h"
 
-@interface PMPlayerViewController ()
+@interface PMPlayerCardViewController ()
 
 - (IBAction)close:(id)sender;
 
 @end
 
-@implementation PMPlayerViewController
+@implementation PMPlayerCardViewController
 
 @synthesize player;
 

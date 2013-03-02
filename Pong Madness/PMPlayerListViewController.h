@@ -9,6 +9,14 @@
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 
+typedef enum {
+    PMPlayerListModeManage = 0,
+	PMPlayerListModeSelectForSingle,
+	PMPlayerListModeSelectForDouble
+} PMPlayerListMode;
+
 @interface PMPlayerListViewController : UIViewController
+
+- (id)initWithMode:(PMPlayerListMode)mode;
 
 @end

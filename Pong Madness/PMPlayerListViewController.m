@@ -7,7 +7,7 @@
 //
 
 #import "PMPlayerListViewController.h"
-#import "PMPlayerViewController.h"
+#import "PMPlayerCardViewController.h"
 #import "PMDocumentManager.h"
 #import "PMPlayerCell.h"
 #import "PMPlayer.h"
@@ -17,6 +17,8 @@
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) IBOutlet UITextField *usernameField;
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
+
+@property (nonatomic, assign) PMPlayerListMode mode;
 
 @end
 
@@ -29,7 +31,15 @@
 - (id)init {
     self = [super init];
     if (self) {
-        // Custom initialization
+        self.mode = PMPlayerListModeManage;
+    }
+    return self;
+}
+
+- (id)initWithMode:(PMPlayerListMode)aMode {
+    self = [super init];
+    if (self) {
+        self.mode = aMode;
     }
     return self;
 }
@@ -37,7 +47,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"Players";
+    switch (self.mode) {
+        case PMPlayerListModeManage: {
+            self.title = @"The Players";
+            break;
+        }
+        case PMPlayerListModeSelectForSingle: {
+            self.title = @"Select 2 Players";
+            break;
+        }
+        case PMPlayerListModeSelectForDouble: {
+            self.title = @"Select the Players";
+            break;
+        }
+    }
+    
+    
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Back", nil)
                                                                              style:UIBarButtonItemStyleBordered
@@ -115,7 +140,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     PMPlayer *player = [fetchedResultsController objectAtIndexPath:indexPath];
     
-    PMPlayerViewController *playerViewController = [[PMPlayerViewController alloc] initWithPlayer:player];
+    PMPlayerCardViewController *playerViewController = [[PMPlayerCardViewController alloc] initWithPlayer:player];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:playerViewController];
     navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
     [self presentViewController:navigationController animated:YES completion:NULL];

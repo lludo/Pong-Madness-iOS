@@ -8,8 +8,9 @@
 
 #import "PMLobbyViewController.h"
 #import "PMPlayerListViewController.h"
+#import "PMLeaderboardViewController.h"
+#import "PMSettingsViewController.h"
 #import "UIFont+PongMadness.h"
-#import "PMGame.h"
 
 typedef enum {
     PMGameConfigurationNone = 0,
@@ -38,11 +39,18 @@ typedef enum {
 - (IBAction)openLeaderboard:(id)sender;
 - (IBAction)openThePlayers:(id)sender;
 
+- (IBAction)playSingleGame:(id)sender;
+- (IBAction)playDoubleGame:(id)sender;
+
+- (IBAction)settings:(id)sender;
+- (IBAction)cancel:(id)sender;
+
 @end
 
 @implementation PMLobbyViewController
 
 @synthesize logoLaunchImageView;
+@synthesize cancelButton;
 @synthesize quickGameButton;
 @synthesize knockOutButton;
 @synthesize leaderboardButton;
@@ -139,12 +147,14 @@ typedef enum {
 }
 
 - (IBAction)openLeaderboard:(id)sender {
-    
-    //TODO: later
+    PMLeaderboardViewController *leaderboardViewController = [[PMLeaderboardViewController alloc] init];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:leaderboardViewController];
+    navigationController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self presentViewController:navigationController animated:YES completion:NULL];
 }
 
 - (IBAction)openThePlayers:(id)sender {
-    PMPlayerListViewController *playerListViewController = [[PMPlayerListViewController alloc] init];
+    PMPlayerListViewController *playerListViewController = [[PMPlayerListViewController alloc] initWithMode:PMPlayerListModeManage];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:playerListViewController];
     navigationController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     [self presentViewController:navigationController animated:YES completion:NULL];
@@ -189,6 +199,27 @@ typedef enum {
             break;
         }
     }
+}
+
+- (IBAction)playSingleGame:(id)sender {
+    PMPlayerListViewController *playerListViewController = [[PMPlayerListViewController alloc] initWithMode:PMPlayerListModeSelectForSingle];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:playerListViewController];
+    navigationController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self presentViewController:navigationController animated:YES completion:NULL];
+}
+
+- (IBAction)playDoubleGame:(id)sender {
+    PMPlayerListViewController *playerListViewController = [[PMPlayerListViewController alloc] initWithMode:PMPlayerListModeSelectForDouble];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:playerListViewController];
+    navigationController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self presentViewController:navigationController animated:YES completion:NULL];
+}
+
+- (IBAction)settings:(id)sender {
+    PMSettingsViewController *settingsViewController = [[PMSettingsViewController alloc] init];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:settingsViewController];
+    navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
+    [self presentViewController:navigationController animated:YES completion:NULL];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -1,5 +1,5 @@
 //
-//  PMPlayerViewController.h
+//  PMPlayerCardViewController.h
 //  Pong Madness
 //
 //  Created by Ludovic Landry on 2/27/13.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "PMPlayer.h"
 
-@interface PMPlayerViewController : UIViewController
+@interface PMPlayerCardViewController : UIViewController
 
 @property (nonatomic, strong) PMPlayer *player;
 

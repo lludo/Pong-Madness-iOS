@@ -1,0 +1,68 @@
+//
+//  PMSettingsViewController.m
+//  Pong Madness
+//
+//  Created by Ludovic Landry on 3/2/13.
+//  Copyright (c) 2013 MirageTeam. All rights reserved.
+//
+
+#import "PMSettingsViewController.h"
+#import "UIFont+PongMadness.h"
+
+@interface PMSettingsViewController ()
+
+@property (nonatomic, strong) IBOutlet UIImageView *robinImageView;
+@property (nonatomic, strong) IBOutlet UILabel *robinNameLabel;
+@property (nonatomic, strong) IBOutlet UILabel *robinJobTitleLabel;
+
+@property (nonatomic, strong) IBOutlet UIImageView *ludoImageView;
+@property (nonatomic, strong) IBOutlet UILabel *ludoNameLabel;
+@property (nonatomic, strong) IBOutlet UILabel *ludoJobTitleLabel;
+
+@end
+
+@implementation PMSettingsViewController
+
+@synthesize robinImageView;
+@synthesize robinNameLabel;
+@synthesize robinJobTitleLabel;
+@synthesize ludoImageView;
+@synthesize ludoNameLabel;
+@synthesize ludoJobTitleLabel;
+
+- (id)init {
+    self = [super init];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    self.title = @"Settings";
+    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Close", nil)
+                                                                             style:UIBarButtonItemStyleBordered
+                                                                            target:self action:@selector(close:)];
+    
+    self.robinImageView.layer.cornerRadius = 2.f;
+    self.robinNameLabel.font = [UIFont brothersBoldFontOfSize:23.f];
+    self.robinJobTitleLabel.font = [UIFont brothersBoldFontOfSize:12.f];
+    
+    self.ludoImageView.layer.cornerRadius = 2.f;
+    self.ludoNameLabel.font = [UIFont brothersBoldFontOfSize:23.f];
+    self.ludoJobTitleLabel.font = [UIFont brothersBoldFontOfSize:12.f];
+}
+
+- (IBAction)close:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+@end
