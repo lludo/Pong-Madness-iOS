@@ -12,22 +12,33 @@
 
 - (IBAction)close:(id)sender;
 
+@property (nonatomic, assign) PMPlayerCardMode mode;
+
 @end
 
 @implementation PMPlayerCardViewController
 
 @synthesize player;
+@synthesize mode;
 
 - (id)init {
     self = [super init];
     if (self) {
-        // Custom initialization
+        self.mode = PMPlayerCardModeConsult;
     }
     return self;
 }
 
-- (id)initWithPlayer:(PMPlayer *)aPlayer {
-    self = [self init];
+- (id)initWithMode:(PMPlayerCardMode)aMode {
+    self = [super init];
+    if (self) {
+        self.mode = aMode;
+    }
+    return self;
+}
+
+- (id)initWithPlayer:(PMPlayer *)aPlayer mode:(PMPlayerCardMode)aMode {
+    self = [self initWithMode:aMode];
     if (self) {
         self.player = aPlayer;
     }

@@ -9,10 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "PMPlayer.h"
 
+typedef enum {
+    PMPlayerCardModeConsult = 0,
+	PMPlayerCardModeEdit
+} PMPlayerCardMode;
+
 @interface PMPlayerCardViewController : UIViewController
 
 @property (nonatomic, strong) PMPlayer *player;
 
-- (id)initWithPlayer:(PMPlayer *)player;
+- (id)initWithMode:(PMPlayerCardMode)mode;
+- (id)initWithPlayer:(PMPlayer *)player mode:(PMPlayerCardMode)mode;
 
 @end

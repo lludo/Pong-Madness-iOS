@@ -62,8 +62,6 @@
         }
     }
     
-    
-    
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Back", nil)
                                                                              style:UIBarButtonItemStyleBordered
                                                                             target:self action:@selector(close:)];
@@ -137,13 +135,31 @@
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [aTableView deselectRowAtIndexPath:indexPath animated:YES];
     PMPlayer *player = [fetchedResultsController objectAtIndexPath:indexPath];
     
-    PMPlayerCardViewController *playerViewController = [[PMPlayerCardViewController alloc] initWithPlayer:player];
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:playerViewController];
-    navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
-    [self presentViewController:navigationController animated:YES completion:NULL];
+    switch (self.mode) {
+        case PMPlayerListModeManage: {
+            PMPlayerCardViewController *playerViewController = [[PMPlayerCardViewController alloc] initWithPlayer:player mode:PMPlayerCardModeConsult];
+            UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:playerViewController];
+            navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
+            [self presentViewController:navigationController animated:YES completion:NULL];
+            break;
+        }
+        case PMPlayerListModeSelectForSingle: {
+            
+            //TODO: later
+            
+            break;
+        }
+        case PMPlayerListModeSelectForDouble: {
+            
+            //TODO: later
+            
+            break;
+        }
+    }
 }
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
