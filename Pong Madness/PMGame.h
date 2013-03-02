@@ -11,9 +11,10 @@
 
 @class PMGameParticipant, PMTournament;
 
-//TODO: Type
-// single
-// Double
+typedef enum {
+	PMGameTypeSingle = 0,
+	PMGameTypeDouble
+} PMGameType;
 
 @interface PMGame : NSManagedObject
 

@@ -12,9 +12,10 @@
 
 @class PMLeaderboardPlayer, PMTeam, PMTournament;
 
-//TODO: Handedness
-// lefty
-// righty
+typedef enum {
+	PMPlayerHandednessLefty = 0,
+	PMPlayerHandednessRighty
+} PMPlayerHandedness;
 
 @interface PMPlayer : PMParticipant
 
