@@ -7,10 +7,12 @@
 //
 
 #import "PMAppDelegate.h"
+#import "PMAppearance.h"
 
 @implementation PMAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [PMAppearance loadAppearance];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
