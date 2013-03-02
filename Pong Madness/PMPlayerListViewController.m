@@ -9,13 +9,16 @@
 #import "PMPlayerListViewController.h"
 #import "PMPlayerCardViewController.h"
 #import "PMDocumentManager.h"
+#import "PMAddPlayerView.h"
 #import "PMPlayerCell.h"
 #import "PMPlayer.h"
 
-@interface PMPlayerListViewController () <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, NSFetchedResultsControllerDelegate>
+@interface PMPlayerListViewController () <NSFetchedResultsControllerDelegate> {
+    NSMutableArray *_objectChanges;
+    NSMutableArray *_sectionChanges;
+}
 
-@property (nonatomic, strong) IBOutlet UITableView *tableView;
-@property (nonatomic, strong) IBOutlet UITextField *usernameField;
+@property (nonatomic, strong) IBOutlet UICollectionView *collectionView;
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 
 @property (nonatomic, assign) PMPlayerListMode mode;
@@ -24,8 +27,10 @@
 
 @implementation PMPlayerListViewController
 
-@synthesize tableView;
-@synthesize usernameField;
+static NSString *cellIdentifier = @"PlayerCell";
+static NSString *viewIdentifier = @"AddPlayerView";
+
+@synthesize collectionView;
 @synthesize fetchedResultsController;
 
 - (id)init {
@@ -71,24 +76,19 @@
 		// Update to handle the error appropriately.
 		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
 	}
+    
+    UINib *addPlayerViewNib = [UINib nibWithNibName:@"PMAddPlayerView" bundle:nil];
+    [self.collectionView registerNib:addPlayerViewNib forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:viewIdentifier];
+    
+    UINib *playerCellNib = [UINib nibWithNibName:@"PMPlayerCell" bundle:nil];
+    [self.collectionView registerNib:playerCellNib forCellWithReuseIdentifier:cellIdentifier];
+    
+    _objectChanges = [NSMutableArray array];
+    _sectionChanges = [NSMutableArray array];
 }
 
 - (IBAction)close:(id)sender {
     [self dismissViewControllerAnimated:YES completion:NULL];
-}
-
-- (IBAction)createNewPlayer:(id)sender {
-    NSString *username = [self.usernameField.text capitalizedString];
-    self.usernameField.text = nil;
-    [self.usernameField resignFirstResponder];
-    
-    NSManagedObjectContext *managedObjectContext = [PMDocumentManager sharedDocument].managedObjectContext;
-    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Player" inManagedObjectContext:managedObjectContext];
-    PMPlayer *player = [[PMPlayer alloc] initWithEntity:entityDescription insertIntoManagedObjectContext:managedObjectContext];
-    
-    player.username = username;
-    
-    [[PMDocumentManager sharedDocument] save];
 }
 
 - (NSFetchedResultsController *)fetchedResultsController {
@@ -113,30 +113,30 @@
     return fetchedResultsController;
 }
 
-#pragma mark table view delegate
+#pragma mark table collection delegate
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     id<NSFetchedResultsSectionInfo> sectionInfo = [[fetchedResultsController sections] objectAtIndex:section];
     return [sectionInfo numberOfObjects];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)aTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UICollectionViewCell *)collectionView:(UICollectionView *)aCollectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    PMPlayerCell *cell = [aCollectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
     
-    static NSString *cellIdentifier = @"PMPlayerCell";
-    UITableViewCell *cell = [aTableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if (!cell) {
-        [aTableView registerClass:[PMPlayerCell class] forCellReuseIdentifier:cellIdentifier];
-        cell = [aTableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    }
-    
-    // Set up the cell...
-    [self configureCell:cell atIndexPath:indexPath];
+    PMPlayer *player = [fetchedResultsController objectAtIndexPath:indexPath];
+    cell.nameLabel.text = player.username;
     
     return cell;
 }
 
-- (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [aTableView deselectRowAtIndexPath:indexPath animated:YES];
+- (UICollectionReusableView *)collectionView:(UICollectionView *)aCollectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+    PMAddPlayerView *cell = [aCollectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:viewIdentifier forIndexPath:indexPath];
+    
+    return cell;
+}
+
+- (void)collectionView:(UICollectionView *)aCollectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    [aCollectionView deselectItemAtIndexPath:indexPath animated:YES];
     PMPlayer *player = [fetchedResultsController objectAtIndexPath:indexPath];
     
     switch (self.mode) {
@@ -162,64 +162,99 @@
     }
 }
 
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
-    PMPlayer *player = [fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = player.username;
-}
-
 #pragma mark fetched results controller delegate
 
-- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
-    // The fetch controller is about to start sending change notifications, so prepare the table view for updates.
-    [self.tableView beginUpdates];
-}
-
-
-- (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath {
+- (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo
+           atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type {
+    
+    NSMutableDictionary *change = [NSMutableDictionary new];
     
     switch(type) {
         case NSFetchedResultsChangeInsert:
-            [self.tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+            change[@(type)] = @[@(sectionIndex)];
             break;
-            
         case NSFetchedResultsChangeDelete:
-            [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            change[@(type)] = @[@(sectionIndex)];
             break;
-            
+    }
+    
+    [_sectionChanges addObject:change];
+}
+
+- (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject
+       atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type
+      newIndexPath:(NSIndexPath *)newIndexPath {
+    
+    NSMutableDictionary *change = [NSMutableDictionary new];
+    switch(type) {
+        case NSFetchedResultsChangeInsert:
+            change[@(type)] = newIndexPath;
+            break;
+        case NSFetchedResultsChangeDelete:
+            change[@(type)] = indexPath;
+            break;
         case NSFetchedResultsChangeUpdate:
-            [self configureCell:[self.tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
+            change[@(type)] = indexPath;
             break;
-            
         case NSFetchedResultsChangeMove:
-            [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-            [self.tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+            change[@(type)] = @[indexPath, newIndexPath];
             break;
     }
-}
-
-- (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id )sectionInfo atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type {
-    
-    switch(type) {
-        case NSFetchedResultsChangeInsert:
-            [self.tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
-            break;
-            
-        case NSFetchedResultsChangeDelete:
-            [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
-            break;
-    }
+    [_objectChanges addObject:change];
 }
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
-    // The fetch controller has sent all current change notifications, so tell the table view to process all updates.
-    [self.tableView endUpdates];
-}
-
-#pragma mark text field delegate
-
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    [self createNewPlayer:textField];
-    return NO;
+    if ([_sectionChanges count] > 0) {
+        [self.collectionView performBatchUpdates:^{
+            
+            for (NSDictionary *change in _sectionChanges) {
+                [change enumerateKeysAndObjectsUsingBlock:^(NSNumber *key, id obj, BOOL *stop) {
+                    
+                    NSFetchedResultsChangeType type = [key unsignedIntegerValue];
+                    switch (type) {
+                        case NSFetchedResultsChangeInsert:
+                            [self.collectionView insertSections:[NSIndexSet indexSetWithIndex:[obj unsignedIntegerValue]]];
+                            break;
+                        case NSFetchedResultsChangeDelete:
+                            [self.collectionView deleteSections:[NSIndexSet indexSetWithIndex:[obj unsignedIntegerValue]]];
+                            break;
+                        case NSFetchedResultsChangeUpdate:
+                            [self.collectionView reloadSections:[NSIndexSet indexSetWithIndex:[obj unsignedIntegerValue]]];
+                            break;
+                    }
+                }];
+            }
+        } completion:nil];
+    }
+    
+    if ([_objectChanges count] > 0 && [_sectionChanges count] == 0) {
+        [self.collectionView performBatchUpdates:^{
+            
+            for (NSDictionary *change in _objectChanges) {
+                [change enumerateKeysAndObjectsUsingBlock:^(NSNumber *key, id obj, BOOL *stop) {
+                    
+                    NSFetchedResultsChangeType type = [key unsignedIntegerValue];
+                    switch (type) {
+                        case NSFetchedResultsChangeInsert:
+                            [self.collectionView insertItemsAtIndexPaths:@[obj]];
+                            break;
+                        case NSFetchedResultsChangeDelete:
+                            [self.collectionView deleteItemsAtIndexPaths:@[obj]];
+                            break;
+                        case NSFetchedResultsChangeUpdate:
+                            [self.collectionView reloadItemsAtIndexPaths:@[obj]];
+                            break;
+                        case NSFetchedResultsChangeMove:
+                            [self.collectionView moveItemAtIndexPath:obj[0] toIndexPath:obj[1]];
+                            break;
+                    }
+                }];
+            }
+        } completion:nil];
+    }
+    
+    [_sectionChanges removeAllObjects];
+    [_objectChanges removeAllObjects];
 }
 
 - (void)didReceiveMemoryWarning {

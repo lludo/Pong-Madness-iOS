@@ -15,7 +15,7 @@ typedef enum {
 	PMPlayerListModeSelectForDouble
 } PMPlayerListMode;
 
-@interface PMPlayerListViewController : UIViewController
+@interface PMPlayerListViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource>
 
 - (id)initWithMode:(PMPlayerListMode)mode;
 
