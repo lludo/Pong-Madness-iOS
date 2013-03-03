@@ -99,6 +99,12 @@
 		8222C28316DF2B240084D5D6 /* PMGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 8222C28216DF2B240084D5D6 /* PMGame.m */; };
 		8222C28616DF2B240084D5D6 /* PMLeaderboardPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8222C28516DF2B240084D5D6 /* PMLeaderboardPlayer.m */; };
 		8222C28816DF2BEF0084D5D6 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8222C28716DF2BEF0084D5D6 /* CoreData.framework */; };
+		825C162416E328BA008A65FA /* game-switch-21@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 825C161E16E328BA008A65FA /* game-switch-21@2x.png */; };
+		825C162516E328BA008A65FA /* game-start-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 825C161F16E328BA008A65FA /* game-start-button.png */; };
+		825C162616E328BA008A65FA /* game-start-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 825C162016E328BA008A65FA /* game-start-button@2x.png */; };
+		825C162716E328BA008A65FA /* game-switch-11.png in Resources */ = {isa = PBXBuildFile; fileRef = 825C162116E328BA008A65FA /* game-switch-11.png */; };
+		825C162816E328BA008A65FA /* game-switch-11@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 825C162216E328BA008A65FA /* game-switch-11@2x.png */; };
+		825C162916E328BA008A65FA /* game-switch-21.png in Resources */ = {isa = PBXBuildFile; fileRef = 825C162316E328BA008A65FA /* game-switch-21.png */; };
 		82B2A6FF16E2BF98002D6178 /* PMValueFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 82B2A6FE16E2BF98002D6178 /* PMValueFormatter.m */; };
 		82B2A70C16E2D67A002D6178 /* game-stats-border.png in Resources */ = {isa = PBXBuildFile; fileRef = 82B2A70016E2D67A002D6178 /* game-stats-border.png */; };
 		82B2A70D16E2D67A002D6178 /* game-stats-border@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82B2A70116E2D67A002D6178 /* game-stats-border@2x.png */; };
@@ -247,6 +253,12 @@
 		8222C28416DF2B240084D5D6 /* PMLeaderboardPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMLeaderboardPlayer.h; sourceTree = "<group>"; };
 		8222C28516DF2B240084D5D6 /* PMLeaderboardPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMLeaderboardPlayer.m; sourceTree = "<group>"; };
 		8222C28716DF2BEF0084D5D6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		825C161E16E328BA008A65FA /* game-switch-21@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "game-switch-21@2x.png"; sourceTree = "<group>"; };
+		825C161F16E328BA008A65FA /* game-start-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "game-start-button.png"; sourceTree = "<group>"; };
+		825C162016E328BA008A65FA /* game-start-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "game-start-button@2x.png"; sourceTree = "<group>"; };
+		825C162116E328BA008A65FA /* game-switch-11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "game-switch-11.png"; sourceTree = "<group>"; };
+		825C162216E328BA008A65FA /* game-switch-11@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "game-switch-11@2x.png"; sourceTree = "<group>"; };
+		825C162316E328BA008A65FA /* game-switch-21.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "game-switch-21.png"; sourceTree = "<group>"; };
 		82B2A6FD16E2BF98002D6178 /* PMValueFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMValueFormatter.h; sourceTree = "<group>"; };
 		82B2A6FE16E2BF98002D6178 /* PMValueFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMValueFormatter.m; sourceTree = "<group>"; };
 		82B2A70016E2D67A002D6178 /* game-stats-border.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "game-stats-border.png"; sourceTree = "<group>"; };
@@ -325,6 +337,12 @@
 				82B2A71C16E2DA81002D6178 /* icon-select-player-active@2x.png */,
 				82B2A71D16E2DA81002D6178 /* icon-select-player-inactive.png */,
 				82B2A71E16E2DA81002D6178 /* icon-select-player-inactive@2x.png */,
+				825C162116E328BA008A65FA /* game-switch-11.png */,
+				825C162216E328BA008A65FA /* game-switch-11@2x.png */,
+				825C162316E328BA008A65FA /* game-switch-21.png */,
+				825C161E16E328BA008A65FA /* game-switch-21@2x.png */,
+				825C161F16E328BA008A65FA /* game-start-button.png */,
+				825C162016E328BA008A65FA /* game-start-button@2x.png */,
 				820D718516E1F1DA00E98D23 /* player-add.png */,
 				820D718616E1F1DA00E98D23 /* player-add@2x.png */,
 				82B2A72316E2E7EA002D6178 /* player-add-button.png */,
@@ -742,6 +760,12 @@
 				82B2A72D16E30139002D6178 /* paddle-knockout-active@2x.png in Resources */,
 				82B2A72E16E30139002D6178 /* soon.png in Resources */,
 				82B2A72F16E30139002D6178 /* soon@2x.png in Resources */,
+				825C162416E328BA008A65FA /* game-switch-21@2x.png in Resources */,
+				825C162516E328BA008A65FA /* game-start-button.png in Resources */,
+				825C162616E328BA008A65FA /* game-start-button@2x.png in Resources */,
+				825C162716E328BA008A65FA /* game-switch-11.png in Resources */,
+				825C162816E328BA008A65FA /* game-switch-11@2x.png in Resources */,
+				825C162916E328BA008A65FA /* game-switch-21.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
