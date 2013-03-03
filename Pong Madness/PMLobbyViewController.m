@@ -8,6 +8,8 @@
 
 #import "PMLobbyViewController.h"
 #import "PMPlayerListViewController.h"
+#import "PMSingleGameViewController.h"
+#import "PMDoubleGameViewController.h"
 #import "PMLeaderboardViewController.h"
 #import "PMSettingsViewController.h"
 #import "UIFont+PongMadness.h"
@@ -80,23 +82,25 @@ typedef enum {
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
+    self.title = @"PONG MADNESS";
+    
     if (!hasPlayedInitialAnimation) {
         self.hasPlayedInitialAnimation = YES;
         
         self.logoLaunchImageView.alpha = 1.f;
-        self.quickGameButton.center = CGPointMake(-135.f, 374.f);
-        self.knockOutButton.center = CGPointMake(-135.f, 374.f);
-        self.leaderboardButton.center = CGPointMake(-135.f, 374.f);
-        self.thePlayersButton.center = CGPointMake(-135.f, 374.f);
+        self.quickGameButton.center = CGPointMake(-135.f, 330.f);
+        self.knockOutButton.center = CGPointMake(-135.f, 330.f);
+        self.leaderboardButton.center = CGPointMake(-135.f, 330.f);
+        self.thePlayersButton.center = CGPointMake(-135.f, 330.f);
         
         [UIView animateWithDuration:0.4 animations:^{
             self.logoLaunchImageView.alpha = 0.f;
         } completion:^(BOOL finished) {
             [UIView animateWithDuration:0.8 animations:^{
-                self.quickGameButton.center = CGPointMake(135.f, 374.f);
-                self.knockOutButton.center = CGPointMake(386.f, 374.f);
-                self.leaderboardButton.center = CGPointMake(638.f, 374.f);
-                self.thePlayersButton.center = CGPointMake(889.f, 374.f);
+                self.quickGameButton.center = CGPointMake(135.f, 330.f);
+                self.knockOutButton.center = CGPointMake(386.f, 330.f);
+                self.leaderboardButton.center = CGPointMake(638.f, 330.f);
+                self.thePlayersButton.center = CGPointMake(889.f, 330.f);
             }];
         }];
     }
@@ -148,16 +152,12 @@ typedef enum {
 
 - (IBAction)openLeaderboard:(id)sender {
     PMLeaderboardViewController *leaderboardViewController = [[PMLeaderboardViewController alloc] init];
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:leaderboardViewController];
-    navigationController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-    [self presentViewController:navigationController animated:YES completion:NULL];
+    [self.navigationController pushViewController:leaderboardViewController animated:YES];
 }
 
 - (IBAction)openThePlayers:(id)sender {
     PMPlayerListViewController *playerListViewController = [[PMPlayerListViewController alloc] initWithMode:PMPlayerListModeManage];
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:playerListViewController];
-    navigationController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-    [self presentViewController:navigationController animated:YES completion:NULL];
+    [self.navigationController pushViewController:playerListViewController animated:YES];
 }
 
 - (IBAction)cancel:(id)sender {
@@ -203,16 +203,13 @@ typedef enum {
 
 - (IBAction)playSingleGame:(id)sender {
     PMPlayerListViewController *playerListViewController = [[PMPlayerListViewController alloc] initWithMode:PMPlayerListModeSelectForSingle];
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:playerListViewController];
-    navigationController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-    [self presentViewController:navigationController animated:YES completion:NULL];
+    [self.navigationController pushViewController:playerListViewController animated:YES];
+    playerListViewController.delegate = self;
 }
 
 - (IBAction)playDoubleGame:(id)sender {
     PMPlayerListViewController *playerListViewController = [[PMPlayerListViewController alloc] initWithMode:PMPlayerListModeSelectForDouble];
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:playerListViewController];
-    navigationController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-    [self presentViewController:navigationController animated:YES completion:NULL];
+    [self.navigationController pushViewController:playerListViewController animated:YES];
 }
 
 - (IBAction)settings:(id)sender {
@@ -220,6 +217,34 @@ typedef enum {
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:settingsViewController];
     navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
     [self presentViewController:navigationController animated:YES completion:NULL];
+}
+
+#pragma mark player list view controller delegate
+
+- (void)didSelectPlayers:(NSArray *)playerList {
+    switch (self.gameConfiguration) {
+        case PMGameConfigurationNone: {
+            break;
+        }
+        case PMGameConfigurationQuickGame: {
+            
+            // Needs to be sure we have 2 players
+            if ([playerList count] != 2) {
+                return;
+            }
+            
+            PMSingleGameViewController *singleGameViewController = [[PMSingleGameViewController alloc] initWithPlayers:playerList];
+            [self.navigationController pushViewController:singleGameViewController animated:YES];
+            
+            break;
+        }
+        case PMGameConfigurationKnockOut: {
+            
+            //TODO: later
+            
+            break;
+        }
+    }
 }
 
 - (void)didReceiveMemoryWarning {

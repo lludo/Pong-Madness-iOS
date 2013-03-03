@@ -64,8 +64,8 @@
 		820D71A716E1F31400E98D23 /* PMSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 820D71A516E1F31400E98D23 /* PMSettingsViewController.xib */; };
 		820D71AB16E1F37500E98D23 /* PMSingleGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 820D71A916E1F37500E98D23 /* PMSingleGameViewController.m */; };
 		820D71AC16E1F37500E98D23 /* PMSingleGameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 820D71AA16E1F37500E98D23 /* PMSingleGameViewController.xib */; };
-		820D71B016E1F38100E98D23 /* PMDoubleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 820D71AE16E1F38100E98D23 /* PMDoubleViewController.m */; };
-		820D71B116E1F38100E98D23 /* PMDoubleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 820D71AF16E1F38100E98D23 /* PMDoubleViewController.xib */; };
+		820D71B016E1F38100E98D23 /* PMDoubleGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 820D71AE16E1F38100E98D23 /* PMDoubleGameViewController.m */; };
+		820D71B116E1F38100E98D23 /* PMDoubleGameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 820D71AF16E1F38100E98D23 /* PMDoubleGameViewController.xib */; };
 		820D71B316E1F79800E98D23 /* settings-dot.png in Resources */ = {isa = PBXBuildFile; fileRef = 820D71B216E1F79700E98D23 /* settings-dot.png */; };
 		820D71B516E1F79E00E98D23 /* settings-dot@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 820D71B416E1F79D00E98D23 /* settings-dot@2x.png */; };
 		820D71B816E206C900E98D23 /* PMPlayerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 820D71B716E206C900E98D23 /* PMPlayerCell.m */; };
@@ -119,6 +119,10 @@
 		82B2A72216E2DA81002D6178 /* icon-select-player-inactive@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82B2A71E16E2DA81002D6178 /* icon-select-player-inactive@2x.png */; };
 		82B2A72516E2E7EA002D6178 /* player-add-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 82B2A72316E2E7EA002D6178 /* player-add-button.png */; };
 		82B2A72616E2E7EA002D6178 /* player-add-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82B2A72416E2E7EA002D6178 /* player-add-button@2x.png */; };
+		82B2A72C16E30139002D6178 /* paddle-knockout-active.png in Resources */ = {isa = PBXBuildFile; fileRef = 82B2A72816E30139002D6178 /* paddle-knockout-active.png */; };
+		82B2A72D16E30139002D6178 /* paddle-knockout-active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82B2A72916E30139002D6178 /* paddle-knockout-active@2x.png */; };
+		82B2A72E16E30139002D6178 /* soon.png in Resources */ = {isa = PBXBuildFile; fileRef = 82B2A72A16E30139002D6178 /* soon.png */; };
+		82B2A72F16E30139002D6178 /* soon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82B2A72B16E30139002D6178 /* soon@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -188,9 +192,9 @@
 		820D71A816E1F37500E98D23 /* PMSingleGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMSingleGameViewController.h; sourceTree = "<group>"; };
 		820D71A916E1F37500E98D23 /* PMSingleGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMSingleGameViewController.m; sourceTree = "<group>"; };
 		820D71AA16E1F37500E98D23 /* PMSingleGameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PMSingleGameViewController.xib; sourceTree = "<group>"; };
-		820D71AD16E1F38100E98D23 /* PMDoubleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMDoubleViewController.h; sourceTree = "<group>"; };
-		820D71AE16E1F38100E98D23 /* PMDoubleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMDoubleViewController.m; sourceTree = "<group>"; };
-		820D71AF16E1F38100E98D23 /* PMDoubleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PMDoubleViewController.xib; sourceTree = "<group>"; };
+		820D71AD16E1F38100E98D23 /* PMDoubleGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMDoubleGameViewController.h; sourceTree = "<group>"; };
+		820D71AE16E1F38100E98D23 /* PMDoubleGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMDoubleGameViewController.m; sourceTree = "<group>"; };
+		820D71AF16E1F38100E98D23 /* PMDoubleGameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PMDoubleGameViewController.xib; sourceTree = "<group>"; };
 		820D71B216E1F79700E98D23 /* settings-dot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-dot.png"; sourceTree = "<group>"; };
 		820D71B416E1F79D00E98D23 /* settings-dot@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-dot@2x.png"; sourceTree = "<group>"; };
 		820D71B616E206C900E98D23 /* PMPlayerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMPlayerCell.h; sourceTree = "<group>"; };
@@ -265,6 +269,11 @@
 		82B2A71E16E2DA81002D6178 /* icon-select-player-inactive@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-select-player-inactive@2x.png"; sourceTree = "<group>"; };
 		82B2A72316E2E7EA002D6178 /* player-add-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "player-add-button.png"; sourceTree = "<group>"; };
 		82B2A72416E2E7EA002D6178 /* player-add-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "player-add-button@2x.png"; sourceTree = "<group>"; };
+		82B2A72716E2F5D6002D6178 /* PMPlayerListViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMPlayerListViewControllerDelegate.h; sourceTree = "<group>"; };
+		82B2A72816E30139002D6178 /* paddle-knockout-active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paddle-knockout-active.png"; sourceTree = "<group>"; };
+		82B2A72916E30139002D6178 /* paddle-knockout-active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paddle-knockout-active@2x.png"; sourceTree = "<group>"; };
+		82B2A72A16E30139002D6178 /* soon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soon.png; sourceTree = "<group>"; };
+		82B2A72B16E30139002D6178 /* soon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "soon@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -328,6 +337,10 @@
 				82B2A70316E2D67A002D6178 /* game-table-background@2x.png */,
 				82B2A70416E2D67A002D6178 /* game-wood-background.png */,
 				82B2A70516E2D67A002D6178 /* game-wood-background@2x.png */,
+				82B2A72816E30139002D6178 /* paddle-knockout-active.png */,
+				82B2A72916E30139002D6178 /* paddle-knockout-active@2x.png */,
+				82B2A72A16E30139002D6178 /* soon.png */,
+				82B2A72B16E30139002D6178 /* soon@2x.png */,
 				82B2A70616E2D67A002D6178 /* icon-lefty.png */,
 				82B2A70716E2D67A002D6178 /* icon-lefty@2x.png */,
 				82B2A70816E2D67A002D6178 /* icon-righty.png */,
@@ -501,6 +514,7 @@
 			children = (
 				8222C25816DF1F490084D5D6 /* PMPlayerListViewController.h */,
 				8222C25916DF1F490084D5D6 /* PMPlayerListViewController.m */,
+				82B2A72716E2F5D6002D6178 /* PMPlayerListViewControllerDelegate.h */,
 				8222C25A16DF1F490084D5D6 /* PMPlayerListViewController.xib */,
 				8222C25D16DF1F570084D5D6 /* PMPlayerCardViewController.h */,
 				8222C25E16DF1F570084D5D6 /* PMPlayerCardViewController.m */,
@@ -515,9 +529,9 @@
 				820D71A816E1F37500E98D23 /* PMSingleGameViewController.h */,
 				820D71A916E1F37500E98D23 /* PMSingleGameViewController.m */,
 				820D71AA16E1F37500E98D23 /* PMSingleGameViewController.xib */,
-				820D71AD16E1F38100E98D23 /* PMDoubleViewController.h */,
-				820D71AE16E1F38100E98D23 /* PMDoubleViewController.m */,
-				820D71AF16E1F38100E98D23 /* PMDoubleViewController.xib */,
+				820D71AD16E1F38100E98D23 /* PMDoubleGameViewController.h */,
+				820D71AE16E1F38100E98D23 /* PMDoubleGameViewController.m */,
+				820D71AF16E1F38100E98D23 /* PMDoubleGameViewController.xib */,
 			);
 			name = QuickPlay;
 			sourceTree = "<group>";
@@ -701,7 +715,7 @@
 				820D71A116E1F2A800E98D23 /* PMLeaderboardViewController.xib in Resources */,
 				820D71A716E1F31400E98D23 /* PMSettingsViewController.xib in Resources */,
 				820D71AC16E1F37500E98D23 /* PMSingleGameViewController.xib in Resources */,
-				820D71B116E1F38100E98D23 /* PMDoubleViewController.xib in Resources */,
+				820D71B116E1F38100E98D23 /* PMDoubleGameViewController.xib in Resources */,
 				820D71B316E1F79800E98D23 /* settings-dot.png in Resources */,
 				820D71B516E1F79E00E98D23 /* settings-dot@2x.png in Resources */,
 				820D71BA16E206DE00E98D23 /* PMPlayerCell.xib in Resources */,
@@ -724,6 +738,10 @@
 				82B2A72216E2DA81002D6178 /* icon-select-player-inactive@2x.png in Resources */,
 				82B2A72516E2E7EA002D6178 /* player-add-button.png in Resources */,
 				82B2A72616E2E7EA002D6178 /* player-add-button@2x.png in Resources */,
+				82B2A72C16E30139002D6178 /* paddle-knockout-active.png in Resources */,
+				82B2A72D16E30139002D6178 /* paddle-knockout-active@2x.png in Resources */,
+				82B2A72E16E30139002D6178 /* soon.png in Resources */,
+				82B2A72F16E30139002D6178 /* soon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -756,7 +774,7 @@
 				820D71A016E1F2A800E98D23 /* PMLeaderboardViewController.m in Sources */,
 				820D71A616E1F31400E98D23 /* PMSettingsViewController.m in Sources */,
 				820D71AB16E1F37500E98D23 /* PMSingleGameViewController.m in Sources */,
-				820D71B016E1F38100E98D23 /* PMDoubleViewController.m in Sources */,
+				820D71B016E1F38100E98D23 /* PMDoubleGameViewController.m in Sources */,
 				820D71B816E206C900E98D23 /* PMPlayerCell.m in Sources */,
 				820D71BD16E211AA00E98D23 /* PMAddPlayerView.m in Sources */,
 				820D71C216E216D200E98D23 /* PMCollectionViewPlayerManagementLayout.m in Sources */,

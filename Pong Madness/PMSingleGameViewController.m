@@ -7,12 +7,15 @@
 //
 
 #import "PMSingleGameViewController.h"
+#import "PMPlayer.h"
 
 @interface PMSingleGameViewController ()
 
 @end
 
 @implementation PMSingleGameViewController
+
+@synthesize playerList;
 
 - (id)init {
     self = [super init];
@@ -22,9 +25,28 @@
     return self;
 }
 
+- (id)initWithPlayers:(NSArray *)aPlayerList {
+    self = [self init];
+    if (self) {
+        self.playerList = aPlayerList;
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    PMPlayer *firstPlayer = [self.playerList objectAtIndex:0];
+    PMPlayer *secondPlayer = [self.playerList objectAtIndex:1];
+    self.title = [NSString stringWithFormat:@"%@ VS %@", firstPlayer.username, secondPlayer.username];
+    
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Back", nil)
+                                                                             style:UIBarButtonItemStyleBordered
+                                                                            target:self action:@selector(close:)];
+}
+
+- (IBAction)close:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

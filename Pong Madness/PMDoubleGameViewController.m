@@ -1,18 +1,20 @@
 //
-//  PMLeaderboardViewController.m
+//  PMDoubleGameViewController.m
 //  Pong Madness
 //
 //  Created by Ludovic Landry on 3/2/13.
 //  Copyright (c) 2013 MirageTeam. All rights reserved.
 //
 
-#import "PMLeaderboardViewController.h"
+#import "PMDoubleGameViewController.h"
 
-@interface PMLeaderboardViewController ()
+@interface PMDoubleGameViewController ()
 
 @end
 
-@implementation PMLeaderboardViewController
+@implementation PMDoubleGameViewController
+
+@synthesize playerList;
 
 - (id)init {
     self = [super init];
@@ -22,10 +24,16 @@
     return self;
 }
 
+- (id)initWithPlayers:(NSArray *)aPlayerList {
+    self = [self init];
+    if (self) {
+        self.playerList = aPlayerList;
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.title = @"Leaderboard";
     
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Back", nil)
                                                                              style:UIBarButtonItemStyleBordered
@@ -33,7 +41,7 @@
 }
 
 - (IBAction)close:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

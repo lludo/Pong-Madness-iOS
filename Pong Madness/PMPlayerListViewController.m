@@ -27,6 +27,8 @@
 @property (nonatomic, assign) PMPlayerListMode mode;
 @property (nonatomic, strong) NSMutableArray *playersSelection;
 
+- (void)setPlayButtonHidden:(BOOL)hidden;
+
 @end
 
 @implementation PMPlayerListViewController
@@ -38,6 +40,7 @@ static NSString *viewIdentifier = @"AddPlayerView";
 @synthesize fetchedResultsController;
 @synthesize mode;
 @synthesize playersSelection;
+@synthesize delegate;
 
 - (id)init {
     self = [super init];
@@ -79,7 +82,7 @@ static NSString *viewIdentifier = @"AddPlayerView";
         }
     }
     
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Back", nil)
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Back", nil)
                                                                              style:UIBarButtonItemStyleBordered
                                                                             target:self action:@selector(close:)];
     
@@ -91,7 +94,6 @@ static NSString *viewIdentifier = @"AddPlayerView";
     
     UINib *addPlayerViewNib = [UINib nibWithNibName:@"PMAddPlayerView" bundle:nil];
     [self.collectionView registerNib:addPlayerViewNib forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:viewIdentifier];
-    
     UINib *playerCellNib = [UINib nibWithNibName:@"PMPlayerCell" bundle:nil];
     [self.collectionView registerNib:playerCellNib forCellWithReuseIdentifier:cellIdentifier];
     
@@ -104,7 +106,24 @@ static NSString *viewIdentifier = @"AddPlayerView";
 }
 
 - (IBAction)close:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (IBAction)play:(id)sender {
     [self dismissViewControllerAnimated:YES completion:NULL];
+    if ([self.delegate respondsToSelector:@selector(didSelectPlayers:)]) {
+        [self.delegate didSelectPlayers:[NSArray arrayWithArray:playersSelection]];
+    }
+}
+
+- (void)setPlayButtonHidden:(BOOL)hidden {
+    if (hidden) {
+        self.navigationItem.rightBarButtonItem = nil;
+    } else if (self.navigationItem.rightBarButtonItem == nil) {
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Play", nil)
+                                                                                  style:UIBarButtonItemStyleBordered
+                                                                                 target:self action:@selector(play:)];
+    }
 }
 
 - (NSFetchedResultsController *)fetchedResultsController {
@@ -149,7 +168,7 @@ static NSString *viewIdentifier = @"AddPlayerView";
     NSString *dateString = [[PMValueFormatter formatterDateShortStyle] stringFromDate:player.sinceDate];
     cell.sinceLabel.text = [NSString stringWithFormat:@"Since %@", dateString];
     
-    // No selection in ma
+    // No selection in manage mode
     if (self.mode == PMPlayerListModeManage) {
         cell.selectionImageView.hidden = YES;
     } else {
@@ -193,6 +212,9 @@ static NSString *viewIdentifier = @"AddPlayerView";
                     [self.playersSelection addObject:player];
                 }
             }
+            
+            // Display/hide the play button
+            [self setPlayButtonHidden:([self.playersSelection count] != 2)];
             
             // Reload the view
             [aCollectionView reloadData];

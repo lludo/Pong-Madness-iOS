@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PMPlayerListViewControllerDelegate.h"
 
-@interface PMLobbyViewController : UIViewController
+@interface PMLobbyViewController : UIViewController <PMPlayerListViewControllerDelegate>
 
 @end

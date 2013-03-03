@@ -1,5 +1,5 @@
 //
-//  PMSingleGameViewController.h
+//  PMDoubleGameViewController.h
 //  Pong Madness
 //
 //  Created by Ludovic Landry on 3/2/13.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PMSingleGameViewController : UIViewController
+@interface PMDoubleGameViewController : UIViewController
 
 - (id)initWithPlayers:(NSArray *)playerList;
 

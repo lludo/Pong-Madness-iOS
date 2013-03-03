@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import "PMPlayerListViewControllerDelegate.h"
 
 typedef enum {
     PMPlayerListModeManage = 0,
@@ -18,5 +19,7 @@ typedef enum {
 @interface PMPlayerListViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource>
 
 - (id)initWithMode:(PMPlayerListMode)mode;
+
+@property (nonatomic, weak) id<PMPlayerListViewControllerDelegate> delegate;
 
 @end

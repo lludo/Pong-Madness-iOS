@@ -8,6 +8,7 @@
 
 #import "PMAppDelegate.h"
 #import "PMAppearance.h"
+#import "PMLobbyViewController.h"
 
 @implementation PMAppDelegate
 
@@ -16,7 +17,10 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.viewController = [[PMLobbyViewController alloc] init];
+    
+    PMLobbyViewController *lobbyViewController = [[PMLobbyViewController alloc] init];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:lobbyViewController];
+    self.viewController = navigationController;
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     return YES;
