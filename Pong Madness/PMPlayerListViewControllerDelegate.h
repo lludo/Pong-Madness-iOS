@@ -10,6 +10,6 @@
 
 @protocol PMPlayerListViewControllerDelegate <NSObject>
 
-- (void)didSelectPlayers:(NSArray *)playerList;
+- (void)didSelectParticipants:(NSArray *)participantList;
 
 @end

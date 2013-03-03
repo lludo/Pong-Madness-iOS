@@ -111,8 +111,8 @@ static NSString *viewIdentifier = @"AddPlayerView";
 
 - (IBAction)play:(id)sender {
     [self dismissViewControllerAnimated:YES completion:NULL];
-    if ([self.delegate respondsToSelector:@selector(didSelectPlayers:)]) {
-        [self.delegate didSelectPlayers:[NSArray arrayWithArray:playersSelection]];
+    if ([self.delegate respondsToSelector:@selector(didSelectParticipants:)]) {
+        [self.delegate didSelectParticipants:[NSArray arrayWithArray:playersSelection]];
     }
 }
 

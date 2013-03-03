@@ -8,10 +8,14 @@
 
 #import "PMSingleGameViewController.h"
 #import "UIFont+PongMadness.h"
+#import "UIButton+Stretch.h"
+#import "PMDocumentManager.h"
 #import "PMPlayer.h"
+#import "PMGame.h"
 
 @interface PMSingleGameViewController ()
 
+@property (nonatomic, strong) IBOutlet UIView *firstPlayerContainerView;
 @property (nonatomic, strong) IBOutlet UIImageView *avatarFirstPlayerImageView;
 @property (nonatomic, strong) IBOutlet UILabel *usernameFirstPlayerLabel;
 @property (nonatomic, strong) IBOutlet UILabel *rankFirstPlayerLabel;
@@ -20,6 +24,7 @@
 @property (nonatomic, strong) IBOutlet UILabel *playedCountFirstPlayerLabel;
 @property (nonatomic, strong) IBOutlet UIImageView *handednessFirstPlayerImageView;
 
+@property (nonatomic, strong) IBOutlet UIView *secondPlayerContainerView;
 @property (nonatomic, strong) IBOutlet UIImageView *avatarSecondPlayerImageView;
 @property (nonatomic, strong) IBOutlet UILabel *usernameSecondPlayerLabel;
 @property (nonatomic, strong) IBOutlet UILabel *rankSecondPlayerLabel;
@@ -29,13 +34,41 @@
 @property (nonatomic, strong) IBOutlet UIImageView *handednessSecondPlayerImageView;
 
 @property (nonatomic, strong) IBOutletCollection(UILabel) NSArray *legendLabels;
+@property (nonatomic, strong) IBOutlet UIButton *pointsToWinSwitch;
+@property (nonatomic, strong) IBOutlet UIButton *startButton;
+@property (nonatomic, strong) IBOutlet UIButton *finishButton;
 
-- (void)setupView;
+@property (nonatomic, strong) IBOutlet UIButton *leftMinusButton;
+@property (nonatomic, strong) IBOutlet UIButton *leftPlusButton;
+@property (nonatomic, strong) IBOutlet UIView *leftScoreBackground;
+@property (nonatomic, strong) IBOutlet UILabel *leftScoreLabel;
+
+@property (nonatomic, strong) IBOutlet UIButton *rightMinusButton;
+@property (nonatomic, strong) IBOutlet UIButton *rightPlusButton;
+@property (nonatomic, strong) IBOutlet UIView *rightScoreBackground;
+@property (nonatomic, strong) IBOutlet UILabel *rightScoreLabel;
+
+@property (nonatomic, strong) IBOutlet UIView *timerBackground;
+@property (nonatomic, strong) IBOutlet UILabel *timerLabel;
+
+@property (nonatomic, strong) NSTimer *timer;
+@property (nonatomic, strong) PMGame *game;
+
+- (void)updateView;
+- (IBAction)tooglePointsToWinSwitch:(id)sender;
+- (IBAction)startGame:(id)sender;
+- (IBAction)finishGame:(id)sender;
+
+- (IBAction)decreaseLeftPoints:(id)sender;
+- (IBAction)increaseLeftPoints:(id)sender;
+- (IBAction)decreaseRightPoints:(id)sender;
+- (IBAction)increaseRightPoints:(id)sender;
 
 @end
 
 @implementation PMSingleGameViewController
 
+@synthesize firstPlayerContainerView;
 @synthesize avatarFirstPlayerImageView;
 @synthesize usernameFirstPlayerLabel;
 @synthesize rankFirstPlayerLabel;
@@ -44,6 +77,7 @@
 @synthesize playedCountFirstPlayerLabel;
 @synthesize handednessFirstPlayerImageView;
 
+@synthesize secondPlayerContainerView;
 @synthesize avatarSecondPlayerImageView;
 @synthesize usernameSecondPlayerLabel;
 @synthesize rankSecondPlayerLabel;
@@ -53,7 +87,26 @@
 @synthesize handednessSecondPlayerImageView;
 
 @synthesize legendLabels;
-@synthesize playerList;
+@synthesize pointsToWinSwitch;
+@synthesize startButton;
+@synthesize finishButton;
+@synthesize participantList;
+
+@synthesize leftMinusButton;
+@synthesize leftPlusButton;
+@synthesize leftScoreBackground;
+@synthesize leftScoreLabel;
+
+@synthesize rightMinusButton;
+@synthesize rightPlusButton;
+@synthesize rightScoreBackground;
+@synthesize rightScoreLabel;
+
+@synthesize timerBackground;
+@synthesize timerLabel;
+
+@synthesize timer;
+@synthesize game;
 
 - (id)init {
     self = [super init];
@@ -63,10 +116,10 @@
     return self;
 }
 
-- (id)initWithPlayers:(NSArray *)aPlayerList {
+- (id)initWithParticipants:(NSArray *)aParticipantList {
     self = [self init];
     if (self) {
-        self.playerList = aPlayerList;
+        self.participantList = aParticipantList;
     }
     return self;
 }
@@ -74,14 +127,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    PMPlayer *firstPlayer = [self.playerList objectAtIndex:0];
-    PMPlayer *secondPlayer = [self.playerList objectAtIndex:1];
+    PMPlayer *firstPlayer = [self.participantList objectAtIndex:0];
+    PMPlayer *secondPlayer = [self.participantList objectAtIndex:1];
     self.title = [NSString stringWithFormat:@"%@ VS %@", firstPlayer.username, secondPlayer.username];
     
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Back", nil)
                                                                              style:UIBarButtonItemStyleBordered
                                                                             target:self action:@selector(close:)];
     
+    // Configure players
+    
+    self.firstPlayerContainerView.transform = CGAffineTransformMakeTranslation(0.f, -466.f);
     self.avatarFirstPlayerImageView.layer.cornerRadius = 3.f;
     self.usernameFirstPlayerLabel.font = [UIFont brothersBoldFontOfSize:38.f];
     self.rankFirstPlayerLabel.font = [UIFont brothersBoldFontOfSize:22.f];
@@ -89,6 +145,7 @@
     self.loseCountFirstPlayerLabel.font = [UIFont brothersBoldFontOfSize:22.f];
     self.playedCountFirstPlayerLabel.font = [UIFont brothersBoldFontOfSize:22.f];
     
+    self.secondPlayerContainerView.transform = CGAffineTransformMakeTranslation(0.f, -466.f);
     self.avatarSecondPlayerImageView.layer.cornerRadius = 3.f;
     self.usernameSecondPlayerLabel.font = [UIFont brothersBoldFontOfSize:38.f];
     self.rankSecondPlayerLabel.font = [UIFont brothersBoldFontOfSize:22.f];
@@ -100,19 +157,164 @@
         label.font = [UIFont brothersBoldFontOfSize:11.f];
     }];
     
-    [self setupView];
+    [self.startButton stretchBackgroundImage];
+    self.startButton.titleLabel.font = [UIFont brothersBoldFontOfSize:38.f];
+    
+    [self.finishButton stretchBackgroundImage];
+    self.finishButton.titleLabel.font = [UIFont brothersBoldFontOfSize:38.f];
+    self.finishButton.alpha = 0.f;
+    
+    self.leftScoreLabel.font = [UIFont brothersBoldFontOfSize:93.f];
+    self.rightScoreLabel.font = [UIFont brothersBoldFontOfSize:93.f];
+    self.timerLabel.font = [UIFont brothersBoldFontOfSize:36.f];
+    
+    
+    // Hides games controls for now
+    
+    self.leftMinusButton.transform = CGAffineTransformMakeTranslation(-44.f, 0.f);
+    self.leftPlusButton.transform = CGAffineTransformMakeTranslation(-87.f, 0.f);
+    self.leftScoreBackground.alpha = 0.f;
+    self.leftScoreLabel.alpha = 0.f;
+    self.timerBackground.alpha = 0.f;
+    self.timerLabel.alpha = 0.f;
+    self.rightScoreBackground.alpha = 0.f;
+    self.rightScoreLabel.alpha = 0.f;
+    self.rightMinusButton.transform = CGAffineTransformMakeTranslation(44.f, 0.f);
+    self.rightPlusButton.transform = CGAffineTransformMakeTranslation(87.f, 0.f);
+    
+    // Setup data in the views
+    
+    [self updateView];
 }
 
-- (IBAction)close:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    [UIView animateWithDuration:0.4 delay:0.f options:UIViewAnimationOptionCurveEaseOut animations:^{
+        self.firstPlayerContainerView.transform = CGAffineTransformMakeTranslation(0.f, 12.f);
+        self.secondPlayerContainerView.transform = CGAffineTransformMakeTranslation(0.f, 12.f);
+    } completion:^(BOOL finished) {
+        [UIView animateWithDuration:0.2 delay:0.f options:UIViewAnimationOptionCurveEaseOut animations:^{
+            self.firstPlayerContainerView.transform = CGAffineTransformIdentity;
+            self.secondPlayerContainerView.transform = CGAffineTransformIdentity;
+        } completion:NULL];
+    }];
 }
 
-- (void)setupView {
-    PMPlayer *firstPlayer = [self.playerList objectAtIndex:0];
-    PMPlayer *secondPlayer = [self.playerList objectAtIndex:1];
+- (void)updateView {
+    PMPlayer *firstPlayer = [self.participantList objectAtIndex:0];
+    PMPlayer *secondPlayer = [self.participantList objectAtIndex:1];
     
     self.usernameFirstPlayerLabel.text = firstPlayer.username;
     self.usernameSecondPlayerLabel.text = secondPlayer.username;
+    
+    if (game) {
+        self.leftScoreLabel.text = [NSString stringWithFormat:@"%@", [self.game scoreForParticipant:firstPlayer]];
+        self.rightScoreLabel.text = [NSString stringWithFormat:@"%@", [self.game scoreForParticipant:secondPlayer]];
+        
+        NSInteger minScoreToWin = (self.pointsToWinSwitch.selected) ? 21 : 11;
+        NSInteger scoresGap = 2;
+        PMParticipant *participantWinner = [self.game participantWinnerWithMinimumScore:minScoreToWin andScoresGap:scoresGap];
+        if (participantWinner) {
+            self.timerBackground.alpha = 0.f;
+            self.timerLabel.alpha = 0.f;
+            self.finishButton.alpha = 1.f;
+        } else {
+            self.timerBackground.alpha = 1.f;
+            self.timerLabel.alpha = 1.f;
+            self.finishButton.alpha = 0.f;
+        }
+    }
+}
+
+- (IBAction)close:(id)sender {
+    [self.timer invalidate];
+    self.timer = nil;
+    
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
+- (IBAction)tooglePointsToWinSwitch:(id)sender {
+    self.pointsToWinSwitch.selected = !self.pointsToWinSwitch.selected;
+    [self updateView];
+}
+
+- (IBAction)startGame:(id)sender {
+    if (game) {
+        return;
+    }
+    
+    self.game = [PMGame gameWithParticipants:self.participantList];
+    self.game.startDate = [NSDate date];
+    [[PMDocumentManager sharedDocument] save];
+    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Cancel", nil)
+                                                                             style:UIBarButtonItemStyleBordered
+                                                                            target:self action:@selector(close:)];
+    
+    [UIView animateWithDuration:1.f animations:^{
+        
+        self.startButton.alpha = 0.f;
+        
+        // Show games controls
+        self.leftMinusButton.transform = CGAffineTransformIdentity;
+        self.leftPlusButton.transform = CGAffineTransformIdentity;
+        self.leftScoreBackground.alpha = 1.f;
+        self.leftScoreLabel.alpha = 1.f;
+        self.timerBackground.alpha = 1.f;
+        self.timerLabel.alpha = 1.f;
+        self.rightScoreBackground.alpha = 1.f;
+        self.rightScoreLabel.alpha = 1.f;
+        self.rightMinusButton.transform = CGAffineTransformIdentity;
+        self.rightPlusButton.transform = CGAffineTransformIdentity;
+    } completion:^(BOOL finished) {
+        self.timer = [NSTimer scheduledTimerWithTimeInterval:1.f
+                                                      target:self selector:@selector(timerTick:)
+                                                    userInfo:nil repeats:YES];
+        [self.timer fire];
+    }];
+}
+
+- (IBAction)finishGame:(id)sender {
+    NSInteger minScoreToWin = (self.pointsToWinSwitch.selected) ? 21 : 11;
+    NSInteger scoresGap = 2;
+    PMParticipant *participantWinner = [self.game participantWinnerWithMinimumScore:minScoreToWin andScoresGap:scoresGap];
+    
+    if (participantWinner) {
+        
+        //TODO: xxx
+    }
+}
+
+- (IBAction)decreaseLeftPoints:(id)sender {
+    PMPlayer *firstPlayer = [self.participantList objectAtIndex:0];
+    [self.game decreasePointsForParticipant:firstPlayer];
+    [self updateView];
+}
+
+- (IBAction)increaseLeftPoints:(id)sender {
+    PMPlayer *firstPlayer = [self.participantList objectAtIndex:0];
+    [self.game increasePointsForParticipant:firstPlayer];
+    [self updateView];
+}
+
+- (IBAction)decreaseRightPoints:(id)sender {
+    PMPlayer *secondPlayer = [self.participantList objectAtIndex:1];
+    [self.game decreasePointsForParticipant:secondPlayer];
+    [self updateView];
+}
+
+- (IBAction)increaseRightPoints:(id)sender {
+    PMPlayer *secondPlayer = [self.participantList objectAtIndex:1];
+    [self.game increasePointsForParticipant:secondPlayer];
+    [self updateView];
+}
+
+- (void)timerTick:(id)sender {
+    NSTimeInterval interval = -[self.game.startDate timeIntervalSinceNow];
+    NSInteger minutes = (int)interval / 60;
+    NSInteger seconds = (int)interval % 60;
+    self.timerLabel.text = [NSString stringWithFormat:@"%02i:%02i", minutes, seconds];
 }
 
 - (void)didReceiveMemoryWarning {

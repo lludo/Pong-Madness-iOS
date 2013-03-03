@@ -14,7 +14,7 @@
 
 @implementation PMDoubleGameViewController
 
-@synthesize playerList;
+@synthesize participantList;
 
 - (id)init {
     self = [super init];
@@ -24,10 +24,10 @@
     return self;
 }
 
-- (id)initWithPlayers:(NSArray *)aPlayerList {
+- (id)initWithParticipants:(NSArray *)aParticipantList {
     self = [self init];
     if (self) {
-        self.playerList = aPlayerList;
+        self.participantList = aParticipantList;
     }
     return self;
 }

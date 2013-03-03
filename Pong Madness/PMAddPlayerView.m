@@ -53,13 +53,7 @@
     self.usernameField.text = nil;
     [self.usernameField resignFirstResponder];
     
-    NSManagedObjectContext *managedObjectContext = [PMDocumentManager sharedDocument].managedObjectContext;
-    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Player" inManagedObjectContext:managedObjectContext];
-    PMPlayer *player = [[PMPlayer alloc] initWithEntity:entityDescription insertIntoManagedObjectContext:managedObjectContext];
-    
-    player.username = username;
-    player.sinceDate = [NSDate date];
-    
+    [PMPlayer playerWithUsername:username];
     [[PMDocumentManager sharedDocument] save];
 }
 

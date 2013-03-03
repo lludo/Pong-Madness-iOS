@@ -29,6 +29,8 @@ typedef enum {
 @property (nonatomic, strong) NSDate *sinceDate;
 @property (nonatomic, strong) NSSet *tournamentSet;
 
++ (PMPlayer *)playerWithUsername:(NSString *)username;
+
 @end
 
 @interface PMPlayer (CoreDataGeneratedAccessors)

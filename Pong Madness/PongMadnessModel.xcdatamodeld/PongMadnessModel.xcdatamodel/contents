@@ -4,12 +4,12 @@
         <attribute name="startDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="timePlayed" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="gameParticipantSet" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="GameParticipant" inverseName="game" inverseEntity="GameParticipant" syncable="YES"/>
+        <relationship name="gameParticipantOrderedSet" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="GameParticipant" inverseName="game" inverseEntity="GameParticipant" syncable="YES"/>
         <relationship name="tournamentSet" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tournament" inverseName="gameSet" inverseEntity="Tournament" syncable="YES"/>
     </entity>
     <entity name="GameParticipant" representedClassName="PMGameParticipant" syncable="YES">
         <attribute name="score" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <relationship name="game" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Game" inverseName="gameParticipantSet" inverseEntity="Game" syncable="YES"/>
+        <relationship name="game" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Game" inverseName="gameParticipantOrderedSet" inverseEntity="Game" syncable="YES"/>
         <relationship name="participant" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Participant" inverseName="gameParticipantSet" inverseEntity="Participant" syncable="YES"/>
     </entity>
     <entity name="Leaderboard" representedClassName="PMLeaderboard" syncable="YES">
@@ -47,11 +47,11 @@
         <relationship name="playerSet" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Player" inverseName="tournamentSet" inverseEntity="Player" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Game" positionX="414" positionY="90" width="128" height="118"/>
+        <element name="Game" positionX="369" positionY="90" width="164" height="118"/>
         <element name="GameParticipant" positionX="72" positionY="72" width="128" height="88"/>
         <element name="Leaderboard" positionX="801" positionY="387" width="128" height="88"/>
         <element name="LeaderboardPlayer" positionX="594" positionY="447" width="128" height="73"/>
-        <element name="Participant" positionX="243" positionY="228" width="128" height="58"/>
+        <element name="Participant" positionX="243" positionY="248" width="128" height="58"/>
         <element name="Player" positionX="333" positionY="429" width="128" height="178"/>
         <element name="Team" positionX="126" positionY="441" width="128" height="73"/>
         <element name="Tournament" positionX="630" positionY="198" width="128" height="118"/>

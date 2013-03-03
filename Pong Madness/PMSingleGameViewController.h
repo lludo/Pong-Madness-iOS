@@ -11,8 +11,9 @@
 
 @interface PMSingleGameViewController : UIViewController
 
-- (id)initWithPlayers:(NSArray *)playerList;
+- (id)initWithParticipants:(NSArray *)participantList;
 
-@property (nonatomic, strong) NSArray *playerList;
+// In single games, participants are players
+@property (nonatomic, strong) NSArray *participantList;
 
 @end

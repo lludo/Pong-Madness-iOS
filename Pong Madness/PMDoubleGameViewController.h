@@ -10,8 +10,9 @@
 
 @interface PMDoubleGameViewController : UIViewController
 
-- (id)initWithPlayers:(NSArray *)playerList;
+- (id)initWithParticipants:(NSArray *)participantList;
 
-@property (nonatomic, strong) NSArray *playerList;
+// In double games, participants are teams
+@property (nonatomic, strong) NSArray *participantList;
 
 @end

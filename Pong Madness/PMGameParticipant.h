@@ -17,4 +17,6 @@
 @property (nonatomic, strong) PMParticipant *participant;
 @property (nonatomic, strong) PMGame *game;
 
++ (PMGameParticipant *)gameParticipantWithParticipant:(PMParticipant *)participant;
+
 @end

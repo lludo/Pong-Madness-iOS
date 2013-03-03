@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class PMGameParticipant, PMTournament;
+@class PMGameParticipant, PMTournament, PMParticipant;
 
 typedef enum {
 	PMGameTypeSingle = 0,
@@ -21,17 +21,25 @@ typedef enum {
 @property (nonatomic, strong) NSString *type;
 @property (nonatomic, strong) NSNumber *timePlayed;
 @property (nonatomic, strong) NSDate *startDate;
-@property (nonatomic, strong) NSSet *gameParticipantSet;
+@property (nonatomic, strong) NSOrderedSet *gameParticipantOrderedSet;
 @property (nonatomic, strong) NSSet *tournamentSet;
+
++ (PMGame *)gameWithParticipants:(NSArray *)participants;
+
+- (NSNumber *)scoreForParticipant:(PMParticipant *)participant;
+- (void)increasePointsForParticipant:(PMParticipant *)participant;
+- (void)decreasePointsForParticipant:(PMParticipant *)participant;
+
+- (PMParticipant *)participantWinnerWithMinimumScore:(NSInteger)score andScoresGap:(NSInteger)gap;
 
 @end
 
 @interface PMGame (CoreDataGeneratedAccessors)
 
-- (void)addGameParticipantSetObject:(PMGameParticipant *)value;
-- (void)removeGameParticipantSetObject:(PMGameParticipant *)value;
-- (void)addGameParticipantSet:(NSSet *)values;
-- (void)removeGameParticipantSet:(NSSet *)values;
+- (void)addGameParticipantOrderedSetObject:(PMGameParticipant *)value;
+- (void)removeGameParticipantOrderedSetObject:(PMGameParticipant *)value;
+- (void)addGameParticipantOrederdSet:(NSOrderedSet *)values;
+- (void)removeGameParticipantOrderedSet:(NSOrderedSet *)values;
 
 - (void)addTournamentSetObject:(PMTournament *)value;
 - (void)removeTournamentSetObject:(PMTournament *)value;

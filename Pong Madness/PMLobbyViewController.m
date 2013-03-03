@@ -221,7 +221,7 @@ typedef enum {
 
 #pragma mark player list view controller delegate
 
-- (void)didSelectPlayers:(NSArray *)playerList {
+- (void)didSelectParticipants:(NSArray *)participantList {
     switch (self.gameConfiguration) {
         case PMGameConfigurationNone: {
             break;
@@ -229,11 +229,11 @@ typedef enum {
         case PMGameConfigurationQuickGame: {
             
             // Needs to be sure we have 2 players
-            if ([playerList count] != 2) {
+            if ([participantList count] != 2) {
                 return;
             }
             
-            PMSingleGameViewController *singleGameViewController = [[PMSingleGameViewController alloc] initWithPlayers:playerList];
+            PMSingleGameViewController *singleGameViewController = [[PMSingleGameViewController alloc] initWithParticipants:participantList];
             [self.navigationController pushViewController:singleGameViewController animated:YES];
             
             break;
