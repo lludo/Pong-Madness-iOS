@@ -72,7 +72,7 @@
 		820D71BA16E206DE00E98D23 /* PMPlayerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 820D71B916E206DE00E98D23 /* PMPlayerCell.xib */; };
 		820D71BD16E211AA00E98D23 /* PMAddPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 820D71BC16E211AA00E98D23 /* PMAddPlayerView.m */; };
 		820D71BF16E211C200E98D23 /* PMAddPlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 820D71BE16E211C200E98D23 /* PMAddPlayerView.xib */; };
-		820D71C216E216D200E98D23 /* PMCollectionViewPlayerLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 820D71C116E216D100E98D23 /* PMCollectionViewPlayerLayout.m */; };
+		820D71C216E216D200E98D23 /* PMCollectionViewPlayerManagementLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 820D71C116E216D100E98D23 /* PMCollectionViewPlayerManagementLayout.m */; };
 		8222C23116DF1CD30084D5D6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8222C23016DF1CD30084D5D6 /* UIKit.framework */; };
 		8222C23316DF1CD30084D5D6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8222C23216DF1CD30084D5D6 /* Foundation.framework */; };
 		8222C23516DF1CD30084D5D6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8222C23416DF1CD30084D5D6 /* CoreGraphics.framework */; };
@@ -112,6 +112,11 @@
 		82B2A71516E2D67A002D6178 /* icon-righty@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82B2A70916E2D67A002D6178 /* icon-righty@2x.png */; };
 		82B2A71616E2D67A002D6178 /* player-card-big.png in Resources */ = {isa = PBXBuildFile; fileRef = 82B2A70A16E2D67A002D6178 /* player-card-big.png */; };
 		82B2A71716E2D67A002D6178 /* player-card-big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82B2A70B16E2D67A002D6178 /* player-card-big@2x.png */; };
+		82B2A71A16E2D820002D6178 /* PMCollectionViewPlayerSelectionLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 82B2A71916E2D820002D6178 /* PMCollectionViewPlayerSelectionLayout.m */; };
+		82B2A71F16E2DA81002D6178 /* icon-select-player-active.png in Resources */ = {isa = PBXBuildFile; fileRef = 82B2A71B16E2DA81002D6178 /* icon-select-player-active.png */; };
+		82B2A72016E2DA81002D6178 /* icon-select-player-active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82B2A71C16E2DA81002D6178 /* icon-select-player-active@2x.png */; };
+		82B2A72116E2DA81002D6178 /* icon-select-player-inactive.png in Resources */ = {isa = PBXBuildFile; fileRef = 82B2A71D16E2DA81002D6178 /* icon-select-player-inactive.png */; };
+		82B2A72216E2DA81002D6178 /* icon-select-player-inactive@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82B2A71E16E2DA81002D6178 /* icon-select-player-inactive@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -192,8 +197,8 @@
 		820D71BB16E211AA00E98D23 /* PMAddPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMAddPlayerView.h; sourceTree = "<group>"; };
 		820D71BC16E211AA00E98D23 /* PMAddPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMAddPlayerView.m; sourceTree = "<group>"; };
 		820D71BE16E211C200E98D23 /* PMAddPlayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PMAddPlayerView.xib; sourceTree = "<group>"; };
-		820D71C016E216D100E98D23 /* PMCollectionViewPlayerLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMCollectionViewPlayerLayout.h; sourceTree = "<group>"; };
-		820D71C116E216D100E98D23 /* PMCollectionViewPlayerLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMCollectionViewPlayerLayout.m; sourceTree = "<group>"; };
+		820D71C016E216D100E98D23 /* PMCollectionViewPlayerManagementLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMCollectionViewPlayerManagementLayout.h; sourceTree = "<group>"; };
+		820D71C116E216D100E98D23 /* PMCollectionViewPlayerManagementLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMCollectionViewPlayerManagementLayout.m; sourceTree = "<group>"; };
 		8222C22D16DF1CD30084D5D6 /* Pong Madness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pong Madness.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8222C23016DF1CD30084D5D6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8222C23216DF1CD30084D5D6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -250,6 +255,12 @@
 		82B2A70916E2D67A002D6178 /* icon-righty@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-righty@2x.png"; sourceTree = "<group>"; };
 		82B2A70A16E2D67A002D6178 /* player-card-big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "player-card-big.png"; sourceTree = "<group>"; };
 		82B2A70B16E2D67A002D6178 /* player-card-big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "player-card-big@2x.png"; sourceTree = "<group>"; };
+		82B2A71816E2D820002D6178 /* PMCollectionViewPlayerSelectionLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMCollectionViewPlayerSelectionLayout.h; sourceTree = "<group>"; };
+		82B2A71916E2D820002D6178 /* PMCollectionViewPlayerSelectionLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMCollectionViewPlayerSelectionLayout.m; sourceTree = "<group>"; };
+		82B2A71B16E2DA81002D6178 /* icon-select-player-active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-select-player-active.png"; sourceTree = "<group>"; };
+		82B2A71C16E2DA81002D6178 /* icon-select-player-active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-select-player-active@2x.png"; sourceTree = "<group>"; };
+		82B2A71D16E2DA81002D6178 /* icon-select-player-inactive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-select-player-inactive.png"; sourceTree = "<group>"; };
+		82B2A71E16E2DA81002D6178 /* icon-select-player-inactive@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-select-player-inactive@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -297,6 +308,10 @@
 				820D716A16E1C85200E98D23 /* Icon-Small-50@2x.png */,
 				820D716516E1C85200E98D23 /* Default-Landscape@2x~ipad.png */,
 				820D716616E1C85200E98D23 /* Default-Landscape~ipad.png */,
+				82B2A71B16E2DA81002D6178 /* icon-select-player-active.png */,
+				82B2A71C16E2DA81002D6178 /* icon-select-player-active@2x.png */,
+				82B2A71D16E2DA81002D6178 /* icon-select-player-inactive.png */,
+				82B2A71E16E2DA81002D6178 /* icon-select-player-inactive@2x.png */,
 				820D718516E1F1DA00E98D23 /* player-add.png */,
 				820D718616E1F1DA00E98D23 /* player-add@2x.png */,
 				820D718716E1F1DA00E98D23 /* player-card-medium.png */,
@@ -557,8 +572,10 @@
 		8222C28916DF3D2C0084D5D6 /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
-				820D71C016E216D100E98D23 /* PMCollectionViewPlayerLayout.h */,
-				820D71C116E216D100E98D23 /* PMCollectionViewPlayerLayout.m */,
+				820D71C016E216D100E98D23 /* PMCollectionViewPlayerManagementLayout.h */,
+				820D71C116E216D100E98D23 /* PMCollectionViewPlayerManagementLayout.m */,
+				82B2A71816E2D820002D6178 /* PMCollectionViewPlayerSelectionLayout.h */,
+				82B2A71916E2D820002D6178 /* PMCollectionViewPlayerSelectionLayout.m */,
 				820D71BB16E211AA00E98D23 /* PMAddPlayerView.h */,
 				820D71BC16E211AA00E98D23 /* PMAddPlayerView.m */,
 				820D71BE16E211C200E98D23 /* PMAddPlayerView.xib */,
@@ -695,6 +712,10 @@
 				82B2A71516E2D67A002D6178 /* icon-righty@2x.png in Resources */,
 				82B2A71616E2D67A002D6178 /* player-card-big.png in Resources */,
 				82B2A71716E2D67A002D6178 /* player-card-big@2x.png in Resources */,
+				82B2A71F16E2DA81002D6178 /* icon-select-player-active.png in Resources */,
+				82B2A72016E2DA81002D6178 /* icon-select-player-active@2x.png in Resources */,
+				82B2A72116E2DA81002D6178 /* icon-select-player-inactive.png in Resources */,
+				82B2A72216E2DA81002D6178 /* icon-select-player-inactive@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -730,8 +751,9 @@
 				820D71B016E1F38100E98D23 /* PMDoubleViewController.m in Sources */,
 				820D71B816E206C900E98D23 /* PMPlayerCell.m in Sources */,
 				820D71BD16E211AA00E98D23 /* PMAddPlayerView.m in Sources */,
-				820D71C216E216D200E98D23 /* PMCollectionViewPlayerLayout.m in Sources */,
+				820D71C216E216D200E98D23 /* PMCollectionViewPlayerManagementLayout.m in Sources */,
 				82B2A6FF16E2BF98002D6178 /* PMValueFormatter.m in Sources */,
+				82B2A71A16E2D820002D6178 /* PMCollectionViewPlayerSelectionLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

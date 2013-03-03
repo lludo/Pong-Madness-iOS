@@ -6,25 +6,21 @@
 //  Copyright (c) 2013 MirageTeam. All rights reserved.
 //
 
-#import "PMCollectionViewPlayerLayout.h"
+#import "PMCollectionViewPlayerManagementLayout.h"
 
-@interface PMCollectionViewPlayerLayout ()
+@interface PMCollectionViewPlayerManagementLayout ()
 
 @property (nonatomic, assign) float newMinHeight;
 
 @end
 
-@implementation PMCollectionViewPlayerLayout
+@implementation PMCollectionViewPlayerManagementLayout
 
 @synthesize newMinHeight;
 
 - (void)prepareLayout {
+    [super prepareLayout];
     self.newMinHeight = 0.f;
-    self.minimumLineSpacing = 22.f;
-    self.minimumInteritemSpacing = 22.f;
-    self.itemSize = CGSizeMake(176.f, 224.f);
-    self.scrollDirection = UICollectionViewScrollDirectionVertical;
-    self.headerReferenceSize = CGSizeMake(0.f, 2.f);
 }
 
 - (NSArray *)layoutAttributesForElementsInRect:(CGRect)rect {

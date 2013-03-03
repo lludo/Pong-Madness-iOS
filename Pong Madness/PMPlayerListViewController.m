@@ -7,6 +7,8 @@
 //
 
 #import "PMPlayerListViewController.h"
+#import "PMCollectionViewPlayerManagementLayout.h"
+#import "PMCollectionViewPlayerSelectionLayout.h"
 #import "PMPlayerCardViewController.h"
 #import "PMDocumentManager.h"
 #import "PMValueFormatter.h"
@@ -56,13 +58,19 @@ static NSString *viewIdentifier = @"AddPlayerView";
     switch (self.mode) {
         case PMPlayerListModeManage: {
             self.title = @"The Players";
+            PMCollectionViewPlayerManagementLayout *collectionViewLayout = [[PMCollectionViewPlayerManagementLayout alloc] init];
+            [self.collectionView setCollectionViewLayout:collectionViewLayout];
             break;
         }
         case PMPlayerListModeSelectForSingle: {
             self.title = @"Select 2 Players";
+            PMCollectionViewPlayerSelectionLayout *collectionViewLayout = [[PMCollectionViewPlayerSelectionLayout alloc] init];
+            [self.collectionView setCollectionViewLayout:collectionViewLayout];
             break;
         }
         case PMPlayerListModeSelectForDouble: {
+            PMCollectionViewPlayerSelectionLayout *collectionViewLayout = [[PMCollectionViewPlayerSelectionLayout alloc] init];
+            [self.collectionView setCollectionViewLayout:collectionViewLayout];
             self.title = @"Select the Players";
             break;
         }

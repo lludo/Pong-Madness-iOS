@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PMCollectionViewPlayerSelectionLayout.h"
 
-@interface PMCollectionViewPlayerLayout : UICollectionViewFlowLayout
+@interface PMCollectionViewPlayerManagementLayout : PMCollectionViewPlayerSelectionLayout
 
 @end
