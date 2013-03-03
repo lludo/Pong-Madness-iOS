@@ -20,6 +20,7 @@
 
 - (void)prepareLayout {
     [super prepareLayout];
+    self.headerReferenceSize = CGSizeMake(0.f, 2.f);
     self.newMinHeight = 0.f;
 }
 

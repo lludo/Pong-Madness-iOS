@@ -15,7 +15,6 @@
     self.minimumInteritemSpacing = 22.f;
     self.itemSize = CGSizeMake(176.f, 224.f);
     self.scrollDirection = UICollectionViewScrollDirectionVertical;
-    self.headerReferenceSize = CGSizeMake(0.f, 2.f);
 }
 
 @end

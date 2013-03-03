@@ -21,6 +21,8 @@
 @synthesize nameLabel;
 @synthesize sinceLabel;
 
+@synthesize selectionImageView;
+
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {

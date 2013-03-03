@@ -104,7 +104,6 @@
 								<string key="NSFrame">{{10, 189}, {152, 20}}</string>
 								<reference key="NSSuperview" ref="624826596"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<reference key="IBUIBackgroundColor" ref="931797388"/>
 								<bool key="IBUIOpaque">NO</bool>
@@ -139,7 +138,7 @@
 								<string key="NSFrame">{{12, 8}, {152, 152}}</string>
 								<reference key="NSSuperview" ref="624826596"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="167923197"/>
+								<reference key="NSNextKeyView" ref="72933407"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
 								<int key="IBUIContentMode">2</int>
@@ -148,6 +147,27 @@
 								<object class="NSCustomResource" key="IBUIImage">
 									<string key="NSClassName">NSImage</string>
 									<string key="NSResourceName">default-avatar.png</string>
+								</object>
+							</object>
+							<object class="IBUIImageView" id="72933407">
+								<reference key="NSNextResponder" ref="624826596"/>
+								<int key="NSvFlags">256</int>
+								<string key="NSFrame">{{122, 12}, {39, 39}}</string>
+								<reference key="NSSuperview" ref="624826596"/>
+								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView" ref="167923197"/>
+								<bool key="IBUIOpaque">NO</bool>
+								<bool key="IBUIClipsSubviews">YES</bool>
+								<int key="IBUIContentMode">4</int>
+								<bool key="IBUIMultipleTouchEnabled">YES</bool>
+								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+								<object class="NSCustomResource" key="IBUIImage">
+									<string key="NSClassName">NSImage</string>
+									<string key="NSResourceName">icon-select-player-inactive.png</string>
+								</object>
+								<object class="NSCustomResource" key="IBUIHighlightedImage">
+									<string key="NSClassName">NSImage</string>
+									<string key="NSResourceName">icon-select-player-active.png</string>
 								</object>
 							</object>
 						</array>
@@ -204,6 +224,14 @@
 					</object>
 					<int key="connectionID">11</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">selectionImageView</string>
+						<reference key="source" ref="459957163"/>
+						<reference key="destination" ref="72933407"/>
+					</object>
+					<int key="connectionID">13</int>
+				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
@@ -232,6 +260,7 @@
 							<reference ref="374757063"/>
 							<reference ref="167923197"/>
 							<reference ref="906973760"/>
+							<reference ref="72933407"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -255,12 +284,18 @@
 						<reference key="object" ref="906973760"/>
 						<reference key="parent" ref="459957163"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">12</int>
+						<reference key="object" ref="72933407"/>
+						<reference key="parent" ref="459957163"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
 				<string key="-1.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="-2.CustomClassName">UIResponder</string>
 				<string key="-2.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="12.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="3.CustomClassName">PMPlayerCell</string>
 				<string key="3.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="4.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -272,7 +307,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">11</int>
+			<int key="maxID">13</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -282,6 +317,7 @@
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="imageView">UIImageView</string>
 						<string key="nameLabel">UILabel</string>
+						<string key="selectionImageView">UIImageView</string>
 						<string key="sinceLabel">UILabel</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
@@ -292,6 +328,10 @@
 						<object class="IBToOneOutletInfo" key="nameLabel">
 							<string key="name">nameLabel</string>
 							<string key="candidateClassName">UILabel</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="selectionImageView">
+							<string key="name">selectionImageView</string>
+							<string key="candidateClassName">UIImageView</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="sinceLabel">
 							<string key="name">sinceLabel</string>
@@ -327,6 +367,8 @@
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
 			<string key="default-avatar.png">{298, 298}</string>
+			<string key="icon-select-player-active.png">{39, 39}</string>
+			<string key="icon-select-player-inactive.png">{39, 39}</string>
 			<string key="player-card-medium.png">{175, 224}</string>
 		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">2083</string>

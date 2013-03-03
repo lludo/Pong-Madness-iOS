@@ -25,6 +25,7 @@
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 
 @property (nonatomic, assign) PMPlayerListMode mode;
+@property (nonatomic, strong) NSMutableArray *playersSelection;
 
 @end
 
@@ -35,6 +36,8 @@ static NSString *viewIdentifier = @"AddPlayerView";
 
 @synthesize collectionView;
 @synthesize fetchedResultsController;
+@synthesize mode;
+@synthesize playersSelection;
 
 - (id)init {
     self = [super init];
@@ -94,6 +97,10 @@ static NSString *viewIdentifier = @"AddPlayerView";
     
     _objectChanges = [NSMutableArray array];
     _sectionChanges = [NSMutableArray array];
+    
+    if (self.mode != PMPlayerListModeManage) {
+        self.playersSelection = [NSMutableArray array];
+    }
 }
 
 - (IBAction)close:(id)sender {
@@ -142,6 +149,19 @@ static NSString *viewIdentifier = @"AddPlayerView";
     NSString *dateString = [[PMValueFormatter formatterDateShortStyle] stringFromDate:player.sinceDate];
     cell.sinceLabel.text = [NSString stringWithFormat:@"Since %@", dateString];
     
+    // No selection in ma
+    if (self.mode == PMPlayerListModeManage) {
+        cell.selectionImageView.hidden = YES;
+    } else {
+        cell.selectionImageView.hidden = NO;
+        cell.selectionImageView.highlighted = [self.playersSelection containsObject:player];
+        if ([self.playersSelection count] == 2 && !cell.selectionImageView.highlighted) {
+            cell.contentView.alpha = 0.1f;
+        } else {
+            cell.contentView.alpha = 1.f;
+        }
+    }
+    
     return cell;
 }
 
@@ -165,7 +185,17 @@ static NSString *viewIdentifier = @"AddPlayerView";
         }
         case PMPlayerListModeSelectForSingle: {
             
-            //TODO: later
+            // Select or deselect the player
+            if ([self.playersSelection containsObject:player]) {
+                [self.playersSelection removeObject:player];
+            } else {
+                if ([self.playersSelection count] != 2) {
+                    [self.playersSelection addObject:player];
+                }
+            }
+            
+            // Reload the view
+            [aCollectionView reloadData];
             
             break;
         }
