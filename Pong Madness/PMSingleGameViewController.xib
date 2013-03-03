@@ -42,7 +42,6 @@
 						<int key="NSvFlags">274</int>
 						<string key="NSFrameSize">{1024, 704}</string>
 						<reference key="NSSuperview" ref="766721923"/>
-						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="906450375"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -59,7 +58,6 @@
 						<int key="NSvFlags">290</int>
 						<string key="NSFrameSize">{1024, 552}</string>
 						<reference key="NSSuperview" ref="766721923"/>
-						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="149368272"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -71,6 +69,346 @@
 							<string key="NSResourceName">game-table-background.png</string>
 						</object>
 					</object>
+					<object class="IBUIButton" id="171990268">
+						<reference key="NSNextResponder" ref="766721923"/>
+						<int key="NSvFlags">269</int>
+						<string key="NSFrame">{{422, 615}, {180, 72}}</string>
+						<reference key="NSSuperview" ref="766721923"/>
+						<reference key="NSNextKeyView" ref="54732832"/>
+						<string key="NSReuseIdentifierKey">_NS:9</string>
+						<bool key="IBUIOpaque">NO</bool>
+						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+						<int key="IBUIContentHorizontalAlignment">0</int>
+						<int key="IBUIContentVerticalAlignment">0</int>
+						<string key="IBUITitleShadowOffset">{0, 1}</string>
+						<string key="IBUINormalTitle">START</string>
+						<object class="NSColor" key="IBUIHighlightedTitleColor">
+							<int key="NSColorSpace">1</int>
+							<bytes key="NSRGB">MC45MjU0OTAxOTYxIDAuODM5MjE1Njg2MyAwLjgwMzkyMTU2ODYAA</bytes>
+						</object>
+						<object class="NSColor" key="IBUINormalTitleColor">
+							<int key="NSColorSpace">1</int>
+							<bytes key="NSRGB">MC45MjU0OTAxOTYxIDAuODM5MjE1Njg2MyAwLjgwMzkyMTU2ODYAA</bytes>
+						</object>
+						<object class="NSColor" key="IBUIHighlightedTitleShadowColor" id="318341737">
+							<int key="NSColorSpace">1</int>
+							<bytes key="NSRGB">MCAwIDAAA</bytes>
+						</object>
+						<reference key="IBUINormalTitleShadowColor" ref="318341737"/>
+						<object class="NSCustomResource" key="IBUINormalBackgroundImage" id="603044641">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">game-start-button.png</string>
+						</object>
+						<object class="IBUIFontDescription" key="IBUIFontDescription" id="156656795">
+							<int key="type">2</int>
+							<double key="pointSize">38</double>
+						</object>
+						<object class="NSFont" key="IBUIFont" id="109060074">
+							<string key="NSName">Helvetica-Bold</string>
+							<double key="NSSize">38</double>
+							<int key="NSfFlags">16</int>
+						</object>
+					</object>
+					<object class="IBUIButton" id="54732832">
+						<reference key="NSNextResponder" ref="766721923"/>
+						<int key="NSvFlags">269</int>
+						<string key="NSFrame">{{422, 615}, {180, 72}}</string>
+						<reference key="NSSuperview" ref="766721923"/>
+						<reference key="NSNextKeyView" ref="1073365054"/>
+						<string key="NSReuseIdentifierKey">_NS:9</string>
+						<bool key="IBUIOpaque">NO</bool>
+						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+						<int key="IBUIContentHorizontalAlignment">0</int>
+						<int key="IBUIContentVerticalAlignment">0</int>
+						<string key="IBUITitleShadowOffset">{0, 1}</string>
+						<string key="IBUINormalTitle">FINISH</string>
+						<object class="NSColor" key="IBUIHighlightedTitleColor">
+							<int key="NSColorSpace">1</int>
+							<bytes key="NSRGB">MC45MjU0OTAxOTYxIDAuODM5MjE1Njg2MyAwLjgwMzkyMTU2ODYAA</bytes>
+						</object>
+						<object class="NSColor" key="IBUINormalTitleColor">
+							<int key="NSColorSpace">1</int>
+							<bytes key="NSRGB">MC45MjU0OTAxOTYxIDAuODM5MjE1Njg2MyAwLjgwMzkyMTU2ODYAA</bytes>
+						</object>
+						<reference key="IBUIHighlightedTitleShadowColor" ref="318341737"/>
+						<reference key="IBUINormalTitleShadowColor" ref="318341737"/>
+						<reference key="IBUINormalBackgroundImage" ref="603044641"/>
+						<reference key="IBUIFontDescription" ref="156656795"/>
+						<reference key="IBUIFont" ref="109060074"/>
+					</object>
+					<object class="IBUIButton" id="522941741">
+						<reference key="NSNextResponder" ref="766721923"/>
+						<int key="NSvFlags">269</int>
+						<string key="NSFrame">{{422, 561}, {180, 39}}</string>
+						<reference key="NSSuperview" ref="766721923"/>
+						<reference key="NSNextKeyView" ref="345349322"/>
+						<string key="NSReuseIdentifierKey">_NS:9</string>
+						<bool key="IBUIOpaque">NO</bool>
+						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+						<int key="IBUIContentHorizontalAlignment">0</int>
+						<int key="IBUIContentVerticalAlignment">0</int>
+						<object class="NSColor" key="IBUIHighlightedTitleColor" id="586839631">
+							<int key="NSColorSpace">3</int>
+							<bytes key="NSWhite">MQA</bytes>
+						</object>
+						<object class="NSColor" key="IBUINormalTitleColor">
+							<int key="NSColorSpace">1</int>
+							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
+						</object>
+						<object class="NSColor" key="IBUINormalTitleShadowColor" id="44671150">
+							<int key="NSColorSpace">3</int>
+							<bytes key="NSWhite">MC41AA</bytes>
+						</object>
+						<object class="NSCustomResource" key="IBUISelectedImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">game-switch-21.png</string>
+						</object>
+						<object class="NSCustomResource" key="IBUINormalImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">game-switch-11.png</string>
+						</object>
+						<object class="IBUIFontDescription" key="IBUIFontDescription" id="107001959">
+							<int key="type">2</int>
+							<double key="pointSize">15</double>
+						</object>
+						<object class="NSFont" key="IBUIFont" id="95154625">
+							<string key="NSName">Helvetica-Bold</string>
+							<double key="NSSize">15</double>
+							<int key="NSfFlags">16</int>
+						</object>
+					</object>
+					<object class="IBUIImageView" id="548842756">
+						<reference key="NSNextResponder" ref="766721923"/>
+						<int key="NSvFlags">256</int>
+						<string key="NSFrame">{{174, 546}, {161, 141}}</string>
+						<reference key="NSSuperview" ref="766721923"/>
+						<reference key="NSNextKeyView" ref="585604921"/>
+						<bool key="IBUIOpaque">NO</bool>
+						<bool key="IBUIClipsSubviews">YES</bool>
+						<int key="IBUIContentMode">4</int>
+						<bool key="IBUIMultipleTouchEnabled">YES</bool>
+						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+						<object class="NSCustomResource" key="IBUIImage" id="181923907">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">game-placeholder-score.png</string>
+						</object>
+					</object>
+					<object class="IBUIImageView" id="1073365054">
+						<reference key="NSNextResponder" ref="766721923"/>
+						<int key="NSvFlags">256</int>
+						<string key="NSFrame">{{689, 546}, {161, 141}}</string>
+						<reference key="NSSuperview" ref="766721923"/>
+						<reference key="NSNextKeyView" ref="541905009"/>
+						<bool key="IBUIOpaque">NO</bool>
+						<bool key="IBUIClipsSubviews">YES</bool>
+						<int key="IBUIContentMode">4</int>
+						<bool key="IBUIMultipleTouchEnabled">YES</bool>
+						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+						<reference key="IBUIImage" ref="181923907"/>
+					</object>
+					<object class="IBUILabel" id="541905009">
+						<reference key="NSNextResponder" ref="766721923"/>
+						<int key="NSvFlags">269</int>
+						<string key="NSFrame">{{689, 567}, {161, 100}}</string>
+						<reference key="NSSuperview" ref="766721923"/>
+						<reference key="NSNextKeyView" ref="388029655"/>
+						<string key="NSReuseIdentifierKey">_NS:9</string>
+						<bool key="IBUIOpaque">NO</bool>
+						<bool key="IBUIClipsSubviews">YES</bool>
+						<int key="IBUIContentMode">7</int>
+						<bool key="IBUIUserInteractionEnabled">NO</bool>
+						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+						<string key="IBUIText">0</string>
+						<object class="NSColor" key="IBUITextColor" id="927510003">
+							<int key="NSColorSpace">1</int>
+							<bytes key="NSRGB">MC43NzI1NDkwMTk2IDAuNTQxMTc2NDcwNiAwLjQ2NjY2NjY2NjcAA</bytes>
+						</object>
+						<nil key="IBUIHighlightedColor"/>
+						<object class="NSColor" key="IBUIShadowColor" id="1059744347">
+							<int key="NSColorSpace">3</int>
+							<bytes key="NSWhite">MAA</bytes>
+						</object>
+						<string key="IBUIShadowOffset">{0, 2}</string>
+						<int key="IBUIBaselineAdjustment">0</int>
+						<int key="IBUITextAlignment">1</int>
+						<object class="IBUIFontDescription" key="IBUIFontDescription" id="644955316">
+							<int key="type">1</int>
+							<double key="pointSize">93</double>
+						</object>
+						<object class="NSFont" key="IBUIFont" id="687560748">
+							<string key="NSName">Helvetica</string>
+							<double key="NSSize">93</double>
+							<int key="NSfFlags">16</int>
+						</object>
+						<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
+					</object>
+					<object class="IBUILabel" id="585604921">
+						<reference key="NSNextResponder" ref="766721923"/>
+						<int key="NSvFlags">269</int>
+						<string key="NSFrame">{{174, 567}, {161, 100}}</string>
+						<reference key="NSSuperview" ref="766721923"/>
+						<reference key="NSNextKeyView" ref="522941741"/>
+						<string key="NSReuseIdentifierKey">_NS:9</string>
+						<bool key="IBUIOpaque">NO</bool>
+						<bool key="IBUIClipsSubviews">YES</bool>
+						<int key="IBUIContentMode">7</int>
+						<bool key="IBUIUserInteractionEnabled">NO</bool>
+						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+						<string key="IBUIText">0</string>
+						<reference key="IBUITextColor" ref="927510003"/>
+						<nil key="IBUIHighlightedColor"/>
+						<reference key="IBUIShadowColor" ref="1059744347"/>
+						<string key="IBUIShadowOffset">{0, 2}</string>
+						<int key="IBUIBaselineAdjustment">0</int>
+						<int key="IBUITextAlignment">1</int>
+						<reference key="IBUIFontDescription" ref="644955316"/>
+						<reference key="IBUIFont" ref="687560748"/>
+						<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
+					</object>
+					<object class="IBUIImageView" id="345349322">
+						<reference key="NSNextResponder" ref="766721923"/>
+						<int key="NSvFlags">256</int>
+						<string key="NSFrame">{{408, 613}, {208, 74}}</string>
+						<reference key="NSSuperview" ref="766721923"/>
+						<reference key="NSNextKeyView" ref="171990268"/>
+						<bool key="IBUIOpaque">NO</bool>
+						<bool key="IBUIClipsSubviews">YES</bool>
+						<int key="IBUIContentMode">4</int>
+						<bool key="IBUIMultipleTouchEnabled">YES</bool>
+						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+						<object class="NSCustomResource" key="IBUIImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">game-chrono.png</string>
+						</object>
+					</object>
+					<object class="IBUILabel" id="436004097">
+						<reference key="NSNextResponder" ref="766721923"/>
+						<int key="NSvFlags">269</int>
+						<string key="NSFrame">{{416, 630}, {192, 40}}</string>
+						<reference key="NSSuperview" ref="766721923"/>
+						<reference key="NSNextKeyView" ref="314899719"/>
+						<string key="NSReuseIdentifierKey">_NS:9</string>
+						<bool key="IBUIOpaque">NO</bool>
+						<bool key="IBUIClipsSubviews">YES</bool>
+						<int key="IBUIContentMode">7</int>
+						<bool key="IBUIUserInteractionEnabled">NO</bool>
+						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+						<string key="IBUIText">00:00</string>
+						<reference key="IBUITextColor" ref="927510003"/>
+						<nil key="IBUIHighlightedColor"/>
+						<reference key="IBUIShadowColor" ref="1059744347"/>
+						<string key="IBUIShadowOffset">{0, 1}</string>
+						<int key="IBUIBaselineAdjustment">0</int>
+						<int key="IBUITextAlignment">1</int>
+						<object class="IBUIFontDescription" key="IBUIFontDescription">
+							<int key="type">1</int>
+							<double key="pointSize">36</double>
+						</object>
+						<object class="NSFont" key="IBUIFont">
+							<string key="NSName">Helvetica</string>
+							<double key="NSSize">36</double>
+							<int key="NSfFlags">16</int>
+						</object>
+						<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
+					</object>
+					<object class="IBUIButton" id="451643875">
+						<reference key="NSNextResponder" ref="766721923"/>
+						<int key="NSvFlags">268</int>
+						<string key="NSFrame">{{0, 646}, {44, 46}}</string>
+						<reference key="NSSuperview" ref="766721923"/>
+						<reference key="NSNextKeyView" ref="436004097"/>
+						<string key="NSReuseIdentifierKey">_NS:9</string>
+						<bool key="IBUIOpaque">NO</bool>
+						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+						<int key="IBUIContentHorizontalAlignment">0</int>
+						<int key="IBUIContentVerticalAlignment">0</int>
+						<reference key="IBUIHighlightedTitleColor" ref="586839631"/>
+						<object class="NSColor" key="IBUINormalTitleColor">
+							<int key="NSColorSpace">1</int>
+							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
+						</object>
+						<reference key="IBUINormalTitleShadowColor" ref="44671150"/>
+						<object class="NSCustomResource" key="IBUINormalBackgroundImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">game-interface-left-minus.png</string>
+						</object>
+						<reference key="IBUIFontDescription" ref="107001959"/>
+						<reference key="IBUIFont" ref="95154625"/>
+					</object>
+					<object class="IBUIButton" id="449092985">
+						<reference key="NSNextResponder" ref="766721923"/>
+						<int key="NSvFlags">268</int>
+						<string key="NSFrame">{{0, 552}, {87, 90}}</string>
+						<reference key="NSSuperview" ref="766721923"/>
+						<reference key="NSNextKeyView" ref="548842756"/>
+						<string key="NSReuseIdentifierKey">_NS:9</string>
+						<bool key="IBUIOpaque">NO</bool>
+						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+						<int key="IBUIContentHorizontalAlignment">0</int>
+						<int key="IBUIContentVerticalAlignment">0</int>
+						<int key="IBUIButtonType">1</int>
+						<reference key="IBUIHighlightedTitleColor" ref="586839631"/>
+						<object class="NSColor" key="IBUINormalTitleColor">
+							<int key="NSColorSpace">1</int>
+							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
+						</object>
+						<reference key="IBUINormalTitleShadowColor" ref="44671150"/>
+						<object class="NSCustomResource" key="IBUINormalBackgroundImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">game-interface-left-plus.png</string>
+						</object>
+						<reference key="IBUIFontDescription" ref="107001959"/>
+						<reference key="IBUIFont" ref="95154625"/>
+					</object>
+					<object class="IBUIButton" id="388029655">
+						<reference key="NSNextResponder" ref="766721923"/>
+						<int key="NSvFlags">265</int>
+						<string key="NSFrame">{{937, 552}, {87, 90}}</string>
+						<reference key="NSSuperview" ref="766721923"/>
+						<reference key="NSNextKeyView" ref="451643875"/>
+						<string key="NSReuseIdentifierKey">_NS:9</string>
+						<bool key="IBUIOpaque">NO</bool>
+						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+						<int key="IBUIContentHorizontalAlignment">0</int>
+						<int key="IBUIContentVerticalAlignment">0</int>
+						<int key="IBUIButtonType">1</int>
+						<reference key="IBUIHighlightedTitleColor" ref="586839631"/>
+						<object class="NSColor" key="IBUINormalTitleColor">
+							<int key="NSColorSpace">1</int>
+							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
+						</object>
+						<reference key="IBUINormalTitleShadowColor" ref="44671150"/>
+						<object class="NSCustomResource" key="IBUINormalBackgroundImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">game-interface-right-plus.png</string>
+						</object>
+						<reference key="IBUIFontDescription" ref="107001959"/>
+						<reference key="IBUIFont" ref="95154625"/>
+					</object>
+					<object class="IBUIButton" id="314899719">
+						<reference key="NSNextResponder" ref="766721923"/>
+						<int key="NSvFlags">265</int>
+						<string key="NSFrame">{{980, 646}, {44, 46}}</string>
+						<reference key="NSSuperview" ref="766721923"/>
+						<reference key="NSNextKeyView"/>
+						<string key="NSReuseIdentifierKey">_NS:9</string>
+						<bool key="IBUIOpaque">NO</bool>
+						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+						<int key="IBUIContentHorizontalAlignment">0</int>
+						<int key="IBUIContentVerticalAlignment">0</int>
+						<reference key="IBUIHighlightedTitleColor" ref="586839631"/>
+						<object class="NSColor" key="IBUINormalTitleColor">
+							<int key="NSColorSpace">1</int>
+							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
+						</object>
+						<reference key="IBUINormalTitleShadowColor" ref="44671150"/>
+						<object class="NSCustomResource" key="IBUINormalBackgroundImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">game-interface-right-minus.png</string>
+						</object>
+						<reference key="IBUIFontDescription" ref="107001959"/>
+						<reference key="IBUIFont" ref="95154625"/>
+					</object>
 					<object class="IBUIView" id="149368272">
 						<reference key="NSNextResponder" ref="766721923"/>
 						<int key="NSvFlags">292</int>
@@ -80,7 +418,6 @@
 								<int key="NSvFlags">292</int>
 								<string key="NSFrameSize">{325, 418}</string>
 								<reference key="NSSuperview" ref="149368272"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="898101209"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -97,7 +434,6 @@
 								<int key="NSvFlags">256</int>
 								<string key="NSFrame">{{13, 10}, {298, 298}}</string>
 								<reference key="NSSuperview" ref="149368272"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="492566418"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -114,7 +450,6 @@
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{20, 313}, {285, 38}}</string>
 								<reference key="NSSuperview" ref="149368272"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="1071029070"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<object class="NSColor" key="IBUIBackgroundColor" id="137132687">
@@ -132,10 +467,7 @@
 									<bytes key="NSRGB">MC4xMzcyNTQ5MDIgMC4wNzQ1MDk4MDM5MiAwLjAxNTY4NjI3NDUxAA</bytes>
 								</object>
 								<nil key="IBUIHighlightedColor"/>
-								<object class="NSColor" key="IBUIShadowColor" id="586839631">
-									<int key="NSColorSpace">3</int>
-									<bytes key="NSWhite">MQA</bytes>
-								</object>
+								<reference key="IBUIShadowColor" ref="586839631"/>
 								<string key="IBUIShadowOffset">{0, 1}</string>
 								<int key="IBUIBaselineAdjustment">0</int>
 								<int key="IBUITextAlignment">1</int>
@@ -155,7 +487,6 @@
 								<int key="NSvFlags">269</int>
 								<string key="NSFrame">{{140, 356}, {45, 45}}</string>
 								<reference key="NSSuperview" ref="149368272"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="282766832"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -172,7 +503,6 @@
 								<int key="NSvFlags">269</int>
 								<string key="NSFrame">{{193, 356}, {45, 45}}</string>
 								<reference key="NSSuperview" ref="149368272"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="142330698"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -186,7 +516,6 @@
 								<int key="NSvFlags">269</int>
 								<string key="NSFrame">{{246, 356}, {45, 45}}</string>
 								<reference key="NSSuperview" ref="149368272"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="608375033"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -200,7 +529,6 @@
 								<int key="NSvFlags">269</int>
 								<string key="NSFrame">{{87, 356}, {45, 45}}</string>
 								<reference key="NSSuperview" ref="149368272"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="918764561"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -214,7 +542,6 @@
 								<int key="NSvFlags">269</int>
 								<string key="NSFrame">{{34, 356}, {45, 45}}</string>
 								<reference key="NSSuperview" ref="149368272"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="184104656"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -228,14 +555,13 @@
 								<int key="NSvFlags">269</int>
 								<string key="NSFrame">{{246, 356}, {45, 45}}</string>
 								<reference key="NSSuperview" ref="149368272"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="67717438"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
 								<int key="IBUIContentMode">4</int>
 								<bool key="IBUIMultipleTouchEnabled">YES</bool>
 								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-								<object class="NSCustomResource" key="IBUIImage" id="763548007">
+								<object class="NSCustomResource" key="IBUIImage" id="979831217">
 									<string key="NSClassName">NSImage</string>
 									<string key="NSResourceName">icon-handedness-undefine.png</string>
 								</object>
@@ -245,7 +571,6 @@
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{34, 360}, {45, 24}}</string>
 								<reference key="NSSuperview" ref="149368272"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="497728788"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<reference key="IBUIBackgroundColor" ref="137132687"/>
@@ -280,7 +605,6 @@
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{87, 360}, {45, 24}}</string>
 								<reference key="NSSuperview" ref="149368272"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="786180184"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<reference key="IBUIBackgroundColor" ref="137132687"/>
@@ -308,7 +632,6 @@
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{140, 360}, {45, 24}}</string>
 								<reference key="NSSuperview" ref="149368272"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="873008580"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<reference key="IBUIBackgroundColor" ref="137132687"/>
@@ -336,7 +659,6 @@
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{193, 360}, {45, 24}}</string>
 								<reference key="NSSuperview" ref="149368272"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="287530931"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<reference key="IBUIBackgroundColor" ref="137132687"/>
@@ -364,7 +686,6 @@
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{34, 383}, {45, 14}}</string>
 								<reference key="NSSuperview" ref="149368272"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="897826264"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<reference key="IBUIBackgroundColor" ref="137132687"/>
@@ -399,7 +720,6 @@
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{87, 383}, {45, 14}}</string>
 								<reference key="NSSuperview" ref="149368272"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="627434632"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<reference key="IBUIBackgroundColor" ref="137132687"/>
@@ -427,7 +747,6 @@
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{140, 383}, {45, 14}}</string>
 								<reference key="NSSuperview" ref="149368272"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="803605426"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<reference key="IBUIBackgroundColor" ref="137132687"/>
@@ -455,7 +774,6 @@
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{193, 383}, {45, 14}}</string>
 								<reference key="NSSuperview" ref="149368272"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="62424632"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<reference key="IBUIBackgroundColor" ref="137132687"/>
@@ -481,7 +799,6 @@
 						</array>
 						<string key="NSFrame">{{92, 48}, {325, 418}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
-						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="169173583"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<reference key="IBUIBackgroundColor" ref="137132687"/>
@@ -496,7 +813,6 @@
 								<int key="NSvFlags">292</int>
 								<string key="NSFrameSize">{325, 418}</string>
 								<reference key="NSSuperview" ref="67717438"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="926650943"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -510,7 +826,6 @@
 								<int key="NSvFlags">256</int>
 								<string key="NSFrame">{{13, 10}, {298, 298}}</string>
 								<reference key="NSSuperview" ref="67717438"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="1007935716"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -524,7 +839,6 @@
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{20, 313}, {285, 38}}</string>
 								<reference key="NSSuperview" ref="67717438"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="375528752"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<reference key="IBUIBackgroundColor" ref="137132687"/>
@@ -552,7 +866,6 @@
 								<int key="NSvFlags">269</int>
 								<string key="NSFrame">{{140, 356}, {45, 45}}</string>
 								<reference key="NSSuperview" ref="67717438"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="868094170"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -566,7 +879,6 @@
 								<int key="NSvFlags">269</int>
 								<string key="NSFrame">{{193, 356}, {45, 45}}</string>
 								<reference key="NSSuperview" ref="67717438"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="80845412"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -580,7 +892,6 @@
 								<int key="NSvFlags">269</int>
 								<string key="NSFrame">{{246, 356}, {45, 45}}</string>
 								<reference key="NSSuperview" ref="67717438"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="16495116"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -594,7 +905,6 @@
 								<int key="NSvFlags">269</int>
 								<string key="NSFrame">{{87, 356}, {45, 45}}</string>
 								<reference key="NSSuperview" ref="67717438"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="1010423868"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -608,7 +918,6 @@
 								<int key="NSvFlags">269</int>
 								<string key="NSFrame">{{34, 356}, {45, 45}}</string>
 								<reference key="NSSuperview" ref="67717438"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="717216367"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -622,21 +931,19 @@
 								<int key="NSvFlags">269</int>
 								<string key="NSFrame">{{246, 356}, {45, 45}}</string>
 								<reference key="NSSuperview" ref="67717438"/>
-								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="867560158"/>
+								<reference key="NSNextKeyView" ref="449092985"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
 								<int key="IBUIContentMode">4</int>
 								<bool key="IBUIMultipleTouchEnabled">YES</bool>
 								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-								<reference key="IBUIImage" ref="763548007"/>
+								<reference key="IBUIImage" ref="979831217"/>
 							</object>
 							<object class="IBUILabel" id="717216367">
 								<reference key="NSNextResponder" ref="67717438"/>
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{34, 360}, {45, 24}}</string>
 								<reference key="NSSuperview" ref="67717438"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="855444606"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<reference key="IBUIBackgroundColor" ref="137132687"/>
@@ -664,7 +971,6 @@
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{87, 360}, {45, 24}}</string>
 								<reference key="NSSuperview" ref="67717438"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="901318026"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<reference key="IBUIBackgroundColor" ref="137132687"/>
@@ -692,7 +998,6 @@
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{140, 360}, {45, 24}}</string>
 								<reference key="NSSuperview" ref="67717438"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="692585588"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<reference key="IBUIBackgroundColor" ref="137132687"/>
@@ -720,7 +1025,6 @@
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{193, 360}, {45, 24}}</string>
 								<reference key="NSSuperview" ref="67717438"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="279429572"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<reference key="IBUIBackgroundColor" ref="137132687"/>
@@ -748,7 +1052,6 @@
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{34, 383}, {45, 14}}</string>
 								<reference key="NSSuperview" ref="67717438"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="1038449713"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<reference key="IBUIBackgroundColor" ref="137132687"/>
@@ -776,7 +1079,6 @@
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{87, 383}, {45, 14}}</string>
 								<reference key="NSSuperview" ref="67717438"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="205681396"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<reference key="IBUIBackgroundColor" ref="137132687"/>
@@ -804,7 +1106,6 @@
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{140, 383}, {45, 14}}</string>
 								<reference key="NSSuperview" ref="67717438"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="1065608756"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<reference key="IBUIBackgroundColor" ref="137132687"/>
@@ -832,7 +1133,6 @@
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{193, 383}, {45, 14}}</string>
 								<reference key="NSSuperview" ref="67717438"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="275313553"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<reference key="IBUIBackgroundColor" ref="137132687"/>
@@ -858,366 +1158,14 @@
 						</array>
 						<string key="NSFrame">{{607, 48}, {325, 418}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
-						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="859412935"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<reference key="IBUIBackgroundColor" ref="137132687"/>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 					</object>
-					<object class="IBUIButton" id="422075522">
-						<reference key="NSNextResponder" ref="766721923"/>
-						<int key="NSvFlags">269</int>
-						<string key="NSFrame">{{422, 615}, {180, 72}}</string>
-						<reference key="NSSuperview" ref="766721923"/>
-						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="702107269"/>
-						<string key="NSReuseIdentifierKey">_NS:9</string>
-						<bool key="IBUIOpaque">NO</bool>
-						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-						<int key="IBUIContentHorizontalAlignment">0</int>
-						<int key="IBUIContentVerticalAlignment">0</int>
-						<string key="IBUITitleShadowOffset">{0, 1}</string>
-						<string key="IBUINormalTitle">START</string>
-						<object class="NSColor" key="IBUIHighlightedTitleColor">
-							<int key="NSColorSpace">1</int>
-							<bytes key="NSRGB">MC45MjU0OTAxOTYxIDAuODM5MjE1Njg2MyAwLjgwMzkyMTU2ODYAA</bytes>
-						</object>
-						<object class="NSColor" key="IBUINormalTitleColor">
-							<int key="NSColorSpace">1</int>
-							<bytes key="NSRGB">MC45MjU0OTAxOTYxIDAuODM5MjE1Njg2MyAwLjgwMzkyMTU2ODYAA</bytes>
-						</object>
-						<object class="NSColor" key="IBUIHighlightedTitleShadowColor" id="187378512">
-							<int key="NSColorSpace">1</int>
-							<bytes key="NSRGB">MCAwIDAAA</bytes>
-						</object>
-						<reference key="IBUINormalTitleShadowColor" ref="187378512"/>
-						<object class="NSCustomResource" key="IBUINormalBackgroundImage" id="115142298">
-							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">game-start-button.png</string>
-						</object>
-						<object class="IBUIFontDescription" key="IBUIFontDescription" id="703726500">
-							<int key="type">2</int>
-							<double key="pointSize">38</double>
-						</object>
-						<object class="NSFont" key="IBUIFont" id="222763360">
-							<string key="NSName">Helvetica-Bold</string>
-							<double key="NSSize">38</double>
-							<int key="NSfFlags">16</int>
-						</object>
-					</object>
-					<object class="IBUIButton" id="702107269">
-						<reference key="NSNextResponder" ref="766721923"/>
-						<int key="NSvFlags">269</int>
-						<string key="NSFrame">{{422, 615}, {180, 72}}</string>
-						<reference key="NSSuperview" ref="766721923"/>
-						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="356496398"/>
-						<string key="NSReuseIdentifierKey">_NS:9</string>
-						<bool key="IBUIOpaque">NO</bool>
-						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-						<int key="IBUIContentHorizontalAlignment">0</int>
-						<int key="IBUIContentVerticalAlignment">0</int>
-						<string key="IBUITitleShadowOffset">{0, 1}</string>
-						<string key="IBUINormalTitle">FINISH</string>
-						<object class="NSColor" key="IBUIHighlightedTitleColor">
-							<int key="NSColorSpace">1</int>
-							<bytes key="NSRGB">MC45MjU0OTAxOTYxIDAuODM5MjE1Njg2MyAwLjgwMzkyMTU2ODYAA</bytes>
-						</object>
-						<object class="NSColor" key="IBUINormalTitleColor">
-							<int key="NSColorSpace">1</int>
-							<bytes key="NSRGB">MC45MjU0OTAxOTYxIDAuODM5MjE1Njg2MyAwLjgwMzkyMTU2ODYAA</bytes>
-						</object>
-						<reference key="IBUIHighlightedTitleShadowColor" ref="187378512"/>
-						<reference key="IBUINormalTitleShadowColor" ref="187378512"/>
-						<reference key="IBUINormalBackgroundImage" ref="115142298"/>
-						<reference key="IBUIFontDescription" ref="703726500"/>
-						<reference key="IBUIFont" ref="222763360"/>
-					</object>
-					<object class="IBUIButton" id="851222231">
-						<reference key="NSNextResponder" ref="766721923"/>
-						<int key="NSvFlags">269</int>
-						<string key="NSFrame">{{422, 561}, {180, 39}}</string>
-						<reference key="NSSuperview" ref="766721923"/>
-						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="265893103"/>
-						<string key="NSReuseIdentifierKey">_NS:9</string>
-						<bool key="IBUIOpaque">NO</bool>
-						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-						<int key="IBUIContentHorizontalAlignment">0</int>
-						<int key="IBUIContentVerticalAlignment">0</int>
-						<reference key="IBUIHighlightedTitleColor" ref="586839631"/>
-						<object class="NSColor" key="IBUINormalTitleColor">
-							<int key="NSColorSpace">1</int>
-							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
-						</object>
-						<object class="NSColor" key="IBUINormalTitleShadowColor" id="792464746">
-							<int key="NSColorSpace">3</int>
-							<bytes key="NSWhite">MC41AA</bytes>
-						</object>
-						<object class="NSCustomResource" key="IBUISelectedImage">
-							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">game-switch-21.png</string>
-						</object>
-						<object class="NSCustomResource" key="IBUINormalImage">
-							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">game-switch-11.png</string>
-						</object>
-						<object class="IBUIFontDescription" key="IBUIFontDescription" id="480699807">
-							<int key="type">2</int>
-							<double key="pointSize">15</double>
-						</object>
-						<object class="NSFont" key="IBUIFont" id="973928955">
-							<string key="NSName">Helvetica-Bold</string>
-							<double key="NSSize">15</double>
-							<int key="NSfFlags">16</int>
-						</object>
-					</object>
-					<object class="IBUIImageView" id="172421083">
-						<reference key="NSNextResponder" ref="766721923"/>
-						<int key="NSvFlags">256</int>
-						<string key="NSFrame">{{174, 546}, {161, 141}}</string>
-						<reference key="NSSuperview" ref="766721923"/>
-						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="714371435"/>
-						<bool key="IBUIOpaque">NO</bool>
-						<bool key="IBUIClipsSubviews">YES</bool>
-						<int key="IBUIContentMode">4</int>
-						<bool key="IBUIMultipleTouchEnabled">YES</bool>
-						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-						<object class="NSCustomResource" key="IBUIImage" id="124451833">
-							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">game-placeholder-score.png</string>
-						</object>
-					</object>
-					<object class="IBUIImageView" id="356496398">
-						<reference key="NSNextResponder" ref="766721923"/>
-						<int key="NSvFlags">256</int>
-						<string key="NSFrame">{{689, 546}, {161, 141}}</string>
-						<reference key="NSSuperview" ref="766721923"/>
-						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="364961672"/>
-						<bool key="IBUIOpaque">NO</bool>
-						<bool key="IBUIClipsSubviews">YES</bool>
-						<int key="IBUIContentMode">4</int>
-						<bool key="IBUIMultipleTouchEnabled">YES</bool>
-						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-						<reference key="IBUIImage" ref="124451833"/>
-					</object>
-					<object class="IBUILabel" id="364961672">
-						<reference key="NSNextResponder" ref="766721923"/>
-						<int key="NSvFlags">269</int>
-						<string key="NSFrame">{{689, 567}, {161, 100}}</string>
-						<reference key="NSSuperview" ref="766721923"/>
-						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="908448091"/>
-						<string key="NSReuseIdentifierKey">_NS:9</string>
-						<bool key="IBUIOpaque">NO</bool>
-						<bool key="IBUIClipsSubviews">YES</bool>
-						<int key="IBUIContentMode">7</int>
-						<bool key="IBUIUserInteractionEnabled">NO</bool>
-						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-						<string key="IBUIText">0</string>
-						<object class="NSColor" key="IBUITextColor" id="900278034">
-							<int key="NSColorSpace">1</int>
-							<bytes key="NSRGB">MC43NzI1NDkwMTk2IDAuNTQxMTc2NDcwNiAwLjQ2NjY2NjY2NjcAA</bytes>
-						</object>
-						<nil key="IBUIHighlightedColor"/>
-						<object class="NSColor" key="IBUIShadowColor" id="930328188">
-							<int key="NSColorSpace">3</int>
-							<bytes key="NSWhite">MAA</bytes>
-						</object>
-						<string key="IBUIShadowOffset">{0, 2}</string>
-						<int key="IBUIBaselineAdjustment">0</int>
-						<int key="IBUITextAlignment">1</int>
-						<object class="IBUIFontDescription" key="IBUIFontDescription" id="298526528">
-							<int key="type">1</int>
-							<double key="pointSize">93</double>
-						</object>
-						<object class="NSFont" key="IBUIFont" id="814746601">
-							<string key="NSName">Helvetica</string>
-							<double key="NSSize">93</double>
-							<int key="NSfFlags">16</int>
-						</object>
-						<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
-					</object>
-					<object class="IBUILabel" id="714371435">
-						<reference key="NSNextResponder" ref="766721923"/>
-						<int key="NSvFlags">269</int>
-						<string key="NSFrame">{{174, 567}, {161, 100}}</string>
-						<reference key="NSSuperview" ref="766721923"/>
-						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="851222231"/>
-						<string key="NSReuseIdentifierKey">_NS:9</string>
-						<bool key="IBUIOpaque">NO</bool>
-						<bool key="IBUIClipsSubviews">YES</bool>
-						<int key="IBUIContentMode">7</int>
-						<bool key="IBUIUserInteractionEnabled">NO</bool>
-						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-						<string key="IBUIText">0</string>
-						<reference key="IBUITextColor" ref="900278034"/>
-						<nil key="IBUIHighlightedColor"/>
-						<reference key="IBUIShadowColor" ref="930328188"/>
-						<string key="IBUIShadowOffset">{0, 2}</string>
-						<int key="IBUIBaselineAdjustment">0</int>
-						<int key="IBUITextAlignment">1</int>
-						<reference key="IBUIFontDescription" ref="298526528"/>
-						<reference key="IBUIFont" ref="814746601"/>
-						<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
-					</object>
-					<object class="IBUIImageView" id="265893103">
-						<reference key="NSNextResponder" ref="766721923"/>
-						<int key="NSvFlags">256</int>
-						<string key="NSFrame">{{408, 613}, {208, 74}}</string>
-						<reference key="NSSuperview" ref="766721923"/>
-						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="422075522"/>
-						<bool key="IBUIOpaque">NO</bool>
-						<bool key="IBUIClipsSubviews">YES</bool>
-						<int key="IBUIContentMode">4</int>
-						<bool key="IBUIMultipleTouchEnabled">YES</bool>
-						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-						<object class="NSCustomResource" key="IBUIImage">
-							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">game-chrono.png</string>
-						</object>
-					</object>
-					<object class="IBUILabel" id="252935788">
-						<reference key="NSNextResponder" ref="766721923"/>
-						<int key="NSvFlags">269</int>
-						<string key="NSFrame">{{416, 630}, {192, 40}}</string>
-						<reference key="NSSuperview" ref="766721923"/>
-						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="592784048"/>
-						<string key="NSReuseIdentifierKey">_NS:9</string>
-						<bool key="IBUIOpaque">NO</bool>
-						<bool key="IBUIClipsSubviews">YES</bool>
-						<int key="IBUIContentMode">7</int>
-						<bool key="IBUIUserInteractionEnabled">NO</bool>
-						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-						<string key="IBUIText">00:00</string>
-						<reference key="IBUITextColor" ref="900278034"/>
-						<nil key="IBUIHighlightedColor"/>
-						<reference key="IBUIShadowColor" ref="930328188"/>
-						<string key="IBUIShadowOffset">{0, 1}</string>
-						<int key="IBUIBaselineAdjustment">0</int>
-						<int key="IBUITextAlignment">1</int>
-						<object class="IBUIFontDescription" key="IBUIFontDescription">
-							<int key="type">1</int>
-							<double key="pointSize">36</double>
-						</object>
-						<object class="NSFont" key="IBUIFont">
-							<string key="NSName">Helvetica</string>
-							<double key="NSSize">36</double>
-							<int key="NSfFlags">16</int>
-						</object>
-						<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
-					</object>
-					<object class="IBUIButton" id="574228008">
-						<reference key="NSNextResponder" ref="766721923"/>
-						<int key="NSvFlags">268</int>
-						<string key="NSFrame">{{0, 646}, {44, 46}}</string>
-						<reference key="NSSuperview" ref="766721923"/>
-						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="252935788"/>
-						<string key="NSReuseIdentifierKey">_NS:9</string>
-						<bool key="IBUIOpaque">NO</bool>
-						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-						<int key="IBUIContentHorizontalAlignment">0</int>
-						<int key="IBUIContentVerticalAlignment">0</int>
-						<reference key="IBUIHighlightedTitleColor" ref="586839631"/>
-						<object class="NSColor" key="IBUINormalTitleColor">
-							<int key="NSColorSpace">1</int>
-							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
-						</object>
-						<reference key="IBUINormalTitleShadowColor" ref="792464746"/>
-						<object class="NSCustomResource" key="IBUINormalBackgroundImage">
-							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">game-interface-left-minus.png</string>
-						</object>
-						<reference key="IBUIFontDescription" ref="480699807"/>
-						<reference key="IBUIFont" ref="973928955"/>
-					</object>
-					<object class="IBUIButton" id="867560158">
-						<reference key="NSNextResponder" ref="766721923"/>
-						<int key="NSvFlags">268</int>
-						<string key="NSFrame">{{0, 552}, {87, 90}}</string>
-						<reference key="NSSuperview" ref="766721923"/>
-						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="172421083"/>
-						<string key="NSReuseIdentifierKey">_NS:9</string>
-						<bool key="IBUIOpaque">NO</bool>
-						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-						<int key="IBUIContentHorizontalAlignment">0</int>
-						<int key="IBUIContentVerticalAlignment">0</int>
-						<int key="IBUIButtonType">1</int>
-						<reference key="IBUIHighlightedTitleColor" ref="586839631"/>
-						<object class="NSColor" key="IBUINormalTitleColor">
-							<int key="NSColorSpace">1</int>
-							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
-						</object>
-						<reference key="IBUINormalTitleShadowColor" ref="792464746"/>
-						<object class="NSCustomResource" key="IBUINormalBackgroundImage">
-							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">game-interface-left-plus.png</string>
-						</object>
-						<reference key="IBUIFontDescription" ref="480699807"/>
-						<reference key="IBUIFont" ref="973928955"/>
-					</object>
-					<object class="IBUIButton" id="908448091">
-						<reference key="NSNextResponder" ref="766721923"/>
-						<int key="NSvFlags">265</int>
-						<string key="NSFrame">{{937, 552}, {87, 90}}</string>
-						<reference key="NSSuperview" ref="766721923"/>
-						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="574228008"/>
-						<string key="NSReuseIdentifierKey">_NS:9</string>
-						<bool key="IBUIOpaque">NO</bool>
-						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-						<int key="IBUIContentHorizontalAlignment">0</int>
-						<int key="IBUIContentVerticalAlignment">0</int>
-						<int key="IBUIButtonType">1</int>
-						<reference key="IBUIHighlightedTitleColor" ref="586839631"/>
-						<object class="NSColor" key="IBUINormalTitleColor">
-							<int key="NSColorSpace">1</int>
-							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
-						</object>
-						<reference key="IBUINormalTitleShadowColor" ref="792464746"/>
-						<object class="NSCustomResource" key="IBUINormalBackgroundImage">
-							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">game-interface-right-plus.png</string>
-						</object>
-						<reference key="IBUIFontDescription" ref="480699807"/>
-						<reference key="IBUIFont" ref="973928955"/>
-					</object>
-					<object class="IBUIButton" id="592784048">
-						<reference key="NSNextResponder" ref="766721923"/>
-						<int key="NSvFlags">265</int>
-						<string key="NSFrame">{{980, 646}, {44, 46}}</string>
-						<reference key="NSSuperview" ref="766721923"/>
-						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
-						<string key="NSReuseIdentifierKey">_NS:9</string>
-						<bool key="IBUIOpaque">NO</bool>
-						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-						<int key="IBUIContentHorizontalAlignment">0</int>
-						<int key="IBUIContentVerticalAlignment">0</int>
-						<reference key="IBUIHighlightedTitleColor" ref="586839631"/>
-						<object class="NSColor" key="IBUINormalTitleColor">
-							<int key="NSColorSpace">1</int>
-							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
-						</object>
-						<reference key="IBUINormalTitleShadowColor" ref="792464746"/>
-						<object class="NSCustomResource" key="IBUINormalBackgroundImage">
-							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">game-interface-right-minus.png</string>
-						</object>
-						<reference key="IBUIFontDescription" ref="480699807"/>
-						<reference key="IBUIFont" ref="973928955"/>
-					</object>
 				</array>
 				<string key="NSFrame">{{0, 64}, {1024, 704}}</string>
 				<reference key="NSSuperview"/>
-				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="864873513"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">1</int>
@@ -1444,7 +1392,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">startButton</string>
 						<reference key="source" ref="841351856"/>
-						<reference key="destination" ref="422075522"/>
+						<reference key="destination" ref="171990268"/>
 					</object>
 					<int key="connectionID">85</int>
 				</object>
@@ -1452,7 +1400,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">pointsToWinSwitch</string>
 						<reference key="source" ref="841351856"/>
-						<reference key="destination" ref="851222231"/>
+						<reference key="destination" ref="522941741"/>
 					</object>
 					<int key="connectionID">87</int>
 				</object>
@@ -1460,7 +1408,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">leftMinusButton</string>
 						<reference key="source" ref="841351856"/>
-						<reference key="destination" ref="574228008"/>
+						<reference key="destination" ref="451643875"/>
 					</object>
 					<int key="connectionID">105</int>
 				</object>
@@ -1468,7 +1416,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">leftPlusButton</string>
 						<reference key="source" ref="841351856"/>
-						<reference key="destination" ref="867560158"/>
+						<reference key="destination" ref="449092985"/>
 					</object>
 					<int key="connectionID">106</int>
 				</object>
@@ -1476,7 +1424,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">leftScoreBackground</string>
 						<reference key="source" ref="841351856"/>
-						<reference key="destination" ref="172421083"/>
+						<reference key="destination" ref="548842756"/>
 					</object>
 					<int key="connectionID">107</int>
 				</object>
@@ -1484,7 +1432,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">leftScoreLabel</string>
 						<reference key="source" ref="841351856"/>
-						<reference key="destination" ref="714371435"/>
+						<reference key="destination" ref="585604921"/>
 					</object>
 					<int key="connectionID">108</int>
 				</object>
@@ -1492,7 +1440,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">rightMinusButton</string>
 						<reference key="source" ref="841351856"/>
-						<reference key="destination" ref="592784048"/>
+						<reference key="destination" ref="314899719"/>
 					</object>
 					<int key="connectionID">109</int>
 				</object>
@@ -1500,7 +1448,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">rightPlusButton</string>
 						<reference key="source" ref="841351856"/>
-						<reference key="destination" ref="908448091"/>
+						<reference key="destination" ref="388029655"/>
 					</object>
 					<int key="connectionID">110</int>
 				</object>
@@ -1508,7 +1456,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">rightScoreBackground</string>
 						<reference key="source" ref="841351856"/>
-						<reference key="destination" ref="356496398"/>
+						<reference key="destination" ref="1073365054"/>
 					</object>
 					<int key="connectionID">111</int>
 				</object>
@@ -1516,7 +1464,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">rightScoreLabel</string>
 						<reference key="source" ref="841351856"/>
-						<reference key="destination" ref="364961672"/>
+						<reference key="destination" ref="541905009"/>
 					</object>
 					<int key="connectionID">112</int>
 				</object>
@@ -1524,7 +1472,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">timerBackground</string>
 						<reference key="source" ref="841351856"/>
-						<reference key="destination" ref="265893103"/>
+						<reference key="destination" ref="345349322"/>
 					</object>
 					<int key="connectionID">113</int>
 				</object>
@@ -1532,7 +1480,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">timerLabel</string>
 						<reference key="source" ref="841351856"/>
-						<reference key="destination" ref="252935788"/>
+						<reference key="destination" ref="436004097"/>
 					</object>
 					<int key="connectionID">114</int>
 				</object>
@@ -1556,14 +1504,22 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">finishButton</string>
 						<reference key="source" ref="841351856"/>
-						<reference key="destination" ref="702107269"/>
+						<reference key="destination" ref="54732832"/>
 					</object>
 					<int key="connectionID">123</int>
 				</object>
 				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">tableBackgroundView</string>
+						<reference key="source" ref="841351856"/>
+						<reference key="destination" ref="906450375"/>
+					</object>
+					<int key="connectionID">125</int>
+				</object>
+				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">startGame:</string>
-						<reference key="source" ref="422075522"/>
+						<reference key="source" ref="171990268"/>
 						<reference key="destination" ref="841351856"/>
 						<int key="IBEventType">7</int>
 					</object>
@@ -1572,7 +1528,7 @@
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">tooglePointsToWinSwitch:</string>
-						<reference key="source" ref="851222231"/>
+						<reference key="source" ref="522941741"/>
 						<reference key="destination" ref="841351856"/>
 						<int key="IBEventType">7</int>
 					</object>
@@ -1581,7 +1537,7 @@
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">decreaseLeftPoints:</string>
-						<reference key="source" ref="574228008"/>
+						<reference key="source" ref="451643875"/>
 						<reference key="destination" ref="841351856"/>
 						<int key="IBEventType">7</int>
 					</object>
@@ -1590,7 +1546,7 @@
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">increaseLeftPoints:</string>
-						<reference key="source" ref="867560158"/>
+						<reference key="source" ref="449092985"/>
 						<reference key="destination" ref="841351856"/>
 						<int key="IBEventType">7</int>
 					</object>
@@ -1599,7 +1555,7 @@
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">increaseRightPoints:</string>
-						<reference key="source" ref="908448091"/>
+						<reference key="source" ref="388029655"/>
 						<reference key="destination" ref="841351856"/>
 						<int key="IBEventType">7</int>
 					</object>
@@ -1608,7 +1564,7 @@
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">decreaseRightPoints:</string>
-						<reference key="source" ref="592784048"/>
+						<reference key="source" ref="314899719"/>
 						<reference key="destination" ref="841351856"/>
 						<int key="IBEventType">7</int>
 					</object>
@@ -1617,7 +1573,7 @@
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">startGame:</string>
-						<reference key="source" ref="702107269"/>
+						<reference key="source" ref="54732832"/>
 						<reference key="destination" ref="841351856"/>
 						<int key="IBEventType">7</int>
 					</object>
@@ -1626,7 +1582,7 @@
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">finishGame:</string>
-						<reference key="source" ref="702107269"/>
+						<reference key="source" ref="54732832"/>
 						<reference key="destination" ref="841351856"/>
 						<int key="IBEventType">7</int>
 					</object>
@@ -1658,21 +1614,21 @@
 						<array class="NSMutableArray" key="children">
 							<reference ref="864873513"/>
 							<reference ref="906450375"/>
+							<reference ref="171990268"/>
+							<reference ref="522941741"/>
+							<reference ref="548842756"/>
+							<reference ref="1073365054"/>
+							<reference ref="541905009"/>
+							<reference ref="585604921"/>
+							<reference ref="345349322"/>
+							<reference ref="451643875"/>
+							<reference ref="449092985"/>
+							<reference ref="388029655"/>
+							<reference ref="436004097"/>
 							<reference ref="149368272"/>
 							<reference ref="67717438"/>
-							<reference ref="422075522"/>
-							<reference ref="851222231"/>
-							<reference ref="172421083"/>
-							<reference ref="356496398"/>
-							<reference ref="364961672"/>
-							<reference ref="714371435"/>
-							<reference ref="265893103"/>
-							<reference ref="574228008"/>
-							<reference ref="867560158"/>
-							<reference ref="908448091"/>
-							<reference ref="252935788"/>
-							<reference ref="592784048"/>
-							<reference ref="702107269"/>
+							<reference ref="314899719"/>
+							<reference ref="54732832"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -1906,67 +1862,67 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">84</int>
-						<reference key="object" ref="422075522"/>
+						<reference key="object" ref="171990268"/>
 						<reference key="parent" ref="766721923"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">86</int>
-						<reference key="object" ref="851222231"/>
+						<reference key="object" ref="522941741"/>
 						<reference key="parent" ref="766721923"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">94</int>
-						<reference key="object" ref="172421083"/>
+						<reference key="object" ref="548842756"/>
 						<reference key="parent" ref="766721923"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">95</int>
-						<reference key="object" ref="356496398"/>
+						<reference key="object" ref="1073365054"/>
 						<reference key="parent" ref="766721923"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">96</int>
-						<reference key="object" ref="364961672"/>
+						<reference key="object" ref="541905009"/>
 						<reference key="parent" ref="766721923"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">97</int>
-						<reference key="object" ref="714371435"/>
+						<reference key="object" ref="585604921"/>
 						<reference key="parent" ref="766721923"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">98</int>
-						<reference key="object" ref="252935788"/>
+						<reference key="object" ref="436004097"/>
 						<reference key="parent" ref="766721923"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">100</int>
-						<reference key="object" ref="265893103"/>
+						<reference key="object" ref="345349322"/>
 						<reference key="parent" ref="766721923"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">101</int>
-						<reference key="object" ref="574228008"/>
+						<reference key="object" ref="451643875"/>
 						<reference key="parent" ref="766721923"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">102</int>
-						<reference key="object" ref="867560158"/>
+						<reference key="object" ref="449092985"/>
 						<reference key="parent" ref="766721923"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">103</int>
-						<reference key="object" ref="908448091"/>
+						<reference key="object" ref="388029655"/>
 						<reference key="parent" ref="766721923"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">104</int>
-						<reference key="object" ref="592784048"/>
+						<reference key="object" ref="314899719"/>
 						<reference key="parent" ref="766721923"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">121</int>
-						<reference key="object" ref="702107269"/>
+						<reference key="object" ref="54732832"/>
 						<reference key="parent" ref="766721923"/>
 					</object>
 				</array>
@@ -2036,221 +1992,9 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">124</int>
+			<int key="maxID">125</int>
 		</object>
-		<object class="IBClassDescriber" key="IBDocument.Classes">
-			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
-				<object class="IBPartialClassDescription">
-					<string key="className">PMSingleGameViewController</string>
-					<string key="superclassName">UIViewController</string>
-					<dictionary class="NSMutableDictionary" key="actions">
-						<string key="close:">id</string>
-						<string key="decreaseLeftPoints:">id</string>
-						<string key="decreaseRightPoints:">id</string>
-						<string key="finishGame:">id</string>
-						<string key="increaseLeftPoints:">id</string>
-						<string key="increaseRightPoints:">id</string>
-						<string key="startGame:">id</string>
-						<string key="tooglePointsToWinSwitch:">id</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="actionInfosByName">
-						<object class="IBActionInfo" key="close:">
-							<string key="name">close:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="decreaseLeftPoints:">
-							<string key="name">decreaseLeftPoints:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="decreaseRightPoints:">
-							<string key="name">decreaseRightPoints:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="finishGame:">
-							<string key="name">finishGame:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="increaseLeftPoints:">
-							<string key="name">increaseLeftPoints:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="increaseRightPoints:">
-							<string key="name">increaseRightPoints:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="startGame:">
-							<string key="name">startGame:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="tooglePointsToWinSwitch:">
-							<string key="name">tooglePointsToWinSwitch:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="avatarFirstPlayerImageView">UIImageView</string>
-						<string key="avatarSecondPlayerImageView">UIImageView</string>
-						<string key="finishButton">UIButton</string>
-						<string key="firstPlayerContainerView">UIView</string>
-						<string key="handednessFirstPlayerImageView">UIImageView</string>
-						<string key="handednessSecondPlayerImageView">UIImageView</string>
-						<string key="leftMinusButton">UIButton</string>
-						<string key="leftPlusButton">UIButton</string>
-						<string key="leftScoreBackground">UIView</string>
-						<string key="leftScoreLabel">UILabel</string>
-						<string key="loseCountFirstPlayerLabel">UILabel</string>
-						<string key="loseCountSecondPlayerLabel">UILabel</string>
-						<string key="playedCountFirstPlayerLabel">UILabel</string>
-						<string key="playedCountSecondPlayerLabel">UILabel</string>
-						<string key="pointsToWinSwitch">UIButton</string>
-						<string key="rankFirstPlayerLabel">UILabel</string>
-						<string key="rankSecondPlayerLabel">UILabel</string>
-						<string key="rightMinusButton">UIButton</string>
-						<string key="rightPlusButton">UIButton</string>
-						<string key="rightScoreBackground">UIView</string>
-						<string key="rightScoreLabel">UILabel</string>
-						<string key="secondPlayerContainerView">UIView</string>
-						<string key="startButton">UIButton</string>
-						<string key="timerBackground">UIView</string>
-						<string key="timerLabel">UILabel</string>
-						<string key="usernameFirstPlayerLabel">UILabel</string>
-						<string key="usernameSecondPlayerLabel">UILabel</string>
-						<string key="winCountFirstPlayerLabel">UILabel</string>
-						<string key="winCountSecondPlayerLabel">UILabel</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<object class="IBToOneOutletInfo" key="avatarFirstPlayerImageView">
-							<string key="name">avatarFirstPlayerImageView</string>
-							<string key="candidateClassName">UIImageView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="avatarSecondPlayerImageView">
-							<string key="name">avatarSecondPlayerImageView</string>
-							<string key="candidateClassName">UIImageView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="finishButton">
-							<string key="name">finishButton</string>
-							<string key="candidateClassName">UIButton</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="firstPlayerContainerView">
-							<string key="name">firstPlayerContainerView</string>
-							<string key="candidateClassName">UIView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="handednessFirstPlayerImageView">
-							<string key="name">handednessFirstPlayerImageView</string>
-							<string key="candidateClassName">UIImageView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="handednessSecondPlayerImageView">
-							<string key="name">handednessSecondPlayerImageView</string>
-							<string key="candidateClassName">UIImageView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="leftMinusButton">
-							<string key="name">leftMinusButton</string>
-							<string key="candidateClassName">UIButton</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="leftPlusButton">
-							<string key="name">leftPlusButton</string>
-							<string key="candidateClassName">UIButton</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="leftScoreBackground">
-							<string key="name">leftScoreBackground</string>
-							<string key="candidateClassName">UIView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="leftScoreLabel">
-							<string key="name">leftScoreLabel</string>
-							<string key="candidateClassName">UILabel</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="loseCountFirstPlayerLabel">
-							<string key="name">loseCountFirstPlayerLabel</string>
-							<string key="candidateClassName">UILabel</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="loseCountSecondPlayerLabel">
-							<string key="name">loseCountSecondPlayerLabel</string>
-							<string key="candidateClassName">UILabel</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="playedCountFirstPlayerLabel">
-							<string key="name">playedCountFirstPlayerLabel</string>
-							<string key="candidateClassName">UILabel</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="playedCountSecondPlayerLabel">
-							<string key="name">playedCountSecondPlayerLabel</string>
-							<string key="candidateClassName">UILabel</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="pointsToWinSwitch">
-							<string key="name">pointsToWinSwitch</string>
-							<string key="candidateClassName">UIButton</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="rankFirstPlayerLabel">
-							<string key="name">rankFirstPlayerLabel</string>
-							<string key="candidateClassName">UILabel</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="rankSecondPlayerLabel">
-							<string key="name">rankSecondPlayerLabel</string>
-							<string key="candidateClassName">UILabel</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="rightMinusButton">
-							<string key="name">rightMinusButton</string>
-							<string key="candidateClassName">UIButton</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="rightPlusButton">
-							<string key="name">rightPlusButton</string>
-							<string key="candidateClassName">UIButton</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="rightScoreBackground">
-							<string key="name">rightScoreBackground</string>
-							<string key="candidateClassName">UIView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="rightScoreLabel">
-							<string key="name">rightScoreLabel</string>
-							<string key="candidateClassName">UILabel</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="secondPlayerContainerView">
-							<string key="name">secondPlayerContainerView</string>
-							<string key="candidateClassName">UIView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="startButton">
-							<string key="name">startButton</string>
-							<string key="candidateClassName">UIButton</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="timerBackground">
-							<string key="name">timerBackground</string>
-							<string key="candidateClassName">UIView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="timerLabel">
-							<string key="name">timerLabel</string>
-							<string key="candidateClassName">UILabel</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="usernameFirstPlayerLabel">
-							<string key="name">usernameFirstPlayerLabel</string>
-							<string key="candidateClassName">UILabel</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="usernameSecondPlayerLabel">
-							<string key="name">usernameSecondPlayerLabel</string>
-							<string key="candidateClassName">UILabel</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="winCountFirstPlayerLabel">
-							<string key="name">winCountFirstPlayerLabel</string>
-							<string key="candidateClassName">UILabel</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="winCountSecondPlayerLabel">
-							<string key="name">winCountSecondPlayerLabel</string>
-							<string key="candidateClassName">UILabel</string>
-						</object>
-					</dictionary>
-					<object class="NSMutableDictionary" key="toManyOutletInfosByName">
-						<string key="NS.key.0">legendLabels</string>
-						<object class="IBToManyOutletInfo" key="NS.object.0">
-							<string key="name">legendLabels</string>
-							<string key="candidateClassName">UILabel</string>
-							<string key="collectionClassName">NSArray</string>
-						</object>
-					</object>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/PMSingleGameViewController.h</string>
-					</object>
-				</object>
-			</array>
-		</object>
+		<object class="IBClassDescriber" key="IBDocument.Classes"/>
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBIPadFramework</string>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>

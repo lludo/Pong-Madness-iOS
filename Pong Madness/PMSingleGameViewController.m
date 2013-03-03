@@ -34,6 +34,7 @@
 @property (nonatomic, strong) IBOutlet UIImageView *handednessSecondPlayerImageView;
 
 @property (nonatomic, strong) IBOutletCollection(UILabel) NSArray *legendLabels;
+@property (nonatomic, strong) IBOutlet UIView *tableBackgroundView;
 @property (nonatomic, strong) IBOutlet UIButton *pointsToWinSwitch;
 @property (nonatomic, strong) IBOutlet UIButton *startButton;
 @property (nonatomic, strong) IBOutlet UIButton *finishButton;
@@ -87,6 +88,7 @@
 @synthesize handednessSecondPlayerImageView;
 
 @synthesize legendLabels;
+@synthesize tableBackgroundView;
 @synthesize pointsToWinSwitch;
 @synthesize startButton;
 @synthesize finishButton;
@@ -246,6 +248,7 @@
     
     self.game = [PMGame gameWithParticipants:self.participantList];
     self.game.startDate = [NSDate date];
+    self.game.type = @"single";
     [[PMDocumentManager sharedDocument] save];
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Cancel", nil)
@@ -281,8 +284,54 @@
     PMParticipant *participantWinner = [self.game participantWinnerWithMinimumScore:minScoreToWin andScoresGap:scoresGap];
     
     if (participantWinner) {
+        [self.timer invalidate];
+        self.timer = nil;
+        self.game.timePlayed = @(-[self.game.startDate timeIntervalSinceNow]);
+        [[PMDocumentManager sharedDocument] save];
         
-        //TODO: xxx
+        [UIView animateWithDuration:0.8 animations:^{
+            
+            // Discard the loser
+            PMPlayer *firstPlayer = [self.participantList objectAtIndex:0];
+            if (participantWinner == firstPlayer) {
+                self.secondPlayerContainerView.transform = CGAffineTransformConcat(
+                    CGAffineTransformMakeTranslation(0.f, 1200.f),
+                    CGAffineTransformMakeScale(0.5, 0.5)
+                );
+            } else {
+                self.firstPlayerContainerView.transform = CGAffineTransformConcat(
+                    CGAffineTransformMakeTranslation(0.f, 1200.f),
+                    CGAffineTransformMakeScale(0.5, 0.5)
+                );
+            }
+            
+            // Hides games controls
+            
+            self.leftMinusButton.transform = CGAffineTransformMakeTranslation(-44.f, 0.f);
+            self.leftPlusButton.transform = CGAffineTransformMakeTranslation(-87.f, 0.f);
+            self.leftScoreBackground.alpha = 0.f;
+            self.leftScoreLabel.alpha = 0.f;
+            self.finishButton.alpha = 0.f;
+            self.pointsToWinSwitch.alpha = 0.f;
+            self.rightScoreBackground.alpha = 0.f;
+            self.rightScoreLabel.alpha = 0.f;
+            self.rightMinusButton.transform = CGAffineTransformMakeTranslation(44.f, 0.f);
+            self.rightPlusButton.transform = CGAffineTransformMakeTranslation(87.f, 0.f);
+            
+        } completion:^(BOOL finished) {
+            [UIView animateWithDuration:0.6 animations:^{
+                
+                // Hilight the winner
+                PMPlayer *firstPlayer = [self.participantList objectAtIndex:0];
+                if (participantWinner == firstPlayer) {
+                    self.firstPlayerContainerView.transform = CGAffineTransformMakeTranslation(257, -20.f);
+                } else {
+                    self.secondPlayerContainerView.transform = CGAffineTransformMakeTranslation(-257.f, -20.f);
+                }
+                
+                self.tableBackgroundView.transform = CGAffineTransformMakeTranslation(0.f, -552.f);
+            }];
+        }];
     }
 }
 
