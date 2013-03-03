@@ -29,7 +29,7 @@
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="handedness" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="photo" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="sinceDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sinceDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="leaderboardPlayerSet" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="LeaderboardPlayer" inverseName="player" inverseEntity="LeaderboardPlayer" syncable="YES"/>
         <relationship name="teamSet" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Team" inverseName="playerSet" inverseEntity="Team" syncable="YES"/>
@@ -47,13 +47,13 @@
         <relationship name="playerSet" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Player" inverseName="tournamentSet" inverseEntity="Player" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Player" positionX="333" positionY="429" width="128" height="178"/>
-        <element name="Tournament" positionX="630" positionY="198" width="128" height="118"/>
-        <element name="Leaderboard" positionX="801" positionY="387" width="128" height="88"/>
-        <element name="LeaderboardPlayer" positionX="594" positionY="447" width="128" height="73"/>
-        <element name="Team" positionX="126" positionY="441" width="128" height="73"/>
         <element name="Game" positionX="414" positionY="90" width="128" height="118"/>
         <element name="GameParticipant" positionX="72" positionY="72" width="128" height="88"/>
+        <element name="Leaderboard" positionX="801" positionY="387" width="128" height="88"/>
+        <element name="LeaderboardPlayer" positionX="594" positionY="447" width="128" height="73"/>
         <element name="Participant" positionX="243" positionY="228" width="128" height="58"/>
+        <element name="Player" positionX="333" positionY="429" width="128" height="178"/>
+        <element name="Team" positionX="126" positionY="441" width="128" height="73"/>
+        <element name="Tournament" positionX="630" positionY="198" width="128" height="118"/>
     </elements>
 </model>

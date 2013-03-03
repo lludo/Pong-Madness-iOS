@@ -99,6 +99,7 @@
 		8222C28316DF2B240084D5D6 /* PMGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 8222C28216DF2B240084D5D6 /* PMGame.m */; };
 		8222C28616DF2B240084D5D6 /* PMLeaderboardPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8222C28516DF2B240084D5D6 /* PMLeaderboardPlayer.m */; };
 		8222C28816DF2BEF0084D5D6 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8222C28716DF2BEF0084D5D6 /* CoreData.framework */; };
+		82B2A6FF16E2BF98002D6178 /* PMValueFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 82B2A6FE16E2BF98002D6178 /* PMValueFormatter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -223,6 +224,8 @@
 		8222C28416DF2B240084D5D6 /* PMLeaderboardPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMLeaderboardPlayer.h; sourceTree = "<group>"; };
 		8222C28516DF2B240084D5D6 /* PMLeaderboardPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMLeaderboardPlayer.m; sourceTree = "<group>"; };
 		8222C28716DF2BEF0084D5D6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		82B2A6FD16E2BF98002D6178 /* PMValueFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMValueFormatter.h; sourceTree = "<group>"; };
+		82B2A6FE16E2BF98002D6178 /* PMValueFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMValueFormatter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -328,6 +331,8 @@
 			children = (
 				820D714416E1B09600E98D23 /* PMAppearance.h */,
 				820D714516E1B09600E98D23 /* PMAppearance.m */,
+				82B2A6FD16E2BF98002D6178 /* PMValueFormatter.h */,
+				82B2A6FE16E2BF98002D6178 /* PMValueFormatter.m */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -678,6 +683,7 @@
 				820D71B816E206C900E98D23 /* PMPlayerCell.m in Sources */,
 				820D71BD16E211AA00E98D23 /* PMAddPlayerView.m in Sources */,
 				820D71C216E216D200E98D23 /* PMCollectionViewPlayerLayout.m in Sources */,
+				82B2A6FF16E2BF98002D6178 /* PMValueFormatter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -38,6 +38,7 @@
     PMPlayer *player = [[PMPlayer alloc] initWithEntity:entityDescription insertIntoManagedObjectContext:managedObjectContext];
     
     player.username = username;
+    player.sinceDate = [NSDate date];
     
     [[PMDocumentManager sharedDocument] save];
 }

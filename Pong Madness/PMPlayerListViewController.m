@@ -9,6 +9,7 @@
 #import "PMPlayerListViewController.h"
 #import "PMPlayerCardViewController.h"
 #import "PMDocumentManager.h"
+#import "PMValueFormatter.h"
 #import "PMAddPlayerView.h"
 #import "PMPlayerCell.h"
 #import "PMPlayer.h"
@@ -115,6 +116,10 @@ static NSString *viewIdentifier = @"AddPlayerView";
 
 #pragma mark table collection delegate
 
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return [[self.fetchedResultsController sections] count];
+}
+
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     id<NSFetchedResultsSectionInfo> sectionInfo = [[fetchedResultsController sections] objectAtIndex:section];
     return [sectionInfo numberOfObjects];
@@ -125,6 +130,9 @@ static NSString *viewIdentifier = @"AddPlayerView";
     
     PMPlayer *player = [fetchedResultsController objectAtIndexPath:indexPath];
     cell.nameLabel.text = player.username;
+    
+    NSString *dateString = [[PMValueFormatter formatterDateShortStyle] stringFromDate:player.sinceDate];
+    cell.sinceLabel.text = [NSString stringWithFormat:@"Since %@", dateString];
     
     return cell;
 }
@@ -171,10 +179,10 @@ static NSString *viewIdentifier = @"AddPlayerView";
     
     switch(type) {
         case NSFetchedResultsChangeInsert:
-            change[@(type)] = @[@(sectionIndex)];
+            change[@(type)] = @(sectionIndex);
             break;
         case NSFetchedResultsChangeDelete:
-            change[@(type)] = @[@(sectionIndex)];
+            change[@(type)] = @(sectionIndex);
             break;
     }
     
@@ -228,33 +236,74 @@ static NSString *viewIdentifier = @"AddPlayerView";
     }
     
     if ([_objectChanges count] > 0 && [_sectionChanges count] == 0) {
-        [self.collectionView performBatchUpdates:^{
-            
-            for (NSDictionary *change in _objectChanges) {
-                [change enumerateKeysAndObjectsUsingBlock:^(NSNumber *key, id obj, BOOL *stop) {
-                    
-                    NSFetchedResultsChangeType type = [key unsignedIntegerValue];
-                    switch (type) {
-                        case NSFetchedResultsChangeInsert:
-                            [self.collectionView insertItemsAtIndexPaths:@[obj]];
-                            break;
-                        case NSFetchedResultsChangeDelete:
-                            [self.collectionView deleteItemsAtIndexPaths:@[obj]];
-                            break;
-                        case NSFetchedResultsChangeUpdate:
-                            [self.collectionView reloadItemsAtIndexPaths:@[obj]];
-                            break;
-                        case NSFetchedResultsChangeMove:
-                            [self.collectionView moveItemAtIndexPath:obj[0] toIndexPath:obj[1]];
-                            break;
+        
+        if ([self shouldReloadCollectionViewToPreventKnownIssue]) {
+            [self.collectionView reloadData];
+        } else {
+            [self.collectionView performBatchUpdates:^{
+                
+                for (NSDictionary *change in _objectChanges)
+                {
+                    [change enumerateKeysAndObjectsUsingBlock:^(NSNumber *key, id obj, BOOL *stop) {
+                        
+                        NSFetchedResultsChangeType type = [key unsignedIntegerValue];
+                        switch (type)
+                        {
+                            case NSFetchedResultsChangeInsert:
+                                [self.collectionView insertItemsAtIndexPaths:@[obj]];
+                                break;
+                            case NSFetchedResultsChangeDelete:
+                                [self.collectionView deleteItemsAtIndexPaths:@[obj]];
+                                break;
+                            case NSFetchedResultsChangeUpdate:
+                                [self.collectionView reloadItemsAtIndexPaths:@[obj]];
+                                break;
+                            case NSFetchedResultsChangeMove:
+                                [self.collectionView moveItemAtIndexPath:obj[0] toIndexPath:obj[1]];
+                                break;
+                        }
+                    }];
+                }
+            } completion:nil];
+        }
+        
+        [_sectionChanges removeAllObjects];
+        [_objectChanges removeAllObjects];
+    }
+}
+
+- (BOOL)shouldReloadCollectionViewToPreventKnownIssue {
+    __block BOOL shouldReload = NO;
+    for (NSDictionary *change in _objectChanges) {
+        [change enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+            NSFetchedResultsChangeType type = [key unsignedIntegerValue];
+            NSIndexPath *indexPath = obj;
+            switch (type) {
+                case NSFetchedResultsChangeInsert:
+                    if ([self.collectionView numberOfItemsInSection:indexPath.section] == 0) {
+                        shouldReload = YES;
+                    } else {
+                        shouldReload = NO;
                     }
-                }];
+                    break;
+                case NSFetchedResultsChangeDelete:
+                    if ([self.collectionView numberOfItemsInSection:indexPath.section] == 1) {
+                        shouldReload = YES;
+                    } else {
+                        shouldReload = NO;
+                    }
+                    break;
+                case NSFetchedResultsChangeUpdate:
+                    shouldReload = NO;
+                    break;
+                case NSFetchedResultsChangeMove:
+                    shouldReload = NO;
+                    break;
             }
-        } completion:nil];
+        }];
     }
     
-    [_sectionChanges removeAllObjects];
-    [_objectChanges removeAllObjects];
+    return shouldReload;
 }
 
 - (void)didReceiveMemoryWarning {

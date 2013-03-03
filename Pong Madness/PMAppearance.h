@@ -1,9 +1,9 @@
 //
 //  KMAppearance.h
-//  KwarterMobile
+//  Pong Madness
 //
-//  Created by Ludovic Landry on 05/12/12.
-//  Copyright (c) 2012 Kwarter, inc. All rights reserved.
+//  Created by Ludovic Landry on 02/02/13.
+//  Copyright (c) 2013 MirageTeam. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

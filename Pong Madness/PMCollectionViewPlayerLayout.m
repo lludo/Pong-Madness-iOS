@@ -8,9 +8,18 @@
 
 #import "PMCollectionViewPlayerLayout.h"
 
+@interface PMCollectionViewPlayerLayout ()
+
+@property (nonatomic, assign) float newMinHeight;
+
+@end
+
 @implementation PMCollectionViewPlayerLayout
 
+@synthesize newMinHeight;
+
 - (void)prepareLayout {
+    self.newMinHeight = 0.f;
     self.minimumLineSpacing = 22.f;
     self.minimumInteritemSpacing = 22.f;
     self.itemSize = CGSizeMake(176.f, 224.f);
@@ -36,10 +45,22 @@
     NSIndexPath *itemIndexPath = layoutAttribute.indexPath;
     NSIndexPath *nextIndexPath = [NSIndexPath indexPathForItem:itemIndexPath.item + 1 inSection:itemIndexPath.section];
     layoutAttribute.frame = [super layoutAttributesForItemAtIndexPath:nextIndexPath].frame;
+    
+    if (layoutAttribute.frame.origin.y > self.newMinHeight) {
+        self.newMinHeight = layoutAttribute.frame.origin.y;
+    }
 }
 
 - (void)modifyHeaderLayoutAttributes:(UICollectionViewLayoutAttributes *)layoutAttribute {
     layoutAttribute.frame = CGRectMake(-self.headerReferenceSize.width, -self.headerReferenceSize.height, self.itemSize.width, self.itemSize.height);
+}
+
+- (CGSize)collectionViewContentSize {
+    CGSize size = [super collectionViewContentSize];
+    if (size.height < self.newMinHeight) {
+        size.height += self.itemSize.height + self.minimumInteritemSpacing;
+    }
+    return size;
 }
 
 @end
