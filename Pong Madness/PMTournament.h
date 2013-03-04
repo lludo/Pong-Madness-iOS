@@ -19,6 +19,8 @@
 @property (nonatomic, strong) NSSet *gameSet;
 @property (nonatomic, strong) PMLeaderboard *leaderboard;
 
++ (PMTournament *)globalTournament;
+
 @end
 
 @interface PMTournament (CoreDataGeneratedAccessors)

@@ -18,6 +18,7 @@
     
     UIImage *navBarBackground = [UIImage stretchableHorizontalImageNamed:@"navbar-background"];
     [[UINavigationBar appearance] setBackgroundImage:navBarBackground forBarMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance] setShadowImage:[UIImage imageNamed:@"navbar-shadow"]];
     [[UINavigationBar appearanceWhenContainedIn:[UIPopoverController class], nil] setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
     
     [[UINavigationBar appearance] setTitleTextAttributes:@{

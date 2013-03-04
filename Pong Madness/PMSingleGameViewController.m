@@ -36,6 +36,7 @@
 @property (nonatomic, strong) IBOutletCollection(UILabel) NSArray *legendLabels;
 @property (nonatomic, strong) IBOutlet UIView *tableBackgroundView;
 @property (nonatomic, strong) IBOutlet UIButton *pointsToWinSwitch;
+@property (nonatomic, strong) IBOutlet UILabel *winnerLabel;
 @property (nonatomic, strong) IBOutlet UIButton *startButton;
 @property (nonatomic, strong) IBOutlet UIButton *finishButton;
 
@@ -90,6 +91,7 @@
 @synthesize legendLabels;
 @synthesize tableBackgroundView;
 @synthesize pointsToWinSwitch;
+@synthesize winnerLabel;
 @synthesize startButton;
 @synthesize finishButton;
 @synthesize participantList;
@@ -169,6 +171,8 @@
     self.leftScoreLabel.font = [UIFont brothersBoldFontOfSize:93.f];
     self.rightScoreLabel.font = [UIFont brothersBoldFontOfSize:93.f];
     self.timerLabel.font = [UIFont brothersBoldFontOfSize:36.f];
+    self.winnerLabel.font = [UIFont brothersBoldFontOfSize:17.f];
+    self.winnerLabel.alpha = 0.f;
     
     
     // Hides games controls for now
@@ -298,10 +302,21 @@
         self.game.timePlayed = @(-[self.game.startDate timeIntervalSinceNow]);
         [[PMDocumentManager sharedDocument] save];
         
+        NSInteger timePlayed = [self.game.timePlayed integerValue];
+        NSInteger minutes = timePlayed / 60;
+        NSInteger seconds = timePlayed % 60;
+        
+        PMPlayer *firstPlayer = [self.participantList objectAtIndex:0];
+        PMPlayer *secondPlayer = [self.participantList objectAtIndex:1];
+        if (participantWinner == firstPlayer) {
+            self.winnerLabel.text = [NSString stringWithFormat:@"%@ defeated %@ %@-%@ in %i minutes and %i seconds.", firstPlayer.username, secondPlayer.username, [game scoreForParticipant:firstPlayer], [game scoreForParticipant:secondPlayer], minutes, seconds];
+        } else {
+            self.winnerLabel.text = [NSString stringWithFormat:@"%@ defeated %@ %@-%@ in %i minutes and %i seconds.", secondPlayer.username, firstPlayer.username, [game scoreForParticipant:secondPlayer], [game scoreForParticipant:firstPlayer], minutes, seconds];
+        }
+                                     
         [UIView animateWithDuration:0.8 animations:^{
             
             // Discard the loser
-            PMPlayer *firstPlayer = [self.participantList objectAtIndex:0];
             if (participantWinner == firstPlayer) {
                 self.secondPlayerContainerView.transform = CGAffineTransformConcat(
                     CGAffineTransformMakeTranslation(0.f, 1200.f),
@@ -331,12 +346,13 @@
             [UIView animateWithDuration:0.6 animations:^{
                 
                 // Hilight the winner
-                PMPlayer *firstPlayer = [self.participantList objectAtIndex:0];
                 if (participantWinner == firstPlayer) {
                     self.firstPlayerContainerView.transform = CGAffineTransformMakeTranslation(257, 94.f);
                 } else {
                     self.secondPlayerContainerView.transform = CGAffineTransformMakeTranslation(-257.f, 94.f);
                 }
+                
+                self.winnerLabel.alpha = 1.f;
                 
                 self.tableBackgroundView.transform = CGAffineTransformMakeTranslation(0.f, -552.f);
             } completion:^(BOOL finished) {

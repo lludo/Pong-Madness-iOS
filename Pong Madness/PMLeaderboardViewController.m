@@ -7,12 +7,17 @@
 //
 
 #import "PMLeaderboardViewController.h"
+#import "PMLeaderboardCell.h"
 
-@interface PMLeaderboardViewController ()
+@interface PMLeaderboardViewController () <UITableViewDelegate, UITableViewDataSource>
+
+@property (nonatomic, strong) IBOutlet UITableView *tableView;
 
 @end
 
 @implementation PMLeaderboardViewController
+
+@synthesize tableView;
 
 - (id)init {
     self = [super init];
@@ -30,10 +35,25 @@
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Back", nil)
                                                                              style:UIBarButtonItemStyleBordered
                                                                             target:self action:@selector(close:)];
+    
+    UINib *leaderboardCellNib = [UINib nibWithNibName:@"PMLeaderboardCell" bundle:nil];
+    [self.tableView registerNib:leaderboardCellNib forCellReuseIdentifier:@"LeaderboardCell"];
 }
 
 - (IBAction)close:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+#pragma mark tableview delegate 
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 30;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)aTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    PMLeaderboardCell *cell = [aTableView dequeueReusableCellWithIdentifier:@"LeaderboardCell" forIndexPath:indexPath];
+    
+    return cell;
 }
 
 - (void)didReceiveMemoryWarning {

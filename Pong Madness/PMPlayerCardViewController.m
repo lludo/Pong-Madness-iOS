@@ -22,6 +22,7 @@
 @property (nonatomic, strong) IBOutlet UILabel *winCountPlayerLabel;
 @property (nonatomic, strong) IBOutlet UILabel *loseCountPlayerLabel;
 @property (nonatomic, strong) IBOutlet UILabel *playedCountPlayerLabel;
+@property (nonatomic, strong) IBOutlet UILabel *ratioPlayerLabel;
 @property (nonatomic, strong) IBOutlet UIImageView *handednessPlayerImageView;
 
 @property (nonatomic, strong) IBOutletCollection(UILabel) NSArray *legendLabels;
@@ -86,6 +87,7 @@
     self.winCountPlayerLabel.font = [UIFont brothersBoldFontOfSize:22.f];
     self.loseCountPlayerLabel.font = [UIFont brothersBoldFontOfSize:22.f];
     self.playedCountPlayerLabel.font = [UIFont brothersBoldFontOfSize:22.f];
+    self.ratioPlayerLabel.font = [UIFont brothersBoldFontOfSize:22.f];
     
     [self.legendLabels enumerateObjectsUsingBlock:^(UILabel *label, NSUInteger idx, BOOL *stop) {
         label.font = [UIFont brothersBoldFontOfSize:11.f];
@@ -97,7 +99,24 @@
 }
 
 - (void)updateView {
+    NSUInteger playedGamesCount = [self.player playedGamesCount];
+    NSUInteger wonGamesCount = [self.player wonGamesCount];
+    float ratio = wonGamesCount / (float)playedGamesCount;
+    
+    NSString *ratioString;
+    if (playedGamesCount == 0) {
+        ratioString = @"-";
+    } else if (ratio == 1.f) {
+        ratioString = @"1";
+    } else {
+        ratioString = [[NSString stringWithFormat:@"%.2f", ratio] substringFromIndex:1];
+    }
+    
     self.usernamePlayerLabel.text = self.player.username;
+    self.playedCountPlayerLabel.text = [NSString stringWithFormat:@"%u", playedGamesCount];
+    self.winCountPlayerLabel.text = [NSString stringWithFormat:@"%u", wonGamesCount];
+    self.loseCountPlayerLabel.text = [NSString stringWithFormat:@"%u", playedGamesCount - wonGamesCount];
+    self.ratioPlayerLabel.text = ratioString;
 }
 
 - (IBAction)close:(id)sender {

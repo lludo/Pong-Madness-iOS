@@ -10,7 +10,7 @@
 #import <CoreData/CoreData.h>
 #import "PMParticipant.h"
 
-@class PMLeaderboardPlayer, PMTeam, PMTournament;
+@class PMLeaderboardPlayer, PMTeam, PMTournament, PMLeaderboard;
 
 typedef enum {
 	PMPlayerHandednessLefty = 0,
@@ -30,6 +30,12 @@ typedef enum {
 @property (nonatomic, strong) NSSet *tournamentSet;
 
 + (PMPlayer *)playerWithUsername:(NSString *)username;
+
+- (NSUInteger)wonGamesCount;
+- (NSUInteger)lostGamesCount;
+- (NSUInteger)playedGamesCount;
+
+- (NSUInteger)rankInLeaderboard:(PMLeaderboard *)leaderboard;
 
 @end
 

@@ -77,6 +77,26 @@
 		8215A90916E4243C00BDDFA2 /* game-winner-text@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8215A90516E4243C00BDDFA2 /* game-winner-text@2x.png */; };
 		8215A90A16E4243C00BDDFA2 /* icon-bubble.png in Resources */ = {isa = PBXBuildFile; fileRef = 8215A90616E4243C00BDDFA2 /* icon-bubble.png */; };
 		8215A90B16E4243C00BDDFA2 /* icon-bubble@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8215A90716E4243C00BDDFA2 /* icon-bubble@2x.png */; };
+		8215A91E16E44CB400BDDFA2 /* edit-handedness-left-active.png in Resources */ = {isa = PBXBuildFile; fileRef = 8215A90C16E44CB400BDDFA2 /* edit-handedness-left-active.png */; };
+		8215A91F16E44CB400BDDFA2 /* edit-handedness-left-active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8215A90D16E44CB400BDDFA2 /* edit-handedness-left-active@2x.png */; };
+		8215A92016E44CB400BDDFA2 /* edit-handedness-left-inactive.png in Resources */ = {isa = PBXBuildFile; fileRef = 8215A90E16E44CB400BDDFA2 /* edit-handedness-left-inactive.png */; };
+		8215A92116E44CB400BDDFA2 /* edit-handedness-left-inactive@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8215A90F16E44CB400BDDFA2 /* edit-handedness-left-inactive@2x.png */; };
+		8215A92216E44CB400BDDFA2 /* edit-handedness-right-active.png in Resources */ = {isa = PBXBuildFile; fileRef = 8215A91016E44CB400BDDFA2 /* edit-handedness-right-active.png */; };
+		8215A92316E44CB400BDDFA2 /* edit-handedness-right-active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8215A91116E44CB400BDDFA2 /* edit-handedness-right-active@2x.png */; };
+		8215A92416E44CB400BDDFA2 /* edit-handedness-right-inactive.png in Resources */ = {isa = PBXBuildFile; fileRef = 8215A91216E44CB400BDDFA2 /* edit-handedness-right-inactive.png */; };
+		8215A92516E44CB400BDDFA2 /* edit-handedness-right-inactive@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8215A91316E44CB400BDDFA2 /* edit-handedness-right-inactive@2x.png */; };
+		8215A92616E44CB400BDDFA2 /* edit-picture.png in Resources */ = {isa = PBXBuildFile; fileRef = 8215A91416E44CB400BDDFA2 /* edit-picture.png */; };
+		8215A92716E44CB400BDDFA2 /* edit-picture@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8215A91516E44CB400BDDFA2 /* edit-picture@2x.png */; };
+		8215A92816E44CB400BDDFA2 /* leaderboard-avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 8215A91616E44CB400BDDFA2 /* leaderboard-avatar.png */; };
+		8215A92916E44CB400BDDFA2 /* leaderboard-avatar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8215A91716E44CB400BDDFA2 /* leaderboard-avatar@2x.png */; };
+		8215A92A16E44CB400BDDFA2 /* leaderboard-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 8215A91816E44CB400BDDFA2 /* leaderboard-background.png */; };
+		8215A92B16E44CB400BDDFA2 /* leaderboard-background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8215A91916E44CB400BDDFA2 /* leaderboard-background@2x.png */; };
+		8215A92C16E44CB400BDDFA2 /* leaderboard-bar-legend.png in Resources */ = {isa = PBXBuildFile; fileRef = 8215A91A16E44CB400BDDFA2 /* leaderboard-bar-legend.png */; };
+		8215A92D16E44CB400BDDFA2 /* leaderboard-bar-legend@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8215A91B16E44CB400BDDFA2 /* leaderboard-bar-legend@2x.png */; };
+		8215A92E16E44CB400BDDFA2 /* leaderboard-playeroftheweek-title.png in Resources */ = {isa = PBXBuildFile; fileRef = 8215A91C16E44CB400BDDFA2 /* leaderboard-playeroftheweek-title.png */; };
+		8215A92F16E44CB400BDDFA2 /* leaderboard-playeroftheweek-title@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8215A91D16E44CB400BDDFA2 /* leaderboard-playeroftheweek-title@2x.png */; };
+		8215A93216E454E500BDDFA2 /* PMLeaderboardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8215A93116E454E500BDDFA2 /* PMLeaderboardCell.m */; };
+		8215A93416E4556F00BDDFA2 /* PMLeaderboardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8215A93316E4556F00BDDFA2 /* PMLeaderboardCell.xib */; };
 		8222C23116DF1CD30084D5D6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8222C23016DF1CD30084D5D6 /* UIKit.framework */; };
 		8222C23316DF1CD30084D5D6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8222C23216DF1CD30084D5D6 /* Foundation.framework */; };
 		8222C23516DF1CD30084D5D6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8222C23416DF1CD30084D5D6 /* CoreGraphics.framework */; };
@@ -236,6 +256,27 @@
 		8215A90516E4243C00BDDFA2 /* game-winner-text@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "game-winner-text@2x.png"; sourceTree = "<group>"; };
 		8215A90616E4243C00BDDFA2 /* icon-bubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-bubble.png"; sourceTree = "<group>"; };
 		8215A90716E4243C00BDDFA2 /* icon-bubble@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-bubble@2x.png"; sourceTree = "<group>"; };
+		8215A90C16E44CB400BDDFA2 /* edit-handedness-left-active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit-handedness-left-active.png"; sourceTree = "<group>"; };
+		8215A90D16E44CB400BDDFA2 /* edit-handedness-left-active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit-handedness-left-active@2x.png"; sourceTree = "<group>"; };
+		8215A90E16E44CB400BDDFA2 /* edit-handedness-left-inactive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit-handedness-left-inactive.png"; sourceTree = "<group>"; };
+		8215A90F16E44CB400BDDFA2 /* edit-handedness-left-inactive@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit-handedness-left-inactive@2x.png"; sourceTree = "<group>"; };
+		8215A91016E44CB400BDDFA2 /* edit-handedness-right-active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit-handedness-right-active.png"; sourceTree = "<group>"; };
+		8215A91116E44CB400BDDFA2 /* edit-handedness-right-active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit-handedness-right-active@2x.png"; sourceTree = "<group>"; };
+		8215A91216E44CB400BDDFA2 /* edit-handedness-right-inactive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit-handedness-right-inactive.png"; sourceTree = "<group>"; };
+		8215A91316E44CB400BDDFA2 /* edit-handedness-right-inactive@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit-handedness-right-inactive@2x.png"; sourceTree = "<group>"; };
+		8215A91416E44CB400BDDFA2 /* edit-picture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit-picture.png"; sourceTree = "<group>"; };
+		8215A91516E44CB400BDDFA2 /* edit-picture@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit-picture@2x.png"; sourceTree = "<group>"; };
+		8215A91616E44CB400BDDFA2 /* leaderboard-avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "leaderboard-avatar.png"; sourceTree = "<group>"; };
+		8215A91716E44CB400BDDFA2 /* leaderboard-avatar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "leaderboard-avatar@2x.png"; sourceTree = "<group>"; };
+		8215A91816E44CB400BDDFA2 /* leaderboard-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "leaderboard-background.png"; sourceTree = "<group>"; };
+		8215A91916E44CB400BDDFA2 /* leaderboard-background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "leaderboard-background@2x.png"; sourceTree = "<group>"; };
+		8215A91A16E44CB400BDDFA2 /* leaderboard-bar-legend.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "leaderboard-bar-legend.png"; sourceTree = "<group>"; };
+		8215A91B16E44CB400BDDFA2 /* leaderboard-bar-legend@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "leaderboard-bar-legend@2x.png"; sourceTree = "<group>"; };
+		8215A91C16E44CB400BDDFA2 /* leaderboard-playeroftheweek-title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "leaderboard-playeroftheweek-title.png"; sourceTree = "<group>"; };
+		8215A91D16E44CB400BDDFA2 /* leaderboard-playeroftheweek-title@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "leaderboard-playeroftheweek-title@2x.png"; sourceTree = "<group>"; };
+		8215A93016E454E500BDDFA2 /* PMLeaderboardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMLeaderboardCell.h; sourceTree = "<group>"; };
+		8215A93116E454E500BDDFA2 /* PMLeaderboardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMLeaderboardCell.m; sourceTree = "<group>"; };
+		8215A93316E4556F00BDDFA2 /* PMLeaderboardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PMLeaderboardCell.xib; sourceTree = "<group>"; };
 		8222C22D16DF1CD30084D5D6 /* Pong Madness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pong Madness.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8222C23016DF1CD30084D5D6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8222C23216DF1CD30084D5D6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -384,6 +425,24 @@
 				8215A90516E4243C00BDDFA2 /* game-winner-text@2x.png */,
 				8215A90616E4243C00BDDFA2 /* icon-bubble.png */,
 				8215A90716E4243C00BDDFA2 /* icon-bubble@2x.png */,
+				8215A90C16E44CB400BDDFA2 /* edit-handedness-left-active.png */,
+				8215A90D16E44CB400BDDFA2 /* edit-handedness-left-active@2x.png */,
+				8215A90E16E44CB400BDDFA2 /* edit-handedness-left-inactive.png */,
+				8215A90F16E44CB400BDDFA2 /* edit-handedness-left-inactive@2x.png */,
+				8215A91016E44CB400BDDFA2 /* edit-handedness-right-active.png */,
+				8215A91116E44CB400BDDFA2 /* edit-handedness-right-active@2x.png */,
+				8215A91216E44CB400BDDFA2 /* edit-handedness-right-inactive.png */,
+				8215A91316E44CB400BDDFA2 /* edit-handedness-right-inactive@2x.png */,
+				8215A91416E44CB400BDDFA2 /* edit-picture.png */,
+				8215A91516E44CB400BDDFA2 /* edit-picture@2x.png */,
+				8215A91616E44CB400BDDFA2 /* leaderboard-avatar.png */,
+				8215A91716E44CB400BDDFA2 /* leaderboard-avatar@2x.png */,
+				8215A91816E44CB400BDDFA2 /* leaderboard-background.png */,
+				8215A91916E44CB400BDDFA2 /* leaderboard-background@2x.png */,
+				8215A91A16E44CB400BDDFA2 /* leaderboard-bar-legend.png */,
+				8215A91B16E44CB400BDDFA2 /* leaderboard-bar-legend@2x.png */,
+				8215A91C16E44CB400BDDFA2 /* leaderboard-playeroftheweek-title.png */,
+				8215A91D16E44CB400BDDFA2 /* leaderboard-playeroftheweek-title@2x.png */,
 				825C162116E328BA008A65FA /* game-switch-11.png */,
 				825C162216E328BA008A65FA /* game-switch-11@2x.png */,
 				825C162316E328BA008A65FA /* game-switch-21.png */,
@@ -685,6 +744,9 @@
 				820D71B616E206C900E98D23 /* PMPlayerCell.h */,
 				820D71B716E206C900E98D23 /* PMPlayerCell.m */,
 				820D71B916E206DE00E98D23 /* PMPlayerCell.xib */,
+				8215A93016E454E500BDDFA2 /* PMLeaderboardCell.h */,
+				8215A93116E454E500BDDFA2 /* PMLeaderboardCell.m */,
+				8215A93316E4556F00BDDFA2 /* PMLeaderboardCell.xib */,
 			);
 			name = TableViewCells;
 			sourceTree = "<group>";
@@ -851,6 +913,25 @@
 				8215A90916E4243C00BDDFA2 /* game-winner-text@2x.png in Resources */,
 				8215A90A16E4243C00BDDFA2 /* icon-bubble.png in Resources */,
 				8215A90B16E4243C00BDDFA2 /* icon-bubble@2x.png in Resources */,
+				8215A91E16E44CB400BDDFA2 /* edit-handedness-left-active.png in Resources */,
+				8215A91F16E44CB400BDDFA2 /* edit-handedness-left-active@2x.png in Resources */,
+				8215A92016E44CB400BDDFA2 /* edit-handedness-left-inactive.png in Resources */,
+				8215A92116E44CB400BDDFA2 /* edit-handedness-left-inactive@2x.png in Resources */,
+				8215A92216E44CB400BDDFA2 /* edit-handedness-right-active.png in Resources */,
+				8215A92316E44CB400BDDFA2 /* edit-handedness-right-active@2x.png in Resources */,
+				8215A92416E44CB400BDDFA2 /* edit-handedness-right-inactive.png in Resources */,
+				8215A92516E44CB400BDDFA2 /* edit-handedness-right-inactive@2x.png in Resources */,
+				8215A92616E44CB400BDDFA2 /* edit-picture.png in Resources */,
+				8215A92716E44CB400BDDFA2 /* edit-picture@2x.png in Resources */,
+				8215A92816E44CB400BDDFA2 /* leaderboard-avatar.png in Resources */,
+				8215A92916E44CB400BDDFA2 /* leaderboard-avatar@2x.png in Resources */,
+				8215A92A16E44CB400BDDFA2 /* leaderboard-background.png in Resources */,
+				8215A92B16E44CB400BDDFA2 /* leaderboard-background@2x.png in Resources */,
+				8215A92C16E44CB400BDDFA2 /* leaderboard-bar-legend.png in Resources */,
+				8215A92D16E44CB400BDDFA2 /* leaderboard-bar-legend@2x.png in Resources */,
+				8215A92E16E44CB400BDDFA2 /* leaderboard-playeroftheweek-title.png in Resources */,
+				8215A92F16E44CB400BDDFA2 /* leaderboard-playeroftheweek-title@2x.png in Resources */,
+				8215A93416E4556F00BDDFA2 /* PMLeaderboardCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -890,6 +971,7 @@
 				82B2A6FF16E2BF98002D6178 /* PMValueFormatter.m in Sources */,
 				82B2A71A16E2D820002D6178 /* PMCollectionViewPlayerSelectionLayout.m in Sources */,
 				825C164416E32D23008A65FA /* UIButton+Stretch.m in Sources */,
+				8215A93216E454E500BDDFA2 /* PMLeaderboardCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

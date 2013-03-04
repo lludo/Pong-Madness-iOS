@@ -11,6 +11,7 @@
 #import "PMTournament.h"
 #import "PMParticipant.h"
 #import "PMDocumentManager.h"
+#import "PMTournament.h"
 
 @implementation PMGame
 
@@ -42,7 +43,12 @@
     
     // Assign the game participants to the game
     [game setGameParticipantOrderedSet:[NSOrderedSet orderedSetWithObjects:firstGameParticipant, secondGameParticipant, nil]];
+    [game setTournamentSet:[NSSet setWithObject:[PMTournament globalTournament]]];
     return game;
+}
+
+- (BOOL)isGameOver {
+    return (self.timePlayed != nil);
 }
 
 - (NSNumber *)scoreForParticipant:(PMParticipant *)participant {

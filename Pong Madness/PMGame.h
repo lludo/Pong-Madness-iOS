@@ -26,6 +26,7 @@ typedef enum {
 
 + (PMGame *)gameWithParticipants:(NSArray *)participants;
 
+- (BOOL)isGameOver;
 - (NSNumber *)scoreForParticipant:(PMParticipant *)participant;
 - (void)increasePointsForParticipant:(PMParticipant *)participant;
 - (void)decreasePointsForParticipant:(PMParticipant *)participant;
