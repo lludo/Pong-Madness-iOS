@@ -14,6 +14,14 @@
 @interface PMLeaderboardPlayer : NSManagedObject
 
 @property (nonatomic, strong) PMPlayer *player;
+@property (nonatomic, strong) NSNumber *gamesPlayedCount;
+@property (nonatomic, strong) NSNumber *gamesWonCount;
+@property (nonatomic, strong) NSNumber *victoryRatio;
 @property (nonatomic, strong) PMLeaderboard *leaderboard;
+
++ (PMLeaderboardPlayer *)leaderboardPlayerForPlayer:(PMPlayer *)player inLeaderboard:(PMLeaderboard *)leaderboard;
+
+- (void)recordVictory;
+- (void)recordDefeat;
 
 @end

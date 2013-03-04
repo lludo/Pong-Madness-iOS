@@ -18,6 +18,9 @@
         <relationship name="tournament" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Tournament" inverseName="leaderboard" inverseEntity="Tournament" syncable="YES"/>
     </entity>
     <entity name="LeaderboardPlayer" representedClassName="PMLeaderboardPlayer" syncable="YES">
+        <attribute name="gamesPlayedCount" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="gamesWonCount" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="victoryRatio" optional="YES" attributeType="Float" defaultValueString="0" syncable="YES"/>
         <relationship name="leaderboard" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Leaderboard" inverseName="leaderboardPlayerSet" inverseEntity="Leaderboard" syncable="YES"/>
         <relationship name="player" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Player" inverseName="leaderboardPlayerSet" inverseEntity="Player" syncable="YES"/>
     </entity>
@@ -50,7 +53,7 @@
         <element name="Game" positionX="369" positionY="90" width="164" height="118"/>
         <element name="GameParticipant" positionX="72" positionY="72" width="128" height="88"/>
         <element name="Leaderboard" positionX="801" positionY="387" width="128" height="88"/>
-        <element name="LeaderboardPlayer" positionX="594" positionY="447" width="128" height="73"/>
+        <element name="LeaderboardPlayer" positionX="594" positionY="447" width="128" height="118"/>
         <element name="Participant" positionX="243" positionY="248" width="128" height="58"/>
         <element name="Player" positionX="333" positionY="429" width="128" height="178"/>
         <element name="Team" positionX="126" positionY="441" width="128" height="73"/>

@@ -12,6 +12,10 @@
 #import "PMParticipant.h"
 #import "PMDocumentManager.h"
 #import "PMTournament.h"
+#import "PMPlayer.h"
+#import "PMTeam.h"
+#import "PMLeaderboard.h"
+#import "PMLeaderboardPlayer.h"
 
 @implementation PMGame
 
@@ -49,6 +53,52 @@
 
 - (BOOL)isGameOver {
     return (self.timePlayed != nil);
+}
+
+// When a new game is completed we update some denormalized fields
+- (void)setTimePlayed:(NSNumber *)timePlayed {
+    [self willChangeValueForKey:@"timePlayed"];
+    [self setPrimitiveValue:timePlayed forKey:@"timePlayed"];
+    [self didChangeValueForKey:@"timePlayed"];
+    
+    PMGameParticipant *firstGameParticipant = [self.gameParticipantOrderedSet objectAtIndex:0];
+    PMGameParticipant *secondGameParticipant = [self.gameParticipantOrderedSet objectAtIndex:1];
+    
+    // Add the players to the global tournament
+    PMTournament *globalTournament = [PMTournament globalTournament];
+    [globalTournament addGameSetObject:self];
+    if ([firstGameParticipant.participant isKindOfClass:[PMPlayer class]]) {
+        [globalTournament addPlayerSetObject:(PMPlayer *)firstGameParticipant.participant];
+        [globalTournament addPlayerSetObject:(PMPlayer *)secondGameParticipant.participant];
+    } else if ([firstGameParticipant.participant isKindOfClass:[PMTeam class]]) {
+        [globalTournament addPlayerSet:((PMTeam *)firstGameParticipant.participant).playerSet];
+        [globalTournament addPlayerSet:((PMTeam *)secondGameParticipant.participant).playerSet];
+    }
+    
+    // Update leadearboard players
+    PMLeaderboard *globalLeaderboard = [PMLeaderboard globalLeaderboard];
+    if ([firstGameParticipant.participant isKindOfClass:[PMPlayer class]]) {
+        PMPlayer *firstPlayer = (PMPlayer *)firstGameParticipant.participant;
+        PMPlayer *secondPlayer = (PMPlayer *)secondGameParticipant.participant;
+        PMLeaderboardPlayer *firstLeaderboardPlayer = [firstPlayer leaderboardPlayerInLeaderboard:globalLeaderboard];
+        PMLeaderboardPlayer *secondLeaderboardPlayer = [secondPlayer leaderboardPlayerInLeaderboard:globalLeaderboard];
+        if (!firstLeaderboardPlayer) {
+            firstLeaderboardPlayer = [PMLeaderboardPlayer leaderboardPlayerForPlayer:firstPlayer inLeaderboard:globalLeaderboard];
+        }
+        if (!secondLeaderboardPlayer) {
+            secondLeaderboardPlayer = [PMLeaderboardPlayer leaderboardPlayerForPlayer:secondPlayer inLeaderboard:globalLeaderboard];
+        }
+        if ([firstGameParticipant.score intValue] > [secondGameParticipant.score intValue]) {
+            [firstLeaderboardPlayer recordVictory];
+            [secondLeaderboardPlayer recordDefeat];
+        } else {
+            [firstLeaderboardPlayer recordDefeat];
+            [secondLeaderboardPlayer recordVictory];
+        }
+    } else if ([firstGameParticipant.participant isKindOfClass:[PMTeam class]]) {
+        
+        //TODO: later manage teams
+    }
 }
 
 - (NSNumber *)scoreForParticipant:(PMParticipant *)participant {

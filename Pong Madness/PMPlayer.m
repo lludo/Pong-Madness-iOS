@@ -58,53 +58,44 @@
     }
 }
 
-- (NSUInteger)wonGamesCount {
-    __block NSUInteger wonGamesCount = 0;
-    NSArray *playedGames = [self gamesPlayed];
-    [playedGames enumerateObjectsUsingBlock:^(PMGame *game, NSUInteger idx, BOOL *stop) {
-        PMParticipant *participant = [game participantWinnerWithMinimumScore:0 andScoresGap:2];
-        if ([participant isKindOfClass:[PMPlayer class]]) {
-            PMPlayer *player = (PMPlayer *)participant;
-            if (player == self) {
-                wonGamesCount++;
-            }
-        } else if ([participant isKindOfClass:[PMTeam class]]) {
-            PMTeam *team = (PMTeam *)participant;
-            if ([team.playerSet containsObject:self]) {
-                wonGamesCount++;
-            }
-        }
-    }];
-    return wonGamesCount;
-}
-
-- (NSUInteger)lostGamesCount {
-    __block NSUInteger wonGamesCount = 0;
-    NSArray *playedGames = [self gamesPlayed];
-    [playedGames enumerateObjectsUsingBlock:^(PMGame *game, NSUInteger idx, BOOL *stop) {
-        PMParticipant *participant = [game participantWinnerWithMinimumScore:0 andScoresGap:2];
-        if ([participant isKindOfClass:[PMPlayer class]]) {
-            PMPlayer *player = (PMPlayer *)participant;
-            if (player == self) {
-                wonGamesCount++;
-            }
-        } else if ([participant isKindOfClass:[PMTeam class]]) {
-            PMTeam *team = (PMTeam *)participant;
-            if ([team.playerSet containsObject:self]) {
-                wonGamesCount++;
-            }
-        }
-    }];
-    return [playedGames count] - wonGamesCount;
-}
-
-- (NSUInteger)playedGamesCount {
-    NSArray *playedGames = [self gamesPlayed];
-    return [playedGames count];
-}
-
-- (NSUInteger)rankInLeaderboard:(PMLeaderboard *)leaderboard {
+- (PMLeaderboardPlayer *)leaderboardPlayerInLeaderboard:(PMLeaderboard *)leaderboard {
     
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSManagedObjectContext *managedObjectContext = [PMDocumentManager sharedDocument].managedObjectContext;
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"LeaderboardPlayer" inManagedObjectContext:managedObjectContext];
+    [fetchRequest setEntity:entity];
+    [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"leaderboard == %@ AND player == %@", leaderboard, self]];
+    [fetchRequest setFetchLimit:1];
+    
+    NSError *error = nil;
+    NSArray *result = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    
+    if (!error && [result count] == 1) {
+        return [result lastObject];
+    } else {
+        return nil;
+    }
+}
+
+- (NSNumber *)rankInLeaderboard:(PMLeaderboard *)leaderboard {
+    __block NSUInteger rank = 0;
+    
+    NSSortDescriptor *victoryRatioSortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"victoryRatio" ascending:NO];
+    NSSortDescriptor *gamesPlayedCountSortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"gamesPlayedCount" ascending:NO];
+    NSArray *leaderboardPlayers = [leaderboard.leaderboardPlayerSet sortedArrayUsingDescriptors:@[victoryRatioSortDescriptor, gamesPlayedCountSortDescriptor]];
+    
+    [leaderboardPlayers enumerateObjectsUsingBlock:^(PMLeaderboardPlayer *leaderboardPlayer, NSUInteger index, BOOL *stop) {
+        if (leaderboardPlayer.player == self) {
+            rank = index + 1;
+            *stop = YES;
+        }
+    }];
+    
+    if (rank != 0) {
+        return @(rank);
+    } else {
+        return nil;
+    }
 }
 
 @end

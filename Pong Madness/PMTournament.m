@@ -38,6 +38,7 @@
         globalTournament = [result lastObject];
     } else {
         globalTournament = [[PMTournament alloc] initWithEntity:entity insertIntoManagedObjectContext:managedObjectContext];
+        globalTournament.name = @"Global";
     }
     
     return globalTournament;

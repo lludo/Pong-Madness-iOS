@@ -31,11 +31,8 @@ typedef enum {
 
 + (PMPlayer *)playerWithUsername:(NSString *)username;
 
-- (NSUInteger)wonGamesCount;
-- (NSUInteger)lostGamesCount;
-- (NSUInteger)playedGamesCount;
-
-- (NSUInteger)rankInLeaderboard:(PMLeaderboard *)leaderboard;
+- (PMLeaderboardPlayer *)leaderboardPlayerInLeaderboard:(PMLeaderboard *)leaderboard;
+- (NSNumber *)rankInLeaderboard:(PMLeaderboard *)leaderboard;
 
 @end
 

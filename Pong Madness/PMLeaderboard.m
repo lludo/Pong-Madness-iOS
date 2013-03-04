@@ -35,6 +35,7 @@
         globalLeaderboard = [result lastObject];
     } else {
         globalLeaderboard = [[PMLeaderboard alloc] initWithEntity:entity insertIntoManagedObjectContext:managedObjectContext];
+        globalLeaderboard.tournament = [PMTournament globalTournament];
     }
     
     return globalLeaderboard;

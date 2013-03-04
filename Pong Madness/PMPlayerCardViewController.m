@@ -8,6 +8,8 @@
 
 #import "PMPlayerCardViewController.h"
 #import "UIFont+PongMadness.h"
+#import "PMLeaderboardPlayer.h"
+#import "PMLeaderboard.h"
 
 @interface PMPlayerCardViewController ()
 
@@ -99,9 +101,15 @@
 }
 
 - (void)updateView {
-    NSUInteger playedGamesCount = [self.player playedGamesCount];
-    NSUInteger wonGamesCount = [self.player wonGamesCount];
+    PMLeaderboard *globalLeaderboard = [PMLeaderboard globalLeaderboard];
+    PMLeaderboardPlayer *leaderboardPlayer = [self.player leaderboardPlayerInLeaderboard:globalLeaderboard];
+    
+    NSUInteger playedGamesCount = [leaderboardPlayer.gamesPlayedCount unsignedIntegerValue];
+    NSUInteger wonGamesCount = [leaderboardPlayer.gamesWonCount unsignedIntegerValue];
+    NSNumber *rank = [self.player rankInLeaderboard:globalLeaderboard];
     float ratio = wonGamesCount / (float)playedGamesCount;
+    
+    NSString *rankString = (rank != nil) ? [rank stringValue] : @"-";
     
     NSString *ratioString;
     if (playedGamesCount == 0) {
@@ -113,6 +121,7 @@
     }
     
     self.usernamePlayerLabel.text = self.player.username;
+    self.rankPlayerLabel.text = rankString;
     self.playedCountPlayerLabel.text = [NSString stringWithFormat:@"%u", playedGamesCount];
     self.winCountPlayerLabel.text = [NSString stringWithFormat:@"%u", wonGamesCount];
     self.loseCountPlayerLabel.text = [NSString stringWithFormat:@"%u", playedGamesCount - wonGamesCount];
