@@ -7,6 +7,7 @@
 //
 
 #import "PMPlayerCardViewController.h"
+#import "UIFont+PongMadness.h"
 
 @interface PMPlayerCardViewController ()
 
@@ -14,12 +15,36 @@
 
 @property (nonatomic, assign) PMPlayerCardMode mode;
 
+@property (nonatomic, strong) IBOutlet UIView *playerContainerView;
+@property (nonatomic, strong) IBOutlet UIImageView *avatarPlayerImageView;
+@property (nonatomic, strong) IBOutlet UILabel *usernamePlayerLabel;
+@property (nonatomic, strong) IBOutlet UILabel *rankPlayerLabel;
+@property (nonatomic, strong) IBOutlet UILabel *winCountPlayerLabel;
+@property (nonatomic, strong) IBOutlet UILabel *loseCountPlayerLabel;
+@property (nonatomic, strong) IBOutlet UILabel *playedCountPlayerLabel;
+@property (nonatomic, strong) IBOutlet UIImageView *handednessPlayerImageView;
+
+@property (nonatomic, strong) IBOutletCollection(UILabel) NSArray *legendLabels;
+
+- (void)updateView;
+
 @end
 
 @implementation PMPlayerCardViewController
 
 @synthesize player;
 @synthesize mode;
+
+@synthesize playerContainerView;
+@synthesize avatarPlayerImageView;
+@synthesize usernamePlayerLabel;
+@synthesize rankPlayerLabel;
+@synthesize winCountPlayerLabel;
+@synthesize loseCountPlayerLabel;
+@synthesize playedCountPlayerLabel;
+@synthesize handednessPlayerImageView;
+
+@synthesize legendLabels;
 
 - (id)init {
     self = [super init];
@@ -53,6 +78,26 @@
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Close", nil)
                                                                              style:UIBarButtonItemStyleBordered
                                                                             target:self action:@selector(close:)];
+    
+    self.playerContainerView.transform = CGAffineTransformMakeTranslation(0.f, -466.f);
+    self.avatarPlayerImageView.layer.cornerRadius = 3.f;
+    self.usernamePlayerLabel.font = [UIFont brothersBoldFontOfSize:38.f];
+    self.rankPlayerLabel.font = [UIFont brothersBoldFontOfSize:22.f];
+    self.winCountPlayerLabel.font = [UIFont brothersBoldFontOfSize:22.f];
+    self.loseCountPlayerLabel.font = [UIFont brothersBoldFontOfSize:22.f];
+    self.playedCountPlayerLabel.font = [UIFont brothersBoldFontOfSize:22.f];
+    
+    [self.legendLabels enumerateObjectsUsingBlock:^(UILabel *label, NSUInteger idx, BOOL *stop) {
+        label.font = [UIFont brothersBoldFontOfSize:11.f];
+    }];
+    
+    // Setup data in the views
+    
+    [self updateView];
+}
+
+- (void)updateView {
+    self.usernamePlayerLabel.text = self.player.username;
 }
 
 - (IBAction)close:(id)sender {

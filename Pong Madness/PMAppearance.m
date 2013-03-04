@@ -33,7 +33,7 @@
     UIImage *navBarButtonImage = [UIImage stretchableImageNamed:@"navbar-button"];
     
     UIImage *backBarButtonBackImage = [UIImage imageNamed:@"navbar-back"];
-    backBarButtonBackImage = [backBarButtonBackImage resizableImageWithCapInsets:UIEdgeInsetsMake(0, 16.0, 0, 5.0)];
+    backBarButtonBackImage = [backBarButtonBackImage resizableImageWithCapInsets:UIEdgeInsetsMake(0, 16.0, 0, 4.0) resizingMode:UIImageResizingModeStretch];
     
     UIBarButtonItem *navBarButtonItemAppearance = [UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil];
     [navBarButtonItemAppearance setBackgroundImage:navBarButtonImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];

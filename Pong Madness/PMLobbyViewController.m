@@ -84,7 +84,9 @@ typedef enum {
     
     self.title = @"PONG MADNESS";
     
-    if (!hasPlayedInitialAnimation) {
+    if (hasPlayedInitialAnimation) {
+        [self cancel:nil];
+    } else {
         self.hasPlayedInitialAnimation = YES;
         
         self.logoLaunchImageView.alpha = 1.f;

@@ -230,10 +230,19 @@
 }
 
 - (IBAction)close:(id)sender {
-    [self.timer invalidate];
-    self.timer = nil;
-    
+    if (timer) {
+        [self.timer invalidate];
+        self.timer = nil;
+    }
     [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
+- (IBAction)popNavigation:(id)sender {
+    if (timer) {
+        [self.timer invalidate];
+        self.timer = nil;
+    }
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)tooglePointsToWinSwitch:(id)sender {
@@ -324,12 +333,20 @@
                 // Hilight the winner
                 PMPlayer *firstPlayer = [self.participantList objectAtIndex:0];
                 if (participantWinner == firstPlayer) {
-                    self.firstPlayerContainerView.transform = CGAffineTransformMakeTranslation(257, -20.f);
+                    self.firstPlayerContainerView.transform = CGAffineTransformMakeTranslation(257, 94.f);
                 } else {
-                    self.secondPlayerContainerView.transform = CGAffineTransformMakeTranslation(-257.f, -20.f);
+                    self.secondPlayerContainerView.transform = CGAffineTransformMakeTranslation(-257.f, 94.f);
                 }
                 
                 self.tableBackgroundView.transform = CGAffineTransformMakeTranslation(0.f, -552.f);
+            } completion:^(BOOL finished) {
+                self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Close", nil)
+                                                                                         style:UIBarButtonItemStyleBordered
+                                                                                        target:self action:@selector(close:)];
+                
+                self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"New Game", nil)
+                                                                                          style:UIBarButtonItemStyleBordered
+                                                                                         target:self action:@selector(popNavigation:)];
             }];
         }];
     }

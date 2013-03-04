@@ -73,6 +73,10 @@
 		820D71BD16E211AA00E98D23 /* PMAddPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 820D71BC16E211AA00E98D23 /* PMAddPlayerView.m */; };
 		820D71BF16E211C200E98D23 /* PMAddPlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 820D71BE16E211C200E98D23 /* PMAddPlayerView.xib */; };
 		820D71C216E216D200E98D23 /* PMCollectionViewPlayerManagementLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 820D71C116E216D100E98D23 /* PMCollectionViewPlayerManagementLayout.m */; };
+		8215A90816E4243C00BDDFA2 /* game-winner-text.png in Resources */ = {isa = PBXBuildFile; fileRef = 8215A90416E4243C00BDDFA2 /* game-winner-text.png */; };
+		8215A90916E4243C00BDDFA2 /* game-winner-text@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8215A90516E4243C00BDDFA2 /* game-winner-text@2x.png */; };
+		8215A90A16E4243C00BDDFA2 /* icon-bubble.png in Resources */ = {isa = PBXBuildFile; fileRef = 8215A90616E4243C00BDDFA2 /* icon-bubble.png */; };
+		8215A90B16E4243C00BDDFA2 /* icon-bubble@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8215A90716E4243C00BDDFA2 /* icon-bubble@2x.png */; };
 		8222C23116DF1CD30084D5D6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8222C23016DF1CD30084D5D6 /* UIKit.framework */; };
 		8222C23316DF1CD30084D5D6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8222C23216DF1CD30084D5D6 /* Foundation.framework */; };
 		8222C23516DF1CD30084D5D6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8222C23416DF1CD30084D5D6 /* CoreGraphics.framework */; };
@@ -228,6 +232,10 @@
 		820D71BE16E211C200E98D23 /* PMAddPlayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PMAddPlayerView.xib; sourceTree = "<group>"; };
 		820D71C016E216D100E98D23 /* PMCollectionViewPlayerManagementLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMCollectionViewPlayerManagementLayout.h; sourceTree = "<group>"; };
 		820D71C116E216D100E98D23 /* PMCollectionViewPlayerManagementLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMCollectionViewPlayerManagementLayout.m; sourceTree = "<group>"; };
+		8215A90416E4243C00BDDFA2 /* game-winner-text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "game-winner-text.png"; sourceTree = "<group>"; };
+		8215A90516E4243C00BDDFA2 /* game-winner-text@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "game-winner-text@2x.png"; sourceTree = "<group>"; };
+		8215A90616E4243C00BDDFA2 /* icon-bubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-bubble.png"; sourceTree = "<group>"; };
+		8215A90716E4243C00BDDFA2 /* icon-bubble@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-bubble@2x.png"; sourceTree = "<group>"; };
 		8222C22D16DF1CD30084D5D6 /* Pong Madness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pong Madness.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8222C23016DF1CD30084D5D6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8222C23216DF1CD30084D5D6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -372,6 +380,10 @@
 				82B2A71C16E2DA81002D6178 /* icon-select-player-active@2x.png */,
 				82B2A71D16E2DA81002D6178 /* icon-select-player-inactive.png */,
 				82B2A71E16E2DA81002D6178 /* icon-select-player-inactive@2x.png */,
+				8215A90416E4243C00BDDFA2 /* game-winner-text.png */,
+				8215A90516E4243C00BDDFA2 /* game-winner-text@2x.png */,
+				8215A90616E4243C00BDDFA2 /* icon-bubble.png */,
+				8215A90716E4243C00BDDFA2 /* icon-bubble@2x.png */,
 				825C162116E328BA008A65FA /* game-switch-11.png */,
 				825C162216E328BA008A65FA /* game-switch-11@2x.png */,
 				825C162316E328BA008A65FA /* game-switch-21.png */,
@@ -835,6 +847,10 @@
 				825C164A16E3304A008A65FA /* game-mark-leader@2x.png in Resources */,
 				825C164B16E3304A008A65FA /* icon-handedness-undefine.png in Resources */,
 				825C164C16E3304A008A65FA /* icon-handedness-undefine@2x.png in Resources */,
+				8215A90816E4243C00BDDFA2 /* game-winner-text.png in Resources */,
+				8215A90916E4243C00BDDFA2 /* game-winner-text@2x.png in Resources */,
+				8215A90A16E4243C00BDDFA2 /* icon-bubble.png in Resources */,
+				8215A90B16E4243C00BDDFA2 /* icon-bubble@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
