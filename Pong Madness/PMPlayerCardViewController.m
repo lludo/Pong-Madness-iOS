@@ -7,29 +7,17 @@
 //
 
 #import "PMPlayerCardViewController.h"
-#import "UIFont+PongMadness.h"
+#import "PMPlayerView.h"
 #import "PMLeaderboardPlayer.h"
 #import "PMLeaderboard.h"
+#import "UIFont+PongMadness.h"
 
 @interface PMPlayerCardViewController ()
 
 - (IBAction)close:(id)sender;
 
 @property (nonatomic, assign) PMPlayerCardMode mode;
-
-@property (nonatomic, strong) IBOutlet UIView *playerContainerView;
-@property (nonatomic, strong) IBOutlet UIImageView *avatarPlayerImageView;
-@property (nonatomic, strong) IBOutlet UILabel *usernamePlayerLabel;
-@property (nonatomic, strong) IBOutlet UILabel *rankPlayerLabel;
-@property (nonatomic, strong) IBOutlet UILabel *winCountPlayerLabel;
-@property (nonatomic, strong) IBOutlet UILabel *loseCountPlayerLabel;
-@property (nonatomic, strong) IBOutlet UILabel *playedCountPlayerLabel;
-@property (nonatomic, strong) IBOutlet UILabel *ratioPlayerLabel;
-@property (nonatomic, strong) IBOutlet UIImageView *handednessPlayerImageView;
-
-@property (nonatomic, strong) IBOutletCollection(UILabel) NSArray *legendLabels;
-
-- (void)updateView;
+@property (nonatomic, strong) IBOutlet PMPlayerView *playerCardView;
 
 @end
 
@@ -37,17 +25,7 @@
 
 @synthesize player;
 @synthesize mode;
-
-@synthesize playerContainerView;
-@synthesize avatarPlayerImageView;
-@synthesize usernamePlayerLabel;
-@synthesize rankPlayerLabel;
-@synthesize winCountPlayerLabel;
-@synthesize loseCountPlayerLabel;
-@synthesize playedCountPlayerLabel;
-@synthesize handednessPlayerImageView;
-
-@synthesize legendLabels;
+@synthesize playerCardView;
 
 - (id)init {
     self = [super init];
@@ -76,56 +54,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = player.username;
+    self.title = self.player.username;
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Close", nil)
                                                                              style:UIBarButtonItemStyleBordered
                                                                             target:self action:@selector(close:)];
     
-    self.playerContainerView.transform = CGAffineTransformMakeTranslation(0.f, -466.f);
-    self.avatarPlayerImageView.layer.cornerRadius = 3.f;
-    self.usernamePlayerLabel.font = [UIFont brothersBoldFontOfSize:38.f];
-    self.rankPlayerLabel.font = [UIFont brothersBoldFontOfSize:22.f];
-    self.winCountPlayerLabel.font = [UIFont brothersBoldFontOfSize:22.f];
-    self.loseCountPlayerLabel.font = [UIFont brothersBoldFontOfSize:22.f];
-    self.playedCountPlayerLabel.font = [UIFont brothersBoldFontOfSize:22.f];
-    self.ratioPlayerLabel.font = [UIFont brothersBoldFontOfSize:22.f];
-    
-    [self.legendLabels enumerateObjectsUsingBlock:^(UILabel *label, NSUInteger idx, BOOL *stop) {
-        label.font = [UIFont brothersBoldFontOfSize:11.f];
-    }];
-    
-    // Setup data in the views
-    
-    [self updateView];
+    self.playerCardView.transform = CGAffineTransformMakeTranslation(0.f, -466.f);
+    self.playerCardView.player = self.player;
 }
 
-- (void)updateView {
-    PMLeaderboard *globalLeaderboard = [PMLeaderboard globalLeaderboard];
-    PMLeaderboardPlayer *leaderboardPlayer = [self.player leaderboardPlayerInLeaderboard:globalLeaderboard];
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     
-    NSUInteger playedGamesCount = [leaderboardPlayer.gamesPlayedCount unsignedIntegerValue];
-    NSUInteger wonGamesCount = [leaderboardPlayer.gamesWonCount unsignedIntegerValue];
-    NSNumber *rank = [self.player rankInLeaderboard:globalLeaderboard];
-    float ratio = wonGamesCount / (float)playedGamesCount;
-    
-    NSString *rankString = (rank != nil) ? [rank stringValue] : @"-";
-    
-    NSString *ratioString;
-    if (playedGamesCount == 0) {
-        ratioString = @"-";
-    } else if (ratio == 1.f) {
-        ratioString = @"1";
-    } else {
-        ratioString = [[NSString stringWithFormat:@"%.2f", ratio] substringFromIndex:1];
-    }
-    
-    self.usernamePlayerLabel.text = self.player.username;
-    self.rankPlayerLabel.text = rankString;
-    self.playedCountPlayerLabel.text = [NSString stringWithFormat:@"%u", playedGamesCount];
-    self.winCountPlayerLabel.text = [NSString stringWithFormat:@"%u", wonGamesCount];
-    self.loseCountPlayerLabel.text = [NSString stringWithFormat:@"%u", playedGamesCount - wonGamesCount];
-    self.ratioPlayerLabel.text = ratioString;
+    [self.playerCardView refreshUI];
 }
 
 - (IBAction)close:(id)sender {
