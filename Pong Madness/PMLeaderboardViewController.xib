@@ -77,7 +77,7 @@
 						<string key="NSFrame">{{700, 20}, {222, 200}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
+						<reference key="NSNextKeyView" ref="53208380"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<int key="IBUIContentMode">4</int>
@@ -109,37 +109,20 @@
 						<float key="IBUISectionHeaderHeight">30</float>
 						<float key="IBUISectionFooterHeight">30</float>
 					</object>
-					<object class="IBUIImageView" id="923649312">
+					<object class="IBUIView" id="53208380">
 						<reference key="NSNextResponder" ref="766721923"/>
-						<int key="NSvFlags">256</int>
-						<string key="NSFrame">{{649, 244}, {325, 418}}</string>
+						<int key="NSvFlags">269</int>
+						<array class="NSMutableArray" key="NSSubviews"/>
+						<string key="NSFrame">{{649, 236}, {325, 418}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
-						<bool key="IBUIOpaque">NO</bool>
-						<bool key="IBUIClipsSubviews">YES</bool>
-						<int key="IBUIContentMode">4</int>
-						<bool key="IBUIMultipleTouchEnabled">YES</bool>
-						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-						<object class="NSCustomResource" key="IBUIImage">
-							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">player-card-big.png</string>
+						<reference key="NSNextKeyView"/>
+						<string key="NSReuseIdentifierKey">_NS:9</string>
+						<object class="NSColor" key="IBUIBackgroundColor">
+							<int key="NSColorSpace">3</int>
+							<bytes key="NSWhite">MQA</bytes>
 						</object>
-					</object>
-					<object class="IBUIImageView" id="847063949">
-						<reference key="NSNextResponder" ref="766721923"/>
-						<int key="NSvFlags">256</int>
-						<string key="NSFrame">{{662, 254}, {298, 298}}</string>
-						<reference key="NSSuperview" ref="766721923"/>
-						<reference key="NSWindow"/>
-						<bool key="IBUIOpaque">NO</bool>
-						<bool key="IBUIClipsSubviews">YES</bool>
-						<int key="IBUIContentMode">4</int>
-						<bool key="IBUIMultipleTouchEnabled">YES</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-						<object class="NSCustomResource" key="IBUIImage">
-							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">default-avatar.png</string>
-						</object>
 					</object>
 				</array>
 				<string key="NSFrame">{{0, 64}, {1024, 704}}</string>
@@ -197,15 +180,16 @@
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 						<string key="IBUIText">RANK</string>
-						<object class="NSColor" key="IBUITextColor" id="1051898515">
+						<object class="NSColor" key="IBUITextColor" id="384266191">
 							<int key="NSColorSpace">1</int>
-							<bytes key="NSRGB">MC41ODAzOTIxNTY5IDAuNDYyNzQ1MDk4IDAuMzUyOTQxMTc2NQA</bytes>
+							<bytes key="NSRGB">MC4wMzkyMTU2ODYyNyAwLjExMzcyNTQ5MDIgMC4wNzQ1MDk4MDM5MgA</bytes>
 						</object>
 						<nil key="IBUIHighlightedColor"/>
-						<object class="NSColor" key="IBUIShadowColor" id="20960909">
-							<int key="NSColorSpace">3</int>
-							<bytes key="NSWhite">MAA</bytes>
+						<object class="NSColor" key="IBUIShadowColor" id="49189740">
+							<int key="NSColorSpace">1</int>
+							<bytes key="NSRGB">MC4xODAzOTIxNTY5IDAuMjYyNzQ1MDk4IDAuMjE5NjA3ODQzMQA</bytes>
 						</object>
+						<string key="IBUIShadowOffset">{0, 1}</string>
 						<int key="IBUIBaselineAdjustment">0</int>
 						<int key="IBUITextAlignment">1</int>
 						<object class="IBUIFontDescription" key="IBUIFontDescription" id="575331460">
@@ -233,9 +217,10 @@
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 						<string key="IBUIText">PLAYER</string>
-						<reference key="IBUITextColor" ref="1051898515"/>
+						<reference key="IBUITextColor" ref="384266191"/>
 						<nil key="IBUIHighlightedColor"/>
-						<reference key="IBUIShadowColor" ref="20960909"/>
+						<reference key="IBUIShadowColor" ref="49189740"/>
+						<string key="IBUIShadowOffset">{0, 1}</string>
 						<int key="IBUIBaselineAdjustment">0</int>
 						<reference key="IBUIFontDescription" ref="575331460"/>
 						<reference key="IBUIFont" ref="65014034"/>
@@ -254,10 +239,11 @@
 						<int key="IBUIContentMode">7</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-						<string key="IBUIText">WON</string>
-						<reference key="IBUITextColor" ref="1051898515"/>
+						<string key="IBUIText">WINS</string>
+						<reference key="IBUITextColor" ref="384266191"/>
 						<nil key="IBUIHighlightedColor"/>
-						<reference key="IBUIShadowColor" ref="20960909"/>
+						<reference key="IBUIShadowColor" ref="49189740"/>
+						<string key="IBUIShadowOffset">{0, 1}</string>
 						<int key="IBUIBaselineAdjustment">0</int>
 						<int key="IBUITextAlignment">1</int>
 						<reference key="IBUIFontDescription" ref="575331460"/>
@@ -277,10 +263,11 @@
 						<int key="IBUIContentMode">7</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-						<string key="IBUIText">LOST</string>
-						<reference key="IBUITextColor" ref="1051898515"/>
+						<string key="IBUIText">LOSSES</string>
+						<reference key="IBUITextColor" ref="384266191"/>
 						<nil key="IBUIHighlightedColor"/>
-						<reference key="IBUIShadowColor" ref="20960909"/>
+						<reference key="IBUIShadowColor" ref="49189740"/>
+						<string key="IBUIShadowOffset">{0, 1}</string>
 						<int key="IBUIBaselineAdjustment">0</int>
 						<int key="IBUITextAlignment">1</int>
 						<reference key="IBUIFontDescription" ref="575331460"/>
@@ -301,9 +288,10 @@
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 						<string key="IBUIText">PLAYED</string>
-						<reference key="IBUITextColor" ref="1051898515"/>
+						<reference key="IBUITextColor" ref="384266191"/>
 						<nil key="IBUIHighlightedColor"/>
-						<reference key="IBUIShadowColor" ref="20960909"/>
+						<reference key="IBUIShadowColor" ref="49189740"/>
+						<string key="IBUIShadowOffset">{0, 1}</string>
 						<int key="IBUIBaselineAdjustment">0</int>
 						<int key="IBUITextAlignment">1</int>
 						<reference key="IBUIFontDescription" ref="575331460"/>
@@ -324,9 +312,10 @@
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 						<string key="IBUIText">RATIO</string>
-						<reference key="IBUITextColor" ref="1051898515"/>
+						<reference key="IBUITextColor" ref="384266191"/>
 						<nil key="IBUIHighlightedColor"/>
-						<reference key="IBUIShadowColor" ref="20960909"/>
+						<reference key="IBUIShadowColor" ref="49189740"/>
+						<string key="IBUIShadowOffset">{0, 1}</string>
 						<int key="IBUIBaselineAdjustment">0</int>
 						<int key="IBUITextAlignment">1</int>
 						<reference key="IBUIFontDescription" ref="575331460"/>
@@ -437,6 +426,14 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">playerCardView</string>
+						<reference key="source" ref="841351856"/>
+						<reference key="destination" ref="53208380"/>
+					</object>
+					<int key="connectionID">31</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">dataSource</string>
 						<reference key="source" ref="573045164"/>
 						<reference key="destination" ref="841351856"/>
@@ -479,8 +476,7 @@
 							<reference ref="298721965"/>
 							<reference ref="909910728"/>
 							<reference ref="573045164"/>
-							<reference ref="923649312"/>
-							<reference ref="847063949"/>
+							<reference ref="53208380"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -554,13 +550,8 @@
 						<reference key="parent" ref="918063551"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">28</int>
-						<reference key="object" ref="923649312"/>
-						<reference key="parent" ref="766721923"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">29</int>
-						<reference key="object" ref="847063949"/>
+						<int key="objectID">30</int>
+						<reference key="object" ref="53208380"/>
 						<reference key="parent" ref="766721923"/>
 					</object>
 				</array>
@@ -579,8 +570,8 @@
 				<string key="2.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="20.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="21.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<string key="28.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<string key="29.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="30.CustomClassName">PMPlayerView</string>
+				<string key="30.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="4.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="7.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="8.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -590,29 +581,23 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">29</int>
+			<int key="maxID">31</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
 				<object class="IBPartialClassDescription">
 					<string key="className">PMLeaderboardViewController</string>
 					<string key="superclassName">UIViewController</string>
-					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">close:</string>
-						<string key="NS.object.0">id</string>
-					</object>
-					<object class="NSMutableDictionary" key="actionInfosByName">
-						<string key="NS.key.0">close:</string>
-						<object class="IBActionInfo" key="NS.object.0">
-							<string key="name">close:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</object>
 					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="playerCardView">PMPlayerView</string>
 						<string key="tableHeaderView">UIView</string>
 						<string key="tableView">UITableView</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="playerCardView">
+							<string key="name">playerCardView</string>
+							<string key="candidateClassName">PMPlayerView</string>
+						</object>
 						<object class="IBToOneOutletInfo" key="tableHeaderView">
 							<string key="name">tableHeaderView</string>
 							<string key="candidateClassName">UIView</string>
@@ -635,6 +620,71 @@
 						<string key="minorKey">./Classes/PMLeaderboardViewController.h</string>
 					</object>
 				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">PMPlayerView</string>
+					<string key="superclassName">UIView</string>
+					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="avatarPlayerImageView">UIImageView</string>
+						<string key="handednessPlayerImageView">UIImageView</string>
+						<string key="loseCountPlayerLabel">UILabel</string>
+						<string key="mainView">UIView</string>
+						<string key="playedCountPlayerLabel">UILabel</string>
+						<string key="rankPlayerLabel">UILabel</string>
+						<string key="ratioPlayerLabel">UILabel</string>
+						<string key="usernamePlayerLabel">UILabel</string>
+						<string key="winCountPlayerLabel">UILabel</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="avatarPlayerImageView">
+							<string key="name">avatarPlayerImageView</string>
+							<string key="candidateClassName">UIImageView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="handednessPlayerImageView">
+							<string key="name">handednessPlayerImageView</string>
+							<string key="candidateClassName">UIImageView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="loseCountPlayerLabel">
+							<string key="name">loseCountPlayerLabel</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="mainView">
+							<string key="name">mainView</string>
+							<string key="candidateClassName">UIView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="playedCountPlayerLabel">
+							<string key="name">playedCountPlayerLabel</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="rankPlayerLabel">
+							<string key="name">rankPlayerLabel</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="ratioPlayerLabel">
+							<string key="name">ratioPlayerLabel</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="usernamePlayerLabel">
+							<string key="name">usernamePlayerLabel</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="winCountPlayerLabel">
+							<string key="name">winCountPlayerLabel</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+					</dictionary>
+					<object class="NSMutableDictionary" key="toManyOutletInfosByName">
+						<string key="NS.key.0">legendLabels</string>
+						<object class="IBToManyOutletInfo" key="NS.object.0">
+							<string key="name">legendLabels</string>
+							<string key="candidateClassName">UILabel</string>
+							<string key="collectionClassName">NSArray</string>
+						</object>
+					</object>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/PMPlayerView.h</string>
+					</object>
+				</object>
 			</array>
 		</object>
 		<int key="IBDocument.localizationMode">0</int>
@@ -643,11 +693,9 @@
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
 			<string key="background.png">{1024, 768}</string>
-			<string key="default-avatar.png">{298, 298}</string>
 			<string key="leaderboard-background.png">{425, 768}</string>
 			<string key="leaderboard-bar-legend.png">{1, 34}</string>
 			<string key="leaderboard-playeroftheweek-title.png">{222, 200}</string>
-			<string key="player-card-big.png">{325, 418}</string>
 		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">2083</string>
 	</data>

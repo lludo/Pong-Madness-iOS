@@ -10,30 +10,15 @@
 #import "UIFont+PongMadness.h"
 #import "UIButton+Stretch.h"
 #import "PMDocumentManager.h"
+#import "PMPlayerView.h"
 #import "PMPlayer.h"
 #import "PMGame.h"
 
 @interface PMSingleGameViewController ()
 
-@property (nonatomic, strong) IBOutlet UIView *firstPlayerContainerView;
-@property (nonatomic, strong) IBOutlet UIImageView *avatarFirstPlayerImageView;
-@property (nonatomic, strong) IBOutlet UILabel *usernameFirstPlayerLabel;
-@property (nonatomic, strong) IBOutlet UILabel *rankFirstPlayerLabel;
-@property (nonatomic, strong) IBOutlet UILabel *winCountFirstPlayerLabel;
-@property (nonatomic, strong) IBOutlet UILabel *loseCountFirstPlayerLabel;
-@property (nonatomic, strong) IBOutlet UILabel *playedCountFirstPlayerLabel;
-@property (nonatomic, strong) IBOutlet UIImageView *handednessFirstPlayerImageView;
+@property (nonatomic, strong) IBOutlet PMPlayerView *firstPlayerView;
+@property (nonatomic, strong) IBOutlet PMPlayerView *secondPlayerView;
 
-@property (nonatomic, strong) IBOutlet UIView *secondPlayerContainerView;
-@property (nonatomic, strong) IBOutlet UIImageView *avatarSecondPlayerImageView;
-@property (nonatomic, strong) IBOutlet UILabel *usernameSecondPlayerLabel;
-@property (nonatomic, strong) IBOutlet UILabel *rankSecondPlayerLabel;
-@property (nonatomic, strong) IBOutlet UILabel *winCountSecondPlayerLabel;
-@property (nonatomic, strong) IBOutlet UILabel *loseCountSecondPlayerLabel;
-@property (nonatomic, strong) IBOutlet UILabel *playedCountSecondPlayerLabel;
-@property (nonatomic, strong) IBOutlet UIImageView *handednessSecondPlayerImageView;
-
-@property (nonatomic, strong) IBOutletCollection(UILabel) NSArray *legendLabels;
 @property (nonatomic, strong) IBOutlet UIView *tableBackgroundView;
 @property (nonatomic, strong) IBOutlet UIButton *pointsToWinSwitch;
 @property (nonatomic, strong) IBOutlet UILabel *winnerLabel;
@@ -70,25 +55,9 @@
 
 @implementation PMSingleGameViewController
 
-@synthesize firstPlayerContainerView;
-@synthesize avatarFirstPlayerImageView;
-@synthesize usernameFirstPlayerLabel;
-@synthesize rankFirstPlayerLabel;
-@synthesize winCountFirstPlayerLabel;
-@synthesize loseCountFirstPlayerLabel;
-@synthesize playedCountFirstPlayerLabel;
-@synthesize handednessFirstPlayerImageView;
+@synthesize firstPlayerView;
+@synthesize secondPlayerView;
 
-@synthesize secondPlayerContainerView;
-@synthesize avatarSecondPlayerImageView;
-@synthesize usernameSecondPlayerLabel;
-@synthesize rankSecondPlayerLabel;
-@synthesize winCountSecondPlayerLabel;
-@synthesize loseCountSecondPlayerLabel;
-@synthesize playedCountSecondPlayerLabel;
-@synthesize handednessSecondPlayerImageView;
-
-@synthesize legendLabels;
 @synthesize tableBackgroundView;
 @synthesize pointsToWinSwitch;
 @synthesize winnerLabel;
@@ -141,25 +110,8 @@
     
     // Configure players
     
-    self.firstPlayerContainerView.transform = CGAffineTransformMakeTranslation(0.f, -466.f);
-    self.avatarFirstPlayerImageView.layer.cornerRadius = 3.f;
-    self.usernameFirstPlayerLabel.font = [UIFont brothersBoldFontOfSize:38.f];
-    self.rankFirstPlayerLabel.font = [UIFont brothersBoldFontOfSize:22.f];
-    self.winCountFirstPlayerLabel.font = [UIFont brothersBoldFontOfSize:22.f];
-    self.loseCountFirstPlayerLabel.font = [UIFont brothersBoldFontOfSize:22.f];
-    self.playedCountFirstPlayerLabel.font = [UIFont brothersBoldFontOfSize:22.f];
-    
-    self.secondPlayerContainerView.transform = CGAffineTransformMakeTranslation(0.f, -466.f);
-    self.avatarSecondPlayerImageView.layer.cornerRadius = 3.f;
-    self.usernameSecondPlayerLabel.font = [UIFont brothersBoldFontOfSize:38.f];
-    self.rankSecondPlayerLabel.font = [UIFont brothersBoldFontOfSize:22.f];
-    self.winCountSecondPlayerLabel.font = [UIFont brothersBoldFontOfSize:22.f];
-    self.loseCountSecondPlayerLabel.font = [UIFont brothersBoldFontOfSize:22.f];
-    self.playedCountSecondPlayerLabel.font = [UIFont brothersBoldFontOfSize:22.f];
-    
-    [self.legendLabels enumerateObjectsUsingBlock:^(UILabel *label, NSUInteger idx, BOOL *stop) {
-        label.font = [UIFont brothersBoldFontOfSize:11.f];
-    }];
+    self.firstPlayerView.transform = CGAffineTransformMakeTranslation(0.f, -466.f);
+    self.secondPlayerView.transform = CGAffineTransformMakeTranslation(0.f, -466.f);
     
     [self.startButton stretchBackgroundImage];
     self.startButton.titleLabel.font = [UIFont brothersBoldFontOfSize:38.f];
@@ -197,12 +149,12 @@
     [super viewDidAppear:animated];
     
     [UIView animateWithDuration:0.4 delay:0.f options:UIViewAnimationOptionCurveEaseOut animations:^{
-        self.firstPlayerContainerView.transform = CGAffineTransformMakeTranslation(0.f, 12.f);
-        self.secondPlayerContainerView.transform = CGAffineTransformMakeTranslation(0.f, 12.f);
+        self.firstPlayerView.transform = CGAffineTransformMakeTranslation(0.f, 12.f);
+        self.secondPlayerView.transform = CGAffineTransformMakeTranslation(0.f, 12.f);
     } completion:^(BOOL finished) {
         [UIView animateWithDuration:0.2 delay:0.f options:UIViewAnimationOptionCurveEaseOut animations:^{
-            self.firstPlayerContainerView.transform = CGAffineTransformIdentity;
-            self.secondPlayerContainerView.transform = CGAffineTransformIdentity;
+            self.firstPlayerView.transform = CGAffineTransformIdentity;
+            self.secondPlayerView.transform = CGAffineTransformIdentity;
         } completion:NULL];
     }];
 }
@@ -211,8 +163,8 @@
     PMPlayer *firstPlayer = [self.participantList objectAtIndex:0];
     PMPlayer *secondPlayer = [self.participantList objectAtIndex:1];
     
-    self.usernameFirstPlayerLabel.text = firstPlayer.username;
-    self.usernameSecondPlayerLabel.text = secondPlayer.username;
+    self.firstPlayerView.player = firstPlayer;
+    self.secondPlayerView.player = secondPlayer;
     
     if (game) {
         self.leftScoreLabel.text = [NSString stringWithFormat:@"%@", [self.game scoreForParticipant:firstPlayer]];
@@ -308,6 +260,8 @@
         
         PMPlayer *firstPlayer = [self.participantList objectAtIndex:0];
         PMPlayer *secondPlayer = [self.participantList objectAtIndex:1];
+        [self.firstPlayerView refreshUI];
+        [self.secondPlayerView refreshUI];
         if (participantWinner == firstPlayer) {
             self.winnerLabel.text = [NSString stringWithFormat:@"%@ defeated %@ %@-%@ in %i minutes and %i seconds.", firstPlayer.username, secondPlayer.username, [game scoreForParticipant:firstPlayer], [game scoreForParticipant:secondPlayer], minutes, seconds];
         } else {
@@ -318,12 +272,12 @@
             
             // Discard the loser
             if (participantWinner == firstPlayer) {
-                self.secondPlayerContainerView.transform = CGAffineTransformConcat(
+                self.secondPlayerView.transform = CGAffineTransformConcat(
                     CGAffineTransformMakeTranslation(0.f, 1200.f),
                     CGAffineTransformMakeScale(0.5, 0.5)
                 );
             } else {
-                self.firstPlayerContainerView.transform = CGAffineTransformConcat(
+                self.firstPlayerView.transform = CGAffineTransformConcat(
                     CGAffineTransformMakeTranslation(0.f, 1200.f),
                     CGAffineTransformMakeScale(0.5, 0.5)
                 );
@@ -347,9 +301,9 @@
                 
                 // Hilight the winner
                 if (participantWinner == firstPlayer) {
-                    self.firstPlayerContainerView.transform = CGAffineTransformMakeTranslation(257, 94.f);
+                    self.firstPlayerView.transform = CGAffineTransformMakeTranslation(257, 94.f);
                 } else {
-                    self.secondPlayerContainerView.transform = CGAffineTransformMakeTranslation(-257.f, 94.f);
+                    self.secondPlayerView.transform = CGAffineTransformMakeTranslation(-257.f, 94.f);
                 }
                 
                 self.winnerLabel.alpha = 1.f;

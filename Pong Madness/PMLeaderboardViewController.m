@@ -7,10 +7,12 @@
 //
 
 #import "PMLeaderboardViewController.h"
+#import "PMPlayerCardViewController.h"
 #import "PMLeaderboardCell.h"
 #import "UIFont+PongMadness.h"
 #import "PMLeaderboardPlayer.h"
 #import "PMLeaderboard.h"
+#import "PMPlayerView.h"
 #import "PMPlayer.h"
 
 @interface PMLeaderboardViewController () <UITableViewDelegate, UITableViewDataSource>
@@ -18,6 +20,7 @@
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) IBOutlet UIView *tableHeaderView;
 @property (nonatomic, strong) IBOutletCollection(UILabel) NSArray *legendLabels;
+@property (nonatomic, strong) IBOutlet PMPlayerView *playerCardView;
 @property (nonatomic, strong) NSArray *leaderboardPlayers;
 
 - (void)updateView;
@@ -29,6 +32,7 @@
 @synthesize tableView;
 @synthesize tableHeaderView;
 @synthesize leaderboardPlayers;
+@synthesize playerCardView;
 
 - (id)init {
     self = [super init];
@@ -103,6 +107,15 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     return self.tableHeaderView;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    PMLeaderboardPlayer *leaderboardPlayer = [self.leaderboardPlayers objectAtIndex:indexPath.row];
+    
+    PMPlayerCardViewController *playerViewController = [[PMPlayerCardViewController alloc] initWithPlayer:leaderboardPlayer.player mode:PMPlayerCardModeConsult];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:playerViewController];
+    navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
+    [self presentViewController:navigationController animated:YES completion:NULL];
 }
 
 - (void)didReceiveMemoryWarning {
