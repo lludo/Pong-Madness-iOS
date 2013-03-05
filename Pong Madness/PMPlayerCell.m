@@ -22,6 +22,7 @@
 @synthesize sinceLabel;
 
 @synthesize selectionImageView;
+@synthesize deleteButton;
 
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];

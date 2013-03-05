@@ -7,6 +7,7 @@
 //
 
 #import "PMPlayerCardViewController.h"
+#import "PMPlayerEditViewController.h"
 #import "PMPlayerView.h"
 #import "PMLeaderboardPlayer.h"
 #import "PMLeaderboard.h"
@@ -16,35 +17,24 @@
 
 - (IBAction)close:(id)sender;
 
-@property (nonatomic, assign) PMPlayerCardMode mode;
 @property (nonatomic, strong) IBOutlet PMPlayerView *playerCardView;
+@property (nonatomic, strong) IBOutlet UIButton *messageButton;
 
 @end
 
 @implementation PMPlayerCardViewController
 
 @synthesize player;
-@synthesize mode;
 @synthesize playerCardView;
+@synthesize messageButton;
 
 - (id)init {
     self = [super init];
-    if (self) {
-        self.mode = PMPlayerCardModeConsult;
-    }
     return self;
 }
 
-- (id)initWithMode:(PMPlayerCardMode)aMode {
-    self = [super init];
-    if (self) {
-        self.mode = aMode;
-    }
-    return self;
-}
-
-- (id)initWithPlayer:(PMPlayer *)aPlayer mode:(PMPlayerCardMode)aMode {
-    self = [self initWithMode:aMode];
+- (id)initWithPlayer:(PMPlayer *)aPlayer {
+    self = [self init];
     if (self) {
         self.player = aPlayer;
     }
@@ -60,6 +50,10 @@
                                                                              style:UIBarButtonItemStyleBordered
                                                                             target:self action:@selector(close:)];
     
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Edit", nil)
+                                                                              style:UIBarButtonItemStyleBordered
+                                                                             target:self action:@selector(edit:)];
+    
     self.playerCardView.player = self.player;
 }
 
@@ -67,10 +61,20 @@
     [super viewWillAppear:animated];
     
     [self.playerCardView refreshUI];
+    self.messageButton.hidden = ([self.player.email length] < 6);
 }
 
 - (IBAction)close:(id)sender {
     [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
+- (IBAction)edit:(id)sender {
+    PMPlayerEditViewController *playerEditViewController = [[PMPlayerEditViewController alloc] initWithPlayer:self.player];
+    [self.navigationController pushViewController:playerEditViewController animated:YES];
+}
+
+- (IBAction)messagePlayer:(id)sender {
+    
 }
 
 - (void)didReceiveMemoryWarning {

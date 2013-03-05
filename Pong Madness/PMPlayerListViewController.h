@@ -11,7 +11,8 @@
 #import "PMPlayerListViewControllerDelegate.h"
 
 typedef enum {
-    PMPlayerListModeManage = 0,
+    PMPlayerListModeConsult = 0,
+    PMPlayerListModeEdit,
 	PMPlayerListModeSelectForSingle,
 	PMPlayerListModeSelectForDouble
 } PMPlayerListMode;

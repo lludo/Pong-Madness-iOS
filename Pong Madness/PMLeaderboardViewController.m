@@ -47,10 +47,6 @@
     
     self.title = @"Leaderboard";
     
-    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Back", nil)
-                                                                             style:UIBarButtonItemStyleBordered
-                                                                            target:self action:@selector(close:)];
-    
     UINib *leaderboardCellNib = [UINib nibWithNibName:@"PMLeaderboardCell" bundle:nil];
     [self.tableView registerNib:leaderboardCellNib forCellReuseIdentifier:@"LeaderboardCell"];
     [self.legendLabels enumerateObjectsUsingBlock:^(UILabel *label, NSUInteger idx, BOOL *stop) {
@@ -70,10 +66,6 @@
     self.leaderboardPlayers = [leaderboard.leaderboardPlayerSet sortedArrayUsingDescriptors:@[victoryRatioSortDescriptor, gamesPlayedCountSortDescriptor]];
     
     [self.tableView reloadData];
-}
-
-- (IBAction)close:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark tableview delegate 
@@ -112,7 +104,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     PMLeaderboardPlayer *leaderboardPlayer = [self.leaderboardPlayers objectAtIndex:indexPath.row];
     
-    PMPlayerCardViewController *playerViewController = [[PMPlayerCardViewController alloc] initWithPlayer:leaderboardPlayer.player mode:PMPlayerCardModeConsult];
+    PMPlayerCardViewController *playerViewController = [[PMPlayerCardViewController alloc] initWithPlayer:leaderboardPlayer.player];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:playerViewController];
     navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
     [self presentViewController:navigationController animated:YES completion:NULL];

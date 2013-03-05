@@ -10,6 +10,7 @@
 #import "PMCollectionViewPlayerManagementLayout.h"
 #import "PMCollectionViewPlayerSelectionLayout.h"
 #import "PMPlayerCardViewController.h"
+#import "PMPlayerEditViewController.h"
 #import "PMDocumentManager.h"
 #import "PMValueFormatter.h"
 #import "PMAddPlayerView.h"
@@ -45,7 +46,7 @@ static NSString *viewIdentifier = @"AddPlayerView";
 - (id)init {
     self = [super init];
     if (self) {
-        self.mode = PMPlayerListModeManage;
+        self.mode = PMPlayerListModeConsult;
     }
     return self;
 }
@@ -62,7 +63,13 @@ static NSString *viewIdentifier = @"AddPlayerView";
     [super viewDidLoad];
     
     switch (self.mode) {
-        case PMPlayerListModeManage: {
+        case PMPlayerListModeConsult: {
+            self.title = @"The Players";
+            PMCollectionViewPlayerManagementLayout *collectionViewLayout = [[PMCollectionViewPlayerManagementLayout alloc] init];
+            [self.collectionView setCollectionViewLayout:collectionViewLayout];
+            break;
+        }
+        case PMPlayerListModeEdit: {
             self.title = @"The Players";
             PMCollectionViewPlayerManagementLayout *collectionViewLayout = [[PMCollectionViewPlayerManagementLayout alloc] init];
             [self.collectionView setCollectionViewLayout:collectionViewLayout];
@@ -84,7 +91,13 @@ static NSString *viewIdentifier = @"AddPlayerView";
     
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Back", nil)
                                                                              style:UIBarButtonItemStyleBordered
-                                                                            target:self action:@selector(close:)];
+                                                                            target:nil action:nil];
+    
+    if (self.mode == PMPlayerListModeConsult) {
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Edit", nil)
+                                                                                  style:UIBarButtonItemStyleBordered
+                                                                                 target:self action:@selector(edit:)];
+    }
     
     NSError *error;
 	if (![self.fetchedResultsController performFetch:&error]) {
@@ -100,13 +113,27 @@ static NSString *viewIdentifier = @"AddPlayerView";
     _objectChanges = [NSMutableArray array];
     _sectionChanges = [NSMutableArray array];
     
-    if (self.mode != PMPlayerListModeManage) {
+    if (self.mode == PMPlayerListModeSelectForSingle || self.mode == PMPlayerListModeSelectForDouble) {
         self.playersSelection = [NSMutableArray array];
     }
 }
 
-- (IBAction)close:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
+- (IBAction)edit:(id)sender {
+    self.mode = PMPlayerListModeEdit;
+    [self.collectionView reloadData];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Done", nil)
+                                                                              style:UIBarButtonItemStyleBordered
+                                                                             target:self action:@selector(done:)];
+}
+
+- (IBAction)done:(id)sender {
+    self.mode = PMPlayerListModeConsult;
+    [self.collectionView reloadData];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Edit", nil)
+                                                                              style:UIBarButtonItemStyleBordered
+                                                                             target:self action:@selector(edit:)];
 }
 
 - (IBAction)play:(id)sender {
@@ -168,8 +195,13 @@ static NSString *viewIdentifier = @"AddPlayerView";
     NSString *dateString = [[PMValueFormatter formatterDateShortStyle] stringFromDate:player.sinceDate];
     cell.sinceLabel.text = [NSString stringWithFormat:@"Since %@", dateString];
     
+    if (player.photo) {
+        NSData *data = [[NSData alloc] initWithContentsOfFile:player.photo];
+        cell.imageView.image = [UIImage imageWithData:data];
+    }
+    
     // No selection in manage mode
-    if (self.mode == PMPlayerListModeManage) {
+    if (self.mode == PMPlayerListModeConsult || self.mode == PMPlayerListModeEdit) {
         cell.selectionImageView.hidden = YES;
     } else {
         cell.selectionImageView.hidden = NO;
@@ -180,6 +212,8 @@ static NSString *viewIdentifier = @"AddPlayerView";
             cell.contentView.alpha = 1.f;
         }
     }
+    
+    cell.deleteButton.hidden = (self.mode != PMPlayerListModeEdit);
     
     return cell;
 }
@@ -195,9 +229,16 @@ static NSString *viewIdentifier = @"AddPlayerView";
     PMPlayer *player = [fetchedResultsController objectAtIndexPath:indexPath];
     
     switch (self.mode) {
-        case PMPlayerListModeManage: {
-            PMPlayerCardViewController *playerViewController = [[PMPlayerCardViewController alloc] initWithPlayer:player mode:PMPlayerCardModeConsult];
+        case PMPlayerListModeConsult: {
+            PMPlayerCardViewController *playerViewController = [[PMPlayerCardViewController alloc] initWithPlayer:player];
             UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:playerViewController];
+            navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
+            [self presentViewController:navigationController animated:YES completion:NULL];
+            break;
+        }
+        case PMPlayerListModeEdit: {
+            PMPlayerEditViewController *playerEditViewController = [[PMPlayerEditViewController alloc] initWithPlayer:player];
+            UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:playerEditViewController];
             navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
             [self presentViewController:navigationController animated:YES completion:NULL];
             break;

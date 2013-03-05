@@ -91,6 +91,11 @@
 }
 
 - (void)refreshUI {
+    if (self.player.photo) {
+        NSData *data = [[NSData alloc] initWithContentsOfFile:self.player.photo];
+        self.avatarPlayerImageView.image = [UIImage imageWithData:data];
+    }
+    
     PMLeaderboard *globalLeaderboard = [PMLeaderboard globalLeaderboard];
     PMLeaderboardPlayer *leaderboardPlayer = [self.player leaderboardPlayerInLeaderboard:globalLeaderboard];
     
@@ -116,6 +121,12 @@
     self.winCountPlayerLabel.text = [NSString stringWithFormat:@"%u", wonGamesCount];
     self.loseCountPlayerLabel.text = [NSString stringWithFormat:@"%u", playedGamesCount - wonGamesCount];
     self.ratioPlayerLabel.text = ratioString;
+    
+    if ([self.player.handedness isEqualToString:@"L"]) {
+        self.handednessPlayerImageView.image = [UIImage imageNamed:@"icon-lefty"];
+    } else if ([self.player.handedness isEqualToString:@"R"]) {
+        self.handednessPlayerImageView.image = [UIImage imageNamed:@"icon-righty"];
+    }
 }
 
 @end

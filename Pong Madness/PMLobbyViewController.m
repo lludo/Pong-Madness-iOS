@@ -75,6 +75,10 @@ typedef enum {
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Menu", nil)
+                                                                             style:UIBarButtonItemStyleBordered
+                                                                            target:nil action:nil];
+    
     self.gameSingleButton.titleLabel.font = [UIFont brothersBoldFontOfSize:50.f];
     self.gameDoubleButton.titleLabel.font = [UIFont brothersBoldFontOfSize:50.f];
 }
@@ -158,7 +162,7 @@ typedef enum {
 }
 
 - (IBAction)openThePlayers:(id)sender {
-    PMPlayerListViewController *playerListViewController = [[PMPlayerListViewController alloc] initWithMode:PMPlayerListModeManage];
+    PMPlayerListViewController *playerListViewController = [[PMPlayerListViewController alloc] initWithMode:PMPlayerListModeConsult];
     [self.navigationController pushViewController:playerListViewController animated:YES];
 }
 

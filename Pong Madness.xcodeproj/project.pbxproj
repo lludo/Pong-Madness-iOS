@@ -172,6 +172,17 @@
 		82B2A72D16E30139002D6178 /* paddle-knockout-active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82B2A72916E30139002D6178 /* paddle-knockout-active@2x.png */; };
 		82B2A72E16E30139002D6178 /* soon.png in Resources */ = {isa = PBXBuildFile; fileRef = 82B2A72A16E30139002D6178 /* soon.png */; };
 		82B2A72F16E30139002D6178 /* soon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82B2A72B16E30139002D6178 /* soon@2x.png */; };
+		82EFCC9016E59E9300C383A4 /* edit-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 82EFCC8E16E59E9300C383A4 /* edit-background.png */; };
+		82EFCC9116E59E9300C383A4 /* edit-background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82EFCC8F16E59E9300C383A4 /* edit-background@2x.png */; };
+		82EFCC9516E59F4800C383A4 /* PMPlayerEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82EFCC9316E59F4800C383A4 /* PMPlayerEditViewController.m */; };
+		82EFCC9616E59F4800C383A4 /* PMPlayerEditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82EFCC9416E59F4800C383A4 /* PMPlayerEditViewController.xib */; };
+		82EFCC9816E5ADC700C383A4 /* delete-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 82EFCC9716E5ADC700C383A4 /* delete-button.png */; };
+		82EFCC9A16E5ADCB00C383A4 /* delete-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82EFCC9916E5ADCB00C383A4 /* delete-button@2x.png */; };
+		82EFCCA216E5CD7900C383A4 /* CZPhotoPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82EFCC9E16E5CD7900C383A4 /* CZPhotoPickerController.m */; };
+		82EFCCA316E5CD7900C383A4 /* CZPhotoPreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82EFCCA016E5CD7900C383A4 /* CZPhotoPreviewViewController.m */; };
+		82EFCCA416E5CD7900C383A4 /* CZPhotoPreviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82EFCCA116E5CD7900C383A4 /* CZPhotoPreviewViewController.xib */; };
+		82EFCCA616E5CF0E00C383A4 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82EFCCA516E5CF0E00C383A4 /* AssetsLibrary.framework */; };
+		82EFCCA816E5CF3D00C383A4 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82EFCCA716E5CF3D00C383A4 /* MobileCoreServices.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -375,6 +386,21 @@
 		82B2A72916E30139002D6178 /* paddle-knockout-active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paddle-knockout-active@2x.png"; sourceTree = "<group>"; };
 		82B2A72A16E30139002D6178 /* soon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soon.png; sourceTree = "<group>"; };
 		82B2A72B16E30139002D6178 /* soon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "soon@2x.png"; sourceTree = "<group>"; };
+		82EFCC8E16E59E9300C383A4 /* edit-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit-background.png"; sourceTree = "<group>"; };
+		82EFCC8F16E59E9300C383A4 /* edit-background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit-background@2x.png"; sourceTree = "<group>"; };
+		82EFCC9216E59F4800C383A4 /* PMPlayerEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMPlayerEditViewController.h; sourceTree = "<group>"; };
+		82EFCC9316E59F4800C383A4 /* PMPlayerEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMPlayerEditViewController.m; sourceTree = "<group>"; };
+		82EFCC9416E59F4800C383A4 /* PMPlayerEditViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PMPlayerEditViewController.xib; sourceTree = "<group>"; };
+		82EFCC9716E5ADC700C383A4 /* delete-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "delete-button.png"; sourceTree = "<group>"; };
+		82EFCC9916E5ADCB00C383A4 /* delete-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "delete-button@2x.png"; sourceTree = "<group>"; };
+		82EFCC9C16E5CD7900C383A4 /* CZPhotoPickerController-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CZPhotoPickerController-Prefix.pch"; sourceTree = "<group>"; };
+		82EFCC9D16E5CD7900C383A4 /* CZPhotoPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZPhotoPickerController.h; sourceTree = "<group>"; };
+		82EFCC9E16E5CD7900C383A4 /* CZPhotoPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZPhotoPickerController.m; sourceTree = "<group>"; };
+		82EFCC9F16E5CD7900C383A4 /* CZPhotoPreviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZPhotoPreviewViewController.h; sourceTree = "<group>"; };
+		82EFCCA016E5CD7900C383A4 /* CZPhotoPreviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZPhotoPreviewViewController.m; sourceTree = "<group>"; };
+		82EFCCA116E5CD7900C383A4 /* CZPhotoPreviewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CZPhotoPreviewViewController.xib; sourceTree = "<group>"; };
+		82EFCCA516E5CF0E00C383A4 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		82EFCCA716E5CF3D00C383A4 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -382,6 +408,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82EFCCA816E5CF3D00C383A4 /* MobileCoreServices.framework in Frameworks */,
+				82EFCCA616E5CF0E00C383A4 /* AssetsLibrary.framework in Frameworks */,
 				8222C28816DF2BEF0084D5D6 /* CoreData.framework in Frameworks */,
 				8222C23116DF1CD30084D5D6 /* UIKit.framework in Frameworks */,
 				8222C23316DF1CD30084D5D6 /* Foundation.framework in Frameworks */,
@@ -422,6 +450,10 @@
 				820D716A16E1C85200E98D23 /* Icon-Small-50@2x.png */,
 				820D716516E1C85200E98D23 /* Default-Landscape@2x~ipad.png */,
 				820D716616E1C85200E98D23 /* Default-Landscape~ipad.png */,
+				82EFCC9716E5ADC700C383A4 /* delete-button.png */,
+				82EFCC9916E5ADCB00C383A4 /* delete-button@2x.png */,
+				82EFCC8E16E59E9300C383A4 /* edit-background.png */,
+				82EFCC8F16E59E9300C383A4 /* edit-background@2x.png */,
 				82B2A71B16E2DA81002D6178 /* icon-select-player-active.png */,
 				82B2A71C16E2DA81002D6178 /* icon-select-player-active@2x.png */,
 				82B2A71D16E2DA81002D6178 /* icon-select-player-inactive.png */,
@@ -548,6 +580,8 @@
 				820D714516E1B09600E98D23 /* PMAppearance.m */,
 				82B2A6FD16E2BF98002D6178 /* PMValueFormatter.h */,
 				82B2A6FE16E2BF98002D6178 /* PMValueFormatter.m */,
+				820D714716E1B0F800E98D23 /* Categories */,
+				82EFCC9B16E5CD7900C383A4 /* CZPhotoPickerController */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -612,6 +646,8 @@
 				8222C23016DF1CD30084D5D6 /* UIKit.framework */,
 				8222C23216DF1CD30084D5D6 /* Foundation.framework */,
 				8222C23416DF1CD30084D5D6 /* CoreGraphics.framework */,
+				82EFCCA516E5CF0E00C383A4 /* AssetsLibrary.framework */,
+				82EFCCA716E5CF3D00C383A4 /* MobileCoreServices.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -621,7 +657,6 @@
 			children = (
 				8222C23F16DF1CD30084D5D6 /* PMAppDelegate.h */,
 				8222C24016DF1CD30084D5D6 /* PMAppDelegate.m */,
-				820D714716E1B0F800E98D23 /* Categories */,
 				820D714316E1B07900E98D23 /* Services */,
 				8222C26616DF20EE0084D5D6 /* ViewControllers */,
 				8222C28916DF3D2C0084D5D6 /* TableviewCells */,
@@ -667,6 +702,9 @@
 				8222C25D16DF1F570084D5D6 /* PMPlayerCardViewController.h */,
 				8222C25E16DF1F570084D5D6 /* PMPlayerCardViewController.m */,
 				8222C25F16DF1F570084D5D6 /* PMPlayerCardViewController.xib */,
+				82EFCC9216E59F4800C383A4 /* PMPlayerEditViewController.h */,
+				82EFCC9316E59F4800C383A4 /* PMPlayerEditViewController.m */,
+				82EFCC9416E59F4800C383A4 /* PMPlayerEditViewController.xib */,
 			);
 			name = Player;
 			sourceTree = "<group>";
@@ -765,6 +803,19 @@
 				82B20B7E16E550AD00EFF984 /* PMPlayerView.xib */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		82EFCC9B16E5CD7900C383A4 /* CZPhotoPickerController */ = {
+			isa = PBXGroup;
+			children = (
+				82EFCC9C16E5CD7900C383A4 /* CZPhotoPickerController-Prefix.pch */,
+				82EFCC9D16E5CD7900C383A4 /* CZPhotoPickerController.h */,
+				82EFCC9E16E5CD7900C383A4 /* CZPhotoPickerController.m */,
+				82EFCC9F16E5CD7900C383A4 /* CZPhotoPreviewViewController.h */,
+				82EFCCA016E5CD7900C383A4 /* CZPhotoPreviewViewController.m */,
+				82EFCCA116E5CD7900C383A4 /* CZPhotoPreviewViewController.xib */,
+			);
+			path = CZPhotoPickerController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -949,6 +1000,12 @@
 				8215A92F16E44CB400BDDFA2 /* leaderboard-playeroftheweek-title@2x.png in Resources */,
 				8215A93416E4556F00BDDFA2 /* PMLeaderboardCell.xib in Resources */,
 				82B20B7F16E550AD00EFF984 /* PMPlayerView.xib in Resources */,
+				82EFCC9016E59E9300C383A4 /* edit-background.png in Resources */,
+				82EFCC9116E59E9300C383A4 /* edit-background@2x.png in Resources */,
+				82EFCC9616E59F4800C383A4 /* PMPlayerEditViewController.xib in Resources */,
+				82EFCC9816E5ADC700C383A4 /* delete-button.png in Resources */,
+				82EFCC9A16E5ADCB00C383A4 /* delete-button@2x.png in Resources */,
+				82EFCCA416E5CD7900C383A4 /* CZPhotoPreviewViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -990,6 +1047,9 @@
 				825C164416E32D23008A65FA /* UIButton+Stretch.m in Sources */,
 				8215A93216E454E500BDDFA2 /* PMLeaderboardCell.m in Sources */,
 				82B20B8216E550BF00EFF984 /* PMPlayerView.m in Sources */,
+				82EFCC9516E59F4800C383A4 /* PMPlayerEditViewController.m in Sources */,
+				82EFCCA216E5CD7900C383A4 /* CZPhotoPickerController.m in Sources */,
+				82EFCCA316E5CD7900C383A4 /* CZPhotoPreviewViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

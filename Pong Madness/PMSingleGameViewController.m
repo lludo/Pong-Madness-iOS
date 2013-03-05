@@ -104,10 +104,6 @@
     PMPlayer *secondPlayer = [self.participantList objectAtIndex:1];
     self.title = [NSString stringWithFormat:@"%@ VS %@", firstPlayer.username, secondPlayer.username];
     
-    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Back", nil)
-                                                                             style:UIBarButtonItemStyleBordered
-                                                                            target:self action:@selector(close:)];
-    
     // Configure players
     
     self.firstPlayerView.transform = CGAffineTransformMakeTranslation(0.f, -466.f);

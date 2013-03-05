@@ -16,5 +16,6 @@
 @property (nonatomic, strong) IBOutlet UILabel *sinceLabel;
 
 @property (nonatomic, strong) IBOutlet UIImageView *selectionImageView;
+@property (nonatomic, strong) IBOutlet UIButton *deleteButton;
 
 @end

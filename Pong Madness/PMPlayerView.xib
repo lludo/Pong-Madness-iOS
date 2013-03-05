@@ -55,14 +55,14 @@
 					</object>
 					<object class="IBUIImageView" id="86667488">
 						<reference key="NSNextResponder" ref="758120178"/>
-						<int key="NSvFlags">256</int>
+						<int key="NSvFlags">293</int>
 						<string key="NSFrame">{{13, 10}, {298, 298}}</string>
 						<reference key="NSSuperview" ref="758120178"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="93212977"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
-						<int key="IBUIContentMode">4</int>
+						<int key="IBUIContentMode">2</int>
 						<bool key="IBUIMultipleTouchEnabled">YES</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 						<object class="NSCustomResource" key="IBUIImage">

@@ -1,8 +1,8 @@
 //
-//  PMPlayerCardViewController.h
+//  PMPlayerEditViewController.h
 //  Pong Madness
 //
-//  Created by Ludovic Landry on 2/27/13.
+//  Created by Ludovic Landry on 3/4/13.
 //  Copyright (c) 2013 MirageTeam. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "PMPlayer.h"
 
-@interface PMPlayerCardViewController : UIViewController
+@interface PMPlayerEditViewController : UIViewController
 
 @property (nonatomic, strong) PMPlayer *player;
 

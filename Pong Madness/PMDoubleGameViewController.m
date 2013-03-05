@@ -35,13 +35,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Back", nil)
-                                                                             style:UIBarButtonItemStyleBordered
-                                                                            target:self action:@selector(close:)];
-}
-
-- (IBAction)close:(id)sender {
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    //TODO: later
 }
 
 - (void)didReceiveMemoryWarning {
