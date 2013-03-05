@@ -10,6 +10,7 @@
 
 @interface PMLeaderboardCell : UITableViewCell
 
+@property (nonatomic, strong) IBOutlet UIImageView *imageView;
 @property (nonatomic, strong) IBOutlet UILabel *rankLabel;
 @property (nonatomic, strong) IBOutlet UILabel *usernameLabel;
 @property (nonatomic, strong) IBOutlet UILabel *winCountLabel;

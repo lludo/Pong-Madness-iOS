@@ -17,6 +17,7 @@
 
 @implementation PMLeaderboardCell
 
+@synthesize imageView;
 @synthesize rankLabel;
 @synthesize usernameLabel;
 @synthesize winCountLabel;

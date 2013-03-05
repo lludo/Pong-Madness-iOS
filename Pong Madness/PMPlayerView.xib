@@ -87,7 +87,7 @@
 						<int key="IBUIContentMode">7</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-						<string key="IBUIText">Robin</string>
+						<string key="IBUIText">Ludo</string>
 						<object class="NSColor" key="IBUITextColor">
 							<int key="NSColorSpace">1</int>
 							<bytes key="NSRGB">MC4xMzcyNTQ5MDIgMC4wNzQ1MDk4MDM5MiAwLjAxNTY4NjI3NDUxAA</bytes>
@@ -204,6 +204,7 @@
 						<string key="NSFrame">{{267, 356}, {45, 45}}</string>
 						<reference key="NSSuperview" ref="758120178"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<int key="IBUIContentMode">4</int>

@@ -198,6 +198,8 @@ static NSString *viewIdentifier = @"AddPlayerView";
     if (player.photo) {
         NSData *data = [[NSData alloc] initWithContentsOfFile:player.photo];
         cell.imageView.image = [UIImage imageWithData:data];
+    } else {
+        cell.imageView.image = [UIImage imageNamed:@"default-avatar"];
     }
     
     // No selection in manage mode

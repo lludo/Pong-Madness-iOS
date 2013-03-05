@@ -15,12 +15,13 @@
 #import "PMPlayerView.h"
 #import "PMPlayer.h"
 
-@interface PMLeaderboardViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface PMLeaderboardViewController () <UITableViewDelegate, UITableViewDataSource, UITabBarDelegate>
 
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) IBOutlet UIView *tableHeaderView;
 @property (nonatomic, strong) IBOutletCollection(UILabel) NSArray *legendLabels;
 @property (nonatomic, strong) IBOutlet PMPlayerView *playerCardView;
+@property (nonatomic, strong) IBOutlet UITabBar *tabBar;
 @property (nonatomic, strong) NSArray *leaderboardPlayers;
 
 - (void)updateView;
@@ -53,13 +54,20 @@
         label.font = [UIFont brothersBoldFontOfSize:12.f];
     }];
     
+    self.tabBar.selectedItem = [self.tabBar.items objectAtIndex:0];
+    
     // Setup data in the views
     
     [self updateView];
 }
 
 - (void)updateView {
-    PMLeaderboard *leaderboard = [PMLeaderboard globalLeaderboard];
+    PMLeaderboard *leaderboard;
+    if (self.tabBar.selectedItem == [self.tabBar.items objectAtIndex:0]) {
+        leaderboard = [PMLeaderboard globalLeaderboard];
+    } else {
+        leaderboard = nil;
+    }
     
     NSSortDescriptor *victoryRatioSortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"victoryRatio" ascending:NO];
     NSSortDescriptor *gamesPlayedCountSortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"gamesPlayedCount" ascending:NO];
@@ -80,6 +88,13 @@
     
     float ratio = [leaderboardPlayer.gamesWonCount floatValue] / [leaderboardPlayer.gamesPlayedCount floatValue];
     NSString *ratioString = (ratio == 1.f) ? @"1" : [[NSString stringWithFormat:@"%.2f", ratio] substringFromIndex:1];
+    
+    if (leaderboardPlayer.player.photo) {
+        NSData *data = [[NSData alloc] initWithContentsOfFile:leaderboardPlayer.player.photo];
+        cell.imageView.image = [UIImage imageWithData:data];
+    } else {
+        cell.imageView.image = [UIImage imageNamed:@"default-avatar"];
+    }
     
     cell.rankLabel.text = [NSString stringWithFormat:@"#%i", indexPath.row];
     cell.usernameLabel.text = leaderboardPlayer.player.username;
@@ -108,6 +123,12 @@
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:playerViewController];
     navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
     [self presentViewController:navigationController animated:YES completion:NULL];
+}
+
+#pragma mark tabbar delegate
+
+- (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
+    [self updateView];
 }
 
 - (void)didReceiveMemoryWarning {
