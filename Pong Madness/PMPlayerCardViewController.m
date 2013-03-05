@@ -60,7 +60,6 @@
                                                                              style:UIBarButtonItemStyleBordered
                                                                             target:self action:@selector(close:)];
     
-    self.playerCardView.transform = CGAffineTransformMakeTranslation(0.f, -466.f);
     self.playerCardView.player = self.player;
 }
 

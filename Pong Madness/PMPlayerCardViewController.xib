@@ -71,6 +71,7 @@
 						<int key="NSvFlags">269</int>
 						<string key="NSFrame">{{248, 486}, {44, 44}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -102,6 +103,7 @@
 				</array>
 				<string key="NSFrame">{{0, 64}, {540, 556}}</string>
 				<reference key="NSSuperview"/>
+				<reference key="NSNextKeyView" ref="32347991"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">1</int>
 					<bytes key="NSRGB">MC4wODIzNTI5NDExOCAwLjE4ODIzNTI5NDEgMC4xMjk0MTE3NjQ3AA</bytes>
@@ -208,6 +210,7 @@
 				<string key="-2.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="2.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="35.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="4.CustomClassName">PMPlayerView</string>
 				<string key="4.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="42.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 			</dictionary>
