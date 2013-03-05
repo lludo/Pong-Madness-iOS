@@ -66,7 +66,7 @@
     if (self.tabBar.selectedItem == [self.tabBar.items objectAtIndex:0]) {
         leaderboard = [PMLeaderboard globalLeaderboard];
     } else {
-        leaderboard = nil;
+        leaderboard = [PMLeaderboard currentWeekLeaderboard];
     }
     
     NSSortDescriptor *victoryRatioSortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"victoryRatio" ascending:NO];

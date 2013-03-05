@@ -75,7 +75,7 @@
         [globalTournament addPlayerSet:((PMTeam *)secondGameParticipant.participant).playerSet];
     }
     
-    // Update leadearboard players
+    // Update global leadearboard players
     PMLeaderboard *globalLeaderboard = [PMLeaderboard globalLeaderboard];
     if ([firstGameParticipant.participant isKindOfClass:[PMPlayer class]]) {
         PMPlayer *firstPlayer = (PMPlayer *)firstGameParticipant.participant;
@@ -87,6 +87,31 @@
         }
         if (!secondLeaderboardPlayer) {
             secondLeaderboardPlayer = [PMLeaderboardPlayer leaderboardPlayerForPlayer:secondPlayer inLeaderboard:globalLeaderboard];
+        }
+        if ([firstGameParticipant.score intValue] > [secondGameParticipant.score intValue]) {
+            [firstLeaderboardPlayer recordVictory];
+            [secondLeaderboardPlayer recordDefeat];
+        } else {
+            [firstLeaderboardPlayer recordDefeat];
+            [secondLeaderboardPlayer recordVictory];
+        }
+    } else if ([firstGameParticipant.participant isKindOfClass:[PMTeam class]]) {
+        
+        //TODO: later manage teams
+    }
+    
+    // Update week leadearboard players
+    PMLeaderboard *weekLeaderboard = [PMLeaderboard currentWeekLeaderboard];
+    if ([firstGameParticipant.participant isKindOfClass:[PMPlayer class]]) {
+        PMPlayer *firstPlayer = (PMPlayer *)firstGameParticipant.participant;
+        PMPlayer *secondPlayer = (PMPlayer *)secondGameParticipant.participant;
+        PMLeaderboardPlayer *firstLeaderboardPlayer = [firstPlayer leaderboardPlayerInLeaderboard:weekLeaderboard];
+        PMLeaderboardPlayer *secondLeaderboardPlayer = [secondPlayer leaderboardPlayerInLeaderboard:weekLeaderboard];
+        if (!firstLeaderboardPlayer) {
+            firstLeaderboardPlayer = [PMLeaderboardPlayer leaderboardPlayerForPlayer:firstPlayer inLeaderboard:weekLeaderboard];
+        }
+        if (!secondLeaderboardPlayer) {
+            secondLeaderboardPlayer = [PMLeaderboardPlayer leaderboardPlayerForPlayer:secondPlayer inLeaderboard:weekLeaderboard];
         }
         if ([firstGameParticipant.score intValue] > [secondGameParticipant.score intValue]) {
             [firstLeaderboardPlayer recordVictory];

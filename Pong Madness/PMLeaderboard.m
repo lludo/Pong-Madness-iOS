@@ -18,24 +18,66 @@
 @dynamic leaderboardPlayerSet;
 
 + (PMLeaderboard *)globalLeaderboard {
-    PMLeaderboard *globalLeaderboard = nil;
+    PMTournament *globalTournament = [PMTournament globalTournament];
     
     // Try to get the leaderboard that have the global tournament attached
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSManagedObjectContext *managedObjectContext = [PMDocumentManager sharedDocument].managedObjectContext;
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Leaderboard" inManagedObjectContext:managedObjectContext];
     [fetchRequest setEntity:entity];
-    [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"tournament == %@", [PMTournament globalTournament]]];
+    [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"tournament == %@", globalTournament]];
     [fetchRequest setFetchLimit:1];
     
     NSError *error = nil;
     NSArray *result = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
     
+    PMLeaderboard *globalLeaderboard = nil;
     if ([result count] == 1) {
         globalLeaderboard = [result lastObject];
     } else {
         globalLeaderboard = [[PMLeaderboard alloc] initWithEntity:entity insertIntoManagedObjectContext:managedObjectContext];
-        globalLeaderboard.tournament = [PMTournament globalTournament];
+        globalLeaderboard.tournament = globalTournament;
+    }
+    
+    return globalLeaderboard;
+}
+
++ (PMLeaderboard *)lastWeekLeaderboard {
+    NSDate *today = [NSDate date];
+    
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDateComponents *components = [calendar components:NSWeekdayCalendarUnit | NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit fromDate:today];
+    [components setDay:([components day]-7)];
+    NSDate *lastWeek = [calendar dateFromComponents:components];
+    
+    return [PMLeaderboard weekLeaderboardFromDate:lastWeek];
+}
+
++ (PMLeaderboard *)currentWeekLeaderboard {
+    NSDate *today = [NSDate date];
+    return [PMLeaderboard weekLeaderboardFromDate:today];
+}
+
++ (PMLeaderboard *)weekLeaderboardFromDate:(NSDate *)date {
+    PMTournament *weekTournament = [PMTournament weakTournamentFromDate:date];
+    
+    // Try to get the leaderboard that have the global tournament attached
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSManagedObjectContext *managedObjectContext = [PMDocumentManager sharedDocument].managedObjectContext;
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Leaderboard" inManagedObjectContext:managedObjectContext];
+    [fetchRequest setEntity:entity];
+    [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"tournament == %@", weekTournament]];
+    [fetchRequest setFetchLimit:1];
+    
+    NSError *error = nil;
+    NSArray *result = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    
+    PMLeaderboard *globalLeaderboard = nil;
+    if ([result count] == 1) {
+        globalLeaderboard = [result lastObject];
+    } else {
+        globalLeaderboard = [[PMLeaderboard alloc] initWithEntity:entity insertIntoManagedObjectContext:managedObjectContext];
+        globalLeaderboard.tournament = weekTournament;
     }
     
     return globalLeaderboard;

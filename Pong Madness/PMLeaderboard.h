@@ -19,6 +19,9 @@
 
 + (PMLeaderboard *)globalLeaderboard;
 
++ (PMLeaderboard *)lastWeekLeaderboard;
++ (PMLeaderboard *)currentWeekLeaderboard;
++ (PMLeaderboard *)weekLeaderboardFromDate:(NSDate *)date;
 @end
 
 @interface PMLeaderboard (CoreDataGeneratedAccessors)

@@ -20,6 +20,7 @@
 @property (nonatomic, strong) PMLeaderboard *leaderboard;
 
 + (PMTournament *)globalTournament;
++ (PMTournament *)weakTournamentFromDate:(NSDate *)date;
 
 @end
 
