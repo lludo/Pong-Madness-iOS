@@ -10,6 +10,7 @@
 #import "PMPlayerCardViewController.h"
 #import "PMLeaderboardCell.h"
 #import "UIFont+PongMadness.h"
+#import "UIImage+Stretch.h"
 #import "PMLeaderboardPlayer.h"
 #import "PMLeaderboard.h"
 #import "PMPlayerView.h"
@@ -54,7 +55,30 @@
         label.font = [UIFont brothersBoldFontOfSize:12.f];
     }];
     
-    self.tabBar.selectedItem = [self.tabBar.items objectAtIndex:0];
+    UITabBarItem *allTimeTabBarItem = [self.tabBar.items objectAtIndex:0];
+    UITabBarItem *thisWeekTabBarItem = [self.tabBar.items objectAtIndex:1];
+    UITabBarItem *lastWeekTabBarItem = [self.tabBar.items objectAtIndex:2];
+    
+    self.tabBar.selectedItem = allTimeTabBarItem;
+    float tabbarImageOffset = 7;
+    
+    [allTimeTabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"tabbar-item-alltime-selected.png"]
+             withFinishedUnselectedImage:[UIImage imageNamed:@"tabbar-item-alltime.png"]];
+    allTimeTabBarItem.imageInsets = UIEdgeInsetsMake(tabbarImageOffset, 0, -tabbarImageOffset, 0);
+    
+    [thisWeekTabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"tabbar-item-thisweek-selected.png"]
+             withFinishedUnselectedImage:[UIImage imageNamed:@"tabbar-item-thisweek.png"]];
+    thisWeekTabBarItem.imageInsets = UIEdgeInsetsMake(tabbarImageOffset, 0, -tabbarImageOffset, 0);
+    
+    [lastWeekTabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"tabbar-item-lastweek-selected.png"]
+                     withFinishedUnselectedImage:[UIImage imageNamed:@"tabbar-item-lastweek.png"]];
+    lastWeekTabBarItem.imageInsets = UIEdgeInsetsMake(tabbarImageOffset, 0, -tabbarImageOffset, 0);
+    
+    UIImage *tabbarBackground = [UIImage stretchableHorizontalImageNamed:@"tabbar-background.png"];
+    [self.tabBar setBackgroundImage:tabbarBackground];
+    
+    [self.tabBar setSelectionIndicatorImage:[[UIImage alloc] init]];
+    
     
     // Setup data in the views
     
@@ -63,10 +87,16 @@
 
 - (void)updateView {
     PMLeaderboard *leaderboard;
+    
+    // All time
     if (self.tabBar.selectedItem == [self.tabBar.items objectAtIndex:0]) {
         leaderboard = [PMLeaderboard globalLeaderboard];
-    } else {
+    // This week
+    } else if (self.tabBar.selectedItem == [self.tabBar.items objectAtIndex:1]) {
         leaderboard = [PMLeaderboard currentWeekLeaderboard];
+    // Last week
+    } else {
+        leaderboard = [PMLeaderboard lastWeekLeaderboard];
     }
     
     NSSortDescriptor *victoryRatioSortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"victoryRatio" ascending:NO];
@@ -96,7 +126,7 @@
         cell.imageView.image = [UIImage imageNamed:@"default-avatar"];
     }
     
-    cell.rankLabel.text = [NSString stringWithFormat:@"#%i", indexPath.row];
+    cell.rankLabel.text = [NSString stringWithFormat:@"#%i", indexPath.row + 1];
     cell.usernameLabel.text = leaderboardPlayer.player.username;
     cell.winCountLabel.text = [leaderboardPlayer.gamesWonCount stringValue];
     cell.lostCountLabel.text = [NSString stringWithFormat:@"%i", [leaderboardPlayer.gamesPlayedCount intValue] - [leaderboardPlayer.gamesWonCount intValue]];
