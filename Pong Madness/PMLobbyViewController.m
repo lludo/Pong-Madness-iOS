@@ -36,6 +36,9 @@ typedef enum {
 @property (nonatomic, assign) BOOL hasPlayedInitialAnimation;
 @property (nonatomic, assign) PMGameConfiguration gameConfiguration;
 
+//TODO: (remove when we will have knockout implemented)
+@property (nonatomic, assign) IBOutlet UIView *soonView;
+
 - (IBAction)openQuickGame:(id)sender;
 - (IBAction)openKnockOut:(id)sender;
 - (IBAction)openLeaderboard:(id)sender;
@@ -62,6 +65,9 @@ typedef enum {
 
 @synthesize hasPlayedInitialAnimation;
 @synthesize gameConfiguration;
+
+//TODO: (remove when we will have knockout implemented)
+@synthesize soonView;
 
 - (id)init {
     self = [super init];
@@ -115,6 +121,9 @@ typedef enum {
 - (IBAction)openQuickGame:(id)sender {
     self.gameConfiguration = PMGameConfigurationQuickGame;
     
+    self.gameSingleButton.transform = CGAffineTransformIdentity;
+    self.gameDoubleButton.transform = CGAffineTransformIdentity;
+    
     [UIView transitionWithView:self.quickGameButton
                       duration:0.4
                        options:UIViewAnimationOptionTransitionFlipFromLeft
@@ -145,7 +154,6 @@ typedef enum {
         [self.view insertSubview:self.gameSingleButton aboveSubview:self.cancelButton];
         [self.view insertSubview:self.gameDoubleButton aboveSubview:self.cancelButton];
         
-        self.gameSingleButton.alpha = 1.f;
         self.cancelButton.enabled = YES;
     }];
 }
@@ -153,7 +161,43 @@ typedef enum {
 - (IBAction)openKnockOut:(id)sender {
     self.gameConfiguration = PMGameConfigurationKnockOut;
     
-    //TODO: later
+    self.gameSingleButton.transform = CGAffineTransformMakeTranslation(252, 0);
+    self.gameDoubleButton.transform = CGAffineTransformMakeTranslation(252, 0);
+    
+    [UIView transitionWithView:self.knockOutButton
+                      duration:0.4
+                       options:UIViewAnimationOptionTransitionFlipFromLeft
+                    animations:^{
+        UIImage *knockOutActiveImage = [UIImage imageNamed:@"paddle-knockout-active"];
+        [self.knockOutButton setBackgroundImage:knockOutActiveImage forState:UIControlStateNormal];
+    } completion:nil];
+    
+    [UIView animateWithDuration:0.4 animations:^{
+        //TODO: (uncoment that when we will have knockout implemented)
+        //self.gameSingleButton.alpha = 1.f;
+        //self.gameDoubleButton.alpha = 1.f;
+        self.soonView.alpha = 1.f;
+        
+        self.quickGameButton.transform = CGAffineTransformConcat(
+            CGAffineTransformMakeTranslation(-30, -40),
+            CGAffineTransformMakeRotation(-M_PI_4)
+        );
+        
+        self.leaderboardButton.transform = CGAffineTransformConcat(
+            CGAffineTransformMakeTranslation(380, 60),
+            CGAffineTransformMakeRotation(-M_PI_4/2)
+        );
+        
+        self.thePlayersButton.transform = CGAffineTransformConcat(
+            CGAffineTransformMakeTranslation(80, -20),
+            CGAffineTransformMakeRotation(M_PI_4/4)
+        );
+    } completion:^(BOOL finished) {
+        [self.view insertSubview:self.gameSingleButton aboveSubview:self.cancelButton];
+        [self.view insertSubview:self.gameDoubleButton aboveSubview:self.cancelButton];
+        
+        self.cancelButton.enabled = YES;
+    }];
 }
 
 - (IBAction)openLeaderboard:(id)sender {
@@ -199,8 +243,30 @@ typedef enum {
         }
         case PMGameConfigurationKnockOut: {
             self.gameConfiguration = PMGameConfigurationNone;
+            [self.view insertSubview:self.gameSingleButton belowSubview:self.thePlayersButton];
+            [self.view insertSubview:self.gameDoubleButton belowSubview:self.thePlayersButton];
             
-            //TODO: later
+            [UIView transitionWithView:self.knockOutButton
+                              duration:0.4
+                               options:UIViewAnimationOptionTransitionFlipFromRight
+                            animations:^{
+                UIImage *quickGameActiveImage = [UIImage imageNamed:@"paddle-knockout"];
+                [self.knockOutButton setBackgroundImage:quickGameActiveImage forState:UIControlStateNormal];
+            } completion:nil];
+            
+            [UIView animateWithDuration:0.4 animations:^{
+                self.gameSingleButton.alpha = 0.f;
+                self.gameDoubleButton.alpha = 0.f;
+                
+                //TODO: (remove when we will have knockout implemented)
+                self.soonView.alpha = 0.f;
+                
+                self.quickGameButton.transform = CGAffineTransformIdentity;
+                self.leaderboardButton.transform = CGAffineTransformIdentity;
+                self.thePlayersButton.transform = CGAffineTransformIdentity;
+            } completion:^(BOOL finished) {
+                self.cancelButton.enabled = NO;
+            }];
             
             break;
         }

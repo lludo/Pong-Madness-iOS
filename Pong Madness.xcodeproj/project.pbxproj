@@ -137,6 +137,7 @@
 		825218D416E6EF2B0070D732 /* tabbar-item-thisweek-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 825218C616E6EF2B0070D732 /* tabbar-item-thisweek-selected@2x.png */; };
 		825218D516E6EF2B0070D732 /* tabbar-item-thisweek.png in Resources */ = {isa = PBXBuildFile; fileRef = 825218C716E6EF2B0070D732 /* tabbar-item-thisweek.png */; };
 		825218D616E6EF2B0070D732 /* tabbar-item-thisweek@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 825218C816E6EF2B0070D732 /* tabbar-item-thisweek@2x.png */; };
+		825218D916E716120070D732 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 825218D816E716120070D732 /* Crashlytics.framework */; };
 		825C162416E328BA008A65FA /* game-switch-21@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 825C161E16E328BA008A65FA /* game-switch-21@2x.png */; };
 		825C162516E328BA008A65FA /* game-start-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 825C161F16E328BA008A65FA /* game-start-button.png */; };
 		825C162616E328BA008A65FA /* game-start-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 825C162016E328BA008A65FA /* game-start-button@2x.png */; };
@@ -360,6 +361,7 @@
 		825218C616E6EF2B0070D732 /* tabbar-item-thisweek-selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar-item-thisweek-selected@2x.png"; sourceTree = "<group>"; };
 		825218C716E6EF2B0070D732 /* tabbar-item-thisweek.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar-item-thisweek.png"; sourceTree = "<group>"; };
 		825218C816E6EF2B0070D732 /* tabbar-item-thisweek@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar-item-thisweek@2x.png"; sourceTree = "<group>"; };
+		825218D816E716120070D732 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		825C161E16E328BA008A65FA /* game-switch-21@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "game-switch-21@2x.png"; sourceTree = "<group>"; };
 		825C161F16E328BA008A65FA /* game-start-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "game-start-button.png"; sourceTree = "<group>"; };
 		825C162016E328BA008A65FA /* game-start-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "game-start-button@2x.png"; sourceTree = "<group>"; };
@@ -442,6 +444,7 @@
 				8222C23116DF1CD30084D5D6 /* UIKit.framework in Frameworks */,
 				8222C23316DF1CD30084D5D6 /* Foundation.framework in Frameworks */,
 				8222C23516DF1CD30084D5D6 /* CoreGraphics.framework in Frameworks */,
+				825218D916E716120070D732 /* Crashlytics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -690,6 +693,7 @@
 				8222C23416DF1CD30084D5D6 /* CoreGraphics.framework */,
 				82EFCCA516E5CF0E00C383A4 /* AssetsLibrary.framework */,
 				82EFCCA716E5CF3D00C383A4 /* MobileCoreServices.framework */,
+				825218D816E716120070D732 /* Crashlytics.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -870,6 +874,7 @@
 				8222C22916DF1CD30084D5D6 /* Sources */,
 				8222C22A16DF1CD30084D5D6 /* Frameworks */,
 				8222C22B16DF1CD30084D5D6 /* Resources */,
+				825218D716E715C10070D732 /* Run Crashlytics Script */,
 			);
 			buildRules = (
 			);
@@ -1067,6 +1072,23 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		825218D716E715C10070D732 /* Run Crashlytics Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Crashlytics Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ \"$PLATFORM_NAME\" != \"iphonesimulator\" ];\nthen\n    ./Crashlytics.framework/run 65aa5ca19bfefcb8620ec46a8d0a304039cd5058\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8222C22916DF1CD30084D5D6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -1184,6 +1206,10 @@
 		8222C25116DF1CD30084D5D6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Pong Madness/Pong Madness-Prefix.pch";
 				INFOPLIST_FILE = "Pong Madness/Pong Madness-Info.plist";
@@ -1195,6 +1221,10 @@
 		8222C25216DF1CD30084D5D6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Pong Madness/Pong Madness-Prefix.pch";
 				INFOPLIST_FILE = "Pong Madness/Pong Madness-Info.plist";

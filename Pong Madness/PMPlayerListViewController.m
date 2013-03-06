@@ -143,6 +143,15 @@ static NSString *viewIdentifier = @"AddPlayerView";
     }
 }
 
+- (IBAction)deletePlayer:(id)sender {
+    UIAlertView *confirmAlert = [[UIAlertView alloc] initWithTitle:@"Confirm"
+                                                           message:@"Are you sure you want to delete this player?"
+                                                          delegate:self
+                                                 cancelButtonTitle:@"Cancel"
+                                                 otherButtonTitles:@"Ok", nil];
+    [confirmAlert show];
+}
+
 - (void)setPlayButtonHidden:(BOOL)hidden {
     if (hidden) {
         self.navigationItem.rightBarButtonItem = nil;

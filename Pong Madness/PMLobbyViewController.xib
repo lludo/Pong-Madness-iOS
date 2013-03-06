@@ -69,6 +69,22 @@
 							<string key="NSResourceName">logo-launch.png</string>
 						</object>
 					</object>
+					<object class="IBUIImageView" id="831884551">
+						<reference key="NSNextResponder" ref="766721923"/>
+						<int key="NSvFlags">301</int>
+						<string key="NSFrame">{{558, 210}, {233, 212}}</string>
+						<reference key="NSSuperview" ref="766721923"/>
+						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="690461079"/>
+						<string key="NSReuseIdentifierKey">_NS:9</string>
+						<float key="IBUIAlpha">0.0</float>
+						<bool key="IBUIUserInteractionEnabled">NO</bool>
+						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+						<object class="NSCustomResource" key="IBUIImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">soon.png</string>
+						</object>
+					</object>
 					<object class="IBUIButton" id="348126433">
 						<reference key="NSNextResponder" ref="766721923"/>
 						<int key="NSvFlags">292</int>
@@ -186,7 +202,7 @@
 						<string key="NSFrame">{{521, 115}, {234, 386}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="690461079"/>
+						<reference key="NSNextKeyView" ref="831884551"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -285,6 +301,7 @@
 						<string key="NSFrame">{{964, 644}, {60, 60}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -401,6 +418,14 @@
 					<int key="connectionID">244</int>
 				</object>
 				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">soonView</string>
+						<reference key="source" ref="841351856"/>
+						<reference key="destination" ref="831884551"/>
+					</object>
+					<int key="connectionID">251</int>
+				</object>
+				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">openQuickGame:</string>
 						<reference key="source" ref="323188419"/>
@@ -506,6 +531,7 @@
 							<reference ref="31838387"/>
 							<reference ref="348126433"/>
 							<reference ref="278871596"/>
+							<reference ref="831884551"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -563,6 +589,11 @@
 						<reference key="object" ref="278871596"/>
 						<reference key="parent" ref="766721923"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">250</int>
+						<reference key="object" ref="831884551"/>
+						<reference key="parent" ref="766721923"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -580,6 +611,7 @@
 				<string key="242.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<real value="0.0" key="242.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
 				<string key="245.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="250.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="28.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="35.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="4.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -588,7 +620,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">249</int>
+			<int key="maxID">251</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -647,6 +679,7 @@
 						<string key="leaderboardButton">UIButton</string>
 						<string key="logoLaunchImageView">UIImageView</string>
 						<string key="quickGameButton">UIButton</string>
+						<string key="soonView">UIView</string>
 						<string key="thePlayersButton">UIButton</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
@@ -678,6 +711,10 @@
 							<string key="name">quickGameButton</string>
 							<string key="candidateClassName">UIButton</string>
 						</object>
+						<object class="IBToOneOutletInfo" key="soonView">
+							<string key="name">soonView</string>
+							<string key="candidateClassName">UIView</string>
+						</object>
 						<object class="IBToOneOutletInfo" key="thePlayersButton">
 							<string key="name">thePlayersButton</string>
 							<string key="candidateClassName">UIButton</string>
@@ -704,6 +741,7 @@
 			<string key="paddle-leaderboard.png">{234, 386}</string>
 			<string key="paddle-quickgame.png">{234, 386}</string>
 			<string key="paddle-theplayers.png">{234, 386}</string>
+			<string key="soon.png">{233, 212}</string>
 		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">2083</string>
 	</data>

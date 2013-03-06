@@ -128,6 +128,9 @@
             
             self.player.photo = fullPathToFile;
         }
+        if (weakSelf.presentedViewController) {
+            [weakSelf dismissViewControllerAnimated:YES completion:nil];
+        }
         weakSelf.pickPhotoController = nil;
     }];
 }
