@@ -14,7 +14,7 @@
 #import "UIFont+PongMadness.h"
 #import "PMValueFormatter.h"
 
-@interface PMPlayerCardViewController ()
+@interface PMPlayerCardViewController () <MFMailComposeViewControllerDelegate>
 
 - (IBAction)close:(id)sender;
 
@@ -83,7 +83,27 @@
 }
 
 - (IBAction)messagePlayer:(id)sender {
-    
+    if ([MFMailComposeViewController canSendMail]) {
+        MFMailComposeViewController* controller = [[MFMailComposeViewController alloc] init];
+        controller.mailComposeDelegate = self;
+        [controller setSubject:@"Pong Madness game request!"];
+        [controller setMessageBody:@"You think you will stay on top of this leaderboard without playing against me? Let's sort this out!" isHTML:NO];
+        [self presentViewController:controller animated:YES completion:NULL];
+    } else {
+        UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Email Settings"
+                                                             message:@"No email account configured on this device" delegate:nil
+                                                   cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        [errorAlert show];
+    }
+}
+
+- (void)mailComposeController:(MFMailComposeViewController*)controller
+          didFinishWithResult:(MFMailComposeResult)result
+                        error:(NSError*)error {
+    if (result == MFMailComposeResultSent) {
+        NSLog(@"Message sent");
+    }
+    [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -161,6 +161,7 @@
 		825C164A16E3304A008A65FA /* game-mark-leader@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 825C164616E3304A008A65FA /* game-mark-leader@2x.png */; };
 		825C164B16E3304A008A65FA /* icon-handedness-undefine.png in Resources */ = {isa = PBXBuildFile; fileRef = 825C164716E3304A008A65FA /* icon-handedness-undefine.png */; };
 		825C164C16E3304A008A65FA /* icon-handedness-undefine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 825C164816E3304A008A65FA /* icon-handedness-undefine@2x.png */; };
+		8273A1EE16E72EE200FB2E8F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8273A1ED16E72EE200FB2E8F /* MessageUI.framework */; };
 		82B20B7F16E550AD00EFF984 /* PMPlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82B20B7E16E550AD00EFF984 /* PMPlayerView.xib */; };
 		82B20B8216E550BF00EFF984 /* PMPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 82B20B8116E550BF00EFF984 /* PMPlayerView.m */; };
 		82B2A6FF16E2BF98002D6178 /* PMValueFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 82B2A6FE16E2BF98002D6178 /* PMValueFormatter.m */; };
@@ -386,6 +387,7 @@
 		825C164616E3304A008A65FA /* game-mark-leader@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "game-mark-leader@2x.png"; sourceTree = "<group>"; };
 		825C164716E3304A008A65FA /* icon-handedness-undefine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-handedness-undefine.png"; sourceTree = "<group>"; };
 		825C164816E3304A008A65FA /* icon-handedness-undefine@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-handedness-undefine@2x.png"; sourceTree = "<group>"; };
+		8273A1ED16E72EE200FB2E8F /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		82B20B7E16E550AD00EFF984 /* PMPlayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PMPlayerView.xib; sourceTree = "<group>"; };
 		82B20B8016E550BF00EFF984 /* PMPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMPlayerView.h; sourceTree = "<group>"; };
 		82B20B8116E550BF00EFF984 /* PMPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMPlayerView.m; sourceTree = "<group>"; };
@@ -438,6 +440,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8273A1EE16E72EE200FB2E8F /* MessageUI.framework in Frameworks */,
 				82EFCCA816E5CF3D00C383A4 /* MobileCoreServices.framework in Frameworks */,
 				82EFCCA616E5CF0E00C383A4 /* AssetsLibrary.framework in Frameworks */,
 				8222C28816DF2BEF0084D5D6 /* CoreData.framework in Frameworks */,
@@ -693,6 +696,7 @@
 				8222C23416DF1CD30084D5D6 /* CoreGraphics.framework */,
 				82EFCCA516E5CF0E00C383A4 /* AssetsLibrary.framework */,
 				82EFCCA716E5CF3D00C383A4 /* MobileCoreServices.framework */,
+				8273A1ED16E72EE200FB2E8F /* MessageUI.framework */,
 				825218D816E716120070D732 /* Crashlytics.framework */,
 			);
 			name = Frameworks;
