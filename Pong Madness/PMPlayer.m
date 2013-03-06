@@ -26,6 +26,7 @@
 @dynamic teamSet;
 @dynamic sinceDate;
 @dynamic tournamentSet;
+@dynamic active;
 
 + (PMPlayer *)playerWithUsername:(NSString *)username {
     
@@ -100,6 +101,20 @@
 
 - (NSNumber *)timePlayed {
     return @(4345);
+}
+
+- (void)descativate {
+    
+    // Remove from leaderboard
+    NSManagedObjectContext *managedObjectContext = [PMDocumentManager sharedDocument].managedObjectContext;
+    [self.leaderboardPlayerSet enumerateObjectsUsingBlock:^(id obj, BOOL *stop) {
+        [managedObjectContext deleteObject:obj];
+    }];
+    
+    // Desactive the user
+    self.active = @(NO);
+    
+    [[PMDocumentManager sharedDocument] save];
 }
 
 @end

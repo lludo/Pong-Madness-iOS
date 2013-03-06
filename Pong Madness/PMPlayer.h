@@ -28,6 +28,7 @@ typedef enum {
 @property (nonatomic, strong) NSSet *teamSet;
 @property (nonatomic, strong) NSDate *sinceDate;
 @property (nonatomic, strong) NSSet *tournamentSet;
+@property (nonatomic, strong) NSNumber *active;
 
 + (PMPlayer *)playerWithUsername:(NSString *)username;
 
@@ -35,6 +36,7 @@ typedef enum {
 - (NSNumber *)rankInLeaderboard:(PMLeaderboard *)leaderboard;
 
 - (NSNumber *)timePlayed;
+- (void)descativate;
 
 @end
 

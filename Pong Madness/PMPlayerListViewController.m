@@ -17,7 +17,7 @@
 #import "PMPlayerCell.h"
 #import "PMPlayer.h"
 
-@interface PMPlayerListViewController () <NSFetchedResultsControllerDelegate> {
+@interface PMPlayerListViewController () <NSFetchedResultsControllerDelegate, UIAlertViewDelegate> {
     NSMutableArray *_objectChanges;
     NSMutableArray *_sectionChanges;
 }
@@ -144,12 +144,27 @@ static NSString *viewIdentifier = @"AddPlayerView";
 }
 
 - (IBAction)deletePlayer:(id)sender {
+    CGPoint buttonPositionClicked = [self.collectionView convertPoint:CGPointZero fromView:sender];
+    NSInteger x = (buttonPositionClicked.x + 12) / 201;
+    NSInteger y = (buttonPositionClicked.y +12) / 246;
+    
+    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:(x + 5 * y) - 1 inSection:0];
+    PMPlayer *player = [fetchedResultsController objectAtIndexPath:indexPath];
+    self.playersSelection = [NSArray arrayWithObject:player];
+    
     UIAlertView *confirmAlert = [[UIAlertView alloc] initWithTitle:@"Confirm"
-                                                           message:@"Are you sure you want to delete this player?"
+                                                           message:[NSString stringWithFormat:@"Are you sure you want to delete this %@?", player.username]
                                                           delegate:self
                                                  cancelButtonTitle:@"Cancel"
                                                  otherButtonTitles:@"Ok", nil];
     [confirmAlert show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 1 && self.playersSelection && [self.playersSelection count] == 1) {
+        PMPlayer *player = [self.playersSelection lastObject];
+        [player descativate];
+    }
 }
 
 - (void)setPlayButtonHidden:(BOOL)hidden {
@@ -174,6 +189,7 @@ static NSString *viewIdentifier = @"AddPlayerView";
         NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"username" ascending:YES];
         [fetchRequest setSortDescriptors:@[sortDescriptor]];
         
+        [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"active == YES"]];
         [fetchRequest setFetchBatchSize:20];
         
         self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest

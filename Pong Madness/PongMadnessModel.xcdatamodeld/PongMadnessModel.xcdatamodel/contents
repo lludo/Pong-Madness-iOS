@@ -28,6 +28,7 @@
         <relationship name="gameParticipantSet" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="GameParticipant" inverseName="participant" inverseEntity="GameParticipant" syncable="YES"/>
     </entity>
     <entity name="Player" representedClassName="PMPlayer" parentEntity="Participant" syncable="YES">
+        <attribute name="active" optional="YES" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
         <attribute name="company" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="handedness" optional="YES" attributeType="String" syncable="YES"/>
@@ -55,7 +56,7 @@
         <element name="Leaderboard" positionX="801" positionY="405" width="128" height="88"/>
         <element name="LeaderboardPlayer" positionX="610" positionY="270" width="128" height="118"/>
         <element name="Participant" positionX="297" positionY="212" width="128" height="58"/>
-        <element name="Player" positionX="421" positionY="389" width="128" height="178"/>
+        <element name="Player" positionX="421" positionY="389" width="128" height="193"/>
         <element name="Team" positionX="214" positionY="387" width="128" height="73"/>
         <element name="Tournament" positionX="610" positionY="566" width="128" height="118"/>
     </elements>
