@@ -12,12 +12,14 @@
 #import "PMLeaderboardPlayer.h"
 #import "PMLeaderboard.h"
 #import "UIFont+PongMadness.h"
+#import "PMValueFormatter.h"
 
 @interface PMPlayerCardViewController ()
 
 - (IBAction)close:(id)sender;
 
 @property (nonatomic, strong) IBOutlet PMPlayerView *playerCardView;
+@property (nonatomic, strong) IBOutlet UILabel *playedSinceLabel;
 @property (nonatomic, strong) IBOutlet UIButton *messageButton;
 
 @end
@@ -53,6 +55,13 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Edit", nil)
                                                                               style:UIBarButtonItemStyleBordered
                                                                              target:self action:@selector(edit:)];
+    
+    NSInteger timePlayed = [[self.player timePlayed] integerValue];
+    NSInteger minutes = timePlayed / 60;
+    NSInteger seconds = timePlayed % 60;
+    
+    self.playedSinceLabel.text = [NSString stringWithFormat:@"Played %i minutes and %i seconds since %@.", minutes, seconds, [[PMValueFormatter formatterDateShortStyle] stringFromDate:self.player.sinceDate]];
+    self.playedSinceLabel.font = [UIFont brothersBoldFontOfSize:15.f];
     
     self.playerCardView.player = self.player;
 }

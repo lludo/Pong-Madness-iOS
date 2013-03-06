@@ -34,6 +34,8 @@ typedef enum {
 - (PMLeaderboardPlayer *)leaderboardPlayerInLeaderboard:(PMLeaderboard *)leaderboard;
 - (NSNumber *)rankInLeaderboard:(PMLeaderboard *)leaderboard;
 
+- (NSNumber *)timePlayed;
+
 @end
 
 @interface PMPlayer (CoreDataGeneratedAccessors)

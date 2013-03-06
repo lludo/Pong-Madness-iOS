@@ -17,7 +17,6 @@
     dispatch_once(&predicateDateFormatter, ^{
         dateFormatter = [[NSDateFormatter alloc] init];
 		dateFormatter.timeZone = [NSTimeZone localTimeZone];
-        //dateFormatter.dateFormat = @"MM/dd/yy";
         dateFormatter.timeStyle = NSDateFormatterNoStyle;
         dateFormatter.dateStyle = kCFDateFormatterMediumStyle;
     });

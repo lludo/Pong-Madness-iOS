@@ -98,4 +98,8 @@
     }
 }
 
+- (NSNumber *)timePlayed {
+    return @(4345);
+}
+
 @end
