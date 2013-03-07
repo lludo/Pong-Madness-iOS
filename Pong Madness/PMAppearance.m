@@ -18,7 +18,8 @@
     
     UIImage *navBarBackground = [UIImage stretchableHorizontalImageNamed:@"navbar-background"];
     [[UINavigationBar appearance] setBackgroundImage:navBarBackground forBarMetrics:UIBarMetricsDefault];
-    [[UINavigationBar appearanceWhenContainedIn:[UIPopoverController class], [MFMailComposeViewController class], nil] setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearanceWhenContainedIn:[UIPopoverController class], nil] setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearanceWhenContainedIn:[MFMessageComposeViewController class], nil] setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
     [[UINavigationBar appearance] setShadowImage:[UIImage imageNamed:@"navbar-shadow"]];
     
     [[UINavigationBar appearance] setTitleTextAttributes:@{
@@ -27,7 +28,13 @@
         UITextAttributeTextShadowColor: [UIColor blackColor],
         UITextAttributeTextShadowOffset: [NSValue valueWithUIOffset:UIOffsetMake(0, -1)]
     }];
-    [[UINavigationBar appearanceWhenContainedIn:[UIPopoverController class], [MFMailComposeViewController class], nil] setTitleTextAttributes:@{
+    [[UINavigationBar appearanceWhenContainedIn:[UIPopoverController class], nil] setTitleTextAttributes:@{
+        UITextAttributeTextColor: [UIColor whiteColor],
+        UITextAttributeFont : [UIFont brothersBoldFontOfSize:20.f],
+        UITextAttributeTextShadowColor: [UIColor colorWithWhite:0.f alpha:0.5f],
+        UITextAttributeTextShadowOffset: [NSValue valueWithUIOffset:UIOffsetMake(0, -1)]
+    }];
+    [[UINavigationBar appearanceWhenContainedIn:[MFMessageComposeViewController class], nil] setTitleTextAttributes:@{
         UITextAttributeTextColor: [UIColor whiteColor],
         UITextAttributeFont : [UIFont brothersBoldFontOfSize:20.f],
         UITextAttributeTextShadowColor: [UIColor colorWithWhite:0.f alpha:0.5f],
@@ -52,10 +59,20 @@
         UITextAttributeTextShadowOffset: [NSValue valueWithUIOffset:UIOffsetMake(0, 1)]
     } forState:UIControlStateNormal];
     
-    UIBarButtonItem *otherBarButtonItemAppearance = [UIBarButtonItem appearanceWhenContainedIn:[UIPopoverController class], [MFMailComposeViewController class], nil];
-    [otherBarButtonItemAppearance setBackgroundImage:nil forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-    [otherBarButtonItemAppearance setBackButtonBackgroundImage:nil forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-    [otherBarButtonItemAppearance setTitleTextAttributes:@{
+    UIBarButtonItem *popoverBarButtonItemAppearance = [UIBarButtonItem appearanceWhenContainedIn:[UIPopoverController class], nil];
+    [popoverBarButtonItemAppearance setBackgroundImage:nil forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    [popoverBarButtonItemAppearance setBackButtonBackgroundImage:nil forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    [popoverBarButtonItemAppearance setTitleTextAttributes:@{
+        UITextAttributeTextColor: [UIColor whiteColor],
+        UITextAttributeFont : [UIFont brothersBoldFontOfSize:12.f],
+        UITextAttributeTextShadowColor: [UIColor colorWithWhite:0.f alpha:0.5f],
+        UITextAttributeTextShadowOffset: [NSValue valueWithUIOffset:UIOffsetMake(0, 1)]
+    } forState:UIControlStateNormal];
+    
+    UIBarButtonItem *mailComposerBarButtonItemAppearance = [UIBarButtonItem appearanceWhenContainedIn: [MFMessageComposeViewController class], nil];
+    [mailComposerBarButtonItemAppearance setBackgroundImage:nil forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    [mailComposerBarButtonItemAppearance setBackButtonBackgroundImage:nil forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    [mailComposerBarButtonItemAppearance setTitleTextAttributes:@{
         UITextAttributeTextColor: [UIColor whiteColor],
         UITextAttributeFont : [UIFont brothersBoldFontOfSize:12.f],
         UITextAttributeTextShadowColor: [UIColor colorWithWhite:0.f alpha:0.5f],

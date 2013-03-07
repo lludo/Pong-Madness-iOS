@@ -153,7 +153,7 @@ static NSString *viewIdentifier = @"AddPlayerView";
     self.playersSelection = [NSArray arrayWithObject:player];
     
     UIAlertView *confirmAlert = [[UIAlertView alloc] initWithTitle:@"Confirm"
-                                                           message:[NSString stringWithFormat:@"Are you sure you want to delete this %@?", player.username]
+                                                           message:[NSString stringWithFormat:@"Are you sure you want to delete %@?", player.username]
                                                           delegate:self
                                                  cancelButtonTitle:@"Cancel"
                                                  otherButtonTitles:@"Ok", nil];
