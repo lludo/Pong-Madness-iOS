@@ -39,6 +39,25 @@
     return player;
 }
 
++ (BOOL)hasAtLeastPlayerCount:(NSUInteger)minCount {
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSManagedObjectContext *managedObjectContext = [PMDocumentManager sharedDocument].managedObjectContext;
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Player" inManagedObjectContext:managedObjectContext];
+    [fetchRequest setEntity:entity];
+    
+    [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"active == YES"]];
+    [fetchRequest setIncludesSubentities:NO];
+    
+    NSError *error = nil;
+    NSUInteger playerCount = [managedObjectContext countForFetchRequest:fetchRequest error:&error];
+    if(playerCount == NSNotFound) {
+        return NO;
+    } else {
+        return (playerCount >= minCount);
+    }
+}
+
 - (NSArray *)gamesPlayed {
     
     //TODO: later manage doubles (when user won because it's team won - not only when he directly won as a player but also as a team)

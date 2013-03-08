@@ -31,6 +31,7 @@ typedef enum {
 @property (nonatomic, strong) NSNumber *active;
 
 + (PMPlayer *)playerWithUsername:(NSString *)username;
++ (BOOL)hasAtLeastPlayerCount:(NSUInteger)minCount;
 
 - (PMLeaderboardPlayer *)leaderboardPlayerInLeaderboard:(PMLeaderboard *)leaderboard;
 - (NSNumber *)rankInLeaderboard:(PMLeaderboard *)leaderboard;

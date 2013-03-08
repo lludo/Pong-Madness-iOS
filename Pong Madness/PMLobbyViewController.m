@@ -12,6 +12,7 @@
 #import "PMDoubleGameViewController.h"
 #import "PMLeaderboardViewController.h"
 #import "PMSettingsViewController.h"
+#import "PMPlayer.h"
 #import "UIFont+PongMadness.h"
 
 typedef enum {
@@ -173,7 +174,7 @@ typedef enum {
     } completion:nil];
     
     [UIView animateWithDuration:0.4 animations:^{
-        //TODO: (uncoment that when we will have knockout implemented)
+        //TODO: (uncomment that when we will have knockout implemented)
         //self.gameSingleButton.alpha = 1.f;
         //self.gameDoubleButton.alpha = 1.f;
         self.soonView.alpha = 1.f;
@@ -274,14 +275,28 @@ typedef enum {
 }
 
 - (IBAction)playSingleGame:(id)sender {
-    PMPlayerListViewController *playerListViewController = [[PMPlayerListViewController alloc] initWithMode:PMPlayerListModeSelectForSingle];
-    [self.navigationController pushViewController:playerListViewController animated:YES];
-    playerListViewController.delegate = self;
+    if ([PMPlayer hasAtLeastPlayerCount:2]) {
+        PMPlayerListViewController *playerListViewController = [[PMPlayerListViewController alloc] initWithMode:PMPlayerListModeSelectForSingle];
+        [self.navigationController pushViewController:playerListViewController animated:YES];
+        playerListViewController.delegate = self;
+    } else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Not too fast!"
+                                                        message:@"First things first, you need players to play! Create your players in The Players section."
+                                                       delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        [alert show];
+    }
 }
 
 - (IBAction)playDoubleGame:(id)sender {
-    PMPlayerListViewController *playerListViewController = [[PMPlayerListViewController alloc] initWithMode:PMPlayerListModeSelectForDouble];
-    [self.navigationController pushViewController:playerListViewController animated:YES];
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Not this time"
+                                                    message:@"This feature is not here yet, but it's coming soon! Stay tuned."
+                                                   delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+    [alert show];
+    
+    //TODO: (uncomment that when we will have double implemented)
+    //PMPlayerListViewController *playerListViewController = [[PMPlayerListViewController alloc] initWithMode:PMPlayerListModeSelectForDouble];
+    //[self.navigationController pushViewController:playerListViewController animated:YES];
 }
 
 - (IBAction)settings:(id)sender {
