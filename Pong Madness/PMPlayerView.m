@@ -92,7 +92,11 @@
 
 - (void)refreshUI {
     if (self.player.photo) {
-        NSData *data = [[NSData alloc] initWithContentsOfFile:self.player.photo];
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString *documentsDirectory = [paths objectAtIndex:0];
+        NSString *fullPathToFile = [documentsDirectory stringByAppendingPathComponent:self.player.photo];
+        
+        NSData *data = [[NSData alloc] initWithContentsOfFile:fullPathToFile];
         self.avatarPlayerImageView.image = [UIImage imageWithData:data];
     }
     

@@ -86,6 +86,7 @@
     if ([MFMailComposeViewController canSendMail]) {
         MFMailComposeViewController* controller = [[MFMailComposeViewController alloc] init];
         controller.mailComposeDelegate = self;
+        [controller setToRecipients:@[self.player.email]];
         [controller setSubject:@"Pong Madness game request!"];
         [controller setMessageBody:@"You think you will stay on top of this leaderboard without playing against me? Let's sort this out!" isHTML:NO];
         [self presentViewController:controller animated:YES completion:NULL];

@@ -9,6 +9,7 @@
 #import "PMPlayerListViewController.h"
 #import "PMCollectionViewPlayerManagementLayout.h"
 #import "PMCollectionViewPlayerSelectionLayout.h"
+#import "PMAutomaticKeyboardDismissingNavigationController.h"
 #import "PMPlayerCardViewController.h"
 #import "PMPlayerEditViewController.h"
 #import "PMDocumentManager.h"
@@ -221,7 +222,11 @@ static NSString *viewIdentifier = @"AddPlayerView";
     cell.sinceLabel.text = [NSString stringWithFormat:@"Since %@", dateString];
     
     if (player.photo) {
-        NSData *data = [[NSData alloc] initWithContentsOfFile:player.photo];
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString *documentsDirectory = [paths objectAtIndex:0];
+        NSString *fullPathToFile = [documentsDirectory stringByAppendingPathComponent:player.photo];
+        
+        NSData *data = [[NSData alloc] initWithContentsOfFile:fullPathToFile];
         cell.imageView.image = [UIImage imageWithData:data];
     } else {
         cell.imageView.image = [UIImage imageNamed:@"default-avatar"];
@@ -258,14 +263,14 @@ static NSString *viewIdentifier = @"AddPlayerView";
     switch (self.mode) {
         case PMPlayerListModeConsult: {
             PMPlayerCardViewController *playerViewController = [[PMPlayerCardViewController alloc] initWithPlayer:player];
-            UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:playerViewController];
+            PMAutomaticKeyboardDismissingNavigationController *navigationController = [[PMAutomaticKeyboardDismissingNavigationController alloc] initWithRootViewController:playerViewController];
             navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
             [self presentViewController:navigationController animated:YES completion:NULL];
             break;
         }
         case PMPlayerListModeEdit: {
             PMPlayerEditViewController *playerEditViewController = [[PMPlayerEditViewController alloc] initWithPlayer:player];
-            UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:playerEditViewController];
+            PMAutomaticKeyboardDismissingNavigationController *navigationController = [[PMAutomaticKeyboardDismissingNavigationController alloc] initWithRootViewController:playerEditViewController];
             navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
             [self presentViewController:navigationController animated:YES completion:NULL];
             break;

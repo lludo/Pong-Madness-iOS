@@ -120,7 +120,11 @@
     NSString *ratioString = (ratio == 1.f) ? @"1" : [[NSString stringWithFormat:@"%.2f", ratio] substringFromIndex:1];
     
     if (leaderboardPlayer.player.photo) {
-        NSData *data = [[NSData alloc] initWithContentsOfFile:leaderboardPlayer.player.photo];
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString *documentsDirectory = [paths objectAtIndex:0];
+        NSString *fullPathToFile = [documentsDirectory stringByAppendingPathComponent:leaderboardPlayer.player.photo];
+        
+        NSData *data = [[NSData alloc] initWithContentsOfFile:fullPathToFile];
         cell.imageView.image = [UIImage imageWithData:data];
     } else {
         cell.imageView.image = [UIImage imageNamed:@"default-avatar"];

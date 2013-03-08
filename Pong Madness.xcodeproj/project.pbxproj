@@ -161,6 +161,7 @@
 		825C164A16E3304A008A65FA /* game-mark-leader@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 825C164616E3304A008A65FA /* game-mark-leader@2x.png */; };
 		825C164B16E3304A008A65FA /* icon-handedness-undefine.png in Resources */ = {isa = PBXBuildFile; fileRef = 825C164716E3304A008A65FA /* icon-handedness-undefine.png */; };
 		825C164C16E3304A008A65FA /* icon-handedness-undefine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 825C164816E3304A008A65FA /* icon-handedness-undefine@2x.png */; };
+		826BE4A916E9A05400A4B64C /* PMAutomaticKeyboardDismissingNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 826BE4A816E9A05400A4B64C /* PMAutomaticKeyboardDismissingNavigationController.m */; };
 		8273A1EE16E72EE200FB2E8F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8273A1ED16E72EE200FB2E8F /* MessageUI.framework */; };
 		82B20B7F16E550AD00EFF984 /* PMPlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82B20B7E16E550AD00EFF984 /* PMPlayerView.xib */; };
 		82B20B8216E550BF00EFF984 /* PMPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 82B20B8116E550BF00EFF984 /* PMPlayerView.m */; };
@@ -387,6 +388,8 @@
 		825C164616E3304A008A65FA /* game-mark-leader@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "game-mark-leader@2x.png"; sourceTree = "<group>"; };
 		825C164716E3304A008A65FA /* icon-handedness-undefine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-handedness-undefine.png"; sourceTree = "<group>"; };
 		825C164816E3304A008A65FA /* icon-handedness-undefine@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-handedness-undefine@2x.png"; sourceTree = "<group>"; };
+		826BE4A716E9A05400A4B64C /* PMAutomaticKeyboardDismissingNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMAutomaticKeyboardDismissingNavigationController.h; sourceTree = "<group>"; };
+		826BE4A816E9A05400A4B64C /* PMAutomaticKeyboardDismissingNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMAutomaticKeyboardDismissingNavigationController.m; sourceTree = "<group>"; };
 		8273A1ED16E72EE200FB2E8F /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		82B20B7E16E550AD00EFF984 /* PMPlayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PMPlayerView.xib; sourceTree = "<group>"; };
 		82B20B8016E550BF00EFF984 /* PMPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMPlayerView.h; sourceTree = "<group>"; };
@@ -755,6 +758,8 @@
 				82EFCC9216E59F4800C383A4 /* PMPlayerEditViewController.h */,
 				82EFCC9316E59F4800C383A4 /* PMPlayerEditViewController.m */,
 				82EFCC9416E59F4800C383A4 /* PMPlayerEditViewController.xib */,
+				826BE4A716E9A05400A4B64C /* PMAutomaticKeyboardDismissingNavigationController.h */,
+				826BE4A816E9A05400A4B64C /* PMAutomaticKeyboardDismissingNavigationController.m */,
 			);
 			name = Player;
 			sourceTree = "<group>";
@@ -1132,6 +1137,7 @@
 				82EFCC9516E59F4800C383A4 /* PMPlayerEditViewController.m in Sources */,
 				82EFCCA216E5CD7900C383A4 /* CZPhotoPickerController.m in Sources */,
 				82EFCCA316E5CD7900C383A4 /* CZPhotoPreviewViewController.m in Sources */,
+				826BE4A916E9A05400A4B64C /* PMAutomaticKeyboardDismissingNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

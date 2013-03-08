@@ -82,7 +82,11 @@
 
 - (void)updateView {
     if (self.player.photo) {
-        NSData *data = [[NSData alloc] initWithContentsOfFile:self.player.photo];
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString *documentsDirectory = [paths objectAtIndex:0];
+        NSString *fullPathToFile = [documentsDirectory stringByAppendingPathComponent:self.player.photo];
+        
+        NSData *data = [[NSData alloc] initWithContentsOfFile:fullPathToFile];
         UIImage *photo = [UIImage imageWithData:data];
         [self.avatarButton setBackgroundImage:photo forState:UIControlStateNormal];
     }
@@ -126,7 +130,7 @@
             NSString *fullPathToFile = [documentsDirectory stringByAppendingPathComponent:imageName];
             [imageData writeToFile:fullPathToFile atomically:NO];
             
-            self.player.photo = fullPathToFile;
+            self.player.photo = imageName;
         }
         if (weakSelf.presentedViewController) {
             [weakSelf dismissViewControllerAnimated:YES completion:nil];
@@ -168,7 +172,11 @@
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    [textField resignFirstResponder];
+    if (textField == self.mailTextField) {
+        [self.companyTextField becomeFirstResponder];
+    } else if (textField == self.companyTextField) {
+        [self.companyTextField resignFirstResponder];
+    }
     return NO;
 }
 

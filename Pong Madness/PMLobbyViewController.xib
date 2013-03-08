@@ -100,13 +100,13 @@
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<string key="IBUITitleShadowOffset">{0, 1}</string>
 						<string key="IBUINormalTitle">SINGLE</string>
-						<object class="NSColor" key="IBUIHighlightedTitleColor" id="97918346">
+						<object class="NSColor" key="IBUIHighlightedTitleColor" id="206306070">
 							<int key="NSColorSpace">1</int>
-							<bytes key="NSRGB">MC4wODIzNTI5NDExOCAwLjE4ODIzNTI5NDEgMC4xMjk0MTE3NjQ3AA</bytes>
+							<bytes key="NSRGB">MC4wNjI3NDUwOTgwNCAwLjE0NTA5ODAzOTIgMC4xMDE5NjA3ODQzAA</bytes>
 						</object>
-						<object class="NSColor" key="IBUINormalTitleColor" id="137408822">
+						<object class="NSColor" key="IBUINormalTitleColor">
 							<int key="NSColorSpace">1</int>
-							<bytes key="NSRGB">MC4wODIzNTI5NDExOCAwLjE4ODIzNTI5NDEgMC4xMjk0MTE3NjQ3AA</bytes>
+							<bytes key="NSRGB">MC4wNjI3NDUwOTgwNCAwLjE0NTA5ODAzOTIgMC4xMDE5NjA3ODQzAA</bytes>
 						</object>
 						<object class="NSColor" key="IBUIHighlightedTitleShadowColor" id="178263386">
 							<int key="NSColorSpace">1</int>
@@ -149,8 +149,11 @@
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<string key="IBUITitleShadowOffset">{0, 1}</string>
 						<string key="IBUINormalTitle">DOUBLE</string>
-						<reference key="IBUIHighlightedTitleColor" ref="97918346"/>
-						<reference key="IBUINormalTitleColor" ref="137408822"/>
+						<reference key="IBUIHighlightedTitleColor" ref="206306070"/>
+						<object class="NSColor" key="IBUINormalTitleColor">
+							<int key="NSColorSpace">1</int>
+							<bytes key="NSRGB">MC4wNjI3NDUwOTgwNCAwLjE0NTA5ODAzOTIgMC4xMDE5NjA3ODQzAA</bytes>
+						</object>
 						<reference key="IBUIHighlightedTitleShadowColor" ref="178263386"/>
 						<reference key="IBUINormalTitleShadowColor" ref="438242587"/>
 						<reference key="IBUIHighlightedBackgroundImage" ref="791004659"/>

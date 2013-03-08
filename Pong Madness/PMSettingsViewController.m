@@ -70,8 +70,9 @@
 
 - (IBAction)sendMessageToRobin:(id)sender {
     if ([MFMailComposeViewController canSendMail]) {
-        MFMailComposeViewController* controller = [[MFMailComposeViewController alloc] init];
+        MFMailComposeViewController *controller = [[MFMailComposeViewController alloc] init];
         controller.mailComposeDelegate = self;
+        [controller setToRecipients:@[@"robin.clediere@me.com"]];
         [controller setSubject:@"Hello from Pong Madness"];
         [controller setMessageBody:@"Great design! I love this app, thank you!" isHTML:NO];
         [self presentViewController:controller animated:YES completion:NULL];
@@ -85,8 +86,9 @@
 
 - (IBAction)sendMessageToLudo:(id)sender {
     if ([MFMailComposeViewController canSendMail]) {
-        MFMailComposeViewController* controller = [[MFMailComposeViewController alloc] init];
+        MFMailComposeViewController *controller = [[MFMailComposeViewController alloc] init];
         controller.mailComposeDelegate = self;
+        [controller setToRecipients:@[@"dev.mirageteam@gmail.com"]];
         [controller setSubject:@"Hello from Pong Madness"];
         [controller setMessageBody:@"Great iPad app! I love it, thank you!" isHTML:NO];
         [self presentViewController:controller animated:YES completion:NULL];
