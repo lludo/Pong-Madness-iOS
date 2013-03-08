@@ -200,6 +200,7 @@
 		82EFCCA416E5CD7900C383A4 /* CZPhotoPreviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82EFCCA116E5CD7900C383A4 /* CZPhotoPreviewViewController.xib */; };
 		82EFCCA616E5CF0E00C383A4 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82EFCCA516E5CF0E00C383A4 /* AssetsLibrary.framework */; };
 		82EFCCA816E5CF3D00C383A4 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82EFCCA716E5CF3D00C383A4 /* MobileCoreServices.framework */; };
+		82FCE07316E9DD88009FE8D9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82FCE07216E9DD88009FE8D9 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -436,6 +437,7 @@
 		82EFCCA116E5CD7900C383A4 /* CZPhotoPreviewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CZPhotoPreviewViewController.xib; sourceTree = "<group>"; };
 		82EFCCA516E5CF0E00C383A4 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		82EFCCA716E5CF3D00C383A4 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		82FCE07216E9DD88009FE8D9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -443,6 +445,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82FCE07316E9DD88009FE8D9 /* QuartzCore.framework in Frameworks */,
 				8273A1EE16E72EE200FB2E8F /* MessageUI.framework in Frameworks */,
 				82EFCCA816E5CF3D00C383A4 /* MobileCoreServices.framework in Frameworks */,
 				82EFCCA616E5CF0E00C383A4 /* AssetsLibrary.framework in Frameworks */,
@@ -700,6 +703,7 @@
 				82EFCCA516E5CF0E00C383A4 /* AssetsLibrary.framework */,
 				82EFCCA716E5CF3D00C383A4 /* MobileCoreServices.framework */,
 				8273A1ED16E72EE200FB2E8F /* MessageUI.framework */,
+				82FCE07216E9DD88009FE8D9 /* QuartzCore.framework */,
 				825218D816E716120070D732 /* Crashlytics.framework */,
 			);
 			name = Frameworks;

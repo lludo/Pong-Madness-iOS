@@ -41,6 +41,8 @@
 @property (nonatomic, strong) NSTimer *timer;
 @property (nonatomic, strong) PMGame *game;
 
+@property (nonatomic, assign) BOOL isReversed;
+
 - (void)updateView;
 - (IBAction)tooglePointsToWinSwitch:(id)sender;
 - (IBAction)startGame:(id)sender;
@@ -84,7 +86,7 @@
 - (id)init {
     self = [super init];
     if (self) {
-        // Custom initialization
+        self.isReversed = NO;
     }
     return self;
 }
@@ -344,10 +346,12 @@
 
 - (IBAction)swipedLeft:(id)sender {
     
+    //TODO: later
 }
 
 - (IBAction)swipedRight:(id)sender {
     
+    //TODO: later
 }
 
 - (void)timerTick:(id)sender {
