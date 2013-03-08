@@ -64,7 +64,7 @@
     self.tabBar.selectedItem = allTimeTabBarItem;
     float tabbarImageOffset = 7;
     
-    self.nobodyView.alpha = 0;
+    self.nobodyView.alpha = 0.f;
     self.playerCardView.transform = CGAffineTransformConcat(
         CGAffineTransformMakeTranslation(420, -180),
         CGAffineTransformMakeRotation(M_PI_4/2)
@@ -103,9 +103,9 @@
             self.playerCardView.transform = CGAffineTransformIdentity;
         } completion:NULL];
     } else {
-        [UIView animateWithDuration:0.4 animations:^{
-            self.nobodyView.alpha = 0;
-        }];
+        [UIView animateWithDuration:0.4 delay:0.1 options:UIViewAnimationOptionCurveEaseOut animations:^{
+            self.nobodyView.alpha = 1.f;
+        } completion:NULL];
     }
 }
 

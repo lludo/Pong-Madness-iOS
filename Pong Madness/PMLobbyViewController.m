@@ -87,6 +87,12 @@ typedef enum {
     
     self.gameSingleButton.titleLabel.font = [UIFont brothersBoldFontOfSize:50.f];
     self.gameDoubleButton.titleLabel.font = [UIFont brothersBoldFontOfSize:50.f];
+    
+    self.logoLaunchImageView.alpha = 1.f;
+    self.quickGameButton.center = CGPointMake(-135.f, 330.f);
+    self.knockOutButton.center = CGPointMake(-135.f, 330.f);
+    self.leaderboardButton.center = CGPointMake(-135.f, 330.f);
+    self.thePlayersButton.center = CGPointMake(-135.f, 330.f);
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -98,12 +104,6 @@ typedef enum {
         [self cancel:nil];
     } else {
         self.hasPlayedInitialAnimation = YES;
-        
-        self.logoLaunchImageView.alpha = 1.f;
-        self.quickGameButton.center = CGPointMake(-135.f, 330.f);
-        self.knockOutButton.center = CGPointMake(-135.f, 330.f);
-        self.leaderboardButton.center = CGPointMake(-135.f, 330.f);
-        self.thePlayersButton.center = CGPointMake(-135.f, 330.f);
         
         [UIView animateWithDuration:0.4 animations:^{
             self.logoLaunchImageView.alpha = 0.f;
