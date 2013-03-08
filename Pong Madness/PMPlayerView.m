@@ -21,6 +21,7 @@
 @property (nonatomic, strong) IBOutlet UILabel *playedCountPlayerLabel;
 @property (nonatomic, strong) IBOutlet UILabel *ratioPlayerLabel;
 @property (nonatomic, strong) IBOutlet UIImageView *handednessPlayerImageView;
+@property (nonatomic, strong) IBOutlet UIView *playerOfTheWeekView;
 @property (nonatomic, strong) IBOutletCollection(UILabel) NSArray *legendLabels;
 
 @property (nonatomic, strong) IBOutlet UIView *mainView;
@@ -41,6 +42,7 @@
 @synthesize loseCountPlayerLabel;
 @synthesize playedCountPlayerLabel;
 @synthesize handednessPlayerImageView;
+@synthesize playerOfTheWeekView;
 @synthesize legendLabels;
 
 @synthesize mainView;
@@ -83,6 +85,8 @@
     [self.legendLabels enumerateObjectsUsingBlock:^(UILabel *label, NSUInteger idx, BOOL *stop) {
         label.font = [UIFont brothersBoldFontOfSize:11.f];
     }];
+    
+    self.playerOfTheWeekView.hidden = YES;
 }
 
 - (void)setPlayer:(PMPlayer *)aPlayer {
@@ -130,6 +134,11 @@
         self.handednessPlayerImageView.image = [UIImage imageNamed:@"icon-lefty"];
     } else if ([self.player.handedness isEqualToString:@"R"]) {
         self.handednessPlayerImageView.image = [UIImage imageNamed:@"icon-righty"];
+    }
+    
+    PMPlayer *playerOfTheWeek = [PMLeaderboard playerOfTheWeek];
+    if (playerOfTheWeek && self.player == playerOfTheWeek) {
+        self.playerOfTheWeekView.hidden = NO;
     }
 }
 

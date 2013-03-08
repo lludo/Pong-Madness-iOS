@@ -342,6 +342,14 @@
     [self updateView];
 }
 
+- (IBAction)swipedLeft:(id)sender {
+    
+}
+
+- (IBAction)swipedRight:(id)sender {
+    
+}
+
 - (void)timerTick:(id)sender {
     NSTimeInterval interval = -[self.game.startDate timeIntervalSinceNow];
     NSInteger minutes = (int)interval / 60;

@@ -19,6 +19,8 @@
 @property (nonatomic, strong) IBOutlet UILabel *ludoNameLabel;
 @property (nonatomic, strong) IBOutlet UILabel *ludoJobTitleLabel;
 
+@property (nonatomic, strong) MFMailComposeViewController *mailController;
+
 - (IBAction)sendMessageToRobin:(id)sender;
 - (IBAction)sendMessageToLudo:(id)sender;
 
@@ -32,6 +34,7 @@
 @synthesize ludoImageView;
 @synthesize ludoNameLabel;
 @synthesize ludoJobTitleLabel;
+@synthesize mailController;
 
 - (id)init {
     self = [super init];
@@ -70,12 +73,12 @@
 
 - (IBAction)sendMessageToRobin:(id)sender {
     if ([MFMailComposeViewController canSendMail]) {
-        MFMailComposeViewController *controller = [[MFMailComposeViewController alloc] init];
-        controller.mailComposeDelegate = self;
-        [controller setToRecipients:@[@"robin.clediere@me.com"]];
-        [controller setSubject:@"Hello from Pong Madness"];
-        [controller setMessageBody:@"Great design! I love this app, thank you!" isHTML:NO];
-        [self presentViewController:controller animated:YES completion:NULL];
+        self.mailController = [[MFMailComposeViewController alloc] init];
+        self.mailController.mailComposeDelegate = self;
+        [self.mailController setToRecipients:@[@"robin.clediere@me.com"]];
+        [self.mailController setSubject:@"Hello from Pong Madness"];
+        [self.mailController setMessageBody:@"Great design! I love this app, thank you!" isHTML:NO];
+        [self presentViewController:self.mailController animated:YES completion:NULL];
     } else {
         UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Email Settings"
                                                              message:@"No email account configured on this device" delegate:nil
@@ -86,12 +89,12 @@
 
 - (IBAction)sendMessageToLudo:(id)sender {
     if ([MFMailComposeViewController canSendMail]) {
-        MFMailComposeViewController *controller = [[MFMailComposeViewController alloc] init];
-        controller.mailComposeDelegate = self;
-        [controller setToRecipients:@[@"dev.mirageteam@gmail.com"]];
-        [controller setSubject:@"Hello from Pong Madness"];
-        [controller setMessageBody:@"Great iPad app! I love it, thank you!" isHTML:NO];
-        [self presentViewController:controller animated:YES completion:NULL];
+        self.mailController = [[MFMailComposeViewController alloc] init];
+        self.mailController.mailComposeDelegate = self;
+        [self.mailController setToRecipients:@[@"dev.mirageteam@gmail.com"]];
+        [self.mailController setSubject:@"Hello from Pong Madness"];
+        [self.mailController setMessageBody:@"Great iPad app! I love it, thank you!" isHTML:NO];
+        [self presentViewController:self.mailController animated:YES completion:NULL];
     } else {
         UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Email Settings"
                                                              message:@"No email account configured on this device" delegate:nil
@@ -107,6 +110,7 @@
         NSLog(@"Message sent");
     }
     [self dismissViewControllerAnimated:YES completion:NULL];
+    self.mailController = nil;
 }
 
 @end
