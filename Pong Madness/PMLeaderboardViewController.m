@@ -83,6 +83,7 @@
     // Setup data in the views
     
     [self updateView];
+    self.playerCardView.player = [PMLeaderboard playerOfTheWeek];
 }
 
 - (void)updateView {

@@ -83,4 +83,32 @@
     return globalLeaderboard;
 }
 
++ (PMPlayer *)playerOfTheWeek {
+    NSDate *today = [NSDate date];
+    
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDateComponents *components = [calendar components:NSWeekdayCalendarUnit | NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit fromDate:today];
+    [components setDay:([components day]-7)];
+    NSDate *lastWeek = [calendar dateFromComponents:components];
+    
+    PMTournament *weekTournament = [PMTournament weakTournamentFromDate:lastWeek];
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSManagedObjectContext *managedObjectContext = [PMDocumentManager sharedDocument].managedObjectContext;
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"LeaderboardPlayer" inManagedObjectContext:managedObjectContext];
+    [fetchRequest setEntity:entity];
+    [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"leaderboard.tournament == %@ && victoryRatio == max(victoryRatio)", weekTournament]];
+    [fetchRequest setFetchLimit:1];
+    
+    NSError *error = nil;
+    NSArray *result = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    
+    PMLeaderboardPlayer *leaderboardPlayer = nil;
+    if (result && [result count] == 1) {
+        leaderboardPlayer = [result lastObject];
+    }
+    
+    return leaderboardPlayer.player;
+}
+
 @end

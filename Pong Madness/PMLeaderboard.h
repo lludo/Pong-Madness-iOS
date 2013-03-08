@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class PMLeaderboardPlayer, PMTournament;
+@class PMLeaderboardPlayer, PMTournament, PMPlayer;
 
 @interface PMLeaderboard : NSManagedObject
 
@@ -22,6 +22,9 @@
 + (PMLeaderboard *)lastWeekLeaderboard;
 + (PMLeaderboard *)currentWeekLeaderboard;
 + (PMLeaderboard *)weekLeaderboardFromDate:(NSDate *)date;
+
++ (PMPlayer *)playerOfTheWeek;
+
 @end
 
 @interface PMLeaderboard (CoreDataGeneratedAccessors)
