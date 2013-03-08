@@ -22,6 +22,7 @@
 @property (nonatomic, strong) IBOutlet UIView *tableHeaderView;
 @property (nonatomic, strong) IBOutletCollection(UILabel) NSArray *legendLabels;
 @property (nonatomic, strong) IBOutlet PMPlayerView *playerCardView;
+@property (nonatomic, strong) IBOutlet UIView *nobodyView;
 @property (nonatomic, strong) IBOutlet UITabBar *tabBar;
 @property (nonatomic, strong) NSArray *leaderboardPlayers;
 
@@ -35,6 +36,7 @@
 @synthesize tableHeaderView;
 @synthesize leaderboardPlayers;
 @synthesize playerCardView;
+@synthesize nobodyView;
 
 - (id)init {
     self = [super init];
@@ -62,6 +64,12 @@
     self.tabBar.selectedItem = allTimeTabBarItem;
     float tabbarImageOffset = 7;
     
+    self.nobodyView.alpha = 0;
+    self.playerCardView.transform = CGAffineTransformConcat(
+        CGAffineTransformMakeTranslation(420, -180),
+        CGAffineTransformMakeRotation(M_PI_4/2)
+    );
+    
     [allTimeTabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"tabbar-item-alltime-selected.png"]
              withFinishedUnselectedImage:[UIImage imageNamed:@"tabbar-item-alltime.png"]];
     allTimeTabBarItem.imageInsets = UIEdgeInsetsMake(tabbarImageOffset, 0, -tabbarImageOffset, 0);
@@ -83,7 +91,22 @@
     // Setup data in the views
     
     [self updateView];
-    self.playerCardView.player = [PMLeaderboard playerOfTheWeek];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    PMPlayer *playerOfTheWeek = [PMLeaderboard playerOfTheWeek];
+    if (playerOfTheWeek) {
+        self.playerCardView.player = playerOfTheWeek;
+        [UIView animateWithDuration:0.4 delay:0.1 options:UIViewAnimationOptionCurveEaseOut animations:^{
+            self.playerCardView.transform = CGAffineTransformIdentity;
+        } completion:NULL];
+    } else {
+        [UIView animateWithDuration:0.4 animations:^{
+            self.nobodyView.alpha = 0;
+        }];
+    }
 }
 
 - (void)updateView {
