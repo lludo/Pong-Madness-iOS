@@ -100,7 +100,23 @@
 }
 
 - (NSNumber *)timePlayed {
-    return @(4345);
+    __block NSUInteger timePlayed = 0;
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSManagedObjectContext *managedObjectContext = [PMDocumentManager sharedDocument].managedObjectContext;
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Game" inManagedObjectContext:managedObjectContext];
+    [fetchRequest setEntity:entity];
+    [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"ANY gameParticipantOrderedSet.participant == %@", self]];
+    
+    NSError *error = nil;
+    NSArray *result = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    
+    if (!error) {
+        [result enumerateObjectsUsingBlock:^(PMGame *game, NSUInteger idx, BOOL *stop) {
+            timePlayed += [game.timePlayed unsignedIntValue];
+        }];
+    }
+    return @(timePlayed);
 }
 
 - (void)descativate {
