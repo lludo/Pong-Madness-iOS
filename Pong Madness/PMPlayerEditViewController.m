@@ -10,6 +10,7 @@
 #import "CZPhotoPickerController.h"
 #import "PMDocumentManager.h"
 #import "UIFont+PongMadness.h"
+#import "UIImage+Resize.h"
 
 @interface PMPlayerEditViewController () <UITextFieldDelegate>
 
@@ -115,22 +116,50 @@
             // Display image in the button
             [weakSelf.avatarButton setBackgroundImage:image forState:UIControlStateNormal];
             
-            // Save image to the disk and path into the user
-            NSData *imageData = UIImagePNGRepresentation(image);
-            
+            // Image name
             NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
             [dateFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"]];
             [dateFormatter setDateFormat:@"yyyyMMdd-HHmmss"];
             [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
-            NSString *imageName = [NSString stringWithFormat:@"photo-%@.png", [dateFormatter stringFromDate:[NSDate date]]];
+            NSString *imageName = [NSString stringWithFormat:@"photo-%@", [dateFormatter stringFromDate:[NSDate date]]];
             
+            // Images directory
             NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
             NSString *documentsDirectory = [paths objectAtIndex:0];
             
+            // Save image to the disk and path into the user
+            NSData *imageData = UIImagePNGRepresentation(image);
             NSString *fullPathToFile = [documentsDirectory stringByAppendingPathComponent:imageName];
             [imageData writeToFile:fullPathToFile atomically:NO];
-            
             self.player.photo = imageName;
+            
+            
+            // Reduce the image for player cell (medium size = 152 points)
+            {
+                CGFloat mediumSize = 152.f * 2;
+                UIImage *mediumImage = [image resizedImageWithContentMode:UIViewContentModeScaleAspectFit
+                                                                bounds:CGSizeMake(mediumSize, mediumSize)
+                                                  interpolationQuality:kCGInterpolationHigh];
+                NSData *mediumImageData = UIImagePNGRepresentation(mediumImage);
+                
+                NSString *mediumImageName = [NSString stringWithFormat:@"%@-medium", imageName];
+                NSString *fullPathToFile = [documentsDirectory stringByAppendingPathComponent:mediumImageName];
+                [mediumImageData writeToFile:fullPathToFile atomically:NO];
+            }
+            
+            
+            // Reduce the image for leaderboard cell (small size = 51 points)
+            {
+                CGFloat smallSize = 51.f * 2;
+                UIImage *smallImage = [image resizedImageWithContentMode:UIViewContentModeScaleAspectFit
+                                                                   bounds:CGSizeMake(smallSize, smallSize)
+                                                     interpolationQuality:kCGInterpolationHigh];
+                NSData *smallImageData = UIImagePNGRepresentation(smallImage);
+                
+                NSString *smallImageName = [NSString stringWithFormat:@"%@-small", imageName];
+                NSString *fullPathToFile = [documentsDirectory stringByAppendingPathComponent:smallImageName];
+                [smallImageData writeToFile:fullPathToFile atomically:NO];
+            }
         }
         if (weakSelf.presentedViewController) {
             [weakSelf dismissViewControllerAnimated:YES completion:nil];

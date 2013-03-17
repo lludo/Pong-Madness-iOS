@@ -224,7 +224,8 @@ static NSString *viewIdentifier = @"AddPlayerView";
     if (player.photo) {
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
         NSString *documentsDirectory = [paths objectAtIndex:0];
-        NSString *fullPathToFile = [documentsDirectory stringByAppendingPathComponent:player.photo];
+        NSString *photoName = [NSString stringWithFormat:@"%@-medium", player.photo];
+        NSString *fullPathToFile = [documentsDirectory stringByAppendingPathComponent:photoName];
         
         NSData *data = [[NSData alloc] initWithContentsOfFile:fullPathToFile];
         cell.imageView.image = [UIImage imageWithData:data];

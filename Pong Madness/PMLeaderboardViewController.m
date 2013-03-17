@@ -146,12 +146,13 @@
     if (leaderboardPlayer.player.photo) {
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
         NSString *documentsDirectory = [paths objectAtIndex:0];
-        NSString *fullPathToFile = [documentsDirectory stringByAppendingPathComponent:leaderboardPlayer.player.photo];
+        NSString *photoName = [NSString stringWithFormat:@"%@-small", leaderboardPlayer.player.photo];
+        NSString *fullPathToFile = [documentsDirectory stringByAppendingPathComponent:photoName];
         
         NSData *data = [[NSData alloc] initWithContentsOfFile:fullPathToFile];
         cell.imageView.image = [UIImage imageWithData:data];
     } else {
-        cell.imageView.image = [UIImage imageNamed:@"default-avatar"];
+        cell.imageView.image = [UIImage imageNamed:@"default-avatar-small"];
     }
     
     cell.rankLabel.text = [NSString stringWithFormat:@"#%i", indexPath.row + 1];
