@@ -198,6 +198,7 @@
 		82B2A72D16E30139002D6178 /* paddle-knockout-active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82B2A72916E30139002D6178 /* paddle-knockout-active@2x.png */; };
 		82B2A72E16E30139002D6178 /* soon.png in Resources */ = {isa = PBXBuildFile; fileRef = 82B2A72A16E30139002D6178 /* soon.png */; };
 		82B2A72F16E30139002D6178 /* soon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82B2A72B16E30139002D6178 /* soon@2x.png */; };
+		82B5AD8D16F6BDAD0036F0FA /* PMDefaultKFactorStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 82B5AD8C16F6BDAD0036F0FA /* PMDefaultKFactorStrategy.m */; };
 		82EFCC9016E59E9300C383A4 /* edit-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 82EFCC8E16E59E9300C383A4 /* edit-background.png */; };
 		82EFCC9116E59E9300C383A4 /* edit-background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82EFCC8F16E59E9300C383A4 /* edit-background@2x.png */; };
 		82EFCC9516E59F4800C383A4 /* PMPlayerEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82EFCC9316E59F4800C383A4 /* PMPlayerEditViewController.m */; };
@@ -447,6 +448,8 @@
 		82B2A72916E30139002D6178 /* paddle-knockout-active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paddle-knockout-active@2x.png"; sourceTree = "<group>"; };
 		82B2A72A16E30139002D6178 /* soon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soon.png; sourceTree = "<group>"; };
 		82B2A72B16E30139002D6178 /* soon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "soon@2x.png"; sourceTree = "<group>"; };
+		82B5AD8B16F6BDAD0036F0FA /* PMDefaultKFactorStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMDefaultKFactorStrategy.h; sourceTree = "<group>"; };
+		82B5AD8C16F6BDAD0036F0FA /* PMDefaultKFactorStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMDefaultKFactorStrategy.m; sourceTree = "<group>"; };
 		82EFCC8E16E59E9300C383A4 /* edit-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit-background.png"; sourceTree = "<group>"; };
 		82EFCC8F16E59E9300C383A4 /* edit-background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edit-background@2x.png"; sourceTree = "<group>"; };
 		82EFCC9216E59F4800C383A4 /* PMPlayerEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMPlayerEditViewController.h; sourceTree = "<group>"; };
@@ -666,6 +669,8 @@
 				820D714716E1B0F800E98D23 /* Categories */,
 				82EFCC9B16E5CD7900C383A4 /* CZPhotoPickerController */,
 				8298F65D16F30AF900482653 /* ScoreKit */,
+				82B5AD8B16F6BDAD0036F0FA /* PMDefaultKFactorStrategy.h */,
+				82B5AD8C16F6BDAD0036F0FA /* PMDefaultKFactorStrategy.m */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -1200,6 +1205,7 @@
 				8298F66B16F30AF900482653 /* SBFIDEKFactorStrategy.m in Sources */,
 				8298F66C16F30AF900482653 /* SBUSCFKFactorStrategy.m in Sources */,
 				82A8FE5B16F6874700159FFB /* UIImage+Resize.m in Sources */,
+				82B5AD8D16F6BDAD0036F0FA /* PMDefaultKFactorStrategy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -97,7 +97,7 @@
     NSManagedObjectContext *managedObjectContext = [PMDocumentManager sharedDocument].managedObjectContext;
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"LeaderboardPlayer" inManagedObjectContext:managedObjectContext];
     [fetchRequest setEntity:entity];
-    [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"leaderboard.tournament == %@ && victoryRatio == max(victoryRatio)", weekTournament]];
+    [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"leaderboard.tournament == %@ && rating == max(rating)", weekTournament]];
     [fetchRequest setFetchLimit:1];
     
     NSError *error = nil;

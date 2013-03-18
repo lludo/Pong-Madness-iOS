@@ -89,11 +89,11 @@
             secondLeaderboardPlayer = [PMLeaderboardPlayer leaderboardPlayerForPlayer:secondPlayer inLeaderboard:globalLeaderboard];
         }
         if ([firstGameParticipant.score intValue] > [secondGameParticipant.score intValue]) {
-            [firstLeaderboardPlayer recordVictory];
-            [secondLeaderboardPlayer recordDefeat];
+            [firstLeaderboardPlayer recordVictoryAgainst:secondLeaderboardPlayer];
+            [secondLeaderboardPlayer recordDefeatAgainst:firstLeaderboardPlayer];
         } else {
-            [firstLeaderboardPlayer recordDefeat];
-            [secondLeaderboardPlayer recordVictory];
+            [firstLeaderboardPlayer recordDefeatAgainst:secondLeaderboardPlayer];
+            [secondLeaderboardPlayer recordVictoryAgainst:firstLeaderboardPlayer];
         }
     } else if ([firstGameParticipant.participant isKindOfClass:[PMTeam class]]) {
         
@@ -114,11 +114,11 @@
             secondLeaderboardPlayer = [PMLeaderboardPlayer leaderboardPlayerForPlayer:secondPlayer inLeaderboard:weekLeaderboard];
         }
         if ([firstGameParticipant.score intValue] > [secondGameParticipant.score intValue]) {
-            [firstLeaderboardPlayer recordVictory];
-            [secondLeaderboardPlayer recordDefeat];
+            [firstLeaderboardPlayer recordVictoryAgainst:secondLeaderboardPlayer];
+            [secondLeaderboardPlayer recordDefeatAgainst:firstLeaderboardPlayer];
         } else {
-            [firstLeaderboardPlayer recordDefeat];
-            [secondLeaderboardPlayer recordVictory];
+            [firstLeaderboardPlayer recordDefeatAgainst:secondLeaderboardPlayer];
+            [secondLeaderboardPlayer recordVictoryAgainst:firstLeaderboardPlayer];
         }
     } else if ([firstGameParticipant.participant isKindOfClass:[PMTeam class]]) {
         

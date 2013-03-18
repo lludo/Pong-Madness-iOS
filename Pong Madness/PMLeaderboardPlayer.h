@@ -17,11 +17,12 @@
 @property (nonatomic, strong) NSNumber *gamesPlayedCount;
 @property (nonatomic, strong) NSNumber *gamesWonCount;
 @property (nonatomic, strong) NSNumber *victoryRatio;
+@property (nonatomic, strong) NSNumber *rating;
 @property (nonatomic, strong) PMLeaderboard *leaderboard;
 
 + (PMLeaderboardPlayer *)leaderboardPlayerForPlayer:(PMPlayer *)player inLeaderboard:(PMLeaderboard *)leaderboard;
 
-- (void)recordVictory;
-- (void)recordDefeat;
+- (void)recordVictoryAgainst:(PMLeaderboardPlayer *)againstPlayer;
+- (void)recordDefeatAgainst:(PMLeaderboardPlayer *)againstPlayer;
 
 @end
