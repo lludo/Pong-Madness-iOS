@@ -97,18 +97,21 @@
     NSManagedObjectContext *managedObjectContext = [PMDocumentManager sharedDocument].managedObjectContext;
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"LeaderboardPlayer" inManagedObjectContext:managedObjectContext];
     [fetchRequest setEntity:entity];
-    [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"leaderboard.tournament == %@ && rating == max(rating)", weekTournament]];
-    [fetchRequest setFetchLimit:1];
+    [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"leaderboard.tournament == %@", weekTournament]];
     
     NSError *error = nil;
     NSArray *result = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
     
-    PMLeaderboardPlayer *leaderboardPlayer = nil;
-    if (result && [result count] == 1) {
-        leaderboardPlayer = [result lastObject];
+    __block PMLeaderboardPlayer *leaderboardPlayerOfTheWeek = nil;
+    if (result) {
+        [result enumerateObjectsUsingBlock:^(PMLeaderboardPlayer *leaderboardPlayer, NSUInteger idx, BOOL *stop) {
+            if (!leaderboardPlayerOfTheWeek || [leaderboardPlayer.rating unsignedIntegerValue] > [leaderboardPlayerOfTheWeek.rating unsignedIntegerValue]) {
+                leaderboardPlayerOfTheWeek = leaderboardPlayer;
+            }
+        }];
     }
     
-    return leaderboardPlayer.player;
+    return leaderboardPlayerOfTheWeek.player;
 }
 
 @end
