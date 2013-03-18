@@ -161,6 +161,7 @@
     cell.lostCountLabel.text = [NSString stringWithFormat:@"%i", [leaderboardPlayer.gamesPlayedCount intValue] - [leaderboardPlayer.gamesWonCount intValue]];
     cell.playedCountLabel.text = [leaderboardPlayer.gamesPlayedCount stringValue];
     cell.ratioLabel.text = ratioString;
+    cell.ratingLabel.text = [leaderboardPlayer.rating stringValue];
     
     cell.contentView.backgroundColor = [UIColor colorWithWhite:1.f alpha:(indexPath.row % 2) ? 0.03f : 0.f];
     

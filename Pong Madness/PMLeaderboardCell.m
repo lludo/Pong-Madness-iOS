@@ -24,6 +24,7 @@
 @synthesize lostCountLabel;
 @synthesize playedCountLabel;
 @synthesize ratioLabel;
+@synthesize ratingLabel;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
