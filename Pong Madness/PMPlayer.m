@@ -100,9 +100,9 @@
 - (NSNumber *)rankInLeaderboard:(PMLeaderboard *)leaderboard {
     __block NSUInteger rank = 0;
     
-    NSSortDescriptor *victoryRatioSortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"victoryRatio" ascending:NO];
+    NSSortDescriptor *ratingSortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"rating" ascending:NO];
     NSSortDescriptor *gamesPlayedCountSortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"gamesPlayedCount" ascending:NO];
-    NSArray *leaderboardPlayers = [leaderboard.leaderboardPlayerSet sortedArrayUsingDescriptors:@[victoryRatioSortDescriptor, gamesPlayedCountSortDescriptor]];
+    NSArray *leaderboardPlayers = [leaderboard.leaderboardPlayerSet sortedArrayUsingDescriptors:@[ratingSortDescriptor, gamesPlayedCountSortDescriptor]];
     
     [leaderboardPlayers enumerateObjectsUsingBlock:^(PMLeaderboardPlayer *leaderboardPlayer, NSUInteger index, BOOL *stop) {
         if (leaderboardPlayer.player == self) {
