@@ -90,9 +90,7 @@
         }
         if ([firstGameParticipant.score intValue] > [secondGameParticipant.score intValue]) {
             [firstLeaderboardPlayer recordVictoryAgainst:secondLeaderboardPlayer];
-            [secondLeaderboardPlayer recordDefeatAgainst:firstLeaderboardPlayer];
         } else {
-            [firstLeaderboardPlayer recordDefeatAgainst:secondLeaderboardPlayer];
             [secondLeaderboardPlayer recordVictoryAgainst:firstLeaderboardPlayer];
         }
     } else if ([firstGameParticipant.participant isKindOfClass:[PMTeam class]]) {
@@ -115,9 +113,7 @@
         }
         if ([firstGameParticipant.score intValue] > [secondGameParticipant.score intValue]) {
             [firstLeaderboardPlayer recordVictoryAgainst:secondLeaderboardPlayer];
-            [secondLeaderboardPlayer recordDefeatAgainst:firstLeaderboardPlayer];
         } else {
-            [firstLeaderboardPlayer recordDefeatAgainst:secondLeaderboardPlayer];
             [secondLeaderboardPlayer recordVictoryAgainst:firstLeaderboardPlayer];
         }
     } else if ([firstGameParticipant.participant isKindOfClass:[PMTeam class]]) {

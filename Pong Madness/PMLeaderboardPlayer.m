@@ -37,29 +37,31 @@
 }
 
 - (void)recordVictoryAgainst:(PMLeaderboardPlayer *)againstPlayer {
+    
+    // Update winner stats
     self.gamesPlayedCount = @([self.gamesPlayedCount intValue] + 1);
     self.gamesWonCount = @([self.gamesWonCount intValue] + 1);
     self.victoryRatio = @([self.gamesWonCount floatValue] / [self.gamesPlayedCount floatValue]);
     
+    // Update looser stats
+    againstPlayer.gamesPlayedCount = @([againstPlayer.gamesPlayedCount intValue] + 1);
+    againstPlayer.victoryRatio = @([againstPlayer.gamesWonCount floatValue] / [againstPlayer.gamesPlayedCount floatValue]);
     
+    // Compute elo for winner
     SBEloRating *elo = [[SBEloRating alloc] initWithStrategy:[[PMDefaultKFactorStrategy alloc] init]];
-    NSUInteger newRating = [elo adjustedRatingForPlayerWithCompletedGames:[self.gamesPlayedCount unsignedIntegerValue]
+    
+    NSUInteger winnerNewRating = [elo adjustedRatingForPlayerWithCompletedGames:[self.gamesPlayedCount unsignedIntegerValue]
                                                                 andRating:[self.rating unsignedIntegerValue]
                                                                   scoring:1
-                                                    againstOpponentRating:[againstPlayer.gamesPlayedCount unsignedIntegerValue]];
-    self.rating = @(newRating);
-}
-
-- (void)recordDefeatAgainst:(PMLeaderboardPlayer *)againstPlayer {
-    self.gamesPlayedCount = @([self.gamesPlayedCount intValue] + 1);
-    self.victoryRatio = @([self.gamesWonCount floatValue] / [self.gamesPlayedCount floatValue]);
+                                                    againstOpponentRating:[againstPlayer.rating unsignedIntegerValue]];
     
-    SBEloRating *elo = [[SBEloRating alloc] initWithStrategy:[[PMDefaultKFactorStrategy alloc] init]];
-    NSUInteger newRating = [elo adjustedRatingForPlayerWithCompletedGames:[self.gamesPlayedCount unsignedIntegerValue]
-                                                                andRating:[self.rating unsignedIntegerValue]
+    NSUInteger looserNewRating = [elo adjustedRatingForPlayerWithCompletedGames:[againstPlayer.gamesPlayedCount unsignedIntegerValue]
+                                                                andRating:[againstPlayer.rating unsignedIntegerValue]
                                                                   scoring:0
-                                                    againstOpponentRating:[againstPlayer.gamesPlayedCount unsignedIntegerValue]];
-    self.rating = @(newRating);
+                                                    againstOpponentRating:[self.rating unsignedIntegerValue]];
+    
+    self.rating = @(winnerNewRating);
+    againstPlayer.rating = @(looserNewRating);
 }
 
 @end

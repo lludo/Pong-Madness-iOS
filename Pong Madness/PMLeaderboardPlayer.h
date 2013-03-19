@@ -23,6 +23,5 @@
 + (PMLeaderboardPlayer *)leaderboardPlayerForPlayer:(PMPlayer *)player inLeaderboard:(PMLeaderboard *)leaderboard;
 
 - (void)recordVictoryAgainst:(PMLeaderboardPlayer *)againstPlayer;
-- (void)recordDefeatAgainst:(PMLeaderboardPlayer *)againstPlayer;
 
 @end
