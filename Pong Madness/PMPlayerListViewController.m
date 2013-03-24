@@ -187,7 +187,7 @@ static NSString *viewIdentifier = @"AddPlayerView";
         NSEntityDescription *entity = [NSEntityDescription entityForName:@"Player" inManagedObjectContext:managedObjectContext];
         [fetchRequest setEntity:entity];
         
-        NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"username" ascending:YES];
+        NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"username" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)];
         [fetchRequest setSortDescriptors:@[sortDescriptor]];
         
         [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"active == YES"]];
