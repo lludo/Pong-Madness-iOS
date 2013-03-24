@@ -2,10 +2,10 @@
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="8.00">
 	<data>
 		<int key="IBDocument.SystemTarget">1552</int>
-		<string key="IBDocument.SystemVersion">12C3103</string>
+		<string key="IBDocument.SystemVersion">12D78</string>
 		<string key="IBDocument.InterfaceBuilderVersion">3084</string>
-		<string key="IBDocument.AppKitVersion">1187.34</string>
-		<string key="IBDocument.HIToolboxVersion">625.00</string>
+		<string key="IBDocument.AppKitVersion">1187.37</string>
+		<string key="IBDocument.HIToolboxVersion">626.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 			<string key="NS.object.0">2083</string>
@@ -59,7 +59,7 @@
 						<string key="NSFrame">{{13, 10}, {298, 298}}</string>
 						<reference key="NSSuperview" ref="758120178"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="93212977"/>
+						<reference key="NSNextKeyView" ref="18985526"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<int key="IBUIContentMode">2</int>
@@ -204,6 +204,7 @@
 						<string key="NSFrame">{{267, 356}, {45, 45}}</string>
 						<reference key="NSSuperview" ref="758120178"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<int key="IBUIContentMode">4</int>
@@ -494,7 +495,7 @@
 						<int key="IBUIContentMode">7</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-						<string key="IBUIText">RATIO</string>
+						<string key="IBUIText">POINTS</string>
 						<object class="NSColor" key="IBUITextColor">
 							<int key="NSColorSpace">1</int>
 							<bytes key="NSRGB">MC41ODAzOTIxNTY5IDAuNDYyNzQ1MDk4IDAuMzUyOTQxMTc2NQA</bytes>
@@ -514,6 +515,7 @@
 						<string key="NSFrame">{{256, -24}, {90, 136}}</string>
 						<reference key="NSSuperview" ref="758120178"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="93212977"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<int key="IBUIContentMode">4</int>
@@ -621,14 +623,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">ratioPlayerLabel</string>
-						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="246221751"/>
-					</object>
-					<int key="connectionID">136</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">playedCountPlayerLabel</string>
 						<reference key="source" ref="372490531"/>
 						<reference key="destination" ref="796720281"/>
@@ -666,6 +660,14 @@
 						<reference key="destination" ref="18985526"/>
 					</object>
 					<int key="connectionID">142</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">pointsPlayerLabel</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="246221751"/>
+					</object>
+					<int key="connectionID">143</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -857,7 +859,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">142</int>
+			<int key="maxID">143</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -871,8 +873,8 @@
 						<string key="mainView">UIView</string>
 						<string key="playedCountPlayerLabel">UILabel</string>
 						<string key="playerOfTheWeekView">UIView</string>
+						<string key="pointsPlayerLabel">UILabel</string>
 						<string key="rankPlayerLabel">UILabel</string>
-						<string key="ratioPlayerLabel">UILabel</string>
 						<string key="usernamePlayerLabel">UILabel</string>
 						<string key="winCountPlayerLabel">UILabel</string>
 					</dictionary>
@@ -901,12 +903,12 @@
 							<string key="name">playerOfTheWeekView</string>
 							<string key="candidateClassName">UIView</string>
 						</object>
-						<object class="IBToOneOutletInfo" key="rankPlayerLabel">
-							<string key="name">rankPlayerLabel</string>
+						<object class="IBToOneOutletInfo" key="pointsPlayerLabel">
+							<string key="name">pointsPlayerLabel</string>
 							<string key="candidateClassName">UILabel</string>
 						</object>
-						<object class="IBToOneOutletInfo" key="ratioPlayerLabel">
-							<string key="name">ratioPlayerLabel</string>
+						<object class="IBToOneOutletInfo" key="rankPlayerLabel">
+							<string key="name">rankPlayerLabel</string>
 							<string key="candidateClassName">UILabel</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="usernamePlayerLabel">

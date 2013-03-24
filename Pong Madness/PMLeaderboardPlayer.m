@@ -18,7 +18,6 @@
 @dynamic player;
 @dynamic gamesPlayedCount;
 @dynamic gamesWonCount;
-@dynamic victoryRatio;
 @dynamic rating;
 @dynamic leaderboard;
 
@@ -41,11 +40,9 @@
     // Update winner stats
     self.gamesPlayedCount = @([self.gamesPlayedCount intValue] + 1);
     self.gamesWonCount = @([self.gamesWonCount intValue] + 1);
-    self.victoryRatio = @([self.gamesWonCount floatValue] / [self.gamesPlayedCount floatValue]);
     
     // Update looser stats
     againstPlayer.gamesPlayedCount = @([againstPlayer.gamesPlayedCount intValue] + 1);
-    againstPlayer.victoryRatio = @([againstPlayer.gamesWonCount floatValue] / [againstPlayer.gamesPlayedCount floatValue]);
     
     // Compute elo for winner
     SBEloRating *elo = [[SBEloRating alloc] initWithStrategy:[[PMDefaultKFactorStrategy alloc] init]];

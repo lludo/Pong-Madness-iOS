@@ -89,8 +89,8 @@
         self.mailController = [[MFMailComposeViewController alloc] init];
         self.mailController.mailComposeDelegate = self;
         [self.mailController setToRecipients:@[self.player.email]];
-        [self.mailController setSubject:@"Pong Madness game request!"];
-        [self.mailController setMessageBody:@"You think you will stay on top of this leaderboard without playing against me? Let's sort this out!" isHTML:NO];
+        [self.mailController setSubject:@"Pong Madness Game Request!"];
+        [self.mailController setMessageBody:@"You and I, let's play some Ping Pong now!" isHTML:NO];
         [self presentViewController:self.mailController animated:YES completion:NULL];
     } else {
         UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Email Settings"

@@ -23,7 +23,6 @@
 @synthesize winCountLabel;
 @synthesize lostCountLabel;
 @synthesize playedCountLabel;
-@synthesize ratioLabel;
 @synthesize ratingLabel;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
@@ -44,7 +43,7 @@
     self.winCountLabel.font = [UIFont brothersBoldFontOfSize:18.f];
     self.lostCountLabel.font = [UIFont brothersBoldFontOfSize:18.f];
     self.playedCountLabel.font = [UIFont brothersBoldFontOfSize:18.f];
-    self.ratioLabel.font = [UIFont brothersBoldFontOfSize:18.f];
+    self.ratingLabel.font = [UIFont brothersBoldFontOfSize:18.f];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

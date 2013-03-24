@@ -16,7 +16,6 @@
 @property (nonatomic, strong) IBOutlet UILabel *winCountLabel;
 @property (nonatomic, strong) IBOutlet UILabel *lostCountLabel;
 @property (nonatomic, strong) IBOutlet UILabel *playedCountLabel;
-@property (nonatomic, strong) IBOutlet UILabel *ratioLabel;
 @property (nonatomic, strong) IBOutlet UILabel *ratingLabel;
 
 @end

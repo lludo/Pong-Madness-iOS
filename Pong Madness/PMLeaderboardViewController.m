@@ -11,6 +11,7 @@
 #import "PMLeaderboardCell.h"
 #import "UIFont+PongMadness.h"
 #import "UIImage+Stretch.h"
+#import "PMValueFormatter.h"
 #import "PMLeaderboardPlayer.h"
 #import "PMLeaderboard.h"
 #import "PMPlayerView.h"
@@ -140,9 +141,6 @@
     PMLeaderboardCell *cell = [aTableView dequeueReusableCellWithIdentifier:@"LeaderboardCell" forIndexPath:indexPath];
     PMLeaderboardPlayer *leaderboardPlayer = [self.leaderboardPlayers objectAtIndex:indexPath.row];
     
-    float ratio = [leaderboardPlayer.gamesWonCount floatValue] / [leaderboardPlayer.gamesPlayedCount floatValue];
-    NSString *ratioString = (ratio == 1.f) ? @"1" : [[NSString stringWithFormat:@"%.2f", ratio] substringFromIndex:1];
-    
     if (leaderboardPlayer.player.photo) {
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
         NSString *documentsDirectory = [paths objectAtIndex:0];
@@ -160,8 +158,7 @@
     cell.winCountLabel.text = [leaderboardPlayer.gamesWonCount stringValue];
     cell.lostCountLabel.text = [NSString stringWithFormat:@"%i", [leaderboardPlayer.gamesPlayedCount intValue] - [leaderboardPlayer.gamesWonCount intValue]];
     cell.playedCountLabel.text = [leaderboardPlayer.gamesPlayedCount stringValue];
-    cell.ratioLabel.text = ratioString;
-    cell.ratingLabel.text = [leaderboardPlayer.rating stringValue];
+    cell.ratingLabel.text = [[PMValueFormatter formatterNumberDecimalStyle] stringFromNumber:leaderboardPlayer.rating];
     
     cell.contentView.backgroundColor = [UIColor colorWithWhite:1.f alpha:(indexPath.row % 2) ? 0.03f : 0.f];
     
