@@ -185,7 +185,7 @@
     }
 }
 
-- (IBAction)close:(id)sender {
+- (IBAction)closeConfirm:(id)sender {
     if (!self.closeConfirmActionSheet) {
         self.closeConfirmActionSheet = [[UIActionSheet alloc] initWithTitle:nil
                                                                    delegate:self
@@ -201,12 +201,16 @@
     self.closeConfirmActionSheet = nil;
     
     if (buttonIndex == 0) {
-        if (timer) {
-            [self.timer invalidate];
-            self.timer = nil;
-        }
-        [self.navigationController popToRootViewControllerAnimated:YES];
+        [self close:actionSheet];
     }
+}
+
+- (IBAction)close:(id)sender {
+    if (timer) {
+        [self.timer invalidate];
+        self.timer = nil;
+    }
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 - (IBAction)popNavigation:(id)sender {
@@ -234,7 +238,7 @@
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Cancel", nil)
                                                                              style:UIBarButtonItemStyleBordered
-                                                                            target:self action:@selector(close:)];
+                                                                            target:self action:@selector(closeConfirm:)];
     
     [UIView animateWithDuration:1.f animations:^{
         
