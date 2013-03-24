@@ -14,7 +14,7 @@
 #import "PMPlayer.h"
 #import "PMGame.h"
 
-@interface PMSingleGameViewController ()
+@interface PMSingleGameViewController () <UIActionSheetDelegate>
 
 @property (nonatomic, strong) IBOutlet PMPlayerView *firstPlayerView;
 @property (nonatomic, strong) IBOutlet PMPlayerView *secondPlayerView;
@@ -37,6 +37,8 @@
 
 @property (nonatomic, strong) IBOutlet UIView *timerBackground;
 @property (nonatomic, strong) IBOutlet UILabel *timerLabel;
+
+@property (nonatomic, strong) UIActionSheet *closeConfirmActionSheet;
 
 @property (nonatomic, strong) NSTimer *timer;
 @property (nonatomic, strong) PMGame *game;
@@ -184,11 +186,27 @@
 }
 
 - (IBAction)close:(id)sender {
-    if (timer) {
-        [self.timer invalidate];
-        self.timer = nil;
+    if (!self.closeConfirmActionSheet) {
+        self.closeConfirmActionSheet = [[UIActionSheet alloc] initWithTitle:nil
+                                                                   delegate:self
+                                                          cancelButtonTitle:nil
+                                                     destructiveButtonTitle:@"Cancel this game"
+                                                          otherButtonTitles:nil];
+        
+        [self.closeConfirmActionSheet showFromBarButtonItem:sender animated:YES];
     }
-    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    self.closeConfirmActionSheet = nil;
+    
+    if (buttonIndex == 0) {
+        if (timer) {
+            [self.timer invalidate];
+            self.timer = nil;
+        }
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    }
 }
 
 - (IBAction)popNavigation:(id)sender {
