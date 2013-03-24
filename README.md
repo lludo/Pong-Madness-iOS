@@ -5,16 +5,15 @@ Pong Madness is a tablet application to manage ping pong games and tournaments i
 
 ## Screenshots
 
-
-![Screen 1](http://little-green-men.github.com/Pong-Madness-iOS/images/readme_appstore_1.png)
-![Screen 2](http://little-green-men.github.com/Pong-Madness-iOS/images/readme_appstore_2.png)
-![Screen 3](http://little-green-men.github.com/Pong-Madness-iOS/images/readme_appstore_3.png)
-![Screen 4](http://little-green-men.github.com/Pong-Madness-iOS/images/readme_appstore_4.png)
-![Screen 5](http://little-green-men.github.com/Pong-Madness-iOS/images/readme_appstore_5.png)
+[![Screen 1](http://little-green-men.github.com/Pong-Madness-iOS/images/readme_appstore_1.png)](http://little-green-men.github.com/Pong-Madness-iOS/images/appstore_1.png)
+[![Screen 2](http://little-green-men.github.com/Pong-Madness-iOS/images/readme_appstore_2.png)](http://little-green-men.github.com/Pong-Madness-iOS/images/appstore_2.png)
+[![Screen 3](http://little-green-men.github.com/Pong-Madness-iOS/images/readme_appstore_3.png)](http://little-green-men.github.com/Pong-Madness-iOS/images/appstore_3.png)
+[![Screen 4](http://little-green-men.github.com/Pong-Madness-iOS/images/readme_appstore_4.png)](http://little-green-men.github.com/Pong-Madness-iOS/images/appstore_4.png)
+[![Screen 5](http://little-green-men.github.com/Pong-Madness-iOS/images/readme_appstore_5.png)](http://little-green-men.github.com/Pong-Madness-iOS/images/appstore_5.png)
 
 ## CoreData Model
 
-![Model](http://little-green-men.github.com/Pong-Madness-iOS/images/readme_model.png)
+[![Model](http://little-green-men.github.com/Pong-Madness-iOS/images/readme_model.png)](http://little-green-men.github.com/Pong-Madness-iOS/images/model.png)
 
 ## Contact
 
