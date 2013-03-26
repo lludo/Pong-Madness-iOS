@@ -289,7 +289,7 @@ typedef enum {
 
 - (IBAction)playDoubleGame:(id)sender {
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Not this time"
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Not This Time"
                                                     message:@"This feature is not here yet, but it's coming soon! Stay tuned."
                                                    delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
     [alert show];
