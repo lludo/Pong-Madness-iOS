@@ -10,7 +10,7 @@
 #import <CoreData/CoreData.h>
 #import "PMParticipant.h"
 
-@class PMLeaderboardPlayer, PMTeam, PMTournament, PMLeaderboard;
+@class PMLeaderboardPlayer, PMBinome, PMTournament, PMLeaderboard;
 
 typedef enum {
 	PMPlayerHandednessLefty = 0,
@@ -25,7 +25,7 @@ typedef enum {
 @property (nonatomic, strong) NSString *company;
 @property (nonatomic, strong) NSString *handedness;
 @property (nonatomic, strong) NSSet *leaderboardPlayerSet;
-@property (nonatomic, strong) NSSet *teamSet;
+@property (nonatomic, strong) NSSet *binomeSet;
 @property (nonatomic, strong) NSDate *sinceDate;
 @property (nonatomic, strong) NSSet *tournamentSet;
 @property (nonatomic, strong) NSNumber *active;
@@ -48,10 +48,10 @@ typedef enum {
 - (void)addLeaderboardPlayerSet:(NSSet *)values;
 - (void)removeLeaderboardPlayerSet:(NSSet *)values;
 
-- (void)addTeamSetObject:(PMTeam *)value;
-- (void)removeTeamSetObject:(PMTeam *)value;
-- (void)addTeamSet:(NSSet *)values;
-- (void)removeTeamSet:(NSSet *)values;
+- (void)addBinomeSetObject:(PMBinome *)value;
+- (void)removeBinomeSetObject:(PMBinome *)value;
+- (void)addBinomeSet:(NSSet *)values;
+- (void)removeBinomeSet:(NSSet *)values;
 
 - (void)addTournamentSetObject:(PMTournament *)value;
 - (void)removeTournamentSetObject:(PMTournament *)value;

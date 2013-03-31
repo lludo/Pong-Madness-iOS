@@ -1,5 +1,5 @@
 //
-//  PMTeam.h
+//  PMBinome.h
 //  Pong Madness
 //
 //  Created by Ludovic Landry on 2/27/13.
@@ -12,14 +12,14 @@
 
 @class PMPlayer;
 
-@interface PMTeam : PMParticipant
+@interface PMBinome : PMParticipant
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSSet *playerSet;
 
 @end
 
-@interface PMTeam (CoreDataGeneratedAccessors)
+@interface PMBinome (CoreDataGeneratedAccessors)
 
 - (void)addPlayerSetObject:(PMPlayer *)value;
 - (void)removePlayerSetObject:(PMPlayer *)value;

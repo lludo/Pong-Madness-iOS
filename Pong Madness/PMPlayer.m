@@ -8,7 +8,7 @@
 
 #import "PMPlayer.h"
 #import "PMLeaderboardPlayer.h"
-#import "PMTeam.h"
+#import "PMBinome.h"
 #import "PMTournament.h"
 #import "PMDocumentManager.h"
 #import "PMLeaderboard.h"
@@ -23,7 +23,7 @@
 @dynamic company;
 @dynamic handedness;
 @dynamic leaderboardPlayerSet;
-@dynamic teamSet;
+@dynamic binomeSet;
 @dynamic sinceDate;
 @dynamic tournamentSet;
 @dynamic active;
@@ -60,7 +60,7 @@
 
 - (NSArray *)gamesPlayed {
     
-    //TODO: later manage doubles (when user won because it's team won - not only when he directly won as a player but also as a team)
+    //TODO: later manage doubles (when user won because it's binome won - not only when he directly won as a player but also as a binome)
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSManagedObjectContext *managedObjectContext = [PMDocumentManager sharedDocument].managedObjectContext;

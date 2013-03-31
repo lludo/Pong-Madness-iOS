@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12D78" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Binome" representedClassName="PMBinome" parentEntity="Participant" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="playerSet" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Player" inverseName="binomeSet" inverseEntity="Player" syncable="YES"/>
+    </entity>
+    <entity name="Game" representedClassName="PMGame" syncable="YES">
+        <attribute name="startDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="timePlayed" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="gameParticipantOrderedSet" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="GameParticipant" inverseName="game" inverseEntity="GameParticipant" syncable="YES"/>
+        <relationship name="tournamentSet" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tournament" inverseName="gameSet" inverseEntity="Tournament" syncable="YES"/>
+    </entity>
+    <entity name="GameParticipant" representedClassName="PMGameParticipant" syncable="YES">
+        <attribute name="score" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="game" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Game" inverseName="gameParticipantOrderedSet" inverseEntity="Game" syncable="YES"/>
+        <relationship name="participant" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Participant" inverseName="gameParticipantSet" inverseEntity="Participant" syncable="YES"/>
+    </entity>
+    <entity name="Leaderboard" representedClassName="PMLeaderboard" syncable="YES">
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="leaderboardPlayerSet" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="LeaderboardPlayer" inverseName="leaderboard" inverseEntity="LeaderboardPlayer" syncable="YES"/>
+        <relationship name="tournament" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Tournament" inverseName="leaderboard" inverseEntity="Tournament" syncable="YES"/>
+    </entity>
+    <entity name="LeaderboardPlayer" representedClassName="PMLeaderboardPlayer" syncable="YES">
+        <attribute name="gamesPlayedCount" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="gamesWonCount" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="rating" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="victoryRatio" optional="YES" attributeType="Float" defaultValueString="0" syncable="YES"/>
+        <relationship name="leaderboard" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Leaderboard" inverseName="leaderboardPlayerSet" inverseEntity="Leaderboard" syncable="YES"/>
+        <relationship name="player" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Player" inverseName="leaderboardPlayerSet" inverseEntity="Player" syncable="YES"/>
+    </entity>
+    <entity name="Participant" representedClassName="PMParticipant" isAbstract="YES" syncable="YES">
+        <relationship name="gameParticipantSet" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="GameParticipant" inverseName="participant" inverseEntity="GameParticipant" syncable="YES"/>
+    </entity>
+    <entity name="Player" representedClassName="PMPlayer" parentEntity="Participant" syncable="YES">
+        <attribute name="active" optional="YES" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
+        <attribute name="company" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="handedness" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="photo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sinceDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="binomeSet" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Binome" inverseName="playerSet" inverseEntity="Binome" syncable="YES"/>
+        <relationship name="leaderboardPlayerSet" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="LeaderboardPlayer" inverseName="player" inverseEntity="LeaderboardPlayer" syncable="YES"/>
+        <relationship name="tournamentSet" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tournament" inverseName="playerSet" inverseEntity="Tournament" syncable="YES"/>
+    </entity>
+    <entity name="Tournament" representedClassName="PMTournament" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="startDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="gameSet" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Game" inverseName="tournamentSet" inverseEntity="Game" syncable="YES"/>
+        <relationship name="leaderboard" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Leaderboard" inverseName="tournament" inverseEntity="Leaderboard" syncable="YES"/>
+        <relationship name="playerSet" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Player" inverseName="tournamentSet" inverseEntity="Player" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Game" positionX="124" positionY="494" width="164" height="118"/>
+        <element name="GameParticipant" positionX="-72" positionY="155" width="128" height="88"/>
+        <element name="Leaderboard" positionX="801" positionY="405" width="128" height="88"/>
+        <element name="LeaderboardPlayer" positionX="610" positionY="270" width="128" height="135"/>
+        <element name="Participant" positionX="297" positionY="212" width="128" height="58"/>
+        <element name="Player" positionX="421" positionY="389" width="128" height="195"/>
+        <element name="Binome" positionX="214" positionY="387" width="128" height="73"/>
+        <element name="Tournament" positionX="610" positionY="566" width="128" height="118"/>
+    </elements>
+</model>

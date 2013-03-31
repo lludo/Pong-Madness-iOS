@@ -114,7 +114,7 @@
 		8222C26E16DF21700084D5D6 /* PongMadnessModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8222C26C16DF21700084D5D6 /* PongMadnessModel.xcdatamodeld */; };
 		8222C27116DF2B230084D5D6 /* PMPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8222C27016DF2B230084D5D6 /* PMPlayer.m */; };
 		8222C27416DF2B230084D5D6 /* PMTournament.m in Sources */ = {isa = PBXBuildFile; fileRef = 8222C27316DF2B230084D5D6 /* PMTournament.m */; };
-		8222C27716DF2B230084D5D6 /* PMTeam.m in Sources */ = {isa = PBXBuildFile; fileRef = 8222C27616DF2B230084D5D6 /* PMTeam.m */; };
+		8222C27716DF2B230084D5D6 /* PMBinome.m in Sources */ = {isa = PBXBuildFile; fileRef = 8222C27616DF2B230084D5D6 /* PMBinome.m */; };
 		8222C27A16DF2B230084D5D6 /* PMGameParticipant.m in Sources */ = {isa = PBXBuildFile; fileRef = 8222C27916DF2B230084D5D6 /* PMGameParticipant.m */; };
 		8222C27D16DF2B230084D5D6 /* PMParticipant.m in Sources */ = {isa = PBXBuildFile; fileRef = 8222C27C16DF2B230084D5D6 /* PMParticipant.m */; };
 		8222C28016DF2B230084D5D6 /* PMLeaderboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 8222C27F16DF2B230084D5D6 /* PMLeaderboard.m */; };
@@ -163,6 +163,7 @@
 		826BE4AC16E9B27100A4B64C /* leaderboard-nobody.png in Resources */ = {isa = PBXBuildFile; fileRef = 826BE4AA16E9B27100A4B64C /* leaderboard-nobody.png */; };
 		826BE4AD16E9B27100A4B64C /* leaderboard-nobody@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 826BE4AB16E9B27100A4B64C /* leaderboard-nobody@2x.png */; };
 		8273A1EE16E72EE200FB2E8F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8273A1ED16E72EE200FB2E8F /* MessageUI.framework */; };
+		82946E98170813E8006FE53A /* Mapping.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 82946E97170813E8006FE53A /* Mapping.xcmappingmodel */; };
 		8298F66916F30AF900482653 /* SBDefaultKFactorStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8298F65F16F30AF900482653 /* SBDefaultKFactorStrategy.m */; };
 		8298F66A16F30AF900482653 /* SBEloRating.m in Sources */ = {isa = PBXBuildFile; fileRef = 8298F66116F30AF900482653 /* SBEloRating.m */; };
 		8298F66B16F30AF900482653 /* SBFIDEKFactorStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8298F66316F30AF900482653 /* SBFIDEKFactorStrategy.m */; };
@@ -345,8 +346,8 @@
 		8222C27016DF2B230084D5D6 /* PMPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMPlayer.m; sourceTree = "<group>"; };
 		8222C27216DF2B230084D5D6 /* PMTournament.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMTournament.h; sourceTree = "<group>"; };
 		8222C27316DF2B230084D5D6 /* PMTournament.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMTournament.m; sourceTree = "<group>"; };
-		8222C27516DF2B230084D5D6 /* PMTeam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMTeam.h; sourceTree = "<group>"; };
-		8222C27616DF2B230084D5D6 /* PMTeam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMTeam.m; sourceTree = "<group>"; };
+		8222C27516DF2B230084D5D6 /* PMBinome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMBinome.h; sourceTree = "<group>"; };
+		8222C27616DF2B230084D5D6 /* PMBinome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMBinome.m; sourceTree = "<group>"; };
 		8222C27816DF2B230084D5D6 /* PMGameParticipant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMGameParticipant.h; sourceTree = "<group>"; };
 		8222C27916DF2B230084D5D6 /* PMGameParticipant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMGameParticipant.m; sourceTree = "<group>"; };
 		8222C27B16DF2B230084D5D6 /* PMParticipant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMParticipant.h; sourceTree = "<group>"; };
@@ -402,6 +403,8 @@
 		826BE4AA16E9B27100A4B64C /* leaderboard-nobody.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "leaderboard-nobody.png"; sourceTree = "<group>"; };
 		826BE4AB16E9B27100A4B64C /* leaderboard-nobody@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "leaderboard-nobody@2x.png"; sourceTree = "<group>"; };
 		8273A1ED16E72EE200FB2E8F /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		82946E9617081289006FE53A /* PongMadnessModel 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PongMadnessModel 2.xcdatamodel"; sourceTree = "<group>"; };
+		82946E97170813E8006FE53A /* Mapping.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = Mapping.xcmappingmodel; sourceTree = "<group>"; };
 		8298F65E16F30AF900482653 /* SBDefaultKFactorStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBDefaultKFactorStrategy.h; sourceTree = "<group>"; };
 		8298F65F16F30AF900482653 /* SBDefaultKFactorStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBDefaultKFactorStrategy.m; sourceTree = "<group>"; };
 		8298F66016F30AF900482653 /* SBEloRating.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBEloRating.h; sourceTree = "<group>"; };
@@ -851,6 +854,7 @@
 			isa = PBXGroup;
 			children = (
 				8222C26C16DF21700084D5D6 /* PongMadnessModel.xcdatamodeld */,
+				82946E97170813E8006FE53A /* Mapping.xcmappingmodel */,
 				8222C28416DF2B240084D5D6 /* PMLeaderboardPlayer.h */,
 				8222C28516DF2B240084D5D6 /* PMLeaderboardPlayer.m */,
 				8222C28116DF2B240084D5D6 /* PMGame.h */,
@@ -861,8 +865,8 @@
 				8222C27C16DF2B230084D5D6 /* PMParticipant.m */,
 				8222C27816DF2B230084D5D6 /* PMGameParticipant.h */,
 				8222C27916DF2B230084D5D6 /* PMGameParticipant.m */,
-				8222C27516DF2B230084D5D6 /* PMTeam.h */,
-				8222C27616DF2B230084D5D6 /* PMTeam.m */,
+				8222C27516DF2B230084D5D6 /* PMBinome.h */,
+				8222C27616DF2B230084D5D6 /* PMBinome.m */,
 				8222C27216DF2B230084D5D6 /* PMTournament.h */,
 				8222C27316DF2B230084D5D6 /* PMTournament.m */,
 				8222C26F16DF2B230084D5D6 /* PMPlayer.h */,
@@ -1174,7 +1178,7 @@
 				8222C26E16DF21700084D5D6 /* PongMadnessModel.xcdatamodeld in Sources */,
 				8222C27116DF2B230084D5D6 /* PMPlayer.m in Sources */,
 				8222C27416DF2B230084D5D6 /* PMTournament.m in Sources */,
-				8222C27716DF2B230084D5D6 /* PMTeam.m in Sources */,
+				8222C27716DF2B230084D5D6 /* PMBinome.m in Sources */,
 				8222C27A16DF2B230084D5D6 /* PMGameParticipant.m in Sources */,
 				8222C27D16DF2B230084D5D6 /* PMParticipant.m in Sources */,
 				8222C28016DF2B230084D5D6 /* PMLeaderboard.m in Sources */,
@@ -1206,6 +1210,7 @@
 				8298F66C16F30AF900482653 /* SBUSCFKFactorStrategy.m in Sources */,
 				82A8FE5B16F6874700159FFB /* UIImage+Resize.m in Sources */,
 				82B5AD8D16F6BDAD0036F0FA /* PMDefaultKFactorStrategy.m in Sources */,
+				82946E98170813E8006FE53A /* Mapping.xcmappingmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1340,9 +1345,10 @@
 		8222C26C16DF21700084D5D6 /* PongMadnessModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				82946E9617081289006FE53A /* PongMadnessModel 2.xcdatamodel */,
 				8222C26D16DF21700084D5D6 /* PongMadnessModel.xcdatamodel */,
 			);
-			currentVersion = 8222C26D16DF21700084D5D6 /* PongMadnessModel.xcdatamodel */;
+			currentVersion = 82946E9617081289006FE53A /* PongMadnessModel 2.xcdatamodel */;
 			path = PongMadnessModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

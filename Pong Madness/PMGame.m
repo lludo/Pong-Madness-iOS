@@ -13,7 +13,7 @@
 #import "PMDocumentManager.h"
 #import "PMTournament.h"
 #import "PMPlayer.h"
-#import "PMTeam.h"
+#import "PMBinome.h"
 #import "PMLeaderboard.h"
 #import "PMLeaderboardPlayer.h"
 
@@ -70,9 +70,9 @@
     if ([firstGameParticipant.participant isKindOfClass:[PMPlayer class]]) {
         [globalTournament addPlayerSetObject:(PMPlayer *)firstGameParticipant.participant];
         [globalTournament addPlayerSetObject:(PMPlayer *)secondGameParticipant.participant];
-    } else if ([firstGameParticipant.participant isKindOfClass:[PMTeam class]]) {
-        [globalTournament addPlayerSet:((PMTeam *)firstGameParticipant.participant).playerSet];
-        [globalTournament addPlayerSet:((PMTeam *)secondGameParticipant.participant).playerSet];
+    } else if ([firstGameParticipant.participant isKindOfClass:[PMBinome class]]) {
+        [globalTournament addPlayerSet:((PMBinome *)firstGameParticipant.participant).playerSet];
+        [globalTournament addPlayerSet:((PMBinome *)secondGameParticipant.participant).playerSet];
     }
     
     // Update global leadearboard players
@@ -93,9 +93,9 @@
         } else {
             [secondLeaderboardPlayer recordVictoryAgainst:firstLeaderboardPlayer];
         }
-    } else if ([firstGameParticipant.participant isKindOfClass:[PMTeam class]]) {
+    } else if ([firstGameParticipant.participant isKindOfClass:[PMBinome class]]) {
         
-        //TODO: later manage teams
+        //TODO: later manage binomes
     }
     
     // Update week leadearboard players
@@ -116,9 +116,9 @@
         } else {
             [secondLeaderboardPlayer recordVictoryAgainst:firstLeaderboardPlayer];
         }
-    } else if ([firstGameParticipant.participant isKindOfClass:[PMTeam class]]) {
+    } else if ([firstGameParticipant.participant isKindOfClass:[PMBinome class]]) {
         
-        //TODO: later manage teams
+        //TODO: later manage binomes
     }
 }
 
