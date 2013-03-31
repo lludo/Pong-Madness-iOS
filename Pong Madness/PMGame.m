@@ -15,7 +15,7 @@
 #import "PMPlayer.h"
 #import "PMBinome.h"
 #import "PMLeaderboard.h"
-#import "PMLeaderboardPlayer.h"
+#import "PMLeaderboardParticipant.h"
 
 @implementation PMGame
 
@@ -80,18 +80,18 @@
     if ([firstGameParticipant.participant isKindOfClass:[PMPlayer class]]) {
         PMPlayer *firstPlayer = (PMPlayer *)firstGameParticipant.participant;
         PMPlayer *secondPlayer = (PMPlayer *)secondGameParticipant.participant;
-        PMLeaderboardPlayer *firstLeaderboardPlayer = [firstPlayer leaderboardPlayerInLeaderboard:globalLeaderboard];
-        PMLeaderboardPlayer *secondLeaderboardPlayer = [secondPlayer leaderboardPlayerInLeaderboard:globalLeaderboard];
-        if (!firstLeaderboardPlayer) {
-            firstLeaderboardPlayer = [PMLeaderboardPlayer leaderboardPlayerForPlayer:firstPlayer inLeaderboard:globalLeaderboard];
+        PMLeaderboardParticipant *firstLeaderboardParticipant = [firstPlayer leaderboardParticipantInLeaderboard:globalLeaderboard];
+        PMLeaderboardParticipant *secondLeaderboardParticipant = [secondPlayer leaderboardParticipantInLeaderboard:globalLeaderboard];
+        if (!firstLeaderboardParticipant) {
+            firstLeaderboardParticipant = [PMLeaderboardParticipant leaderboardParticipantForParticipant:firstPlayer inLeaderboard:globalLeaderboard];
         }
-        if (!secondLeaderboardPlayer) {
-            secondLeaderboardPlayer = [PMLeaderboardPlayer leaderboardPlayerForPlayer:secondPlayer inLeaderboard:globalLeaderboard];
+        if (!secondLeaderboardParticipant) {
+            secondLeaderboardParticipant = [PMLeaderboardParticipant leaderboardParticipantForParticipant:secondPlayer inLeaderboard:globalLeaderboard];
         }
         if ([firstGameParticipant.score intValue] > [secondGameParticipant.score intValue]) {
-            [firstLeaderboardPlayer recordVictoryAgainst:secondLeaderboardPlayer];
+            [firstLeaderboardParticipant recordVictoryAgainst:secondLeaderboardParticipant];
         } else {
-            [secondLeaderboardPlayer recordVictoryAgainst:firstLeaderboardPlayer];
+            [secondLeaderboardParticipant recordVictoryAgainst:firstLeaderboardParticipant];
         }
     } else if ([firstGameParticipant.participant isKindOfClass:[PMBinome class]]) {
         
@@ -103,18 +103,18 @@
     if ([firstGameParticipant.participant isKindOfClass:[PMPlayer class]]) {
         PMPlayer *firstPlayer = (PMPlayer *)firstGameParticipant.participant;
         PMPlayer *secondPlayer = (PMPlayer *)secondGameParticipant.participant;
-        PMLeaderboardPlayer *firstLeaderboardPlayer = [firstPlayer leaderboardPlayerInLeaderboard:weekLeaderboard];
-        PMLeaderboardPlayer *secondLeaderboardPlayer = [secondPlayer leaderboardPlayerInLeaderboard:weekLeaderboard];
-        if (!firstLeaderboardPlayer) {
-            firstLeaderboardPlayer = [PMLeaderboardPlayer leaderboardPlayerForPlayer:firstPlayer inLeaderboard:weekLeaderboard];
+        PMLeaderboardParticipant *firstLeaderboardParticipant = [firstPlayer leaderboardParticipantInLeaderboard:weekLeaderboard];
+        PMLeaderboardParticipant *secondLeaderboardParticipant = [secondPlayer leaderboardParticipantInLeaderboard:weekLeaderboard];
+        if (!firstLeaderboardParticipant) {
+            firstLeaderboardParticipant = [PMLeaderboardParticipant leaderboardParticipantForParticipant:firstPlayer inLeaderboard:weekLeaderboard];
         }
-        if (!secondLeaderboardPlayer) {
-            secondLeaderboardPlayer = [PMLeaderboardPlayer leaderboardPlayerForPlayer:secondPlayer inLeaderboard:weekLeaderboard];
+        if (!secondLeaderboardParticipant) {
+            secondLeaderboardParticipant = [PMLeaderboardParticipant leaderboardParticipantForParticipant:secondPlayer inLeaderboard:weekLeaderboard];
         }
         if ([firstGameParticipant.score intValue] > [secondGameParticipant.score intValue]) {
-            [firstLeaderboardPlayer recordVictoryAgainst:secondLeaderboardPlayer];
+            [firstLeaderboardParticipant recordVictoryAgainst:secondLeaderboardParticipant];
         } else {
-            [secondLeaderboardPlayer recordVictoryAgainst:firstLeaderboardPlayer];
+            [secondLeaderboardParticipant recordVictoryAgainst:firstLeaderboardParticipant];
         }
     } else if ([firstGameParticipant.participant isKindOfClass:[PMBinome class]]) {
         

@@ -8,7 +8,7 @@
 
 #import "PMPlayerView.h"
 #import "PMLeaderboard.h"
-#import "PMLeaderboardPlayer.h"
+#import "PMLeaderboardParticipant.h"
 #import "PMValueFormatter.h"
 #import "UIFont+PongMadness.h"
 
@@ -106,10 +106,10 @@
     }
     
     PMLeaderboard *globalLeaderboard = [PMLeaderboard globalLeaderboard];
-    PMLeaderboardPlayer *leaderboardPlayer = [self.player leaderboardPlayerInLeaderboard:globalLeaderboard];
+    PMLeaderboardParticipant *leaderboardParticipant = [self.player leaderboardParticipantInLeaderboard:globalLeaderboard];
     
-    NSUInteger playedGamesCount = [leaderboardPlayer.gamesPlayedCount unsignedIntegerValue];
-    NSUInteger wonGamesCount = [leaderboardPlayer.gamesWonCount unsignedIntegerValue];
+    NSUInteger playedGamesCount = [leaderboardParticipant.gamesPlayedCount unsignedIntegerValue];
+    NSUInteger wonGamesCount = [leaderboardParticipant.gamesWonCount unsignedIntegerValue];
     NSNumber *rank = [self.player rankInLeaderboard:globalLeaderboard];
     
     NSString *rankString = (rank != nil) ? [rank stringValue] : @"-";
@@ -118,7 +118,7 @@
     if (playedGamesCount == 0) {
         ratioString = @"-";
     } else {
-        ratioString = [[PMValueFormatter formatterNumberDecimalStyle] stringFromNumber:leaderboardPlayer.rating];
+        ratioString = [[PMValueFormatter formatterNumberDecimalStyle] stringFromNumber:leaderboardParticipant.rating];
     }
     
     self.usernamePlayerLabel.text = self.player.username;

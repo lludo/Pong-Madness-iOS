@@ -12,7 +12,7 @@
 #import "UIFont+PongMadness.h"
 #import "UIImage+Stretch.h"
 #import "PMValueFormatter.h"
-#import "PMLeaderboardPlayer.h"
+#import "PMLeaderboardParticipant.h"
 #import "PMLeaderboard.h"
 #import "PMPlayerView.h"
 #import "PMPlayer.h"
@@ -25,7 +25,7 @@
 @property (nonatomic, strong) IBOutlet PMPlayerView *playerCardView;
 @property (nonatomic, strong) IBOutlet UIView *nobodyView;
 @property (nonatomic, strong) IBOutlet UITabBar *tabBar;
-@property (nonatomic, strong) NSArray *leaderboardPlayers;
+@property (nonatomic, strong) NSArray *leaderboardParticipants;
 
 - (void)updateView;
 
@@ -35,7 +35,7 @@
 
 @synthesize tableView;
 @synthesize tableHeaderView;
-@synthesize leaderboardPlayers;
+@synthesize leaderboardParticipants;
 @synthesize playerCardView;
 @synthesize nobodyView;
 
@@ -126,7 +126,7 @@
     
     NSSortDescriptor *ratingSortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"rating" ascending:NO];
     NSSortDescriptor *gamesPlayedCountSortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"gamesPlayedCount" ascending:NO];
-    self.leaderboardPlayers = [leaderboard.leaderboardPlayerSet sortedArrayUsingDescriptors:@[ratingSortDescriptor, gamesPlayedCountSortDescriptor]];
+    self.leaderboardParticipants = [leaderboard.leaderboardParticipantSet sortedArrayUsingDescriptors:@[ratingSortDescriptor, gamesPlayedCountSortDescriptor]];
     
     [self.tableView reloadData];
 }
@@ -134,17 +134,19 @@
 #pragma mark tableview delegate 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.leaderboardPlayers count];
+    return [self.leaderboardParticipants count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)aTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     PMLeaderboardCell *cell = [aTableView dequeueReusableCellWithIdentifier:@"LeaderboardCell" forIndexPath:indexPath];
-    PMLeaderboardPlayer *leaderboardPlayer = [self.leaderboardPlayers objectAtIndex:indexPath.row];
+    PMLeaderboardParticipant *leaderboardParticipant = [self.leaderboardParticipants objectAtIndex:indexPath.row];
     
-    if (leaderboardPlayer.player.photo) {
+    PMPlayer *player = leaderboardParticipant.participant;
+    
+    if (player.photo) {
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
         NSString *documentsDirectory = [paths objectAtIndex:0];
-        NSString *photoName = [NSString stringWithFormat:@"%@-small", leaderboardPlayer.player.photo];
+        NSString *photoName = [NSString stringWithFormat:@"%@-small", player.photo];
         NSString *fullPathToFile = [documentsDirectory stringByAppendingPathComponent:photoName];
         
         NSData *data = [[NSData alloc] initWithContentsOfFile:fullPathToFile];
@@ -154,11 +156,11 @@
     }
     
     cell.rankLabel.text = [NSString stringWithFormat:@"#%i", indexPath.row + 1];
-    cell.usernameLabel.text = leaderboardPlayer.player.username;
-    cell.winCountLabel.text = [leaderboardPlayer.gamesWonCount stringValue];
-    cell.lostCountLabel.text = [NSString stringWithFormat:@"%i", [leaderboardPlayer.gamesPlayedCount intValue] - [leaderboardPlayer.gamesWonCount intValue]];
-    cell.playedCountLabel.text = [leaderboardPlayer.gamesPlayedCount stringValue];
-    cell.ratingLabel.text = [[PMValueFormatter formatterNumberDecimalStyle] stringFromNumber:leaderboardPlayer.rating];
+    cell.usernameLabel.text = player.username;
+    cell.winCountLabel.text = [leaderboardParticipant.gamesWonCount stringValue];
+    cell.lostCountLabel.text = [NSString stringWithFormat:@"%i", [leaderboardParticipant.gamesPlayedCount intValue] - [leaderboardParticipant.gamesWonCount intValue]];
+    cell.playedCountLabel.text = [leaderboardParticipant.gamesPlayedCount stringValue];
+    cell.ratingLabel.text = [[PMValueFormatter formatterNumberDecimalStyle] stringFromNumber:leaderboardParticipant.rating];
     
     cell.contentView.backgroundColor = [UIColor colorWithWhite:1.f alpha:(indexPath.row % 2) ? 0.03f : 0.f];
     
@@ -174,9 +176,11 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    PMLeaderboardPlayer *leaderboardPlayer = [self.leaderboardPlayers objectAtIndex:indexPath.row];
+    PMLeaderboardParticipant *leaderboardParticipant = [self.leaderboardParticipants objectAtIndex:indexPath.row];
     
-    PMPlayerCardViewController *playerViewController = [[PMPlayerCardViewController alloc] initWithPlayer:leaderboardPlayer.player];
+    PMPlayer *player = leaderboardParticipant.participant;
+    
+    PMPlayerCardViewController *playerViewController = [[PMPlayerCardViewController alloc] initWithPlayer:player];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:playerViewController];
     navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
     [self presentViewController:navigationController animated:YES completion:NULL];
