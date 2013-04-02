@@ -1,5 +1,5 @@
 //
-//  PMLeaderboardPlayer.h
+//  PMLeaderboardParticipant.h
 //  Pong Madness
 //
 //  Created by Ludovic Landry on 2/27/13.
@@ -9,18 +9,18 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class PMLeaderboard, PMPlayer;
+@class PMLeaderboard, PMParticipant;
 
-@interface PMLeaderboardPlayer : NSManagedObject
+@interface PMLeaderboardParticipant : NSManagedObject
 
-@property (nonatomic, strong) PMPlayer *player;
+@property (nonatomic, strong) PMParticipant *participant;
 @property (nonatomic, strong) NSNumber *gamesPlayedCount;
 @property (nonatomic, strong) NSNumber *gamesWonCount;
 @property (nonatomic, strong) NSNumber *rating;
 @property (nonatomic, strong) PMLeaderboard *leaderboard;
 
-+ (PMLeaderboardPlayer *)leaderboardPlayerForPlayer:(PMPlayer *)player inLeaderboard:(PMLeaderboard *)leaderboard;
++ (PMLeaderboardParticipant *)leaderboardParticipantForParticipant:(PMParticipant *)participant inLeaderboard:(PMLeaderboard *)leaderboard;
 
-- (void)recordVictoryAgainst:(PMLeaderboardPlayer *)againstPlayer;
+- (void)recordVictoryAgainst:(PMLeaderboardParticipant *)againstPlayer;
 
 @end

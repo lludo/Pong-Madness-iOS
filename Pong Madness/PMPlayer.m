@@ -7,26 +7,26 @@
 //
 
 #import "PMPlayer.h"
-#import "PMLeaderboardPlayer.h"
-#import "PMTeam.h"
+#import "PMLeaderboardParticipant.h"
+#import "PMBinome.h"
 #import "PMTournament.h"
 #import "PMDocumentManager.h"
 #import "PMLeaderboard.h"
 #import "PMGame.h"
 #import "PMParticipant.h"
+#import "PMTeam.h"
 
 @implementation PMPlayer
 
 @dynamic username;
 @dynamic photo;
 @dynamic email;
-@dynamic company;
 @dynamic handedness;
-@dynamic leaderboardPlayerSet;
-@dynamic teamSet;
+@dynamic binomeSet;
 @dynamic sinceDate;
 @dynamic tournamentSet;
 @dynamic active;
+@dynamic team;
 
 + (PMPlayer *)playerWithUsername:(NSString *)username {
     
@@ -60,7 +60,7 @@
 
 - (NSArray *)gamesPlayed {
     
-    //TODO: later manage doubles (when user won because it's team won - not only when he directly won as a player but also as a team)
+    //TODO: later manage doubles (when user won because it's binome won - not only when he directly won as a player but also as a binome)
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSManagedObjectContext *managedObjectContext = [PMDocumentManager sharedDocument].managedObjectContext;
@@ -78,13 +78,13 @@
     }
 }
 
-- (PMLeaderboardPlayer *)leaderboardPlayerInLeaderboard:(PMLeaderboard *)leaderboard {
+- (PMLeaderboardParticipant *)leaderboardParticipantInLeaderboard:(PMLeaderboard *)leaderboard {
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSManagedObjectContext *managedObjectContext = [PMDocumentManager sharedDocument].managedObjectContext;
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"LeaderboardPlayer" inManagedObjectContext:managedObjectContext];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"LeaderboardParticipant" inManagedObjectContext:managedObjectContext];
     [fetchRequest setEntity:entity];
-    [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"leaderboard == %@ AND player == %@", leaderboard, self]];
+    [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"leaderboard == %@ AND participant == %@", leaderboard, self]];
     [fetchRequest setFetchLimit:1];
     
     NSError *error = nil;
@@ -102,10 +102,10 @@
     
     NSSortDescriptor *ratingSortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"rating" ascending:NO];
     NSSortDescriptor *gamesPlayedCountSortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"gamesPlayedCount" ascending:NO];
-    NSArray *leaderboardPlayers = [leaderboard.leaderboardPlayerSet sortedArrayUsingDescriptors:@[ratingSortDescriptor, gamesPlayedCountSortDescriptor]];
+    NSArray *leaderboardParticipants = [leaderboard.leaderboardParticipantSet sortedArrayUsingDescriptors:@[ratingSortDescriptor, gamesPlayedCountSortDescriptor]];
     
-    [leaderboardPlayers enumerateObjectsUsingBlock:^(PMLeaderboardPlayer *leaderboardPlayer, NSUInteger index, BOOL *stop) {
-        if (leaderboardPlayer.player == self) {
+    [leaderboardParticipants enumerateObjectsUsingBlock:^(PMLeaderboardParticipant *leaderboardParticipant, NSUInteger index, BOOL *stop) {
+        if (leaderboardParticipant.participant == self) {
             rank = index + 1;
             *stop = YES;
         }
@@ -142,7 +142,7 @@
     
     // Remove from leaderboard
     NSManagedObjectContext *managedObjectContext = [PMDocumentManager sharedDocument].managedObjectContext;
-    [self.leaderboardPlayerSet enumerateObjectsUsingBlock:^(id obj, BOOL *stop) {
+    [self.leaderboardParticipantSet enumerateObjectsUsingBlock:^(id obj, BOOL *stop) {
         [managedObjectContext deleteObject:obj];
     }];
     

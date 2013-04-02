@@ -9,7 +9,7 @@
 #import "PMPlayerCardViewController.h"
 #import "PMPlayerEditViewController.h"
 #import "PMPlayerView.h"
-#import "PMLeaderboardPlayer.h"
+#import "PMLeaderboardParticipant.h"
 #import "PMLeaderboard.h"
 #import "UIFont+PongMadness.h"
 #import "PMValueFormatter.h"

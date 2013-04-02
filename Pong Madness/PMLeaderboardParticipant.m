@@ -1,41 +1,41 @@
 //
-//  PMLeaderboardPlayer.m
+//  PMLeaderboardParticipant.m
 //  Pong Madness
 //
 //  Created by Ludovic Landry on 2/27/13.
 //  Copyright (c) 2013 MirageTeam. All rights reserved.
 //
 
-#import "PMLeaderboardPlayer.h"
+#import "PMLeaderboardParticipant.h"
 #import "PMLeaderboard.h"
-#import "PMPlayer.h"
+#import "PMParticipant.h"
 #import "PMDocumentManager.h"
 #import "SBEloRating.h"
 #import "PMDefaultKFactorStrategy.h"
 
-@implementation PMLeaderboardPlayer
+@implementation PMLeaderboardParticipant
 
-@dynamic player;
+@dynamic participant;
 @dynamic gamesPlayedCount;
 @dynamic gamesWonCount;
 @dynamic rating;
 @dynamic leaderboard;
 
-+ (PMLeaderboardPlayer *)leaderboardPlayerForPlayer:(PMPlayer *)player inLeaderboard:(PMLeaderboard *)leaderboard {
++ (PMLeaderboardParticipant *)leaderboardParticipantForParticipant:(PMParticipant *)participant inLeaderboard:(PMLeaderboard *)leaderboard {
     
     NSManagedObjectContext *managedObjectContext = [PMDocumentManager sharedDocument].managedObjectContext;
-    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"LeaderboardPlayer" inManagedObjectContext:managedObjectContext];
-    PMLeaderboardPlayer *leaderboardPlayer = [[PMLeaderboardPlayer alloc] initWithEntity:entityDescription insertIntoManagedObjectContext:managedObjectContext];
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"LeaderboardParticipant" inManagedObjectContext:managedObjectContext];
+    PMLeaderboardParticipant *leaderboardParticipant = [[PMLeaderboardParticipant alloc] initWithEntity:entityDescription insertIntoManagedObjectContext:managedObjectContext];
     
     SBEloRating *elo = [[SBEloRating alloc] initWithStrategy:[[PMDefaultKFactorStrategy alloc] init]];
-    leaderboardPlayer.rating = @([elo initialRating]);
+    leaderboardParticipant.rating = @([elo initialRating]);
     
-    leaderboardPlayer.player = player;
-    leaderboardPlayer.leaderboard = leaderboard;
-    return leaderboardPlayer;
+    leaderboardParticipant.participant = participant;
+    leaderboardParticipant.leaderboard = leaderboard;
+    return leaderboardParticipant;
 }
 
-- (void)recordVictoryAgainst:(PMLeaderboardPlayer *)againstPlayer {
+- (void)recordVictoryAgainst:(PMLeaderboardParticipant *)againstPlayer {
     
     // Update winner stats
     self.gamesPlayedCount = @([self.gamesPlayedCount intValue] + 1);

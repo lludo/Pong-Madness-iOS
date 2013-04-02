@@ -12,5 +12,6 @@
 @implementation PMParticipant
 
 @dynamic gameParticipantSet;
+@dynamic leaderboardParticipantSet;
 
 @end

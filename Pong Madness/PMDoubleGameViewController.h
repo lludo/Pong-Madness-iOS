@@ -12,7 +12,7 @@
 
 - (id)initWithParticipants:(NSArray *)participantList;
 
-// In double games, participants are teams
+// In double games, participants are binomes
 @property (nonatomic, strong) NSArray *participantList;
 
 @end
