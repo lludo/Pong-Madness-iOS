@@ -128,8 +128,8 @@ static NSString *cellIdentifier = @"TeamCell";
 }
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
-    id player = [fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = [player valueForKey:@"username"];
+    PMTeam *team = [fetchedResultsController objectAtIndexPath:indexPath];
+    cell.textLabel.text = team.name;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

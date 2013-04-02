@@ -7,12 +7,17 @@
 //
 
 #import "PMTeamCreateViewController.h"
+#import "PMTeam.h"
 
-@interface PMTeamCreateViewController ()
+@interface PMTeamCreateViewController () <UITextFieldDelegate>
+
+@property (nonatomic, strong) IBOutlet UITextField *nameTextField;
 
 @end
 
 @implementation PMTeamCreateViewController
+
+@synthesize nameTextField;
 
 - (id)init {
     self = [super init];
@@ -26,6 +31,32 @@
     [super viewDidLoad];
     
     self.title = @"Add Team";
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Done", nil)
+                                                                              style:UIBarButtonItemStyleBordered
+                                                                             target:self action:@selector(done:)];
+}
+
+- (void)done:(id)sender {
+    [self.nameTextField resignFirstResponder];
+    [self createTeam];
+}
+
+- (void)createTeam {
+    NSString *teamName = [self.nameTextField.text capitalizedString];
+    
+    if (teamName && [teamName length] > 0) {
+        [PMTeam teamWithName:teamName];
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
+
+#pragma mark textfield delegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    [self createTeam];
+    return NO;
 }
 
 - (void)didReceiveMemoryWarning {

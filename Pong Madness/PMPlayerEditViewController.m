@@ -229,6 +229,8 @@
 
 - (void)teamListViewController:(PMTeamListViewController *)teamListViewController didSelectTeam:(PMTeam *)team {
     self.player.team = team;
+    self.teamLabel.text = team.name;
+    [self.teamPopoverController dismissPopoverAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

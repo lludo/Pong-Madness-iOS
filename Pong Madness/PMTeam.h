@@ -17,6 +17,9 @@
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *photo;
 @property (nonatomic, strong) NSSet *playerSet;
+
++ (PMTeam *)teamWithName:(NSString *)name;
+
 @end
 
 @interface PMTeam (CoreDataGeneratedAccessors)
