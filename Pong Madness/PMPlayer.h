@@ -22,7 +22,6 @@ typedef enum {
 @property (nonatomic, strong) NSString *username;
 @property (nonatomic, strong) NSString *photo;
 @property (nonatomic, strong) NSString *email;
-@property (nonatomic, strong) NSString *company;
 @property (nonatomic, strong) NSString *handedness;
 @property (nonatomic, strong) NSSet *binomeSet;
 @property (nonatomic, strong) NSDate *sinceDate;

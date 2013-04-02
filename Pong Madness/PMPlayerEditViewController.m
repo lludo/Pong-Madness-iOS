@@ -11,13 +11,14 @@
 #import "PMDocumentManager.h"
 #import "UIFont+PongMadness.h"
 #import "UIImage+Resize.h"
+#import "PMTeam.h"
 
 @interface PMPlayerEditViewController () <UITextFieldDelegate>
 
 @property (nonatomic, strong) IBOutlet UIButton *avatarButton;
 @property (nonatomic, strong) IBOutlet UILabel *usernameLabel;
 @property (nonatomic, strong) IBOutlet UITextField *mailTextField;
-@property (nonatomic, strong) IBOutlet UITextField *companyTextField;
+@property (nonatomic, strong) IBOutlet UITextField *teamTextField;
 @property (nonatomic, strong) IBOutlet UIButton *handednessLeftyButton;
 @property (nonatomic, strong) IBOutlet UIButton *handednessRightyButton;
 @property (nonatomic, strong) IBOutletCollection(UILabel) NSArray *legendLabels;
@@ -34,7 +35,7 @@
 @synthesize avatarButton;
 @synthesize usernameLabel;
 @synthesize mailTextField;
-@synthesize companyTextField;
+@synthesize teamTextField;
 @synthesize handednessLeftyButton;
 @synthesize handednessRightyButton;
 @synthesize legendLabels;
@@ -67,7 +68,7 @@
     
     self.usernameLabel.font = [UIFont brothersBoldFontOfSize:38.f];
     self.mailTextField.font = [UIFont brothersBoldFontOfSize:23.f];
-    self.companyTextField.font = [UIFont brothersBoldFontOfSize:23.f];
+    self.teamTextField.font = [UIFont brothersBoldFontOfSize:23.f];
     
     [self.legendLabels enumerateObjectsUsingBlock:^(UILabel *label, NSUInteger idx, BOOL *stop) {
         label.font = [UIFont brothersBoldFontOfSize:23.f];
@@ -94,7 +95,7 @@
     
     self.usernameLabel.text = self.player.username;
     self.mailTextField.text = self.player.email;
-    self.companyTextField.text = self.player.company;
+    self.teamTextField.text = self.player.team.name;
     
     if ([self.player.handedness isEqualToString:@"L"]) {
         self.handednessLeftyButton.selected = YES;
@@ -195,16 +196,19 @@
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     if (textField == self.mailTextField) {
         self.player.email = [self.mailTextField.text lowercaseString];
-    } else if (textField == self.companyTextField) {
-        self.player.company = [self.companyTextField.text capitalizedString];
+    } else if (textField == self.teamTextField) {
+        
+        //TODO: team is broben for now, add a picker
+        
+        //self.player.team.name = [self.teamTextField.text capitalizedString];
     }
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     if (textField == self.mailTextField) {
-        [self.companyTextField becomeFirstResponder];
-    } else if (textField == self.companyTextField) {
-        [self.companyTextField resignFirstResponder];
+        [self.teamTextField becomeFirstResponder];
+    } else if (textField == self.teamTextField) {
+        [self.teamTextField resignFirstResponder];
     }
     return NO;
 }

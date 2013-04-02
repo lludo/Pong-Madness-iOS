@@ -21,7 +21,6 @@
 @dynamic username;
 @dynamic photo;
 @dynamic email;
-@dynamic company;
 @dynamic handedness;
 @dynamic binomeSet;
 @dynamic sinceDate;

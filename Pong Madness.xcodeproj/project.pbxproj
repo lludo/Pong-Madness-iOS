@@ -164,11 +164,11 @@
 		826BE4AD16E9B27100A4B64C /* leaderboard-nobody@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 826BE4AB16E9B27100A4B64C /* leaderboard-nobody@2x.png */; };
 		8273A1EE16E72EE200FB2E8F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8273A1ED16E72EE200FB2E8F /* MessageUI.framework */; };
 		82946E9B17081A36006FE53A /* PMTeam.m in Sources */ = {isa = PBXBuildFile; fileRef = 82946E9A17081A36006FE53A /* PMTeam.m */; };
-		82946EA01708207C006FE53A /* Mapping.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 82946E9F1708207B006FE53A /* Mapping.xcmappingmodel */; };
 		8298F66916F30AF900482653 /* SBDefaultKFactorStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8298F65F16F30AF900482653 /* SBDefaultKFactorStrategy.m */; };
 		8298F66A16F30AF900482653 /* SBEloRating.m in Sources */ = {isa = PBXBuildFile; fileRef = 8298F66116F30AF900482653 /* SBEloRating.m */; };
 		8298F66B16F30AF900482653 /* SBFIDEKFactorStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8298F66316F30AF900482653 /* SBFIDEKFactorStrategy.m */; };
 		8298F66C16F30AF900482653 /* SBUSCFKFactorStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8298F66616F30AF900482653 /* SBUSCFKFactorStrategy.m */; };
+		829FF79F170A996D00CA9106 /* Mapping.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 829FF79E170A996D00CA9106 /* Mapping.xcmappingmodel */; };
 		82A8FE5B16F6874700159FFB /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A8FE5A16F6874700159FFB /* UIImage+Resize.m */; };
 		82A8FE6016F68E7D00159FFB /* default-avatar-medium.png in Resources */ = {isa = PBXBuildFile; fileRef = 82A8FE5C16F68E7D00159FFB /* default-avatar-medium.png */; };
 		82A8FE6116F68E7D00159FFB /* default-avatar-medium@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82A8FE5D16F68E7D00159FFB /* default-avatar-medium@2x.png */; };
@@ -407,7 +407,6 @@
 		82946E9617081289006FE53A /* PongMadnessModel 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "PongMadnessModel 2.xcdatamodel"; sourceTree = "<group>"; };
 		82946E9917081A36006FE53A /* PMTeam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMTeam.h; sourceTree = "<group>"; };
 		82946E9A17081A36006FE53A /* PMTeam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMTeam.m; sourceTree = "<group>"; };
-		82946E9F1708207B006FE53A /* Mapping.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = Mapping.xcmappingmodel; sourceTree = "<group>"; };
 		8298F65E16F30AF900482653 /* SBDefaultKFactorStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBDefaultKFactorStrategy.h; sourceTree = "<group>"; };
 		8298F65F16F30AF900482653 /* SBDefaultKFactorStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBDefaultKFactorStrategy.m; sourceTree = "<group>"; };
 		8298F66016F30AF900482653 /* SBEloRating.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBEloRating.h; sourceTree = "<group>"; };
@@ -418,6 +417,7 @@
 		8298F66516F30AF900482653 /* SBUSCFKFactorStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBUSCFKFactorStrategy.h; sourceTree = "<group>"; };
 		8298F66616F30AF900482653 /* SBUSCFKFactorStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBUSCFKFactorStrategy.m; sourceTree = "<group>"; };
 		8298F66816F30AF900482653 /* ScoreKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreKit.h; sourceTree = "<group>"; };
+		829FF79E170A996D00CA9106 /* Mapping.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = Mapping.xcmappingmodel; sourceTree = "<group>"; };
 		82A8FE5916F6874700159FFB /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
 		82A8FE5A16F6874700159FFB /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
 		82A8FE5C16F68E7D00159FFB /* default-avatar-medium.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default-avatar-medium.png"; sourceTree = "<group>"; };
@@ -857,7 +857,7 @@
 			isa = PBXGroup;
 			children = (
 				8222C26C16DF21700084D5D6 /* PongMadnessModel.xcdatamodeld */,
-				82946E9F1708207B006FE53A /* Mapping.xcmappingmodel */,
+				829FF79E170A996D00CA9106 /* Mapping.xcmappingmodel */,
 				8222C28116DF2B240084D5D6 /* PMGame.h */,
 				8222C28216DF2B240084D5D6 /* PMGame.m */,
 				8222C27E16DF2B230084D5D6 /* PMLeaderboard.h */,
@@ -1216,7 +1216,7 @@
 				82A8FE5B16F6874700159FFB /* UIImage+Resize.m in Sources */,
 				82B5AD8D16F6BDAD0036F0FA /* PMDefaultKFactorStrategy.m in Sources */,
 				82946E9B17081A36006FE53A /* PMTeam.m in Sources */,
-				82946EA01708207C006FE53A /* Mapping.xcmappingmodel in Sources */,
+				829FF79F170A996D00CA9106 /* Mapping.xcmappingmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
