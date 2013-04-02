@@ -3,6 +3,10 @@ Pong-Madness
 
 Pong Madness is a tablet application to manage ping pong games and tournaments in your startup or with your friends.
 
+It's open source and free to download on the [AppStore](https://itunes.apple.com/app/pong-madness/id611638463).
+
+<a href="https://itunes.apple.com/us/app/pong-madness/id611638463?mt=8&uo=4" target="itunes_store"style="display:inline-block;overflow:hidden;background:url(http://linkmaker.itunes.apple.com/htmlResources/assets/images/web/linkmaker/badge_appstore-lrg.png) no-repeat;width:135px;height:40px;@media only screen{background-image:url(http://linkmaker.itunes.apple.com/htmlResources/assets/images/web/linkmaker/badge_appstore-lrg.svg);}"></a>
+
 ## Screenshots
 
 [![Screen 1](http://little-green-men.github.com/Pong-Madness-iOS/images/readme_appstore_1.png)](http://little-green-men.github.com/Pong-Madness-iOS/images/appstore_1.png)
