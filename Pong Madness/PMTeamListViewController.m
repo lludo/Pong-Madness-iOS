@@ -7,8 +7,10 @@
 //
 
 #import "PMTeamListViewController.h"
+#import "PMTeamCreateViewController.h"
 #import "PMTeamTableViewCell.h"
 #import "PMDocumentManager.h"
+#import "PMTeam.h"
 
 @interface PMTeamListViewController () <NSFetchedResultsControllerDelegate, UITableViewDelegate, UITableViewDataSource>
 
@@ -26,6 +28,7 @@ static NSString *cellIdentifier = @"TeamCell";
 @synthesize tableView;
 @synthesize fetchedResultsController;
 
+@synthesize delegate;
 @synthesize isInEditMode;
 
 - (id)init {
@@ -54,8 +57,34 @@ static NSString *cellIdentifier = @"TeamCell";
 }
 
 - (void)edit:(id)sender {
+    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Add", nil)
+                                                                             style:UIBarButtonItemStyleBordered
+                                                                            target:self action:@selector(add:)];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Done", nil)
+                                                                              style:UIBarButtonItemStyleBordered
+                                                                             target:self action:@selector(done:)];
+    
     self.isInEditMode = YES;
     [self.tableView reloadData];
+}
+
+- (void)done:(id)sender {
+    
+    self.navigationItem.leftBarButtonItem = nil;
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Edit", nil)
+                                                                              style:UIBarButtonItemStyleBordered
+                                                                             target:self action:@selector(edit:)];
+    
+    self.isInEditMode = YES;
+    [self.tableView reloadData];
+}
+
+- (void)add:(id)sender {
+    PMTeamCreateViewController *teamCreateViewController = [[PMTeamCreateViewController alloc] init];
+    [teamCreateViewController setContentSizeForViewInPopover:CGSizeMake(320, 240)];
+    [self.navigationController pushViewController:teamCreateViewController animated:YES];
 }
 
 - (NSFetchedResultsController *)fetchedResultsController {
@@ -64,13 +93,13 @@ static NSString *cellIdentifier = @"TeamCell";
         
         NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
         NSManagedObjectContext *managedObjectContext = [PMDocumentManager sharedDocument].managedObjectContext;
-        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Player" inManagedObjectContext:managedObjectContext];
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Team" inManagedObjectContext:managedObjectContext];
         [fetchRequest setEntity:entity];
         
-        NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"username" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)];
+        NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)];
         [fetchRequest setSortDescriptors:@[sortDescriptor]];
         
-        [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"active == YES"]];
+        //[fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"active == YES"]];
         [fetchRequest setFetchBatchSize:20];
         
         self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
@@ -100,8 +129,15 @@ static NSString *cellIdentifier = @"TeamCell";
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     id player = [fetchedResultsController objectAtIndexPath:indexPath];
-    
     cell.textLabel.text = [player valueForKey:@"username"];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    PMTeam *team = [fetchedResultsController objectAtIndexPath:indexPath];
+    
+    if (self.delegate && [delegate respondsToSelector:@selector(teamListViewController:didSelectTeam:)]) {
+        [self.delegate teamListViewController:self didSelectTeam:team];
+    }
 }
 
 #pragma mark fetched results controller delegate

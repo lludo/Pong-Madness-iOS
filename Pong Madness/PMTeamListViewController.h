@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import "PMTeamListViewControllerDelegate.h"
 
 @interface PMTeamListViewController : UIViewController
+
+@property (nonatomic, weak) id <PMTeamListViewControllerDelegate> delegate;
 
 @end

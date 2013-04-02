@@ -7,6 +7,7 @@
 //
 
 #import "PMPlayerEditViewController.h"
+#import "PMTeamListViewControllerDelegate.h"
 #import "PMTeamListViewController.h"
 #import "CZPhotoPickerController.h"
 #import "PMDocumentManager.h"
@@ -14,7 +15,7 @@
 #import "UIImage+Resize.h"
 #import "PMTeam.h"
 
-@interface PMPlayerEditViewController () <UITextFieldDelegate>
+@interface PMPlayerEditViewController () <UITextFieldDelegate, PMTeamListViewControllerDelegate>
 
 @property (nonatomic, strong) IBOutlet UIButton *avatarButton;
 @property (nonatomic, strong) IBOutlet UILabel *usernameLabel;
@@ -188,6 +189,7 @@
     PMTeamListViewController *teamListViewController = [[PMTeamListViewController alloc] init];
     [teamListViewController setContentSizeForViewInPopover:CGSizeMake(320, 240)];
     [teamListViewController setTitle:@"Pick Your Team"];
+    [teamListViewController setDelegate:self];
     
     UINavigationController *teamListNavController = [[UINavigationController alloc] initWithRootViewController:teamListViewController];
     
@@ -221,6 +223,12 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
     return NO;
+}
+
+#pragma mark team list view controller delegate
+
+- (void)teamListViewController:(PMTeamListViewController *)teamListViewController didSelectTeam:(PMTeam *)team {
+    self.player.team = team;
 }
 
 - (void)didReceiveMemoryWarning {

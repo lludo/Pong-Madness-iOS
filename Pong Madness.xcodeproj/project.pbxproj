@@ -173,6 +173,8 @@
 		829FF7A6170AA36700CA9106 /* PMTeamListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 829FF7A4170AA36700CA9106 /* PMTeamListViewController.xib */; };
 		829FF7A9170AAE8600CA9106 /* PMTeamTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 829FF7A8170AAE8600CA9106 /* PMTeamTableViewCell.m */; };
 		829FF7AB170AAF1900CA9106 /* PMTeamTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 829FF7AA170AAF1900CA9106 /* PMTeamTableViewCell.xib */; };
+		829FF7AF170AB56200CA9106 /* PMTeamCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 829FF7AD170AB56200CA9106 /* PMTeamCreateViewController.m */; };
+		829FF7B0170AB56200CA9106 /* PMTeamCreateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 829FF7AE170AB56200CA9106 /* PMTeamCreateViewController.xib */; };
 		82A8FE5B16F6874700159FFB /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A8FE5A16F6874700159FFB /* UIImage+Resize.m */; };
 		82A8FE6016F68E7D00159FFB /* default-avatar-medium.png in Resources */ = {isa = PBXBuildFile; fileRef = 82A8FE5C16F68E7D00159FFB /* default-avatar-medium.png */; };
 		82A8FE6116F68E7D00159FFB /* default-avatar-medium@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82A8FE5D16F68E7D00159FFB /* default-avatar-medium@2x.png */; };
@@ -428,6 +430,10 @@
 		829FF7A7170AAE8600CA9106 /* PMTeamTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMTeamTableViewCell.h; sourceTree = "<group>"; };
 		829FF7A8170AAE8600CA9106 /* PMTeamTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMTeamTableViewCell.m; sourceTree = "<group>"; };
 		829FF7AA170AAF1900CA9106 /* PMTeamTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PMTeamTableViewCell.xib; sourceTree = "<group>"; };
+		829FF7AC170AB56200CA9106 /* PMTeamCreateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMTeamCreateViewController.h; sourceTree = "<group>"; };
+		829FF7AD170AB56200CA9106 /* PMTeamCreateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMTeamCreateViewController.m; sourceTree = "<group>"; };
+		829FF7AE170AB56200CA9106 /* PMTeamCreateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PMTeamCreateViewController.xib; sourceTree = "<group>"; };
+		829FF7B1170AB7A900CA9106 /* PMTeamListViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PMTeamListViewControllerDelegate.h; sourceTree = "<group>"; };
 		82A8FE5916F6874700159FFB /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
 		82A8FE5A16F6874700159FFB /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
 		82A8FE5C16F68E7D00159FFB /* default-avatar-medium.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default-avatar-medium.png"; sourceTree = "<group>"; };
@@ -937,6 +943,10 @@
 				829FF7A2170AA36700CA9106 /* PMTeamListViewController.h */,
 				829FF7A3170AA36700CA9106 /* PMTeamListViewController.m */,
 				829FF7A4170AA36700CA9106 /* PMTeamListViewController.xib */,
+				829FF7B1170AB7A900CA9106 /* PMTeamListViewControllerDelegate.h */,
+				829FF7AC170AB56200CA9106 /* PMTeamCreateViewController.h */,
+				829FF7AD170AB56200CA9106 /* PMTeamCreateViewController.m */,
+				829FF7AE170AB56200CA9106 /* PMTeamCreateViewController.xib */,
 			);
 			name = Team;
 			sourceTree = "<group>";
@@ -1173,6 +1183,7 @@
 				82A8FE6316F68E7D00159FFB /* default-avatar-small@2x.png in Resources */,
 				829FF7A6170AA36700CA9106 /* PMTeamListViewController.xib in Resources */,
 				829FF7AB170AAF1900CA9106 /* PMTeamTableViewCell.xib in Resources */,
+				829FF7B0170AB56200CA9106 /* PMTeamCreateViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1245,6 +1256,7 @@
 				829FF79F170A996D00CA9106 /* Mapping.xcmappingmodel in Sources */,
 				829FF7A5170AA36700CA9106 /* PMTeamListViewController.m in Sources */,
 				829FF7A9170AAE8600CA9106 /* PMTeamTableViewCell.m in Sources */,
+				829FF7AF170AB56200CA9106 /* PMTeamCreateViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
