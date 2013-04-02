@@ -9,13 +9,13 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class PMLeaderboardPlayer, PMTournament, PMPlayer;
+@class PMLeaderboardParticipant, PMTournament, PMPlayer;
 
 @interface PMLeaderboard : NSManagedObject
 
 @property (nonatomic, strong) NSString *type;
 @property (nonatomic, strong) PMTournament *tournament;
-@property (nonatomic, strong) NSSet *leaderboardPlayerSet;
+@property (nonatomic, strong) NSSet *leaderboardParticipantSet;
 
 + (PMLeaderboard *)globalLeaderboard;
 
@@ -29,9 +29,9 @@
 
 @interface PMLeaderboard (CoreDataGeneratedAccessors)
 
-- (void)addLeaderboardPlayerSetObject:(PMLeaderboardPlayer *)value;
-- (void)removeLeaderboardPlayerSetObject:(PMLeaderboardPlayer *)value;
-- (void)addLeaderboardPlayerSet:(NSSet *)values;
-- (void)removeLeaderboardPlayerSet:(NSSet *)values;
+- (void)addLeaderboardParticipantSetObject:(PMLeaderboardParticipant *)value;
+- (void)removeLeaderboardParticipantSetObject:(PMLeaderboardParticipant *)value;
+- (void)addLeaderboardPParticipantSet:(NSSet *)values;
+- (void)removeLeaderboardParticipantSet:(NSSet *)values;
 
 @end

@@ -18,7 +18,7 @@
         dateFormatter = [[NSDateFormatter alloc] init];
 		dateFormatter.timeZone = [NSTimeZone localTimeZone];
         dateFormatter.timeStyle = NSDateFormatterNoStyle;
-        dateFormatter.dateStyle = kCFDateFormatterMediumStyle;
+        dateFormatter.dateStyle = NSDateFormatterMediumStyle;
     });
     
     return dateFormatter;

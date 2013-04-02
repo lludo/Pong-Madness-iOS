@@ -7,7 +7,7 @@
 //
 
 #import "PMLeaderboard.h"
-#import "PMLeaderboardPlayer.h"
+#import "PMLeaderboardParticipant.h"
 #import "PMTournament.h"
 #import "PMDocumentManager.h"
 
@@ -15,7 +15,7 @@
 
 @dynamic type;
 @dynamic tournament;
-@dynamic leaderboardPlayerSet;
+@dynamic leaderboardParticipantSet;
 
 + (PMLeaderboard *)globalLeaderboard {
     PMTournament *globalTournament = [PMTournament globalTournament];
@@ -95,23 +95,23 @@
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSManagedObjectContext *managedObjectContext = [PMDocumentManager sharedDocument].managedObjectContext;
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"LeaderboardPlayer" inManagedObjectContext:managedObjectContext];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"LeaderboardParticipant" inManagedObjectContext:managedObjectContext];
     [fetchRequest setEntity:entity];
     [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"leaderboard.tournament == %@", weekTournament]];
     
     NSError *error = nil;
     NSArray *result = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
     
-    __block PMLeaderboardPlayer *leaderboardPlayerOfTheWeek = nil;
+    __block PMLeaderboardParticipant *leaderboardParticipantOfTheWeek = nil;
     if (result) {
-        [result enumerateObjectsUsingBlock:^(PMLeaderboardPlayer *leaderboardPlayer, NSUInteger idx, BOOL *stop) {
-            if (!leaderboardPlayerOfTheWeek || [leaderboardPlayer.rating unsignedIntegerValue] > [leaderboardPlayerOfTheWeek.rating unsignedIntegerValue]) {
-                leaderboardPlayerOfTheWeek = leaderboardPlayer;
+        [result enumerateObjectsUsingBlock:^(PMLeaderboardParticipant *leaderboardParticipant, NSUInteger idx, BOOL *stop) {
+            if (!leaderboardParticipantOfTheWeek || [leaderboardParticipant.rating unsignedIntegerValue] > [leaderboardParticipantOfTheWeek.rating unsignedIntegerValue]) {
+                leaderboardParticipantOfTheWeek = leaderboardParticipant;
             }
         }];
     }
     
-    return leaderboardPlayerOfTheWeek.player;
+    return leaderboardParticipantOfTheWeek.participant;
 }
 
 @end

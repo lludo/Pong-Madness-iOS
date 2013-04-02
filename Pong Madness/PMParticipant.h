@@ -9,11 +9,12 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class PMGameParticipant;
+@class PMGameParticipant, PMLeaderboardParticipant;
 
 @interface PMParticipant : NSManagedObject
 
 @property (nonatomic, strong) NSSet *gameParticipantSet;
+@property (nonatomic, strong) NSSet *leaderboardParticipantSet;
 
 @end
 
@@ -23,5 +24,10 @@
 - (void)removeGameParticipantSetObject:(PMGameParticipant *)value;
 - (void)addGameParticipantSet:(NSSet *)values;
 - (void)removeGameParticipantSet:(NSSet *)values;
+
+- (void)addLeaderboardParticipantSetObject:(PMLeaderboardParticipant *)value;
+- (void)removeLeaderboardParticipantSetObject:(PMLeaderboardParticipant *)value;
+- (void)addLeaderboardParticipantSet:(NSSet *)values;
+- (void)removeLeaderboardParticipantSet:(NSSet *)values;
 
 @end
