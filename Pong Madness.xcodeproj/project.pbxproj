@@ -169,6 +169,10 @@
 		8298F66B16F30AF900482653 /* SBFIDEKFactorStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8298F66316F30AF900482653 /* SBFIDEKFactorStrategy.m */; };
 		8298F66C16F30AF900482653 /* SBUSCFKFactorStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8298F66616F30AF900482653 /* SBUSCFKFactorStrategy.m */; };
 		829FF79F170A996D00CA9106 /* Mapping.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 829FF79E170A996D00CA9106 /* Mapping.xcmappingmodel */; };
+		829FF7A5170AA36700CA9106 /* PMTeamListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 829FF7A3170AA36700CA9106 /* PMTeamListViewController.m */; };
+		829FF7A6170AA36700CA9106 /* PMTeamListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 829FF7A4170AA36700CA9106 /* PMTeamListViewController.xib */; };
+		829FF7A9170AAE8600CA9106 /* PMTeamTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 829FF7A8170AAE8600CA9106 /* PMTeamTableViewCell.m */; };
+		829FF7AB170AAF1900CA9106 /* PMTeamTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 829FF7AA170AAF1900CA9106 /* PMTeamTableViewCell.xib */; };
 		82A8FE5B16F6874700159FFB /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 82A8FE5A16F6874700159FFB /* UIImage+Resize.m */; };
 		82A8FE6016F68E7D00159FFB /* default-avatar-medium.png in Resources */ = {isa = PBXBuildFile; fileRef = 82A8FE5C16F68E7D00159FFB /* default-avatar-medium.png */; };
 		82A8FE6116F68E7D00159FFB /* default-avatar-medium@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 82A8FE5D16F68E7D00159FFB /* default-avatar-medium@2x.png */; };
@@ -418,6 +422,12 @@
 		8298F66616F30AF900482653 /* SBUSCFKFactorStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBUSCFKFactorStrategy.m; sourceTree = "<group>"; };
 		8298F66816F30AF900482653 /* ScoreKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreKit.h; sourceTree = "<group>"; };
 		829FF79E170A996D00CA9106 /* Mapping.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = Mapping.xcmappingmodel; sourceTree = "<group>"; };
+		829FF7A2170AA36700CA9106 /* PMTeamListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMTeamListViewController.h; sourceTree = "<group>"; };
+		829FF7A3170AA36700CA9106 /* PMTeamListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMTeamListViewController.m; sourceTree = "<group>"; };
+		829FF7A4170AA36700CA9106 /* PMTeamListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PMTeamListViewController.xib; sourceTree = "<group>"; };
+		829FF7A7170AAE8600CA9106 /* PMTeamTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMTeamTableViewCell.h; sourceTree = "<group>"; };
+		829FF7A8170AAE8600CA9106 /* PMTeamTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMTeamTableViewCell.m; sourceTree = "<group>"; };
+		829FF7AA170AAF1900CA9106 /* PMTeamTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PMTeamTableViewCell.xib; sourceTree = "<group>"; };
 		82A8FE5916F6874700159FFB /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
 		82A8FE5A16F6874700159FFB /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
 		82A8FE5C16F68E7D00159FFB /* default-avatar-medium.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default-avatar-medium.png"; sourceTree = "<group>"; };
@@ -839,6 +849,7 @@
 				8222C26516DF1F840084D5D6 /* KnockOut */,
 				820D719916E1F27000E98D23 /* Leaderboard */,
 				8222C26316DF1F650084D5D6 /* Player */,
+				829FF7A1170AA34300CA9106 /* Team */,
 				820D71A216E1F2FE00E98D23 /* Settings */,
 			);
 			name = ViewControllers;
@@ -896,6 +907,9 @@
 				8215A93016E454E500BDDFA2 /* PMLeaderboardCell.h */,
 				8215A93116E454E500BDDFA2 /* PMLeaderboardCell.m */,
 				8215A93316E4556F00BDDFA2 /* PMLeaderboardCell.xib */,
+				829FF7A7170AAE8600CA9106 /* PMTeamTableViewCell.h */,
+				829FF7A8170AAE8600CA9106 /* PMTeamTableViewCell.m */,
+				829FF7AA170AAF1900CA9106 /* PMTeamTableViewCell.xib */,
 			);
 			name = TableviewCells;
 			sourceTree = "<group>";
@@ -915,6 +929,16 @@
 				8298F66116F30AF900482653 /* SBEloRating.m */,
 			);
 			path = ScoreKit;
+			sourceTree = "<group>";
+		};
+		829FF7A1170AA34300CA9106 /* Team */ = {
+			isa = PBXGroup;
+			children = (
+				829FF7A2170AA36700CA9106 /* PMTeamListViewController.h */,
+				829FF7A3170AA36700CA9106 /* PMTeamListViewController.m */,
+				829FF7A4170AA36700CA9106 /* PMTeamListViewController.xib */,
+			);
+			name = Team;
 			sourceTree = "<group>";
 		};
 		82B20B7D16E5508C00EFF984 /* Views */ = {
@@ -1147,6 +1171,8 @@
 				82A8FE6116F68E7D00159FFB /* default-avatar-medium@2x.png in Resources */,
 				82A8FE6216F68E7D00159FFB /* default-avatar-small.png in Resources */,
 				82A8FE6316F68E7D00159FFB /* default-avatar-small@2x.png in Resources */,
+				829FF7A6170AA36700CA9106 /* PMTeamListViewController.xib in Resources */,
+				829FF7AB170AAF1900CA9106 /* PMTeamTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1217,6 +1243,8 @@
 				82B5AD8D16F6BDAD0036F0FA /* PMDefaultKFactorStrategy.m in Sources */,
 				82946E9B17081A36006FE53A /* PMTeam.m in Sources */,
 				829FF79F170A996D00CA9106 /* Mapping.xcmappingmodel in Sources */,
+				829FF7A5170AA36700CA9106 /* PMTeamListViewController.m in Sources */,
+				829FF7A9170AAE8600CA9106 /* PMTeamTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

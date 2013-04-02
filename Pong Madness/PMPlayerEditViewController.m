@@ -7,6 +7,7 @@
 //
 
 #import "PMPlayerEditViewController.h"
+#import "PMTeamListViewController.h"
 #import "CZPhotoPickerController.h"
 #import "PMDocumentManager.h"
 #import "UIFont+PongMadness.h"
@@ -18,12 +19,14 @@
 @property (nonatomic, strong) IBOutlet UIButton *avatarButton;
 @property (nonatomic, strong) IBOutlet UILabel *usernameLabel;
 @property (nonatomic, strong) IBOutlet UITextField *mailTextField;
-@property (nonatomic, strong) IBOutlet UITextField *teamTextField;
+@property (nonatomic, strong) IBOutlet UILabel *teamLabel;
+@property (nonatomic, strong) IBOutlet UIButton *teamButton;
 @property (nonatomic, strong) IBOutlet UIButton *handednessLeftyButton;
 @property (nonatomic, strong) IBOutlet UIButton *handednessRightyButton;
 @property (nonatomic, strong) IBOutletCollection(UILabel) NSArray *legendLabels;
 
-@property(nonatomic,strong) CZPhotoPickerController *pickPhotoController;
+@property(nonatomic, strong) CZPhotoPickerController *pickPhotoController;
+@property(nonatomic, strong) UIPopoverController *teamPopoverController;
 
 - (void)updateView;
 
@@ -35,7 +38,8 @@
 @synthesize avatarButton;
 @synthesize usernameLabel;
 @synthesize mailTextField;
-@synthesize teamTextField;
+@synthesize teamLabel;
+@synthesize teamButton;
 @synthesize handednessLeftyButton;
 @synthesize handednessRightyButton;
 @synthesize legendLabels;
@@ -68,7 +72,7 @@
     
     self.usernameLabel.font = [UIFont brothersBoldFontOfSize:38.f];
     self.mailTextField.font = [UIFont brothersBoldFontOfSize:23.f];
-    self.teamTextField.font = [UIFont brothersBoldFontOfSize:23.f];
+    self.teamLabel.font = [UIFont brothersBoldFontOfSize:23.f];
     
     [self.legendLabels enumerateObjectsUsingBlock:^(UILabel *label, NSUInteger idx, BOOL *stop) {
         label.font = [UIFont brothersBoldFontOfSize:23.f];
@@ -95,7 +99,7 @@
     
     self.usernameLabel.text = self.player.username;
     self.mailTextField.text = self.player.email;
-    self.teamTextField.text = self.player.team.name;
+    self.teamLabel.text = self.player.team.name;
     
     if ([self.player.handedness isEqualToString:@"L"]) {
         self.handednessLeftyButton.selected = YES;
@@ -179,6 +183,23 @@
     [self.pickPhotoController showFromRect:self.avatarButton.frame];
 }
 
+- (IBAction)selectTeam:(id)sender {
+    
+    PMTeamListViewController *teamListViewController = [[PMTeamListViewController alloc] init];
+    [teamListViewController setContentSizeForViewInPopover:CGSizeMake(320, 240)];
+    [teamListViewController setTitle:@"Pick Your Team"];
+    
+    UINavigationController *teamListNavController = [[UINavigationController alloc] initWithRootViewController:teamListViewController];
+    
+    self.teamPopoverController = [[UIPopoverController alloc] initWithContentViewController:teamListNavController];
+    [self.teamPopoverController presentPopoverFromRect:self.teamButton.bounds
+                                           inView:self.teamButton
+                         permittedArrowDirections:UIPopoverArrowDirectionLeft
+                                         animated:YES];
+    
+    self.player.team.name = [@"Kwarter" capitalizedString];
+}
+
 - (IBAction)selectRighty:(id)sender {
     self.handednessLeftyButton.selected = NO;
     self.handednessRightyButton.selected = YES;
@@ -194,22 +215,11 @@
 #pragma mark textfield delegate
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
-    if (textField == self.mailTextField) {
-        self.player.email = [self.mailTextField.text lowercaseString];
-    } else if (textField == self.teamTextField) {
-        
-        //TODO: team is broben for now, add a picker
-        
-        //self.player.team.name = [self.teamTextField.text capitalizedString];
-    }
+    self.player.email = [self.mailTextField.text lowercaseString];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    if (textField == self.mailTextField) {
-        [self.teamTextField becomeFirstResponder];
-    } else if (textField == self.teamTextField) {
-        [self.teamTextField resignFirstResponder];
-    }
+    [textField resignFirstResponder];
     return NO;
 }
 
