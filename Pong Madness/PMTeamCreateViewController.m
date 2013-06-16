@@ -7,6 +7,7 @@
 //
 
 #import "PMTeamCreateViewController.h"
+#import "PMDocumentManager.h"
 #import "PMTeam.h"
 
 @interface PMTeamCreateViewController () <UITextFieldDelegate>
@@ -37,13 +38,20 @@
                                                                              target:self action:@selector(done:)];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self.nameTextField becomeFirstResponder];
+}
+
 - (void)done:(id)sender {
     [self.nameTextField resignFirstResponder];
     [self createTeam];
+    [[PMDocumentManager sharedDocument] save];
 }
 
 - (void)createTeam {
-    NSString *teamName = [self.nameTextField.text capitalizedString];
+    NSString *teamName = self.nameTextField.text;
     
     if (teamName && [teamName length] > 0) {
         [PMTeam teamWithName:teamName];
