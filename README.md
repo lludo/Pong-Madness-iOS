@@ -25,7 +25,7 @@ Ludovic Landry
 
 - https://github.com/lludo
 - https://twitter.com/ludoviclandry
-- http://about.me/ludoviclandry
+- http://ludoviclandry.com/
 - landry.ludovic@gmail.com
 
 Robin Clediere
